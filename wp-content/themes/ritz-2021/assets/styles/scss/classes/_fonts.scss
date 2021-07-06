@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "TOSCA ZERO Copyright (c) 2009 by Billy Argel. All rights reserved.";
+  src: url("../fonts/torsca-zero/TOSCA ZERO.eot");
+  src: url("../fonts/torsca-zero/TOSCA ZERO.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/torsca-zero/TOSCA ZERO.woff2") format("woff2"),
+  url("../fonts/torsca-zero/TOSCA ZERO.woff") format("woff"),
+  url("../fonts/torsca-zero/TOSCA ZERO.ttf") format("truetype"),
+  url("../fonts/torsca-zero/TOSCA ZERO.svg#TOSCA ZERO Copyright (c) 2009 by Billy Argel. All rights reserved.") format("svg");
+}
+
+$tosca-zero: "TOSCA ZERO Copyright (c) 2009 by Billy Argel. All rights reserved.";
+
+.tosca-zero, .is-style-tosca-zero, .is-style-tosca-zero-uppercase {
+  font-family: $tosca-zero;
+}
+
+.text-uppercase, .is-style-tosca-zero-uppercase {
+  text-transform: uppercase;
+}
+
+$max-letter-spacing: 100;
+
+@mixin letter-spacing-x {
+  @for $i from 1 through $max-letter-spacing {
+    .letter-spacing-#{$i} {
+      letter-spacing: #{$i}px;
+    }
+  }
+}
+
+@include letter-spacing-x;

@@ -1,0 +1,106 @@
+.large-text-right {
+  @include breakpoint(large) {
+    text-align: right;
+  }
+}
+
+.medium-text-right {
+  @include breakpoint(medium) {
+    text-align: right;
+  }
+}
+
+.large-text-left {
+  @include breakpoint(large) {
+    text-align: left;
+  }
+}
+
+.medium-text-left {
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+}
+
+.large-text-center {
+  @include breakpoint(large) {
+    text-align: center;
+  }
+}
+
+.medium-text-center {
+  @include breakpoint(medium) {
+    text-align: center;
+  }
+}
+
+.small-text-left {
+  text-align: left;
+  @include breakpoint(medium) {
+    &.medium-text-right {
+      text-align: right;
+    }
+    &.medium-text-center {
+      text-align: center;
+    }
+  }
+  @include breakpoint(large) {
+    &.large-text-left {
+      text-align: left;
+    }
+    &.large-text-right {
+      text-align: right;
+    }
+    &.large-text-center {
+      text-align: center;
+    }
+  }
+}
+
+
+.small-text-right {
+  text-align: right;
+  @include breakpoint(medium) {
+    &.medium-text-left {
+      text-align: left;
+    }
+    &.medium-text-center {
+      text-align: center;
+    }
+  }
+  @include breakpoint(large) {
+    &.large-text-left {
+      text-align: left;
+    }
+    &.large-text-right {
+      text-align: right;
+    }
+    &.large-text-center {
+      text-align: center;
+    }
+  }
+}
+
+
+.small-text-center {
+  text-align: center;
+  @include breakpoint(medium) {
+    &.medium-text-left {
+      text-align: left;
+    }
+    &.medium-text-right {
+      text-align: right;
+    }
+  }
+  @include breakpoint(large) {
+    &.large-text-left {
+      text-align: left;
+    }
+    &.large-text-right {
+      text-align: right;
+    }
+    &.large-text-center {
+      text-align: center;
+    }
+  }
+}

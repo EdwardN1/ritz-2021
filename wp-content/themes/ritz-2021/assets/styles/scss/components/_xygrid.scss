@@ -1,0 +1,59 @@
+.grid-x {
+  .cell-type-image {
+    display: inline-block;
+    position: relative;
+
+    .image-description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+
+      .container {
+        max-width: 95%;
+
+        span, a {
+          display: block;
+          text-align: center;
+          color: $white;
+          text-transform: uppercase;
+          line-height: 0.9;
+        }
+
+        span {
+          //font-family: $tosca-zero;
+          font-size: 45px;
+          margin-bottom: 3.5rem;
+        }
+
+        a {
+          //font-family: $Gill-Sans-Nova-SemiBold;
+          letter-spacing: 4px;
+          font-size: 11px;
+          position: relative;
+          padding-right: 56px;
+          &:hover, &:focus, &:visited {
+            color: white;
+          }
+          &:after {
+            content: " ";
+            position: absolute;
+            height: 42px;
+            width: 42px;
+            top: 50%;
+            right: 0;
+            margin-top: -21px;
+            //background-image: url("../images/link-arrow-right.svg");
+            background-size: contain;
+          }
+        }
+      }
+
+    }
+  }
+}

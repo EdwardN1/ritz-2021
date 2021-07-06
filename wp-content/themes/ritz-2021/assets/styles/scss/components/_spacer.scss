@@ -1,0 +1,44 @@
+.wp-block-spacer {
+
+  @include breakpoint(small) {
+    &.is-style-responsive-large {
+      height: 60px !important;
+    }
+
+    &.is-style-responsive-medium {
+      height: 40px !important;
+    }
+
+    &.is-style-responsive-small {
+      height: 20px !important;
+    }
+  }
+
+  @include breakpoint(medium) {
+    &.is-style-responsive-large {
+      height: 80px !important;
+    }
+
+    &.is-style-responsive-medium {
+      height: 60px !important;
+    }
+
+    &.is-style-responsive-small {
+      height: 40px !important;
+    }
+  }
+
+  @include breakpoint(large) {
+    &.is-style-responsive-large {
+      height: 100px !important;
+    }
+
+    &.is-style-responsive-medium {
+      height: 60px !important;
+    }
+
+    &.is-style-responsive-small {
+      height: 30px !important;
+    }
+  }
+}

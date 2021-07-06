@@ -1,0 +1,54 @@
+/** ================= Fixed Top Bar =============== */
+
+$top-bar-fixed: false; // fixes the top bar to top of the page.
+$header-padded: false; // pads the header to accommodate top bar.
+$header-padding: 60px; // amount to pad the header.
+$top-bar-background: transparent; //background colour of the top bar.
+
+/** ================= Absolute Top Bar =============== */
+
+$top-bar-absolute: true; // fixes the top bar to top of the page.
+$header-padded: false; // pads the header to accommodate top bar.
+$header-padding: 60px; // amount to pad the header.
+$top-bar-background: transparent; //background colour of the top bar.
+
+
+#top-bar-menu {
+  display: block;
+  &.top-bar {
+    background-color: $top-bar-background;
+    @if $top-bar-fixed {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    &.fixed {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    @if $top-bar-absolute {
+      position: absolute;
+      width: 100%;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+    }
+    &.absolute {
+      position: absolute;
+      width: 100%;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+    }
+    ul {
+      background-color: $top-bar-background;
+    }
+  }
+}
+
+@if $header-padded {
+  header.header {
+    padding-bottom: $header-padding;
+  }
+}
