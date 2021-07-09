@@ -66,7 +66,10 @@ CSS file.
 
 // Import your custom styles
 @import "global";
+@import "components/font_styles";
 @import "classes/responsive_text_alignment";
 @import "components/top_bar";
 @import "classes/fonts";
 @import "components/spacer";
+@import "components/header";
+@import "components/burger_menu";

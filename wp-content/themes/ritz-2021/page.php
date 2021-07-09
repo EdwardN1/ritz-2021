@@ -9,9 +9,9 @@ get_header(); ?>
 	
 	<div class="content">
 	
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+		<div class="inner-content">
 	
-		    <main class="main small-12 large-8 medium-8 cell" role="main">
+		    <main role="main">
 				
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -21,7 +21,7 @@ get_header(); ?>
 			    					
 			</main> <!-- end #main -->
 
-		    <?php get_sidebar(); ?>
+		    <?php //get_sidebar(); ?>
 		    
 		</div> <!-- end #inner-content -->
 

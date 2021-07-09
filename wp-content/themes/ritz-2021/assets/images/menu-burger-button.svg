@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="35.5" viewBox="0 0 36 35.5">
+  <g id="menu-burger-button" transform="translate(-52 -71.5)">
+    <g id="Group_315" data-name="Group 315" transform="translate(0 10.5)">
+      <line id="Line_1" data-name="Line 1" x2="35" transform="translate(53 61.5)" fill="none" stroke="#fff" stroke-width="1"/>
+      <line id="Line_2" data-name="Line 2" x2="35" transform="translate(53 75.5)" fill="none" stroke="#fff" stroke-width="1"/>
+      <line id="Line_3" data-name="Line 3" x2="35" transform="translate(53 68.5)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
+    <text id="Menu" transform="translate(70 104)" fill="#fff" font-size="10" font-family="Montserrat" font-weight="500" letter-spacing="0.1em"><tspan x="-17.64" y="0">MENU</tspan></text>
+  </g>
+</svg>

@@ -15,9 +15,9 @@
 	</section> <!-- end article section -->
 						
 	<footer class="article-footer">
-		 <?php wp_link_pages(); ?>
+		 <?php //wp_link_pages(); ?>
 	</footer> <!-- end article footer -->
 						    
-	<?php comments_template(); ?>
+	<?php //comments_template(); ?>
 					
 </article> <!-- end article -->
