@@ -13,12 +13,15 @@
     </button>
 
     <div class="grid-container">
+        <div class="logo text-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-ritz-logo.svg">
+        </div>
         <div class="grid-x">
             <div class="cell auto main-nav">
-                <?php if (have_rows('page_links', 'option')) : ?>
-                    <?php $i = 1; ?>
-                    <?php while (have_rows('page_links', 'option')) : the_row(); ?>
-                        <?php
+                <?php
+                if (have_rows('page_links', 'option')) :
+                    $i = 1;
+                    while (have_rows('page_links', 'option')) : the_row();
                         $link_type = get_sub_field('link_type');
                         $target = '';
                         if (get_sub_field('open_in_new_tab') == 1) :
@@ -47,15 +50,16 @@
                         <?php
                         endif;
                         $i++;
-                        ?>
-                    <?php endwhile; ?>
-                <?php endif; ?>
+                    endwhile;
+                endif;
+                ?>
             </div>
             <div class="cell auto sub-nav">
                 <?php
                 if (have_rows('page_links', 'option')) :
                     $i = 1;
                     while (have_rows('page_links', 'option')) : the_row();
+                        $link_type = get_sub_field('link_type');
                         $href = '';
                         if ($link_type == 'Page') {
                             $href = get_sub_field('page');
@@ -69,49 +73,46 @@
                         if ($link_type == 'External URL') {
                             $href = get_sub_field('text_link');
                         }
+                        echo '<div class="">'.get_sub_field('link_text').'</div>';
                         if ($href != ''):
-                            ?>
-                            <div class="child-<?php echo $i; ?>">
-                            <?php
-                            if (have_rows('child_pages')) {
+                            if (have_rows('child_pages')) :
                                 while (have_rows('child_pages')) : the_row();
-                                    $child_link_text = get_sub_field('link_text');
-                                    $child_target = '';
+
+                                    $link_text = get_sub_field('link_text');
+                                    $link_type = get_sub_field('link_type');
+                                    //echo '<h2>'.$link_text.' link: '.get_sub_field('page').'</h2>';
+                                    $target = '';
                                     if (get_sub_field('open_in_new_tab') == 1) :
-                                        $child_target = ' target="_blank"';
+                                        $target = ' target="_blank"';
                                     endif;
-                                    $child_link_type = get_sub_field('link_type');
-                                    $child_href = '';
-                                    if ($child_link_type == 'Page') {
-                                        $child_href = get_sub_field('page');
+                                    $jhref = '';
+                                    if ($link_type == 'Page') {
+                                        $jhref = get_sub_field('page_link');
                                     }
-                                    if ($child_link_type == 'Post') {
-                                        $child_href = get_sub_field('post');
+                                    if ($link_type == 'Post') {
+                                        $jhref = get_sub_field('post_link');
                                     }
-                                    if ($child_link_type == 'External URL') {
-                                        $child_href = get_sub_field('external_url');
+                                    if ($link_type == 'External URL') {
+                                        $jhref = get_sub_field('external_url');
                                     }
-                                    if ($child_link_type == 'External URL') {
-                                        $child_href = get_sub_field('text_link');
+                                    if ($link_type == 'External URL') {
+                                        $jhref = get_sub_field('text_link');
                                     }
-                                    if ($child_href != '') {
+                                    if ($jhref != ''):
                                         ?>
-                                        <h2 class="child-page-link">
-                                            <a href="<?php echo esc_url($child_href); ?>"<?php echo $child_target; ?>><?php echo esc_html($child_link_text); ?></a>
+                                        <h2 class="menu-page-link">
+                                            <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>
+                                               class="parent-<?php echo $i; ?>"><?php echo esc_html($link_text); ?></a>
                                         </h2>
-                                        <?php
-                                    }
-
+                                    <?php
+                                    endif;
                                 endwhile;
-                            }
-                            $i++;
-                        endif;
-
-                        ?>
-                        </div>
-                    <?php
+                            endif;
+                        endif;                        /** if ($href != ''): **/
+                        $i++;
                     endwhile;
-                endif; ?>
+                endif;
+                ?>
             </div>
             <div class="cell auto special-offer">
 

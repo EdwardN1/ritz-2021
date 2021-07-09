@@ -4,4 +4,19 @@
     right: auto;
     top: 66px;
   }
+  .logo {
+    padding-top: 30px;
+  }
+  .main-nav {
+    padding-top: 65px;
+    h3 {
+      padding-bottom: 32px;
+      margin: 0;
+      a {
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 25px;
+      }
+    }
+  }
 }
