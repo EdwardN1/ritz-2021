@@ -4,19 +4,55 @@
     right: auto;
     top: 66px;
   }
+
   .logo {
     padding-top: 30px;
   }
+
   .main-nav {
     padding-top: 65px;
+
     h3 {
       padding-bottom: 32px;
       margin: 0;
+
       a {
         text-transform: uppercase;
         font-size: 20px;
         line-height: 25px;
       }
+    }
+    .spacer {
+      //height: 276px;
+      width: 100%;
+      //border: 1px solid red;
+      transition: height 0.5s linear;
+      &.animate__fadeOutUp {
+        height: 0 !important;
+      }
+    }
+  }
+
+  .sub-nav {
+    padding-top: 65px;
+    position: relative;
+    overflow: hidden;
+    h2 {
+      margin: 0;
+      max-width: 210px;
+      padding-bottom: 17px;
+
+      a {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: $weight-medium;
+        text-transform: uppercase;
+      }
+    }
+    .child-menu {
+      position: absolute;
+      top: 65px;
+      left: 0;
     }
   }
 }
