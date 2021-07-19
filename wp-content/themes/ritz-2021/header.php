@@ -24,8 +24,10 @@
     <!-- If Site Icon isn't set in customizer -->
     <?php if (!function_exists('has_site_icon') || !has_site_icon()) { ?>
         <!-- Icons & Favicons -->
-        <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
-        <link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png"
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png">
+        <link rel="icon"  type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/favicon-32x32.png">
+        <link rel="icon"  type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/favicon-16x16.png">
+        <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/safari-pinned-tab.svg" color="#5bbad5">
               rel="apple-touch-icon"/>
     <?php } ?>
 
@@ -47,65 +49,40 @@
         <header class="header" role="banner">
 
             <div class="blue-top show-for-large">
-
-            </div>
-
-            <?php
-
-            if (has_post_thumbnail()) {
-                ?>
-                <div class="featured-image"
-                     style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>)">
-                    <div class="overlay"></div>
-                    <div class="header-main">
-                        <div class="grid-container">
-                            <div class="grid-x">
-                                <div class="cell auto menu-button">
-                                    <a data-toggle="off-canvas"><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/menu-burger-button.svg"></a>
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell auto">
+                            &nbsp;
+                        </div>
+                        <div class="cell shrink reservations">
+                            <a href="#/booking/step-1" id="book-nav" class="stay-with-us top-button book-now-button">Stay
+                                with us</a>
+                        </div>
+                        <div class="cell shrink dining">
+                            <a href="#" class="dine-with-us top-button" data-toggle="bookings-panel">Dine with us</a>
+                            <div class="dropdown-pane" id="bookings-panel" data-dropdown data-close-on-click="true" data-auto-focus="true">
+                                <div class="booking-line">
+                                    <a href="#">The Ritz Restaurant</a>
                                 </div>
-                                <div class="cell shrink logo">
-                                    <a href="/"><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/white-ritz-logo.svg"
-                                                class="ritz-logo"></a>
+                                <div class="booking-line">
+                                    <a href="#">Afternoon Tea</a>
                                 </div>
-                                <div class="cell auto links-social">
-                                    <div class="grid-x">
-                                        <div class="cell auto">&nbsp;</div>
-                                        <div class="cell shrink link text-right"><a href="#">CONTACT US</a></div>
-                                        <div class="cell shrink link text-right"><a href="#">GIFT VOUCHERS</a></div>
-                                        <div class="cell shrink social">
-                                            <div class="grid-x">
-                                                <div class="cell auto">&nbsp;</div>
-                                                <div class="cell shrink text-right">
-                                                    <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg"></a>
-                                                </div>
-                                                <div class="cell shrink text-right">
-                                                    <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg"></a>
-                                                </div>
-                                                <div class="cell shrink text-right">
-                                                    <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter.svg"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="booking-line">
+                                    <a href="#">The Italian Garden</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="featured-content">
-                        <div class="grid-container">
-                            <h1><?php the_field('page_heading'); ?></h1>
-                            <h2><?php the_field('page_sub_heading'); ?></h2>
-                        </div>
-                    </div>
                 </div>
-                <?php
-            }
-            ?>
+            </div>
 
-            <!-- This navs will be applied to the topbar, above all content
-                 To see additional nav styles, visit the /parts directory -->
-            <?php get_template_part('parts/nav', 'offcanvas-topbar'); ?>
+            <?php if (have_rows('image_gallery')) : ?>
+
+                <?php get_template_part('header/top', 'image-gallery') ?>
+            <?php else : ?>
+                <?php get_template_part('header/top', 'featured-image') ?>
+            <?php endif; ?>
+
+            <?php //get_template_part('parts/nav', 'offcanvas-topbar'); ?>
 
         </header> <!-- end .header -->

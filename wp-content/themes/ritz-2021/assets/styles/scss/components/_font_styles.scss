@@ -55,3 +55,33 @@ body, p, span {
   font-size: 10px;
   line-height: 13px;
 }
+
+.h1 {
+  font-size: 25px;
+  line-height: 30px;
+  @include breakpoint(medium) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+  @include breakpoint(large) {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+.h2 {
+  font-size: 12px;
+  line-height: 15px;
+  @include breakpoint(medium) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  @include breakpoint(large) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.blue {
+  color: $ritz-blue;
+}

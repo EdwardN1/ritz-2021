@@ -93,7 +93,7 @@ $dark-gray: #666666;
 $black: #000000;
 $white: #ffffff;
 $body-background: $white;
-$body-font-color: $black;
+$body-font-color: $ritz-blue;
 $body-font-family: $montserrat;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -149,7 +149,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1.4;
-$header-margin-bottom: 0.5rem;
+$header-margin-bottom: 2.1875rem;
 $header-styles: (
         small: (
                 'h1': ('font-size': 25, 'line-height': 30),
@@ -179,7 +179,7 @@ $header-styles: (
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
+$paragraph-lineheight: 1.267;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;

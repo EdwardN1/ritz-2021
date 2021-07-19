@@ -8,7 +8,79 @@ header.header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 200;
+    padding-top: 6px;
+    .reservations {
+      padding-right: 10px;
+    }
+    .dining {
+      position: relative;
+      .dropdown-pane {
+        padding: 0;
+        border: none;
+        width: 100%;
+        .booking-line {
+          background-color: $ritz-blue;
+          a {
+            color: $white;
+            line-height: 28px;
+            line-height: 28px;
+            display: block;
+            padding: 0;
+            margin: 0;
+            border-left: 1px solid $white;
+            border-right: 1px solid $white;
+            border-bottom: 1px solid $white;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: $weight-bold;
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .top-button {
+      color: $white;
+      line-height: 28px;
+      display: block;
+      padding: 0;
+      margin: 0;
+      border: 1px solid $white;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: $weight-bold;
+      padding-left: 31px;
+      padding-right: 31px;
+      &.dine-with-us {
+        position: relative;
+        &:after {
+          content: " ";
+          position: absolute;
+          right: 10px;
+          top: 7px;
+          border: solid $white;
+          border-width: 0 1px 1px 0;
+          display: inline-block;
+          padding: 3px;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+        }
+        &.hover {
+          &:after {
+            border: solid $ritz-blue;
+            border-width: 0 1px 1px 0;
+            top: 11px;
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+          }
+        }
+      }
+      &.hover {
+        background-color: $white;
+        color: $ritz-blue;
+      }
+    }
   }
 
   .featured-image {
@@ -23,7 +95,7 @@ header.header {
       width: 100%;
       height: 100vh;
       background-color: $black;
-      opacity: 0.3;
+      opacity: 0.4;
     }
 
     .featured-content {
@@ -37,6 +109,7 @@ header.header {
         text-align: center;
         line-height: 1;
         margin: 0;
+        text-transform: uppercase;
       }
 
       h2 {
@@ -45,43 +118,91 @@ header.header {
       }
     }
 
-    .header-main {
-      position: absolute;
-      width: 100%;
-      color: white;
-      top: 50px;
-      color: $white;
+  }
 
-      .menu-button {
-        padding-top: 32px;
-      }
+  .header-spacer {
+    height: 198px;
+    width: 100%;
+  }
 
-      .ritz-logo {
-        width: 135px;
-        height: auto;
-      }
+  .header-main {
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: 50px;
+    color: $white;
+    z-index: 100;
 
-      .links-social {
-        padding-top: 50px;
-      }
+    .menu-button {
+      padding-top: 32px;
+    }
 
-      .link {
-        padding-left: 20px;
-        a {
-          color: $white;
-          font-size: 10px;
-          font-weight: $weight-medium;
-          letter-spacing: 1px;
-        }
-      }
+    .ritz-logo {
+      width: 135px;
+      height: auto;
+    }
 
-      .social {
-        .text-right {
-          padding-left: 14px;
+    .links-social {
+      padding-top: 50px;
+    }
+
+    .link {
+      padding-left: 20px;
+      a {
+        color: $white;
+        font-size: 10px;
+        font-weight: $weight-medium;
+        letter-spacing: 1px;
+        &.blue {
+          color: $ritz-blue;
         }
       }
     }
 
+    .social {
+      .text-right {
+        padding-left: 14px;
+      }
+    }
+  }
+
+  #ritz-main-image-gallery {
+    .slide-link {
+      display: block;
+      width: 100%;
+    }
+    .slide-container {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      .slide-overlay {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background-color: $black;
+        opacity: 0.4;
+      }
+      .slide-info {
+        position: absolute;
+        bottom: 75px;
+        width: 100%;
+        h2, .sub-heading {
+          color: $white;
+          width: 100%;
+          text-align: center;
+          line-height: 1;
+          margin: 0;
+          width: 100%;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .sub-heading {
+          font-weight: $weight-medium;
+          padding-top: 35px;
+        }
+      }
+
+    }
   }
 
 
