@@ -1,0 +1,27 @@
+.show-for-large {
+  display: none;
+  @include breakpoint(large) {
+    display: inherit;
+  }
+}
+
+.hide-for-large {
+  display: inherit;
+  @include breakpoint(large) {
+    display: none;
+  }
+}
+
+.show-for-medium {
+  display: none;
+  @include breakpoint(medium) {
+    display: inherit;
+  }
+}
+
+.hide-for-medium {
+  display: inherit;
+  @include breakpoint(medium) {
+    display: none;
+  }
+}

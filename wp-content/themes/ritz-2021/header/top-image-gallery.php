@@ -1,4 +1,4 @@
-<div class="header-main">
+<div class="header-main show-for-large">
     <div class="grid-container">
         <div class="grid-x">
             <div class="cell auto menu-button">
@@ -34,6 +34,25 @@
         </div>
     </div>
 </div>
+<div class="header-main hide-for-large">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell auto menu-button">
+                <a data-toggle="off-canvas"><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/mobile-menu-burger-button.svg"></a>
+            </div>
+            <div class="cell shrink logo">
+                <a href="/"><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/white-ritz-logo.svg"
+                            class="ritz-logo"></a>
+            </div>
+            <div class="cell auto links-social text-right">
+                <a  data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell.svg"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="ritz-main-image-gallery" class="main-image-gallery">
     <?php while (have_rows('image_gallery')) : the_row(); ?>
         <?php $slide = get_sub_field('slide'); ?>

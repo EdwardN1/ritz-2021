@@ -1,0 +1,65 @@
+.ritz-block-two-columns {
+  padding-top: 20px;
+  .image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 78.125vw;
+    @include breakpoint(medium) {
+      height: 100%;
+    }
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+  .container {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 31px;
+    padding-bottom: 31px;
+    &.top {
+      border: 1px solid $light-gray;
+      border-bottom: none;
+    }
+    &.bottom {
+      border: 1px solid $light-gray;
+      border-top: none;
+    }
+    &.left {
+      border: 1px solid $light-gray;
+      border-right: none;
+    }
+    &.right {
+      border: 1px solid $light-gray;
+      border-left: none;
+    }
+  }
+  @include breakpoint(medium) {
+    padding-top: 40px;
+    .container {
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-top: 41px;
+      padding-bottom: 41px;
+    }
+  }
+  @include breakpoint(large) {
+    padding-top: 50px;
+    h3 {
+      font-size: 20px;
+      line-height: 25px;
+      margin-bottom: 24px;
+    }
+    .container {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 156px;
+      padding-bottom: 156px;
+      background-color: $light-gray;
+      border: none;
+    }
+  }
+}
