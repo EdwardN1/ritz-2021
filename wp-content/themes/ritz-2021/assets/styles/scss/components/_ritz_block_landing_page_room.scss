@@ -1,0 +1,25 @@
+.block-ritz-landing-page-room-block {
+  .image {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .background {
+    @include breakpoint(large) {
+      width: 370px;
+      text-align: center;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 127px;
+      padding-bottom: 125px;
+      border: 1px solid $light-gray;
+      border-right: none;
+    }
+  }
+  .right .background {
+    border: none;
+    background-color: $light-gray;
+  }
+}
