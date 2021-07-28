@@ -154,7 +154,7 @@ endif;
                         if ($booking_options == 'Page') {
                             $page = get_field('page');
                             ?>
-                            <a href="<?php echo esc_url( $page); ?>"><?php echo $booking_link_text; ?></a>
+                            <a href="<?php echo esc_url($page); ?>"><?php echo $booking_link_text; ?></a>
                             <?php
                         };
                         ?>
@@ -165,29 +165,41 @@ endif;
         <?php
         $content_div = ob_get_contents();
         ob_end_clean();
-        $leftClass = 'large-shrink';
-        $rightClass = 'large-auto';
+        $leftClass = 'large-shrink medium-shrink';
+        $rightClass = 'large-auto medium-auto';
+        $topClass = 'left';
         if ($image_position == 'Left') {
-            $leftClass = 'large-auto';
-            $rightClass = 'large-shrink';
+            $leftClass = 'large-auto medium-auto';
+            $rightClass = 'large-shrink medium-shrink';
+            $topClass = 'right';
         }
         ?>
-        <div class="cell <?php echo $leftClass; ?> medium-6 small-12 left">
+        <div class="cell <?php echo $leftClass; ?> small-12 left show-for-medium">
             <?php
-            if ($image_position == 'left'):
+            if ($image_position == 'Left') :
                 echo $img_div;
             else:
                 echo $content_div;
             endif;
             ?>
         </div>
-        <div class="cell <?php echo $rightClass; ?> medium-6 small-12 right">
+        <div class="cell <?php echo $rightClass; ?> small-12 right show-for-medium">
             <?php
             if ($image_position == 'Right'):
                 echo $img_div;
             else:
                 echo $content_div;
             endif;
+            ?>
+        </div>
+        <div class="cell small-12 <?php echo $topClass; ?> hide-for-medium">
+            <?php
+            echo $content_div;
+            ?>
+        </div>
+        <div class="cell small-12 hide-for-medium">
+            <?php
+            echo $img_div;
             ?>
         </div>
     </div>

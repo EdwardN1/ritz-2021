@@ -133,6 +133,9 @@ header.header {
 
   .header-spacer {
     height: 120px;
+    @include breakpoint(medium) {
+      height: 160px;
+    }
     @include breakpoint(large) {
       height: 198px;
     }

@@ -1,21 +1,82 @@
 .block-ritz-landing-page-room-block {
+  padding-top: 20px;
+  @include breakpoint(large) {
+    padding-top: 50px;
+  }
   .image {
     width: 100%;
     height: 100%;
+    min-height: 250px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
+  .content {
+    text-align: center;
+    padding-bottom: 3px;
+    @include breakpoint(medium) {
+      font-size: 13px;
+      line-height: 19px;
+      padding-bottom: 6px;
+    }
+    @include breakpoint(large) {
+      padding-bottom: 20px;
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+  .price {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: $weight-medium;
+    padding-bottom:22px;
+    @include breakpoint(medium) {
+      padding-bottom: 30px;
+    }
+    @include breakpoint(large) {
+      padding-bottom: 46px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  .title {
+    text-align: center;
+    h3 {
+      text-transform: uppercase;
+      margin: 0;
+
+      padding-bottom: 12px;
+      @include breakpoint(medium) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+      @include breakpoint(large) {
+        font-size: 20px;
+        line-height: 25px;
+        padding-bottom: 35px;
+      }
+    }
+
+  }
   .background {
+    min-height: 220px;
+    border: 1px solid $light-gray;
+    text-align: center;
+    padding-top: 31px;
+    padding-bottom: 31px;
+    padding-left: 25px;
+    padding-right: 25px;
+    @include breakpoint(medium) {
+      min-height: 250px;
+      width: 280px;
+      padding-top: 42px;
+      padding-bottom: 42px;
+      border-right: none;
+    }
     @include breakpoint(large) {
       width: 370px;
-      text-align: center;
-      padding-left: 25px;
-      padding-right: 25px;
       padding-top: 127px;
       padding-bottom: 125px;
-      border: 1px solid $light-gray;
-      border-right: none;
     }
   }
   .right .background {
