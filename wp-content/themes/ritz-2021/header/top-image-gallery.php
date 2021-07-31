@@ -62,6 +62,17 @@
                 <?php
                 $slide_heading = get_sub_field('slide_heading');
                 $slide_sub_heading = get_sub_field('slide_sub_heading');
+                $slide_background = '';
+                if($slide_heading == '') {
+                    if($slide_sub_heading == '') {
+                        $slide_background = ' top-gradient';
+                    }
+                }
+                if($slide_sub_heading == '') {
+                    if($slide_heading == '') {
+                        $slide_background = ' top-gradient';
+                    }
+                }
                 $link_to = get_sub_field('link_to');
                 $target = '';
                 if (get_sub_field('open_in_a_new_tab') == 1) {
@@ -89,7 +100,7 @@
 
                 <?php echo $link_open; ?>
                 <div class="slide-container" style="background-image: url(<?php echo esc_url($slide['url']); ?>)">
-                    <div class="slide-overlay">
+                    <div class="slide-overlay<?php echo $slide_background;?>">
                         &nbsp;
                     </div>
                     <div class="slide-info">
