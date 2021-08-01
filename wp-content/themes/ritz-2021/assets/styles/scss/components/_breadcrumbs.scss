@@ -1,6 +1,9 @@
 .breadcrumbs {
   text-transform: uppercase;
-  padding-bottom: 39px;
+  padding-bottom: 27px;
+  @include breakpoint(large) {
+    padding-bottom: 39px;
+  }
   margin: 0;
   color: $dark-gray;
   font-size: 10px;

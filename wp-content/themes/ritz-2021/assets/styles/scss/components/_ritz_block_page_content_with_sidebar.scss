@@ -1,0 +1,158 @@
+.block-ritz-page-content-with-sidebar-block {
+  @include breakpoint(large) {
+    display: flex;
+  }
+  .page-content-desktop {
+    padding-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    /*position: relative;
+    display: inline-block;*/
+    .left {
+      max-width: 575px;
+      padding-right: 50px;
+      p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 30px;
+      }
+    }
+    .right {
+      max-width: 370px;
+      h2 {
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: $weight-medium;
+      }
+      .bullets {
+        border: 1px solid $light-gray;
+        padding: 50px;
+        padding-right: 30px;
+        padding-bottom: 34px;
+        ul {
+          margin: 0;
+          list-style-type: none;
+          li {
+            padding-bottom: 16px;
+            font-size: 15px;
+            line-height: 22px;
+            text-indent: -10px;
+            &:before {
+              content: "- ";
+              text-indent: -10px;
+            }
+          }
+        }
+      }
+      .buttons {
+        .button-row {
+          padding-top: 25px;
+          .button-container {
+            text-align: center;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            border: 1px solid $light-gray;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .price-line {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: $weight-medium;
+      padding-bottom: 40px;
+      text-transform: uppercase;
+    }
+    .footer-lines {
+      font-size: 14px;
+      font-weight: $weight-medium;
+      line-height: 18px;
+      text-transform: uppercase;
+      padding-top: 46px;
+    }
+  }
+
+  .page-content-mobile {
+    .page-sidebar {
+      max-width: 630px;
+      margin-left: auto;
+      margin-right: auto;
+      .bullets {
+        .accordion {
+          margin-bottom: 0;
+          .accordion-item {
+            .accordion-title {
+              font-size: 12px;
+              text-transform: uppercase;
+              background-color: $light-gray;
+              padding-bottom: 14px;
+              &:before {
+                height: 13px;
+                width: 13px;
+                border: none;
+                content: " ";
+                background-image: url(../images/menu-down-arrow.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+              }
+            }
+            .accordion-title[aria-expanded=true] {
+              &:before {
+                transform: scaleY(-1);
+                transform-origin: 50% 50%;
+              }
+            }
+            .accordion-content {
+              background-color: $light-gray;
+              padding-top: 0;
+              ul {
+                margin: 0;
+                list-style-type: none;
+                margin-left: 10px;
+                li {
+                  padding-bottom: 12px;
+                  font-size: 14px;
+                  line-height: 20px;
+                  text-indent: -10px;
+
+                  &:before {
+                    content: "- ";
+                    text-indent: -10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .buttons {
+      max-width: 630px;
+      margin-left: auto;
+      margin-right: auto;
+      .button-row {
+        padding-top: 25px;
+        .button-container {
+          background-color: $light-gray;
+          text-align: center;
+          width: 100%;
+          padding-top: 14px;
+          padding-bottom: 14px;
+        }
+      }
+    }
+    .page-content {
+      padding-top: 35px;
+    }
+  }
+}
+
+div[data-type="acf/ritz-page-content-with-sidebar-block"] {
+  &.wp-block {
+    width: 100%;
+    max-width: none;
+  }
+}

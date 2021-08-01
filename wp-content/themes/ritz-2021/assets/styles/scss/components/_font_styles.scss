@@ -16,6 +16,13 @@ body, p, span {
   line-height: 12px;
 }
 
+h1,h2 {
+  margin-bottom: 10px;
+  @include breakpoint(large) {
+  margin-bottom: 35px;
+}
+}
+
 .cta-link {
   font-size: 12px;
   line-height: 14px;
