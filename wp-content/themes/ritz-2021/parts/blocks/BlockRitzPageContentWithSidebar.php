@@ -421,7 +421,20 @@ endif;
         <?php endif; ?>
 
         <div class="page-content">
-            <?php the_field('content'); ?>
+            <?php
+            $content = get_field('content');
+            $paragraphs = explode('</p>',$content);
+            $count = count($paragraphs);
+            $output = '<div class="visible">';
+            for($i = 0; $i < $count; $i++) {
+                $output .= $paragraphs[$i];
+                if ($i==1) {
+                    $output .= '</div><div class="read-more-content" id="read-more-content" data-toggler data-animate="slide-in-down slide-out-up" style="display: none;">';
+                }
+            }
+            $output .= '</div>';
+            echo $output;
+            ?>
         </div>
 
         <div class="price-line">
@@ -429,13 +442,13 @@ endif;
         </div>
 
         <div class="read-more">
-
+            <button data-toggle="read-more-content" href="#">READ MORE</button>
         </div>
 
         <?php if (have_rows('footer_lines')) : ?>
             <div class="footer-lines">
                 <?php while (have_rows('footer_lines')) : the_row(); ?>
-                    <?php the_sub_field('line'); ?><br>
+                    <?php the_sub_field('line'); ?>&nbsp;
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>

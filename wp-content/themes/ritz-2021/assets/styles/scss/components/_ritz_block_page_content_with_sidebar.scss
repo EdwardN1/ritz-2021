@@ -75,6 +75,10 @@
   }
 
   .page-content-mobile {
+    h1, h2 {
+      margin-bottom: 0;
+      padding-bottom: 10px;
+    }
     .page-sidebar {
       max-width: 630px;
       margin-left: auto;
@@ -128,6 +132,32 @@
           }
         }
       }
+
+    }
+    .booking-line {
+      text-align: center;
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+    .price-line {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: $weight-medium;
+      padding-bottom: 25px;
+    }
+    .read-more {
+      padding-bottom: 25px;
+      button {
+        text-transform: uppercase;
+        color: $ritz-blue;
+        font-size: 12px;
+        font-weight: $weight-semi-bold;
+      }
+    }
+    .footer-lines {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: $weight-medium;
     }
     .buttons {
       max-width: 630px;
@@ -145,7 +175,16 @@
       }
     }
     .page-content {
-      padding-top: 35px;
+      padding-top: 25px;
+      overflow: hidden;
+      .visible {
+        background: $white;
+        z-index: 10;
+      }
+      p {
+        margin: 0;
+        padding-bottom: 25px;
+      }
     }
   }
 }
