@@ -207,3 +207,75 @@ function register_ritz_page_content_with_sidebar_block()
     }
 
 }
+
+add_action('acf/init', 'register_ritz_two_column_experience_block');
+function register_ritz_two_column_experience_block()
+{
+
+    if (function_exists('acf_register_block_type')) {
+
+        // Register Ritz Four Column Block block
+        acf_register_block_type(array(
+            'name' => 'ritz-two-column-experience-block',
+            'title' => __('Ritz Two Column Experience Block'),
+            'description' => __('A Custom Ritz Two Column Experience Block.'),
+            'category' => 'ritzblocks',
+            'icon' => file_get_contents(get_template_directory() . '/assets/images/ritz-icon.svg'),
+            'keywords' => array('ritz', 'two', 'column', 'block', 'experience', 'content'),
+            'post_types' => array('post', 'page'),
+            'mode' => 'auto',
+            // 'align'				=> 'wide',
+            'render_template' => '/parts/blocks/BlockRitzTwoColumnExperience.php',
+            'example' => array(
+                'attributes' => array(
+                    'mode' => 'preview',
+                    'data' => array(
+                        'ritz_two_column_experience_block_preview_image_help' => get_template_directory_uri() . '/assets/images/ritz-two-column-experience.png',
+                    )
+                )
+            ),
+            // 'render_callback'	=> 'ritz_four_column_block_block_render_callback',
+            // 'enqueue_style' 		=> get_template_directory_uri() . '/template-parts/blocks/ritz-four-column-block/ritz-four-column-block.css',
+            // 'enqueue_script' 	=> get_template_directory_uri() . '/template-parts/blocks/ritz-four-column-block/ritz-four-column-block.js',
+            // 'enqueue_assets' 	=> 'ritz_four_column_block_block_enqueue_assets',
+        ));
+
+    }
+
+}
+
+add_action('acf/init', 'register_ritz_underlined_title_block');
+function register_ritz_underlined_title_block()
+{
+
+    if (function_exists('acf_register_block_type')) {
+
+        // Register Ritz Four Column Block block
+        acf_register_block_type(array(
+            'name' => 'ritz-underlined-title-block',
+            'title' => __('Ritz Underlined Title Block'),
+            'description' => __('A Custom Ritz Underlined Title Block.'),
+            'category' => 'ritzblocks',
+            'icon' => file_get_contents(get_template_directory() . '/assets/images/ritz-icon.svg'),
+            'keywords' => array('ritz', 'underlined', 'title', 'block', 'content'),
+            'post_types' => array('post', 'page'),
+            'mode' => 'auto',
+            // 'align'				=> 'wide',
+            'render_template' => '/parts/blocks/BlockRitzUnderlinedTitle.php',
+            'example' => array(
+                'attributes' => array(
+                    'mode' => 'preview',
+                    'data' => array(
+                        'ritz_ritz_underlined_title_block_preview_image_help' => get_template_directory_uri() . '/assets/images/ritz-underlined-title.png',
+                    )
+                )
+            ),
+            // 'render_callback'	=> 'ritz_four_column_block_block_render_callback',
+            // 'enqueue_style' 		=> get_template_directory_uri() . '/template-parts/blocks/ritz-four-column-block/ritz-four-column-block.css',
+            // 'enqueue_script' 	=> get_template_directory_uri() . '/template-parts/blocks/ritz-four-column-block/ritz-four-column-block.js',
+            // 'enqueue_assets' 	=> 'ritz_four_column_block_block_enqueue_assets',
+        ));
+
+    }
+
+}

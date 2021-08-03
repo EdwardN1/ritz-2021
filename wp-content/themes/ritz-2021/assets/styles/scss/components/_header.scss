@@ -127,6 +127,15 @@ header.header {
         font-weight: $weight-medium;
         padding-top: 35px;
       }
+
+      h1 {
+        span.large {
+          font-size: 150px;
+          display: inline-block;
+          padding-bottom: 22px;
+          line-height: 1;
+        }
+      }
     }
 
   }

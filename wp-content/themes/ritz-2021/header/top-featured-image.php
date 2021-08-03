@@ -2,6 +2,7 @@
 if (has_post_thumbnail()) :
     $title = get_post(get_post_thumbnail_id(get_the_ID(),))->post_title;
     $alt = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_wp_attachment_image_alt', true);
+    $caption = get_post(get_post_thumbnail_id(get_the_ID(),))->post_excerpt;
     ?>
     <div class="featured-image"
          style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>)">
@@ -58,14 +59,18 @@ if (has_post_thumbnail()) :
                                     class="ritz-logo"></a>
                     </div>
                     <div class="cell auto links-social text-right">
-                        <a  data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell.svg"></a>
+                        <a data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell.svg"></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="featured-content">
             <div class="grid-container">
-                <h1><?php echo $title; ?></h1>
+                <?php if ($caption != ''): ?>
+                    <h1><?php echo '<span class="large">' . $caption . '</span><br>' . $title; ?></h1>
+                <?php else: ?>
+                    <h1><?php echo $title; ?></h1>
+                <?php endif; ?>
                 <h2><?php echo $alt; ?></h2>
             </div>
         </div>
@@ -130,7 +135,7 @@ else:
                                 class="ritz-logo"></a>
                 </div>
                 <div class="cell auto links-social text-right">
-                    <a  data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell-blue.svg"></a>
+                    <a data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell-blue.svg"></a>
                 </div>
             </div>
         </div>
