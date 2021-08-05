@@ -1,5 +1,5 @@
 <?php
-// Template Name: T4 Offers Page
+// Template Name: T2 Landing Page
 ?>
 <div class="content">
 

@@ -1,5 +1,5 @@
 <?php
-// Template Name: T4 Offers Page
+// Template Name: T3 Detail Page
 ?>
 <div class="content">
 
@@ -9,7 +9,7 @@
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-				<?php get_template_part( 'old/book', 'accommodation' ); ?>
+				<?php get_template_part( 'old/page', 'detail' ); ?>
 
 			<?php endwhile; endif; ?>
 
