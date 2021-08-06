@@ -36,6 +36,9 @@ endif;
 ?>
 
 <style type="text/css">
+    .js .tmce-active .wp-editor-area {
+        color: #000000 !important;
+    }
     <?php echo '#' . $id; ?>
     {
     /* Add styles that use ACF values here */
@@ -110,7 +113,7 @@ endif;
                                 while (have_rows('accomodation_codes')) : the_row();
                                     $key = get_sub_field('key');
                                     $value = get_sub_field('value');
-                                    $query .= $selector . '$key' . '=' . $value;
+                                    $query .= $selector . $key . '=' . $value;
                                     $selector = '&';
                                 endwhile;
                                 ?>

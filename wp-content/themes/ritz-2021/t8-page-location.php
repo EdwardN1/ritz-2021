@@ -1,5 +1,9 @@
 <?php
 // Template Name: T8 Location Page
+global $template_name;
+
+$template_name = 'T8 Location Page';
+get_header();
 ?>
 <div class="content">
 

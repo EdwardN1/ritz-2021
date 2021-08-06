@@ -5,33 +5,9 @@
         <?php if (is_block_page()): ?>
             <?php the_content(); ?>
         <?php else: ?>
-            <?php if (have_rows('slides')) : ?>
-                <?php while (have_rows('slides')) : the_row(); ?>
-                    <?php $image = get_sub_field('image'); ?>
-                    <?php if ($image) : ?>
-                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
-                    <?php endif; ?>
-                <?php endwhile; ?>
-            <?php else : ?>
-                <?php // no rows found ?>
-            <?php endif; ?>
-            <?php if (get_field('use_breadcrumb_link') == 1) : ?>
-                <?php // echo 'true'; ?>
-            <?php else : ?>
-                <?php // echo 'false'; ?>
-            <?php endif; ?>
-            <?php if (get_field('automatic_breadcrumbs') == 1) : ?>
-                <?php // echo 'true'; ?>
-            <?php else : ?>
-                <?php // echo 'false'; ?>
-            <?php endif; ?>
-            <?php the_field('breadcrumb_link_text'); ?>
-            <?php $breadcrumb_link = get_field('breadcrumb_link'); ?>
-            <?php if ($breadcrumb_link) : ?>
-                <a href="<?php echo esc_url($breadcrumb_link); ?>"><?php echo esc_html($breadcrumb_link); ?></a>
-            <?php endif; ?>
-            <?php the_field('main_heading'); ?>
-            <?php the_field('main_sub_heading'); ?>
+            <h1 class="text-center text-uppercase"><?php the_field( 'main_heading' ); ?></h1>
+            <div class="text-center page-summary"><?php the_field( 'main_sub_heading' ); ?></div>
+
             <?php the_field('main_content'); ?>
             <?php if (get_field('include_price') == 1) : ?>
                 <?php // echo 'true'; ?>

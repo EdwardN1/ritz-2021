@@ -1,5 +1,9 @@
 <?php
 // Template Name: T7 Gallery Detail Page
+global $template_name;
+
+$template_name = 'T7 Gallery Detail Page';
+get_header();
 ?>
 <div class="content">
 

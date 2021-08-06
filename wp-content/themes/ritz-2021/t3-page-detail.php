@@ -1,5 +1,9 @@
 <?php
 // Template Name: T3 Detail Page
+global $template_name;
+
+$template_name = 'T3 Detail Page';
+get_header();
 ?>
 <div class="content">
 

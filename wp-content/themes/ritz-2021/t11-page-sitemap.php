@@ -1,5 +1,9 @@
 <?php
 // Template Name: T11 Sitemap
+global $template_name;
+
+$template_name = 'T11 Sitemap';
+get_header();
 ?>
 <div class="content">
 

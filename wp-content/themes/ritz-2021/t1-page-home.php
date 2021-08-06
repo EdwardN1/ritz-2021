@@ -1,5 +1,11 @@
 <?php
 // Template Name: T1 Home Page
+
+global $template_name;
+
+$template_name = 'T1 Home Page';
+
+get_header();
 ?>
 <div class="content">
 

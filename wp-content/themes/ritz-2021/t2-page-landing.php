@@ -1,5 +1,10 @@
 <?php
 // Template Name: T2 Landing Page
+global $template_name;
+
+$template_name = 'T2 Landing Page';
+
+get_header();
 ?>
 <div class="content">
 
@@ -9,7 +14,7 @@
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-				<?php get_template_part( 'old/book', 'accommodation' ); ?>
+				<?php get_template_part( 'old/page', 'landing' ); ?>
 
 			<?php endwhile; endif; ?>
 

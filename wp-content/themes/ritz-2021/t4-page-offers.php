@@ -1,5 +1,9 @@
 <?php
 // Template Name: T4 Offers Page
+global $template_name;
+
+$template_name = 'T4 Offers Page';
+get_header();
 ?>
 <div class="content">
 

@@ -1,5 +1,9 @@
 <?php
 // Template Name: Master Page
+global $template_name;
+
+$template_name = 'Master Page';
+get_header();
 ?>
 <div class="content">
 

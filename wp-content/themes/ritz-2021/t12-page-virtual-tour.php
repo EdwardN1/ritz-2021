@@ -1,5 +1,9 @@
 <?php
 // Template Name: T12 Full screen virtual tour
+global $template_name;
+
+$template_name = 'T2 Full screen virtual tour';
+get_header();
 ?>
 <div class="content">
 

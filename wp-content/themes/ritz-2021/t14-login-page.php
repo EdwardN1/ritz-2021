@@ -1,5 +1,9 @@
 <?php
 // Template Name: T14 Menu Upload Page
+global $template_name;
+
+$template_name = 'T14 Menu Upload Page';
+get_header();
 ?>
 <div class="content">
 

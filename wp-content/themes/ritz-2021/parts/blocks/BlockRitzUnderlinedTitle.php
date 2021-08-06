@@ -36,6 +36,9 @@ endif;
 ?>
 
 <style type="text/css">
+    .js .tmce-active .wp-editor-area {
+        color: #000000 !important;
+    }
     <?php echo '#' . $id; ?> {
     /* Add styles that use ACF values here */
     }

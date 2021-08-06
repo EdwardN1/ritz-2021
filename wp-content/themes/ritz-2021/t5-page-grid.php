@@ -1,5 +1,11 @@
 <?php
 // Template Name: T5 Grid Page
+
+global $template_name;
+
+$template_name = 'T5 Grid Page';
+
+get_header();
 ?>
 <div class="content">
 

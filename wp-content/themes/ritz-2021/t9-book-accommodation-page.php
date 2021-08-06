@@ -1,5 +1,8 @@
 <?php
 // Template Name: Book Accommodation Page
+global $template_name;
+
+$template_name = 'T4 Offers Page';
 get_header(); ?>
 
 <div class="content">

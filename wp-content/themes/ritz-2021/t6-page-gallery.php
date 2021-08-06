@@ -1,5 +1,9 @@
 <?php
 // Template Name: T6 Gallery Page
+global $template_name;
+
+$template_name = 'T6 Gallery Page';
+get_header();
 ?>
 <div class="content">
 

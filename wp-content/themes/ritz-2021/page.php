@@ -5,6 +5,10 @@
  * This is the template that displays all pages by default.
  */
 
+global $template_name;
+
+$template_name = 'Default';
+
 get_header(); ?>
 	
 	<div class="content">

@@ -36,6 +36,9 @@ endif;
 ?>
 
 <style type="text/css">
+    .js .tmce-active .wp-editor-area {
+        color: #000000 !important;
+    }
     <?php echo '#' . $id; ?>
     {
     /* Add styles that use ACF values here */
@@ -66,7 +69,7 @@ endif;
                     <div class="content"><?php the_field('content'); ?></div>
                     <?php $page_link = get_field('page_link'); ?>
                     <?php if ($page_link) : ?>
-                        <div class="link"><a href="<?php echo esc_url($page_link); ?>" class="button-underlined"><?php the_field('page_link_text'); ?></a></div>
+                        <div class="link button-underlined"><a href="<?php echo esc_url($page_link); ?>"><?php the_field('page_link_text'); ?></a></div>
                     <?php endif; ?>
                 </div>
                 <?php
@@ -93,7 +96,7 @@ endif;
                     <div class="content"><?php the_field('content'); ?></div>
                     <?php $page_link = get_field('page_link'); ?>
                     <?php if ($page_link) : ?>
-                        <div class="link"><a href="<?php echo esc_url($page_link); ?>" class="button-underlined"><?php the_field('page_link_text'); ?></a></div>
+                        <div class="link button-underlined"><a href="<?php echo esc_url($page_link); ?>"><?php the_field('page_link_text'); ?></a></div>
                     <?php endif; ?>
                 </div>
                 <?php

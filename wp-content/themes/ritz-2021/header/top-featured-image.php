@@ -79,67 +79,7 @@ if (has_post_thumbnail()) :
     <div class="breadcrumb-spacer">&nbsp;</div>
     <div class="breadcrumbs text-center"><?php echo get_breadcrumb(); ?></div>
 <?php endif; ?>
-<?php
-else:
-    ?>
-    <div class="header-spacer">&nbsp;</div>
-    <div class="header-main show-for-large">
-        <div class="grid-container">
-            <div class="grid-x">
-                <div class="cell auto menu-button">
-                    <a data-toggle="off-canvas"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/menu-burger-button-blue.svg"></a>
-                </div>
-                <div class="cell shrink logo">
-                    <a href="/"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-ritz-logo.svg"
-                                class="ritz-logo"></a>
-                </div>
-                <div class="cell auto links-social">
-                    <div class="grid-x">
-                        <div class="cell auto">&nbsp;</div>
-                        <div class="cell shrink link text-right"><a href="#" class="blue">CONTACT US</a></div>
-                        <div class="cell shrink link text-right"><a href="#" class="blue">GIFT VOUCHERS</a></div>
-                        <div class="cell shrink social">
-                            <div class="grid-x">
-                                <div class="cell auto">&nbsp;</div>
-                                <div class="cell shrink text-right">
-                                    <a href="#" target="_blank"><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-blue.svg"></a>
-                                </div>
-                                <div class="cell shrink text-right">
-                                    <a href="#" target="_blank"><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-blue.svg"></a>
-                                </div>
-                                <div class="cell shrink text-right">
-                                    <a href="#" target="_blank"><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-blue.svg"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="header-main hide-for-large">
-        <div class="grid-container">
-            <div class="grid-x">
-                <div class="cell auto menu-button">
-                    <a data-toggle="off-canvas"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/mobile-menu-burger-button-blue.svg"></a>
-                </div>
-                <div class="cell shrink logo">
-                    <a href="/"><img
-                                src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-ritz-logo.svg"
-                                class="ritz-logo"></a>
-                </div>
-                <div class="cell auto links-social text-right">
-                    <a data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell-blue.svg"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="breadcrumbs text-center"><?php echo get_breadcrumb(); ?></div>
-<?php
-endif;
+<?php else: ?>
+	<?php get_template_part('header/top', 'old-templates') ?>
+
+<?php endif; ?>
