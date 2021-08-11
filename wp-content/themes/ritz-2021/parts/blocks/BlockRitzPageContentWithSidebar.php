@@ -120,7 +120,30 @@ endif;
                                         $href = get_sub_field('url');
                                     }
                                     if ($href != '') {
-                                        echo '<div class="button-row"><div class="button-container"><a href="' . esc_url($href) . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
+                                        $ytpos = strpos($href, 'https://youtu.be/');
+                                        if ($ytpos === 0) {
+                                            $url_array = parse_url($href);
+                                            $videoID = '';
+                                            if (is_array($url_array)) {
+                                                if (array_key_exists('path', $url_array)) {
+                                                    $videoID = trim($url_array['path'], '/');
+                                                    $uniqueID = uniqid();
+                                                    ?>
+                                                    <div id="<?php echo $uniqueID;?>" class="reveal-modal" data-reveal data-id="<?php echo $uniqueID;?>" data-ytvideoid="<?php echo $videoID;?>">
+                                                        <div class="flex-video widescreen">
+                                                            <div id="feature-video">[this div will be converted to an iframe]</div>
+                                                        </div>
+                                                        <span class="close-reveal-modal">&times;</span>
+                                                    </div>
+                                                    <?php
+                                                    echo '<div class="button-row"><div class="button-container"><a data-open="'.$uniqueID.'" data-ytvideoid="' . $videoID . '" class="link button-underlined long feature-modal-btn"' . $target . '>' . $title . '</a></div></div>';
+                                                } else {
+                                                    echo '<div class="button-row"><div class="button-container"><a href="' . esc_url($href) . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
+                                                }
+                                            }
+                                        } else {
+                                            echo '<div class="button-row"><div class="button-container"><a href="' . esc_url($href) . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
+                                        }
                                     } ?>
                                 <?php endwhile; ?>
                             </div>
@@ -418,7 +441,21 @@ endif;
                     $href = get_sub_field('url');
                 }
                 if ($href != '') {
-                    echo '<div class="button-row"><div class="button-container"><a href="' . esc_url($href) . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
+                    $ytpos = strpos($href, 'https://youtu.be/');
+                    if ($ytpos === 0) {
+                        $url_array = parse_url($href);
+                        $videoID = '';
+                        if (is_array($url_array)) {
+                            if (array_key_exists('path', $url_array)) {
+                                $videoID = trim($url_array['path'], '/');
+                                echo '<div class="button-row"><div class="button-container"><a href="#YTMODAL" data-ytvideoid="' . $videoID . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
+                            } else {
+                                echo '<div class="button-row"><div class="button-container"><a href="' . esc_url($href) . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
+                            }
+                        }
+                    } else {
+                        echo '<div class="button-row"><div class="button-container"><a href="' . esc_url($href) . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
+                    }
                 } ?>
             <?php endwhile; ?>
         </div>

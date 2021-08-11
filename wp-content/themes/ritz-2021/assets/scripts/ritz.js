@@ -14,6 +14,25 @@ jQuery(document).ready(function ($) {
         speed: 2000
     });
 
+    $('.ritz-page-carousel').slick({
+        arrows: true,
+        autoplay: false,
+        dots: true,
+        draggable: true,
+        fade: false,
+        infinite: true,
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        responsive: [
+            {
+                breakpoint :768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
     $('#bookings-panel').on(
         'show.zf.dropdown', function() {
             $('#bookings-panel').css('display', 'none');
@@ -79,5 +98,43 @@ jQuery(document).ready(function ($) {
     $('.dining .top-button, .reservations .top-button').on('click', function (e){
         $(this).preventDefault;
     });
+
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    $(document).on(
+        'open.zf.reveal', '[data-reveal]', function () {
+            let $modal = $(this);
+            let ytVideoID = $modal.data('ytvideoid');
+            let player = new YT.Player('feature-video', {
+                width: '800',
+                videoId: ytVideoID,
+                playerVars: {
+                    rel            : 0,
+                    theme          : 'light',
+                    showinfo       : 0,
+                    showsearch     : 0,
+                    autoplay       : 1,
+                    autohide       : 1,
+                    modestbranding : 1
+                },
+                events: {
+
+                }
+            });
+            //console.log("'open.zf.Reveal' fired: "+$modal.data('ytvideoid'));
+        }
+    );
+
+    $(document).on(
+        'closed.zf.reveal', '[data-reveal]', function () {
+            window.console.log("'closed.zf.Reveal' fired");
+            $id = $(this).data('id');
+            $('#'+$id+' .flex-video iframe').remove;
+            $('#'+$id+' .flex-video').append('<div id="feature-video" />');
+        }
+    );
 
 });

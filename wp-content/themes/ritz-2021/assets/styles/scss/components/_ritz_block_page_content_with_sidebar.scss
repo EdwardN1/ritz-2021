@@ -19,6 +19,9 @@
     }
     .right {
       max-width: 370px;
+      @include breakpoint(large) {
+        width: 370px;
+      }
       h2 {
         margin-bottom: 25px;
         text-transform: uppercase;
@@ -191,7 +194,7 @@
 
 div[data-type="acf/ritz-page-content-with-sidebar-block"] {
   &.wp-block {
-    width: 100%;
+    width: 80%;
     max-width: none;
   }
 }
