@@ -1,0 +1,10 @@
+.reveal-overlay {
+  background-color: rgba(2,46,70,.75);
+  .reveal-modal {
+    position: fixed;
+    top: 10%;
+    width: 80%;
+    left: 10%;
+    display: block;
+  }
+}

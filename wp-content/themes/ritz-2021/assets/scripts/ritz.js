@@ -132,7 +132,7 @@ jQuery(document).ready(function ($) {
         'closed.zf.reveal', '[data-reveal]', function () {
             window.console.log("'closed.zf.Reveal' fired");
             $id = $(this).data('id');
-            $('#'+$id+' .flex-video iframe').remove;
+            $('#'+$id+' .flex-video iframe').remove();
             $('#'+$id+' .flex-video').append('<div id="feature-video" />');
         }
     );
