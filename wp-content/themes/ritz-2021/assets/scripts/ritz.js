@@ -106,9 +106,11 @@ jQuery(document).ready(function ($) {
 
     $(document).on(
         'open.zf.reveal', '[data-reveal]', function () {
+            window.console.log('open.zf.reveal');
+            $id = $(this).data('id');
             let $modal = $(this);
             let ytVideoID = $modal.data('ytvideoid');
-            let player = new YT.Player('feature-video', {
+            let player = new YT.Player('feature-video-'+$id, {
                 width: '800',
                 videoId: ytVideoID,
                 playerVars: {
