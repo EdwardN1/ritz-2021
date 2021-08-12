@@ -8,6 +8,68 @@
  */
 ?>
 
+<div class="grid-container">
+    <div class="ritz-full-width-text-banner-block">
+        <div class="background text-center">
+            <div class="heading">
+                <h3>
+					<?php the_field( 'footer_banner_heading', 'option' ); ?>
+                </h3>
+            </div>
+            <div class="content">
+				<?php the_field( 'footer_banner_content', 'option' ); ?>
+            </div>
+            <div class="link">
+				<?php
+				$link    = '';
+				$link_to = get_field( 'footer_banner_link_to', 'option' );
+				$target  = '';
+				if ( get_field( 'footer_banner_open_in_a_new_tab', 'option' ) == 1 ) {
+					$target = ' target="_blank"';
+				}
+				$link_title = get_field( 'footer_banner_link_title', 'option' );
+				$href       = '';
+				if ( $link_to == 'Page' ) {
+					$href = get_field( 'footer_banner_page', 'option'  );
+				}
+				if ( $link_to == 'Post' ) {
+					$href = get_field( 'footer_banner_post', 'option'  );
+				}
+				if ( $link_to == 'Text' ) {
+					$href = get_field( 'footer_banner_text', 'option'  );
+				}
+				if ( $link_to == 'URL' ) {
+					$href = get_field( 'footer_banner_url', 'option'  );
+				}
+				if ( $href != '' ) {
+					$link = '<a href="' . esc_url( $href ) . '" class="link button-underlined long"' . $target . '>' . $link_title . '</a>';
+				}
+				?>
+				<?php echo $link; ?>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Place <div> tag where you want the feed to appear -->
+<div class="grid-container curator">
+    <!-- Place <div> tag where you want the feed to appear -->
+    <h2>Follow Us</h2>
+    <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+    <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+    <script type="text/javascript">
+        /* curator-feed-default-feed-layout */
+        (function () {
+            var i, e, d = document, s = "script";
+            i = d.createElement("script");
+            i.async = 1;
+            i.src = "https://cdn.curator.io/published/678fb0f1-abb8-4448-9f19-2775d5cfa7c4.js";
+            e = d.getElementsByTagName(s)[0];
+            e.parentNode.insertBefore(i, e);
+        })();
+    </script>
+</div>
 <footer class="footer" role="contentinfo">
 
 
@@ -25,7 +87,7 @@
                     REGISTERED IN ENGLAND NO.64203<br>
                     VAT REGISTRATION 773 8638 79<br>
                 </p>
-                <p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+                <p class="source-org copyright">&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>.</p>
             </div>
             <div class="cell shrink social">
                 <div class="grid-container">
@@ -104,7 +166,7 @@
                         REGISTERED IN ENGLAND NO.64203<br>
                         VAT REGISTRATION 773 8638 79<br>
                     </p>
-                    <p class="source-org copyright">&copy; <?php echo date('Y'); ?> THE RITZ HOTEL (LONDON) LTD.</p>
+                    <p class="source-org copyright">&copy; <?php echo date( 'Y' ); ?> THE RITZ HOTEL (LONDON) LTD.</p>
                 </div>
             </div>
             <div class="cell auto">
@@ -157,7 +219,7 @@
                 REGISTERED IN ENGLAND NO.64203 VAT<br>
                 REGISTRATION 773 8638 79<br>
             </p>
-            <p class="source-org copyright">&copy; <?php echo date('Y'); ?> THE RITZ HOTEL (LONDON) LTD.</p>
+            <p class="source-org copyright">&copy; <?php echo date( 'Y' ); ?> THE RITZ HOTEL (LONDON) LTD.</p>
         </div>
         <div class="grid-x">
             <div class="cell auto warrant">
@@ -174,12 +236,12 @@
 
         <div class="small-12 medium-12 large-12 cell">
             <nav role="navigation">
-                <?php joints_footer_links(); ?>
+				<?php joints_footer_links(); ?>
             </nav>
         </div>
 
         <div class="small-12 medium-12 large-12 cell">
-            <p class="source-org copyright">&copy; <?php echo date('Y'); ?> THE RITZ HOTEL (LONDON) LTD.</p>
+            <p class="source-org copyright">&copy; <?php echo date( 'Y' ); ?> THE RITZ HOTEL (LONDON) LTD.</p>
         </div>
 
     </div> <!-- end #inner-footer -->

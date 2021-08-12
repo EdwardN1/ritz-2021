@@ -106,36 +106,51 @@ jQuery(document).ready(function ($) {
 
     $(document).on(
         'open.zf.reveal', '[data-reveal]', function () {
-            window.console.log('open.zf.reveal');
-            $id = $(this).data('id');
             let $modal = $(this);
-            let ytVideoID = $modal.data('ytvideoid');
-            let player = new YT.Player('feature-video-'+$id, {
-                width: '800',
-                videoId: ytVideoID,
-                playerVars: {
-                    rel            : 0,
-                    theme          : 'light',
-                    showinfo       : 0,
-                    showsearch     : 0,
-                    autoplay       : 1,
-                    autohide       : 1,
-                    modestbranding : 1
-                },
-                events: {
-
+            if($modal.data('ytvideoid')) {
+                let $id = $(this).data('id');
+                let ytVideoID = $modal.data('ytvideoid');
+                let player = new YT.Player('feature-video-' + $id, {
+                    width: '800',
+                    videoId: ytVideoID,
+                    playerVars: {
+                        rel: 0,
+                        theme: 'light',
+                        showinfo: 0,
+                        showsearch: 0,
+                        autoplay: 1,
+                        autohide: 1,
+                        modestbranding: 1
+                    },
+                    events: {}
+                });
+            } else {
+                if($modal.data('galleryid')) {
+                    let galleryid = $modal.data('galleryid');
+                    $('#gallery-slick-'+galleryid).slick({
+                        arrows: true,
+                        autoplay: false,
+                        autoplaySpeed: 3000,
+                        dots: false,
+                        draggable: true,
+                        fade: false,
+                        infinite: true,
+                        pauseOnHover: false,
+                        slidesToScroll: 1,
+                        slidesToShow: 1,
+                        speed: 2000
+                    });
                 }
-            });
-            //console.log("'open.zf.Reveal' fired: "+$modal.data('ytvideoid'));
+            }
+
         }
     );
 
     $(document).on(
         'closed.zf.reveal', '[data-reveal]', function () {
-            window.console.log("'closed.zf.Reveal' fired");
             $id = $(this).data('id');
             $('#'+$id+' .flex-video iframe').remove();
-            $('#'+$id+' .flex-video').append('<div id="feature-video" />');
+            $('#'+$id+' .flex-video').append('<div id="feature-video-'+$id+'" />');
         }
     );
 
