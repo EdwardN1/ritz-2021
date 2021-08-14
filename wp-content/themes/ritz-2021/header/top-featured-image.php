@@ -59,7 +59,8 @@ if (has_post_thumbnail()) :
                                     class="ritz-logo"></a>
                     </div>
                     <div class="cell auto links-social text-right">
-                        <a data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell.svg"></a>
+                        <a data-toggle="off-canvas"><img
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/bell.svg"></a>
                     </div>
                 </div>
             </div>
@@ -80,6 +81,6 @@ if (has_post_thumbnail()) :
     <div class="breadcrumbs text-center"><?php echo get_breadcrumb(); ?></div>
 <?php endif; ?>
 <?php else: ?>
-	<?php get_template_part('header/top', 'old-templates') ?>
+    <?php get_template_part('header/top', 'old-templates') ?>
 
 <?php endif; ?>

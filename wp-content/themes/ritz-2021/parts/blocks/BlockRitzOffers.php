@@ -59,7 +59,7 @@ endif;
 				if ( $offer ) :
 					$post = $offer;
 					setup_postdata( $post );
-					$categoryID = get_field( 'categories' );
+					$categoryID = get_field( 'categories', $post->ID);
 					$term       = get_term_by( 'id', $categoryID, 'offercategory' );
 					$termClass  = '';
 					if ( $term ) :
@@ -69,28 +69,28 @@ endif;
 						}
 					endif;
 					?>
-					<?php $image = get_field( 'image' ); ?>
-                    <div class="cell large-4 medium-4 small-12<?php echo $termClass; ?>">
+					<?php $image = get_field( 'image' , $post->ID); ?>
+                    <div class="cell large-4 medium-6 small-12<?php echo $termClass; ?>">
                         <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)"></div>
-                        <div class="heading"><?php the_title(); ?></div>
-                        <div class="description"><?php the_field( 'description' ); ?></div>
+                        <div class="heading"><?php echo get_the_title($post->ID); ?></div>
+                        <div class="description"><?php the_field( 'description', $post->ID); ?></div>
                         <div class="buttons-row">
                             <div class="grid-x grid-padding-x">
                                 <div class="cell auto text-right">
-									<?php $page = get_field( 'page' ); ?>
+									<?php $page = get_field( 'page', $post->ID); ?>
 									<?php if ( $page ) : ?>
-                                        <a href="<?php echo esc_url( $page ); ?>" class="button-underlined long"><?php the_field( 'page_link_text' ); ?></a>
+                                        <a href="<?php echo esc_url( $page ); ?>" class="button-underlined long"><?php the_field( 'page_link_text', $post->ID); ?></a>
 									<?php endif; ?>
                                 </div>
                                 <div class="cell auto text-left">
 									<?php
-									$booking_options   = get_field( 'booking_type' );
-									$booking_link_text = get_field( 'booking_link_text' );
+									$booking_options   = get_field( 'booking_type', $post->ID);
+									$booking_link_text = get_field( 'booking_link_text', $post->ID);
 									if ( $booking_options == 'AZDS' ) {
-										if ( have_rows( 'azds' ) ) :
+										if ( have_rows( 'azds', $post->ID) ) :
 											$selector = '?';
 											$query     = '';
-											while ( have_rows( 'azds' ) ) : the_row();
+											while ( have_rows( 'azds', $post->ID) ) : the_row();
 												$key      = get_sub_field( 'key' );
 												$value    = get_sub_field( 'value' );
 												$query    .= $selector . $key . '=' . $value;
@@ -103,9 +103,9 @@ endif;
 										endif;
 									};
 									if ( $booking_options == 'Bookatable' ) {
-										if ( have_rows( 'bookatable' ) ) :
+										if ( have_rows( 'bookatable', $post->ID) ) :
 											$book_data = '';
-											while ( have_rows( 'bookatable' ) ) : the_row();
+											while ( have_rows( 'bookatable', $post->ID) ) : the_row();
 												$book_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
 												$book_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
 												$book_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
@@ -136,57 +136,36 @@ endif;
 				if ( $termIDS ) {
 					?>
                     <div class="filter-row">
-                        <div class="grid-x"><div class="cell auto"></div><div class="filter-cell selected"><a data-filter-class="all">All</a></div>
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell auto show-for-medium"></div>
+                            <div class="cell large-shrink medium-shrink small-12">
+                                <a class="button-filter selected small" data-filter-class="all">All</a>
+                            </div>
 							<?php
 							foreach ( $termIDS as $term_ID ) {
 								$term       = get_term_by( 'id', $term_ID, 'offercategory' );
 								$term_name  = $term->name;
 								$term_class = seoUrl( $term_name );
+								$button_size = ' small';
+								if(strlen($term_name)>4) $button_size = ' medium';
+                                if(strlen($term_name)>7) $button_size = ' large';
 								?>
-                                   <div class="cell shrink">
-                                       <div class="filter-cell">
-                                           <a data-filter-class="<?php echo $term_class;?>"><?php echo $term_name;?></a>
-                                       </div>
+                                   <div class="cell large-shrink medium-shrink small-12">
+                                           <a class="button-filter<?php echo $button_size;?>" data-filter-class="<?php echo $term_class;?>"><?php echo $term_name;?></a>
                                    </div>
 								<?php
 							}
 							?>
-                        </div>
+                            <div class="cell auto show-for-medium"></div></div>
                     </div>
 					<?php
 				}
 			}
-			echo '<div class="grid-x">' . $offersGrid . '</div>';
+			echo '<div class="offers-grid"><div class="grid-x grid-margin-x grid-margin-y">' . $offersGrid . '</div></div>';
 		endif;
 	} else {
 
 	}
 	?>
-	<?php if ( have_rows( 'selected_offers' ) ) : ?>
-		<?php while ( have_rows( 'selected_offers' ) ) : the_row(); ?>
-			<?php $offer = get_sub_field( 'offer' ); ?>
-			<?php if ( $offer ) : ?>
-				<?php $post = $offer; ?>
-				<?php setup_postdata( $post ); ?>
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				<?php wp_reset_postdata(); ?>
-			<?php endif; ?>
-		<?php endwhile; ?>
-	<?php else : ?>
-		<?php // no rows found ?>
-	<?php endif; ?>
-	<?php $show_all_offers_for_category = get_field( 'show_all_offers_for_category' ); ?>
-	<?php if ( $show_all_offers_for_category ) : ?>
-		<?php $get_terms_args = array(
-			'taxonomy'   => 'offercategory',
-			'hide_empty' => 0,
-			'include'    => $show_all_offers_for_category,
-		); ?>
-		<?php $terms = get_terms( $get_terms_args ); ?>
-		<?php if ( $terms ) : ?>
-			<?php foreach ( $terms as $term ) : ?>
-                <a href="<?php echo esc_url( get_term_link( $term ) ); ?>"><?php echo esc_html( $term->name ); ?></a>
-			<?php endforeach; ?>
-		<?php endif; ?>
-	<?php endif; ?>
+
 </div>

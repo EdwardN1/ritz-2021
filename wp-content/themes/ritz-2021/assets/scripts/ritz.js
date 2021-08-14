@@ -154,4 +154,36 @@ jQuery(document).ready(function ($) {
         }
     );
 
+    $('.block-ritz-offers-block .filter-row .button-filter').on('click', function (){
+        if(!$(this).hasClass('selected')) {
+            $('.block-ritz-offers-block .filter-row .button-filter').each(function (){
+               $(this).removeClass('selected');
+            });
+            $(this).addClass('selected');
+            if($(this).data('filter-class')=='all') {
+                $('.block-ritz-offers-block .offers-grid .grid-x .cell').show();
+            } else {
+                let filterClass = $(this).data('filter-class');
+                $('.block-ritz-offers-block .offers-grid .grid-x .cell').each(function(){
+                    if($(this).hasClass(filterClass)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        }
+    })
+
+    $('.header-main').waypoint(function (direction){
+        if(direction=='down') {
+            $('.white-top').addClass('visible');
+        }
+        if(direction=='up') {
+            $('.white-top').removeClass('visible');
+        }
+    },{
+        offset: '-100px'
+    })
+
 });

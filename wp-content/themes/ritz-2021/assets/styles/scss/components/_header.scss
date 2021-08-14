@@ -1,6 +1,56 @@
 header.header {
   position: relative;
 
+  .white-top {
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    z-index: 200;
+    background-color: $white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+    height: 0;
+    &.visible {
+      height: 62px;
+    }
+    transition: height 0.5s ease-in-out;
+    overflow: hidden;
+    .menu-button {
+      padding-top: 15px;
+    }
+    .logo {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      .ritz-logo {
+        width: 60px;
+        height: auto;
+      }
+    }
+
+    .links-social {
+      padding-top: 15px;
+
+    }
+
+    .link {
+      padding-left: 20px;
+      a {
+        color: $ritz-blue;
+        font-size: 10px;
+        font-weight: $weight-medium;
+        letter-spacing: 1px;
+        &.blue {
+          color: $ritz-blue;
+        }
+      }
+    }
+
+    .social {
+      .text-right {
+        padding-left: 14px;
+      }
+    }
+  }
+
   .blue-top,.blue-bottom {
     background-color: $ritz-blue;
     width: 100%;
@@ -270,6 +320,9 @@ header.header {
   header.header {
     .blue-top {
       top: 32px;
+    }
+    .white-top {
+      top: 72px;
     }
   }
 }

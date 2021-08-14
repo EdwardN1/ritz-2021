@@ -1,0 +1,79 @@
+.block-ritz-offers-block {
+  .offers-grid {
+    .cell {
+      padding-top: 20px;
+    }
+    .image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 280px;
+      height: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      @include breakpoint(670) {
+        width: 324px;
+        height: 250px;
+      }
+      @include breakpoint(1250) {
+        width: 395px;
+        height: 300px;
+      }
+    }
+    .heading {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 22px;
+      padding-left: 18px;
+      padding-right: 18px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      @include breakpoint(670) {
+        font-size: 18px;
+        line-height: 22px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-top: 45px;
+        padding-bottom: 25px;
+      }
+      @include breakpoint(1250) {
+        font-size: 20px;
+        line-height: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 45px;
+        padding-bottom: 25px;
+      }
+    }
+    .description {
+      text-align: center;
+      font-size: 13px;
+      line-height: 19px;
+      padding-bottom: 20px;
+      @include breakpoint(670) {
+        font-size: 13px;
+        line-height: 19px;
+      }
+      @include breakpoint(1250) {
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+  }
+  .filter-row {
+    padding-top: 50px;
+    padding-bottom: 25px;
+  }
+}
+
+div[data-type="acf/ritz-offers-block"] {
+  &.wp-block {
+    width: 80%;
+    max-width: none;
+    .image {
+      width: 250px;
+      height: 200px;
+    }
+  }
+}

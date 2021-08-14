@@ -130,6 +130,43 @@
                 </div>
             </div>
 
+            <div class="white-top show-for-large">
+                <div class="grid-container">
+                    <div class="grid-x">
+                        <div class="cell auto menu-button">
+                            <a data-toggle="off-canvas"><img
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/menu-burger-button-blue.svg"></a>
+                        </div>
+                        <div class="cell shrink logo">
+                            <a href="/"><img
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/ritz-fixed-header-logo.svg"
+                                        class="ritz-logo"></a>
+                        </div>
+                        <div class="cell auto links-social">
+                            <div class="grid-x">
+                                <div class="cell auto">&nbsp;</div>
+                                <div class="cell shrink link text-right"><a href="#">CONTACT US</a></div>
+                                <div class="cell shrink link text-right"><a href="#">GIFT VOUCHERS</a></div>
+                                <div class="cell shrink social">
+                                    <div class="grid-x">
+                                        <div class="cell auto">&nbsp;</div>
+                                        <div class="cell shrink text-right">
+                                            <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-blue.svg"></a>
+                                        </div>
+                                        <div class="cell shrink text-right">
+                                            <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-blue.svg"></a>
+                                        </div>
+                                        <div class="cell shrink text-right">
+                                            <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-blue.svg"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="blue-bottom hide-for-large">
                 <div class="grid-container">
                     <div class="grid-x">
