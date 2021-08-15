@@ -1,0 +1,104 @@
+.block-ritz-image-gallery-block {
+  .icontainer {
+    padding-top: 20px;
+    @include breakpoint(medium) {
+      padding-top: 40px;
+    }
+    @include breakpoint(medium) {
+      padding-top: 50px;
+    }
+    .caption {
+      margin-left: auto;
+      margin-right: auto;
+      width: 280px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: $weight-semi-bold;
+      line-height: 14px;
+      padding-top: 20px;
+      @include breakpoint(medium) {
+        width: 324px;
+      }
+      @include breakpoint(large) {
+        width: 395px;
+      }
+    }
+    .image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-left: auto;
+      margin-right: auto;
+      width: 280px;
+      @include breakpoint(medium) {
+        width: 324px;
+      }
+      @include breakpoint(large) {
+        width: 395px;
+      }
+
+    }
+    &.y1 {
+      &.x1 {
+        .image {
+          height: 300px;
+        }
+      }
+      &.x2 {
+        .image {
+          height: 600px;
+        }
+      }
+      &.x3 {
+        .image {
+          height: 395px;
+        }
+      }
+    }
+    &.y2 {
+      &.x1 {
+        .image {
+          height: 600px;
+        }
+      }
+      &.x2 {
+        .image {
+          height: 300px;
+        }
+      }
+      &.x3 {
+        .image {
+          height: 600px;
+        }
+      }
+    }
+    &.y3 {
+      &.x1 {
+        .image {
+          height: 395px;
+        }
+      }
+      &.x2 {
+        .image {
+          height: 395px;
+        }
+      }
+      &.x3 {
+        .image {
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+
+div[data-type="acf/ritz-offers-block"] {
+  &.wp-block {
+    width: 80%;
+    max-width: none;
+    .image {
+      width: 250px;
+      height: 200px;
+    }
+  }
+}

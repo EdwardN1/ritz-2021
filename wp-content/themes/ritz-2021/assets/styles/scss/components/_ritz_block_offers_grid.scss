@@ -67,13 +67,11 @@
   }
 }
 
-div[data-type="acf/ritz-offers-block"] {
+div[data-type="acf/ritz-image-gallery-block"] {
   &.wp-block {
-    width: 80%;
-    max-width: none;
     .image {
-      width: 250px;
-      height: 200px;
+      width: 220px;
+      max-height: 200px;
     }
   }
 }

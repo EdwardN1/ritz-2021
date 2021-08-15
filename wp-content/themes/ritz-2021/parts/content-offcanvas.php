@@ -5,6 +5,51 @@
  * For more info: http://jointswp.com/docs/off-canvas-menu/
  */
 
+$current_page_id = get_queried_object_id();
+$no_menu_page = true;
+if (is_front_page()):
+    $no_menu_page == true;
+else:
+    if (have_rows('page_links', 'option')) :
+        $currentpage_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        while (have_rows('page_links', 'option')) : the_row();
+            $href = '';
+            $link_type = get_sub_field('link_type');
+            if ($link_type == 'Page') {
+                $href = get_sub_field('page');
+            }
+            if ($link_type == 'Post') {
+                $href = get_sub_field('post');
+            }
+            if ($link_type == 'External URL') {
+                $href = get_sub_field('external_url');
+            }
+            if ($link_type == 'Text') {
+                $href = get_sub_field('text_link');
+            }
+            if ($href == $currentpage_link) $no_menu_page = false;
+            if (have_rows('child_pages')) :
+                while (have_rows('child_pages')) : the_row();
+                    $c_href = '';
+                    $c_link_type = get_sub_field('link_type');
+                    if ($c_link_type == 'Page') {
+                        $c_href = get_sub_field('page_link');
+                    }
+                    if ($c_link_type == 'Post') {
+                        $c_href = get_sub_field('post_link');
+                    }
+                    if ($c_link_type == 'External URL') {
+                        $c_href = get_sub_field('external_url');
+                    }
+                    if ($c_link_type == 'Text') {
+                        $c_href = get_sub_field('text_link');
+                    }
+                    if ($c_href == $currentpage_link) $no_menu_page = false;
+                endwhile;
+            endif;
+        endwhile;
+    endif;
+endif;
 ?>
 
 <div class="off-canvas position-left" id="off-canvas" data-off-canvas>
@@ -46,7 +91,7 @@
                             if ($link_type == 'External URL') {
                                 $href = get_sub_field('external_url');
                             }
-                            if ($link_type == 'External URL') {
+                            if ($link_type == 'Text') {
                                 $href = get_sub_field('text_link');
                             }
 
@@ -56,34 +101,34 @@
                             <?php if (have_rows('child_pages')) :
                                 $childItems = '';
                                 while (have_rows('child_pages')) : the_row();
-                                        $c_link_type = get_sub_field('link_type');
-                                        $c_target = '';
-                                        if (get_sub_field('open_in_new_tab') == 1) :
-                                            $c_target = ' target="_blank"';
-                                        endif;
-                                        $c_link_text = get_sub_field('link_text');
-                                        $c_href = '#';
-                                        if ($c_link_type == 'Page') {
-                                            $c_href = get_sub_field('page_link');
-                                            if ($actual_link == $c_href) {
-                                                $isActive = ' is-active';
-                                            }
+                                    $c_link_type = get_sub_field('link_type');
+                                    $c_target = '';
+                                    if (get_sub_field('open_in_new_tab') == 1) :
+                                        $c_target = ' target="_blank"';
+                                    endif;
+                                    $c_link_text = get_sub_field('link_text');
+                                    $c_href = '#';
+                                    if ($c_link_type == 'Page') {
+                                        $c_href = get_sub_field('page_link');
+                                        if ($actual_link == $c_href) {
+                                            $isActive = ' is-active';
                                         }
-                                        if ($c_link_type == 'Post') {
-                                            $c_href = get_sub_field('post_link');
-                                        }
-                                        if ($c_link_type == 'External URL') {
-                                            $c_href = get_sub_field('external_url');
-                                        }
-                                        if ($c_link_type == 'External URL') {
-                                            $c_href = get_sub_field('text_link');
-                                        }
-                                        $childItems .= '<li><a href="'.$c_href.'"'.$c_target.' class="sub-level-link">'.$c_link_text.'</a></li>';
-                                        ?>
+                                    }
+                                    if ($c_link_type == 'Post') {
+                                        $c_href = get_sub_field('post_link');
+                                    }
+                                    if ($c_link_type == 'External URL') {
+                                        $c_href = get_sub_field('external_url');
+                                    }
+                                    if ($c_link_type == 'Text') {
+                                        $c_href = get_sub_field('text_link');
+                                    }
+                                    $childItems .= '<li><a href="' . $c_href . '"' . $c_target . ' class="sub-level-link">' . $c_link_text . '</a></li>';
+                                    ?>
 
-                                    <?php endwhile; ?>
+                                <?php endwhile; ?>
                                 <ul class="menu vertical nested<?php echo $isActive; ?>">
-                                    <?php echo $childItems;?>
+                                    <?php echo $childItems; ?>
                                 </ul>
                             <?php endif; ?>
                         </li>
@@ -106,7 +151,7 @@
                         if ($link_type == 'External URL') {
                             $href = get_sub_field('external_url');
                         }
-                        if ($link_type == 'External URL') {
+                        if ($link_type == 'Text') {
                             $href = get_sub_field('text_link');
                         }
                         $target = '';
@@ -135,7 +180,7 @@
                         if ($link_type == 'External URL') {
                             $href = get_sub_field('external_url');
                         }
-                        if ($link_type == 'External URL') {
+                        if ($link_type == 'Text') {
                             $href = get_sub_field('text_link');
                         }
                         $target = '';
@@ -156,8 +201,11 @@
 
                 <?php
                 $numRows = 3;
+                $currentpage_set = false;
                 if (have_rows('page_links', 'option')) :
                     $i = 1;
+                    $currentpage_index = 1;
+                    $currentpage = false;
                     while (have_rows('page_links', 'option')) : the_row();
                         $link_type = get_sub_field('link_type');
                         $target = '';
@@ -175,10 +223,43 @@
                         if ($link_type == 'External URL') {
                             $href = get_sub_field('external_url');
                         }
-                        if ($link_type == 'External URL') {
+                        if ($link_type == 'Text') {
                             $href = get_sub_field('text_link');
                         }
                         if ($href != ''):
+                            if (!is_front_page()) {
+                                $href_postID = url_to_postid($href);
+                                if ($href_postID != 0) {
+                                    if ($href_postID == $current_page_id) {
+                                        $currentpage = true;
+                                    } else {
+                                        if (have_rows('child_pages')) :
+                                            while (have_rows('child_pages')) : the_row();
+                                                $jxhref = '';
+                                                if ($link_type == 'Page') {
+                                                    $jxhref = get_sub_field('page_link');
+                                                }
+                                                if ($link_type == 'Post') {
+                                                    $jxhref = get_sub_field('post_link');
+                                                }
+                                                if ($link_type == 'External URL') {
+                                                    $jxhref = get_sub_field('external_url');
+                                                }
+                                                if ($link_type == 'Text') {
+                                                    $jxhref = get_sub_field('text_link');
+                                                }
+                                                if ($jxhref != ''):
+                                                    $jxhref_postID = url_to_postid($jxhref);
+                                                    if ($jxhref_postID == $current_page_id) {
+                                                        $currentpage = true;
+                                                    }
+                                                endif;
+                                            endwhile;
+                                        endif;
+                                    }
+                                }
+                            }
+                            //if ($currentpage) error_log('Current Page is True');
                             ?>
                             <h3 class="menu-page-link">
                                 <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>
@@ -189,13 +270,24 @@
                                     $spacer_height = count(get_sub_field("child_pages")) * 28;
                                 }
                                 ?>
-                                <?php if ($i == 1):
+                                <?php if (($no_menu_page)&&($i==1)):
                                     ?>
                                     <div class="spacer spacer-<?php echo $i;
                                     ?> animate__animated animate__fadeInDown"
                                          style="height: <?php echo $spacer_height;
                                          ?>px"></div>
                                 <?php else:
+                                    if (($currentpage)&&(!$currentpage_set)):
+                                        $currentpage = false;
+                                        $currentpage_index = $i;
+                                        $currentpage_set = true;
+                                        ?>
+                                        <div class="spacer spacer-<?php echo $i;
+                                        ?> animate__animated animate__fadeInDown"
+                                             style="height: <?php echo $spacer_height;
+                                             ?>px"></div>
+                                    <?php
+                                    endif;
                                     ?>
                                     <div class="spacer spacer-<?php echo $i;
                                     ?> animate__animated animate__fadeOutUp"
@@ -230,12 +322,12 @@
                             if ($link_type == 'External URL') {
                                 $href = get_sub_field('external_url');
                             }
-                            if ($link_type == 'External URL') {
+                            if ($link_type == 'Text') {
                                 $href = get_sub_field('text_link');
                             }
                             if ($href != ''):
                                 if (have_rows('child_pages')) :
-                                    if ($i == 1) {
+                                    if (($no_menu_page)&&($i==1)) {
                                         echo '<div class="child-menu child-menu-' . $i . ' animate__animated animate__fadeInDown">';
                                     } else {
                                         $padTop = ($i - 1) * 59;
@@ -243,7 +335,12 @@
                                         if ($i == $numRows) {
                                             $padTop = ($i - 2) * 59;
                                         }
-                                        echo '<div class="child-menu child-menu-' . $i . ' animate__animated animate__fadeOutUp" style="padding-top:' . $padTop . 'px">';
+                                        if ($currentpage_index == $i) {
+                                            echo '<div class="child-menu child-menu-' . $i . ' animate__animated animate__fadeInDown" style="padding-top:' . $padTop . 'px">';
+                                        } else {
+                                            echo '<div class="child-menu child-menu-' . $i . ' animate__animated animate__fadeOutUp" style="padding-top:' . $padTop . 'px">';
+                                        }
+
                                     }
 
                                     while (have_rows('child_pages')) : the_row();
@@ -265,7 +362,7 @@
                                         if ($link_type == 'External URL') {
                                             $jhref = get_sub_field('external_url');
                                         }
-                                        if ($link_type == 'External URL') {
+                                        if ($link_type == 'Text') {
                                             $jhref = get_sub_field('text_link');
                                         }
                                         if ($jhref != ''):
@@ -320,15 +417,15 @@
                     $link_type = get_sub_field('link_type');
                     $href = '#';
                     if ($link_type == 'Page') {
-                        $href = get_sub_field('page_link');
+                        $href = get_sub_field('page');
                     }
                     if ($link_type == 'Post') {
-                        $href = get_sub_field('post_link');
+                        $href = get_sub_field('post');
                     }
                     if ($link_type == 'External URL') {
                         $href = get_sub_field('external_url');
                     }
-                    if ($link_type == 'External URL') {
+                    if ($link_type == 'Text') {
                         $href = get_sub_field('text_link');
                     }
                     $target = '';
@@ -349,15 +446,15 @@
                     $link_type = get_sub_field('link_type');
                     $href = '#';
                     if ($link_type == 'Page') {
-                        $href = get_sub_field('page_link');
+                        $href = get_sub_field('page');
                     }
                     if ($link_type == 'Post') {
-                        $href = get_sub_field('post_link');
+                        $href = get_sub_field('post');
                     }
                     if ($link_type == 'External URL') {
                         $href = get_sub_field('external_url');
                     }
-                    if ($link_type == 'External URL') {
+                    if ($link_type == 'Text') {
                         $href = get_sub_field('text_link');
                     }
                     $target = '';
