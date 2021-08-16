@@ -78,5 +78,41 @@
 
     }
 
+    .image-gallery-container {
+      position: fixed;
+      top: 10%;
+      width: 80%;
+      left: 10%;
+      height: 60%;
+      padding-right: 50px;
+      padding-left: 50px;
+      .gallery-image {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 30px;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .info {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $light-gray;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .caption {
+          font-size: 12px;
+
+        }
+      }
+    }
+
   }
 }

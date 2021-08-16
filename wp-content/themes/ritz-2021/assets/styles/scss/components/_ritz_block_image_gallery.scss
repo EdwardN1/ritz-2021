@@ -30,11 +30,24 @@
       margin-left: auto;
       margin-right: auto;
       width: 280px;
+      position: relative;
       @include breakpoint(medium) {
         width: 324px;
       }
       @include breakpoint(large) {
         width: 395px;
+      }
+      a {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/magnifier.svg");
+        background-position: bottom right;
+        background-size: 25px 25px;
+        background-repeat: no-repeat;
+        font-size: 0;
+        color: transparent;
       }
 
     }

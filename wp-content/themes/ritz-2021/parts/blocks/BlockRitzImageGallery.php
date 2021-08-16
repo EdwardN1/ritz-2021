@@ -124,17 +124,17 @@ endif;
                     $uniqueID = uniqid();
                     ?>
                     <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal data-galleryid="<?php echo $uniqueID; ?>">
-                        <div class="gallery-container">
+                        <div class="image-gallery-container">
                             <div class="gallery-image" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
                             <div class="info">
                                 <div class="grid-x">
-                                    <div class="cell auto">
+                                    <div class="cell auto caption">
                                         <?php the_title(); ?>
                                     </div>
-                                    <div class="cell shrink">
+                                    <div class="cell shrink price">
                                         <?php the_field('price_description',$postID);?>
                                     </div>
-                                    <div class="cell shrink">
+                                    <div class="cell shrink booking">
 
                                     </div>
                                 </div>
