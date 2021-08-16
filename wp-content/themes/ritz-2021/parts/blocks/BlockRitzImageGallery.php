@@ -119,9 +119,32 @@ endif;
                 ?>
                 <div class="icontainer x<?php echo $x; ?> y<?php echo $y; ?>">
                     <?php
-                    $image = get_field('image', get_the_ID());
+                    $postID = get_the_ID();
+                    $image = get_field('image', $postID);
+                    $uniqueID = uniqid();
                     ?>
-                    <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
+                    <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal data-galleryid="<?php echo $uniqueID; ?>">
+                        <div class="gallery-container">
+                            <div class="gallery-image" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
+                            <div class="info">
+                                <div class="grid-x">
+                                    <div class="cell auto">
+                                        <?php the_title(); ?>
+                                    </div>
+                                    <div class="cell shrink">
+                                        <?php the_field('price_description',$postID);?>
+                                    </div>
+                                    <div class="cell shrink">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="close-reveal-modal" data-close>&times;</span>
+                    </div>
+                    <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
+                        <a data-open="<?php echo $uniqueID;?>">OPEN IMAGE</a>
+                    </div>
                     <div class="caption">
                         <?php the_title(); ?>
                     </div>
