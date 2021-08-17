@@ -96,6 +96,10 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        .close-reveal-modal {
+          position: absolute;
+          background-image: url("../images/close-white.svg");
+        }
       }
       .info {
         width: 100%;
@@ -109,7 +113,18 @@
         padding-bottom: 15px;
         .caption {
           font-size: 12px;
-
+          font-weight: $weight-bold;
+          text-transform: uppercase;
+        }
+        .price {
+          font-size: 18px;
+          font-weight: $weight-medium;
+          text-transform: uppercase;
+        }
+        .booking {
+          a.button-ritz {
+            margin-left: 3em;
+          }
         }
       }
     }
