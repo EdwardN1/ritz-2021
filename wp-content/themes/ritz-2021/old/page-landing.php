@@ -50,6 +50,9 @@
 
 											$link_title = get_sub_field( 'left_link_text' );
 											$href       = '';
+											if($link_to == 'Category Link') {
+											    $href = '/category/press-releases';
+                                            }
 											if ( $link_to == 'Page Link' ) {
 												$href = get_sub_field( 'left_link' );
 											}

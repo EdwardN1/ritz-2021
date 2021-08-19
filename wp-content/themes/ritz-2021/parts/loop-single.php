@@ -11,8 +11,7 @@
 		<?php get_template_part( 'parts/content', 'byline' ); ?>
     </header> <!-- end article header -->
 					
-    <section class="entry-content" itemprop="text">
-		<?php the_post_thumbnail('full'); ?>
+    <section class="entry-content single-post" itemprop="text">
 		<?php the_content(); ?>
 	</section> <!-- end article section -->
 						

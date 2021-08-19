@@ -1,5 +1,5 @@
 <?php
-if (has_post_thumbnail()) :
+if (has_post_thumbnail()&&!is_archive()) :
     $title = get_post(get_post_thumbnail_id(get_the_ID(),))->post_title;
     $alt = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_wp_attachment_image_alt', true);
     $caption = get_post(get_post_thumbnail_id(get_the_ID(),))->post_excerpt;

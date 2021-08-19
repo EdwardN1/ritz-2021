@@ -51,7 +51,8 @@
 															$href = get_sub_field( 'link' );
 														}
 														if ( $link_to == 'File' ) {
-															$href = get_sub_field( 'file' );
+															$file = get_sub_field( 'file' );
+															$href = esc_url( $file['url'] );
 														}
 														if ( $link_to == 'Popup' ) {
 															$href = '#';//get_sub_field('text');
@@ -217,7 +218,7 @@
 						<?php endif; ?>
 						<?php $booking_type = get_field( 'bottom_link_type' ); ?>
 
-						<?php if ( get_field( 'hide_bottom_link' ) != 1 ) : ?>
+						<?php if ( (get_field( 'hide_bottom_link' ) != 1)&&(get_field('bottom_description')!='') ) : ?>
                             <div class="booking-line">
 								<?php
 								$booking_link_text = get_field( 'bottom_description' );
