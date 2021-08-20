@@ -116,7 +116,7 @@ endif;
         endwhile;
     endif;
     ?>
-    <div class="grid-x grid-margin-x">
+    <div class="grid-x">
         <div class="cell large-6 medium-6 small-12 left-pane">
             <div class="grid-x">
                 <div class="cell large-6 medium-12 small-12">

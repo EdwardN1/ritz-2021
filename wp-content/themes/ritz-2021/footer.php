@@ -73,9 +73,9 @@
 <footer class="footer" role="contentinfo">
 
 
-    <div class="show-for-large">
+    <div class="show-for-large grid-container">
         <div class="grid-x">
-            <div class="cell auto logo">
+            <div class="cell auto logo text-left">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/white-ritz-logo.svg'; ?>">
             </div>
             <div class="cell shrink contact">
@@ -118,7 +118,7 @@
             <div class="cell shrink warrant">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/white-warrant.svg' ?>"/>
             </div>
-            <div class="cell auto leading">
+            <div class="cell auto leading text-right">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/white-leading.svg' ?>"/>
             </div>
         </div>
