@@ -263,14 +263,14 @@ endif;
         <script>
             jQuery(document).ready(function ($) {
                 <?php
-                if($i==0) {
-                    $i = count(get_field('page_links', 'option'))+1;
+                if ($i == 0) {
+                    $i = count(get_field('page_links', 'option')) + 1;
                 }
                 for($x = 1;$x <= $i - 1;$x++) {
                 ?>
                 $('.parent-<?php echo $x; ?>').on('click', function (e) {
+                        e.preventDefault();
                         if ($('.child-menu-<?php echo $x; ?>').hasClass('animate__fadeOutUp')) {
-                            e.preventDefault();
                             $('.child-menu').removeClass('animate__fadeInDown');
                             $('.child-menu').addClass('animate__fadeOutUp');
                             $('.spacer').removeClass('animate__fadeInDown');
