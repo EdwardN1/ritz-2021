@@ -5,6 +5,7 @@
   font-size: 40px;
   font-weight: $weight-light;
   position: relative;
+  line-height: 1;
   &:after {
     content: " ";
     position: absolute;
@@ -22,6 +23,6 @@
   }
   @include breakpoint(large) {
     padding-top: 50px;
-
+    padding-bottom: 50px;
   }
 }

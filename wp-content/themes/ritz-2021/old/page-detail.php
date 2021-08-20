@@ -55,7 +55,30 @@
 															$href = esc_url( $file['url'] );
 														}
 														if ( $link_to == 'Popup' ) {
-															$href = '#';//get_sub_field('text');
+															$href     = '';
+															$uniqueID = uniqid(); ?>
+                                                            <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal data-id="<?php echo $uniqueID; ?>">
+                                                                <div class="info-box">
+                                                                    <div class="content">
+																		<?php
+																		$popup_content = get_sub_field( 'popup_content' );
+																		if ( strpos( $popup_content, '[entertainment]' ) !== false ) {
+																			echo get_field( 'entertainment', 'option' );
+																		} else {
+																			if ( strpos( $popup_content, '[dresscode]' ) !== false ) {
+																				echo get_field( 'dress_code', 'option' );
+																			} else {
+																				echo $popup_content;
+																			}
+																		}
+
+																		?>
+                                                                    </div>
+                                                                </div>
+                                                                <span class="close-reveal-modal" data-close>&times;</span>
+                                                            </div>
+															<?php
+															$bullet_text = '<a data-open="' . $uniqueID . '" class="link">' . $bullet_text . '</a>';
 														}
 														if ( $link_to == 'URL' ) {
 															$href = get_sub_field( 'url' );
@@ -218,7 +241,7 @@
 						<?php endif; ?>
 						<?php $booking_type = get_field( 'bottom_link_type' ); ?>
 
-						<?php if ( (get_field( 'hide_bottom_link' ) != 1)&&(get_field('bottom_description')!='') ) : ?>
+						<?php if ( ( get_field( 'hide_bottom_link' ) != 1 ) && ( get_field( 'bottom_description' ) != '' ) ) : ?>
                             <div class="booking-line">
 								<?php
 								$booking_link_text = get_field( 'bottom_description' );
@@ -388,7 +411,8 @@
                                                 class="accordion-title"><?php echo $heading; ?></a>
                                         <div class="accordion-content" data-tab-content>
                                             <ul>
-												<?php while ( have_rows( 'feature_items' ) ) : the_row(); ?>
+												<?php while ( have_rows( 'feature_items' ) ) :
+													the_row(); ?>
 													<?php $link_to = get_sub_field( 'link_type' );
 													$bullet_text   = get_sub_field( 'description' );
 													$target        = '';
@@ -403,7 +427,24 @@
 														$href = get_sub_field( 'file' );
 													}
 													if ( $link_to == 'Popup' ) {
-														$href = get_sub_field( '#' );
+														$href     = '';
+														$uniqueID = uniqid(); ?>
+                                                        <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal data-id="<?php echo $uniqueID; ?>">
+                                                            <div class="info-box">
+																<?php
+																$popup_content = get_sub_field( 'popup_content' );
+																if ( $popup_content == '[entertainment]' ) {
+																	echo get_field( 'entertainment', 'option' );
+																}
+																if ( $popup_content == '[dresscode]' ) {
+																	echo get_field( 'dress_code', 'option' );
+																}
+																?>
+                                                            </div>
+                                                            <span class="close-reveal-modal" data-close>&times;</span>
+                                                        </div>
+														<?php
+														$bullet_text = '<a data-open="' . $uniqueID . '" class="link">' . $bullet_text . '</a>';
 													}
 													if ( $link_to == 'URL' ) {
 														$href = get_sub_field( 'url' );

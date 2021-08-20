@@ -8,9 +8,6 @@ CSS file.
 
 ******************************************************************/
 
-@mixin letter-spacing($letter-spacing) {
-  letter-spacing: ($letter-spacing / 1000) * 1em;
-}
 
 // Import local Foundation overrides - Don't link to Bower version as it will be overwritten whenever updated
 @import "settings";

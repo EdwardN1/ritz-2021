@@ -2,12 +2,41 @@ p, .page-summary {
   max-width: 630px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2em;
+  @include letter-spacing(10);
 }
 
 ul {
   max-width: 630px;
   margin-left: auto;
   margin-right: auto;
+  margin: 0;
+  list-style-type: none;
+  li {
+    padding-left: 1em;
+    position: relative;
+    line-height: 1.47;
+    @include letter-spacing(10);
+    &:before {
+      content: "\2013";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &.accordion {
+    margin-left: auto;
+    margin-right: auto;
+    .accordion-title {
+      text-transform: uppercase;
+      font-weight: $weight-bold;
+    }
+    li {
+      &:before {
+        content: "";
+      }
+    }
+  }
 }
 
 .page-summary {

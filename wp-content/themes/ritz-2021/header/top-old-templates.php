@@ -16,8 +16,8 @@
                 <div class="cell auto links-social">
                     <div class="grid-x">
                         <div class="cell auto">&nbsp;</div>
-                        <div class="cell shrink link text-right"><a href="#">CONTACT US</a></div>
-                        <div class="cell shrink link text-right"><a href="#">GIFT VOUCHERS</a></div>
+                        <div class="cell shrink link text-right"><a href="/contact-us/">CONTACT US</a></div>
+                        <div class="cell shrink link text-right"><a href="https://www.theritzlondonvouchers.com/" target="_blank">GIFT VOUCHERS</a></div>
                         <div class="cell shrink social">
                             <div class="grid-x">
                                 <div class="cell auto">&nbsp;</div>
@@ -81,8 +81,8 @@
                     <div class="cell auto links-social">
                         <div class="grid-x">
                             <div class="cell auto">&nbsp;</div>
-                            <div class="cell shrink link text-right"><a href="#" class="blue">CONTACT US</a></div>
-                            <div class="cell shrink link text-right"><a href="#" class="blue">GIFT VOUCHERS</a></div>
+                            <div class="cell shrink link text-right"><a href="/contact-us/" class="blue">CONTACT US</a></div>
+                            <div class="cell shrink link text-right"><a href="https://www.theritzlondonvouchers.com/" target="_blank" class="blue">GIFT VOUCHERS</a></div>
                             <div class="cell shrink social">
                                 <div class="grid-x">
                                     <div class="cell auto">&nbsp;</div>

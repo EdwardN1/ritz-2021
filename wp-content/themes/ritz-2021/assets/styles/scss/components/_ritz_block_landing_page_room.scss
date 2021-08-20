@@ -21,7 +21,7 @@
       padding-bottom: 6px;
     }
     @include breakpoint(large) {
-      padding-bottom: 20px;
+      padding-bottom: 40px;
       font-size: 15px;
       line-height: 22px;
     }
@@ -55,7 +55,7 @@
       @include breakpoint(large) {
         font-size: 20px;
         line-height: 25px;
-        padding-bottom: 35px;
+        padding-bottom: 40px;
       }
     }
 
@@ -79,6 +79,7 @@
       width: 370px;
       padding-top: 127px;
       padding-bottom: 125px;
+      min-height: 495px;
     }
   }
   .right .background {

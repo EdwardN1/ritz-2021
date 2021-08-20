@@ -153,6 +153,8 @@
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
     @include breakpoint(medium) {
       padding-left: 0;
     }
@@ -169,7 +171,7 @@
       color: transparent;
       font-size: 0;
       background-repeat: no-repeat;
-      background-position: top left;
+      background-position: top center;
       //background-size: 7px 7px;
       background-image: url("../images/slick-dot.svg");
 

@@ -1,6 +1,7 @@
 .block-ritz-page-content-with-sidebar-block {
   @include breakpoint(large) {
     display: flex;
+    padding-top: 10px;
   }
   .page-content-desktop {
     padding-top: 6px;
@@ -40,10 +41,16 @@
             padding-bottom: 16px;
             font-size: 15px;
             line-height: 22px;
-            text-indent: -10px;
+            position: relative;
+            padding-left: 1em;
+            a.link {
+              text-decoration: underline;
+            }
             &:before {
-              content: "- ";
-              text-indent: -10px;
+              content: "\2013";
+              position: absolute;
+              top: 0;
+              left: 0;
             }
           }
         }
@@ -67,13 +74,17 @@
       font-weight: $weight-medium;
       padding-bottom: 40px;
       text-transform: uppercase;
+      @include breakpoint(large) {
+        padding-top: 20px;
+        padding-bottom: 50px;
+      }
     }
     .footer-lines {
       font-size: 14px;
       font-weight: $weight-medium;
       line-height: 18px;
       text-transform: uppercase;
-      padding-top: 46px;
+      padding-top: 50px;
     }
   }
 
