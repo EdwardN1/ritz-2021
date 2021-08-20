@@ -175,6 +175,27 @@ jQuery(document).ready(function ($) {
         }
     })
 
+    $('.block-ritz-image-gallery-block .filter-row .button-filter').on('click', function (){
+        if(!$(this).hasClass('selected')) {
+            $('.block-ritz-image-gallery-block .filter-row .button-filter').each(function (){
+                $(this).removeClass('selected');
+            });
+            $(this).addClass('selected');
+            if($(this).data('filter-class')=='all') {
+                $('.block-ritz-image-gallery-block .icontainer').show();
+            } else {
+                let filterClass = $(this).data('filter-class');
+                $('.block-ritz-image-gallery-block .icontainer').each(function(){
+                    if($(this).hasClass(filterClass)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        }
+    })
+
     $('.header-main').waypoint(function (direction){
         if(direction=='down') {
             $('.white-top').addClass('visible');

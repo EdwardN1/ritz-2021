@@ -54,4 +54,18 @@
       padding-right: 50px;
     }
   }
+  .mag-reveal {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/magnifier.svg");
+    background-size: 20px 20px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
 }

@@ -60,9 +60,7 @@ endif;
                 <a class="button-filter selected small" data-filter-class="all">All</a>
             </div>
             <?php
-            foreach ($terms
-
-            as $term) {
+            foreach ($terms as $term) {
             $term_name = $term->name;
             $term_class = seoUrl($term_name);
             $button_size = ' small';
@@ -116,31 +114,92 @@ endif;
             <?php while ($loop->have_posts()) : $loop->the_post(); ?>
                 <?php
                 ob_start();
-                ?>
-                <div class="icontainer x<?php echo $x; ?> y<?php echo $y; ?>">
-                    <?php
-                    $postID = get_the_ID();
-                    $image = get_field('image', $postID);
-                    $uniqueID = uniqid();
-                    ?>
+	            $postID = get_the_ID();
+	            $image = get_field('image', $postID);
+	            $uniqueID = uniqid();
+	            $image_category = get_field( 'image_category', $postID );
+	            $term = get_term_by( 'id', $image_category, 'ritzimagegallerycategory' );
+	            $data_filter_class = seoUrl(esc_html( $term->name ));
+	            ?>
+                <div class="icontainer x<?php echo $x; ?> y<?php echo $y; ?> <?php echo $data_filter_class;?>">
+
                     <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal data-galleryid="<?php echo $uniqueID; ?>">
-                        <div class="gallery-container">
-                            <div class="gallery-image" style="background-image: url(<?php echo esc_url($image['url']); ?>)"></div>
+                        <div class="image-gallery-container">
+                            <div class="gallery-image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
+                                <span class="close-reveal-modal" data-close>&times;</span>
+                            </div>
                             <div class="info">
                                 <div class="grid-x">
-                                    <div class="cell auto">
+                                    <div class="cell auto caption">
                                         <?php the_title(); ?>
                                     </div>
-                                    <div class="cell shrink">
+                                    <div class="cell shrink price">
                                         <?php the_field('price_description',$postID);?>
                                     </div>
-                                    <div class="cell shrink">
+                                    <div class="cell shrink booking">
+	                                    <?php
+	                                    $booking_options = get_field('booking_options', $postID);
+	                                    $booking_link_text = get_field('booking_link_text', $postID);
+	                                    if ($booking_options == 'AZDS') {
+		                                    if (have_rows('accomodation_codes', $postID)) :
+			                                    $selector = '?';
+			                                    $query = '';
+			                                    while (have_rows('accomodation_codes', $postID)) : the_row();
+				                                    $key = get_sub_field('key');
+				                                    $value = get_sub_field('value');
+				                                    $query .= $selector . $key . '=' . $value;
+				                                    $selector = '&';
+			                                    endwhile;
+			                                    ?>
+                                                <a href="#/booking/step-1<?php echo $query; ?>"
+                                                   class="button-ritz"><?php echo $booking_link_text; ?></a>
+		                                    <?php
+		                                    endif;
+	                                    };
+	                                    if ($booking_options == 'Bookatable') {
+		                                    if (have_rows('dining_codes', $postID)) :
+			                                    $book_data = '';
+			                                    while (have_rows('dining_codes', $postID)) : the_row();
+				                                    $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
+				                                    $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
+				                                    $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
+				                                    $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
+				                                    $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
+				                                    $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
+				                                    $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
+			                                    endwhile;
+			                                    if ($book_data != '') {
+				                                    ?>
+                                                    <a href="#" <?php echo $book_data; ?>
+                                                       class="button-ritz"><?php echo $booking_link_text; ?></a>
+				                                    <?php
+			                                    }
+		                                    endif;
+	                                    };
+	                                    if ($booking_options == 'Email') {
 
+		                                    if (have_rows('email_options', $postID)) :
+
+			                                    while (have_rows('email_options', $postID)) : the_row();
+				                                    ?>
+                                                    <a href="mailto:<?php the_sub_field('email_to_address'); ?>?subject=<?php the_sub_field('subject'); ?>&body=<?php the_sub_field('body'); ?>"
+                                                       class="button-ritz"><?php echo $booking_link_text; ?></a>
+			                                    <?php
+			                                    endwhile;
+		                                    endif;
+	                                    };
+	                                    if ($booking_options == 'Page') {
+		                                    $page = get_field('page', $postID);
+		                                    ?>
+                                            <a href="<?php echo esc_url($page); ?>"><?php echo $booking_link_text; ?></a>
+		                                    <?php
+	                                    };
+	                                    ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <span class="close-reveal-modal" data-close>&times;</span>
+
                     </div>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
                         <a data-open="<?php echo $uniqueID;?>">OPEN IMAGE</a>

@@ -1,13 +1,16 @@
 body, p, span {
   font-size: 14px;
   line-height: 20px;
+  @include letter-spacing(10);
   @include breakpoint(medium) {
     font-size: 13px;
     line-height: 19px;
+    @include letter-spacing(10);
   }
   @include breakpoint(large) {
     font-size: 15px;
     line-height: 22px;
+    @include letter-spacing(10);
   }
 }
 
@@ -20,7 +23,12 @@ h1,h2 {
   margin-bottom: 10px;
   @include breakpoint(large) {
   margin-bottom: 35px;
+    @include letter-spacing(50);
 }
+}
+
+h3 {
+  @include letter-spacing(50);
 }
 
 .cta-link {
@@ -66,26 +74,32 @@ h1,h2 {
 .h1 {
   font-size: 25px;
   line-height: 30px;
+  @include letter-spacing(50);
   @include breakpoint(medium) {
     font-size: 35px;
     line-height: 40px;
+    @include letter-spacing(50);
   }
   @include breakpoint(large) {
     font-size: 35px;
     line-height: 40px;
+    @include letter-spacing(50);
   }
 }
 
 .h2 {
   font-size: 12px;
   line-height: 15px;
+  @include letter-spacing(50);
   @include breakpoint(medium) {
     font-size: 14px;
     line-height: 18px;
+    @include letter-spacing(50);
   }
   @include breakpoint(large) {
     font-size: 14px;
     line-height: 18px;
+    @include letter-spacing(50);
   }
 }
 

@@ -4,7 +4,17 @@ p, .page-summary {
   margin-right: auto;
 }
 
+ul {
+  max-width: 630px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .page-summary {
   font-size: 15px;
   line-height: 22px;
+}
+
+form p {
+  max-width: none;
 }

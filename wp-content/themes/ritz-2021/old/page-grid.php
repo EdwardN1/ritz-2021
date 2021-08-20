@@ -36,7 +36,7 @@
                                         <div class="content"><?php the_sub_field( 'content' ); ?></div>
 										<?php $page_link = get_sub_field( 'page_link' ); ?>
 										<?php if ( $page_link ) : ?>
-                                            <div><a  class="link button-underlined" href="<?php echo esc_url( $page_link ); ?>">Read More</a></div>
+                                            <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>">Read More</a></div>
 										<?php endif; ?>
                                     </div>
 									<?php
@@ -63,7 +63,7 @@
                                         <div class="content"><?php the_sub_field( 'content' ); ?></div>
 										<?php $page_link = get_sub_field( 'page_link' ); ?>
 										<?php if ( $page_link ) : ?>
-                                            <div><a  class="link button-underlined" href="<?php echo esc_url( $page_link ); ?>">Read More</a></div>
+                                            <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>">Read More</a></div>
 										<?php endif; ?>
                                     </div>
 									<?php

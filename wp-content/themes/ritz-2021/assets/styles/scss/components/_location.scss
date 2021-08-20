@@ -1,0 +1,141 @@
+.t8-page-location {
+  .map-wrapper {
+    position: relative;
+    height: 58vw;
+    @include breakpoint(large) {
+      height: 44vw;
+    }
+
+    .acf-map {
+      min-height: 300px;
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      img[src*='google-pin'] {
+        display: none;
+        @include breakpoint(large) {
+          display: block;
+        }
+      }
+    }
+
+    .acf-map .map-labels {
+      display: none !important;
+      @include breakpoint(large) {
+        display: block !important;
+      }
+      width: 320px;
+      text-align: center;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .acf-map .map-labels.white {
+      text-shadow: 2px 2px 0 #1E698B,
+      -1px -1px 0 #1E698B,
+      1px -1px 0 #1E698B,
+      -1px 1px 0 #1E698B,
+      1px 1px 0 #1E698B;
+      color: $white;
+      /*text-shadow: 1px 1px 0 #1E698B, -1px -1px 0 #1E698B;*/
+    }
+
+    #map-info-box {
+      display: none;
+      @include breakpoint(large) {
+        display: block;
+      }
+      width: 300px;
+      background: #fff;
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      padding: 30px;
+      z-index: 100;
+      h3 {
+        margin-bottom: 15px;
+      }
+
+      .marker-sub-heading {
+        margin-bottom: 15px;
+      }
+
+      .marker-image {
+        margin-bottom: 15px;
+      }
+
+      .marker-description {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 15px;
+      }
+
+      .adp, .adp table {
+        max-height: 320px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  .main-content {
+    padding-top: 30px;
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+
+  #start-point {
+    width: 220px;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  #get-directions {
+    margin-left: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: #142c45;
+    color: #fff;
+    font-size: 16px;
+    line-height: 23px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  .transit-mode {
+    display: block;
+    border-bottom: 1px solid #dfdfdf;
+    line-height: 40px;
+    position: relative;
+    cursor: pointer;
+    padding-left: 5px;
+  }
+
+  .transit-mode.selected {
+    background: #142c45;
+    color: #FFFFFF;
+  }
+
+  .transit-mode:after {
+    content: "";
+    color: #dfdfdf;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    height: 1.5em;
+    width: 1.5em;
+    background: url("../images/right-chevron.png") no-repeat;
+  }
+
+  .transit-mode.selected:after {
+    background: url("../images/right-chevron-white.png") no-repeat;
+  }
+
+
+
+}

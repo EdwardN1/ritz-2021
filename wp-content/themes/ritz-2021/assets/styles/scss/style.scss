@@ -66,6 +66,7 @@ CSS file.
 
 // Import your custom styles
 @import "global";
+@import "components/mixins";
 @import "components/font_styles";
 @import "classes/responsive_text_alignment";
 @import "components/top_bar";
@@ -90,3 +91,4 @@ CSS file.
 @import "components/curator";
 @import "components/ritz_block_offers_grid";
 @import "components/ritz_block_image_gallery";
+@import "components/location";
