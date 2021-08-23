@@ -216,11 +216,11 @@ global $no_menu_page;
                     <h2 class="text-center"><?php the_sub_field('line_3'); ?></h2>
                     <div class="grid-x">
                         <div class="cell auto text-center">
-                            <a href="<?php $page_link = get_sub_field('page_link'); ?>"
+                            <a href="<?php echo get_sub_field('page_link'); ?>"
                                class="button-underline"><?php the_sub_field('link_text'); ?></a>
                         </div>
                         <div class="cell auto text-center">
-                            <a href="<?php $page_link = get_sub_field('page_link'); ?>" class="button-white">BOOK
+                            <a href="<?php echo get_sub_field('page_link'); ?>" class="button-white">BOOK
                                 NOW</a>
                         </div>
                     </div>

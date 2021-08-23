@@ -1,7 +1,9 @@
 .curator {
   padding-top: 90px;
-  padding-left: 100px;
-  padding-right: 100px;
+  @include breakpoint(large) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
   h2 {
     text-transform: uppercase;
     text-align: center;

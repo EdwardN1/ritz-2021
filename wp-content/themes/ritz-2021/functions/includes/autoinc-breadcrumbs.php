@@ -30,7 +30,7 @@ function get_breadcrumb()
             if ( count( $header_matches ) > 1 ){
                 $title = $header_matches[1];
             }
-            $breadcrumbs[] = '<a href="'.get_the_permalink($page->ID).'">' . $title . '</a> > ';
+            $breadcrumbs[] = '<a href="'.get_the_permalink($page->ID).'">' . $title . ' > </a> ';
             $parent_id = $page->post_parent;
         }
 
@@ -38,7 +38,7 @@ function get_breadcrumb()
         foreach ($breadcrumbs as $crumb) $trail .= $crumb;
     }
 
-    $trail = '<a href="/">HOME</a> > '.$trail;
+    $trail = '<a href="/">HOME > </a> '.$trail;
 
     $trail .= $page_title;
     $trail .= '

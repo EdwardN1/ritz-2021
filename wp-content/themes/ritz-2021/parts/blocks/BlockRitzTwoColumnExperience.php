@@ -52,7 +52,7 @@ endif;
 	<?php $image_position = get_field( 'image_position' ); ?>
 	<?php $image = get_field( 'image' ); ?>
 	<?php $image_iframe_link = get_field( 'image_iframe_link' ); ?>
-    <div class="grid-x">
+    <div class="grid-x show-for-medium">
         <div class="cell large-6 medium-6 small-12">
 	        <?php if ( ($image_iframe_link != '')&&(!$is_preview) ): ?>
 		        <?php  $uniqueID = uniqid(); ?>
@@ -120,6 +120,31 @@ endif;
 				<?php
 			}
 			?>
+        </div>
+    </div>
+
+    <div class="grid-x hide-for-medium">
+        <div class="cell large-6 medium-6 small-12">
+            <div class="left">
+		        <?php $heading = get_field( 'heading' ); ?>
+		        <?php if ( $heading != '' ): ?>
+                    <div class="heading"><h3><?php echo $heading; ?></h3></div>
+		        <?php endif; ?>
+                <div class="content"><?php the_field( 'content' ); ?></div>
+		        <?php $page_link = get_field( 'page_link' ); ?>
+		        <?php if ( $page_link ) : ?>
+                    <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
+		        <?php endif; ?>
+            </div>
+        </div>
+        <div class="cell large-6 medium-6 small-12">
+            <div class="right">
+                <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
+			        <?php if ( $image_iframe_link != '' ): ?>
+                        <a data-open="<?php echo $uniqueID;?>" class="mag-reveal"></a>
+			        <?php endif; ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -42,7 +42,10 @@
             font-size: 15px;
             line-height: 22px;
             position: relative;
-            padding-left: 1em;
+            padding-left: 0;
+            @include breakpoint(large) {
+              padding-left: 1em;
+            }
             a.link {
               text-decoration: underline;
             }
@@ -101,6 +104,7 @@
         .accordion {
           margin-bottom: 0;
           .accordion-item {
+            padding-left: 0;
             .accordion-title {
               font-size: 12px;
               text-transform: uppercase;

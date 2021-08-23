@@ -17,15 +17,16 @@
   .mobile-menu {
     padding-top: 30px;
     .submenu-toggle {
+      width: 100%;
       &:after {
-        height: 13px;
-        width: 13px;
+        height: 100%;
+        width: 100%;
         border: none;
         content: " ";
         background-image: url("../images/menu-down-arrow.svg");
         background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+        background-size: 13px 13px;
+        background-position: center right;
       }
     }
     a {
@@ -34,7 +35,8 @@
       &.top-level-link {
         font-size: 18px;
         padding-left: 10px;
-
+        padding-top: 16px;
+        padding-bottom: 16px;
       }
       &.sub-menu-link {
         font-size: 12px;
@@ -54,12 +56,22 @@
         font-size: 12px;
         color: $dark-gray;
         font-weight: $weight-medium;
+        padding-bottom: 28px;
+        display: inline-block;
+        @include breakpoint(large) {
+          padding-bottom: 0;
+        }
       }
     }
     .footer-sub-links {
       padding-top: 22px;
       a {
         font-size: 10px;
+        padding-bottom: 28px;
+        display: inline-block;
+        @include breakpoint(large) {
+          padding-bottom: 0;
+        }
       }
       padding-bottom: 50px;
     }

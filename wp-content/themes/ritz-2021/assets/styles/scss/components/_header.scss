@@ -3,12 +3,15 @@ header.header {
 
   .white-top {
     position: fixed;
-    top: 40px;
+    top: 0;
     width: 100%;
     z-index: 200;
     background-color: $white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.4);
     height: 0;
+    @include breakpoint(large) {
+      top: 50px;
+    }
     &.visible {
       height: 62px;
     }
@@ -54,12 +57,12 @@ header.header {
   .blue-top,.blue-bottom {
     background-color: $ritz-blue;
     width: 100%;
-    height: 40px;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 200;
-    padding-top: 6px;
+    z-index: 300;
+    padding-top: 10px;
     .reservations {
       padding-right: 10px;
     }
@@ -106,14 +109,24 @@ header.header {
       text-transform: uppercase;
       font-size: 10px;
       font-weight: $weight-bold;
-      padding-left: 31px;
-      padding-right: 31px;
+      padding-left: 25px;
+      padding-right: 25px;
+      @include breakpoint(medium) {
+        padding-left: 36px;
+        padding-right: 36px;
+      }
       &.dine-with-us {
         position: relative;
+        padding-left: 21px;
+        padding-right: 41px;
+        @include breakpoint(medium) {
+          padding-left: 36px;
+          padding-right: 56px;
+        }
         &:after {
           content: " ";
           position: absolute;
-          right: 10px;
+          right: 41px;
           top: 7px;
           border: solid $white;
           border-width: 0 1px 1px 0;
@@ -141,7 +154,7 @@ header.header {
 
   .blue-bottom {
     top: auto;
-    bottom: 0;
+    bottom: -1px;
   }
 
   .featured-image {
@@ -156,7 +169,27 @@ header.header {
       width: 100%;
       height: 100vh;
       background-color: $black;
-      opacity: 0.4;
+      opacity: 0.1;
+      &:before {
+        content: " ";
+        background: linear-gradient(#000 0%, rgba(0, 0, 0, 0) 100%);
+        //opacity: 0.6;
+        height: 196px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        content: " ";
+        background: linear-gradient(rgba(0, 0, 0, 0) 100%, #000 0%);
+        //opacity: 0.6;
+        height: 196px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
 
     .featured-content {
@@ -268,7 +301,30 @@ header.header {
         height: 100vh;
         position: relative;
         background-color: $black;
-        opacity: 0.4;
+        opacity: 0.1;
+        &:before {
+          content: " ";
+          background: linear-gradient(#000 0%, rgba(0, 0, 0, 0) 100%);
+          //opacity: 0.6;
+          height: 196px;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:after {
+          content: " ";
+          background: linear-gradient(rgba(0, 0, 0, 0) 100%, #000 0%);
+          //opacity: 0.6;
+          height: 196px;
+          width: 100%;
+          position: absolute;
+          bottom: 35%;
+          left: 0;
+          @include breakpoint(medium) {
+            bottom: 0;
+          }
+        }
         &.top-gradient {
           background-color: transparent;
           &:before {
@@ -286,7 +342,7 @@ header.header {
       .slide-info {
         position: absolute;
         width: 100%;
-        bottom: 35%;
+        bottom: 45%;
         @include breakpoint(medium) {
           bottom: 15%;
         }

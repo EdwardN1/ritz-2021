@@ -37,6 +37,14 @@ ul {
       }
     }
   }
+  &.menu {
+    li {
+      padding-left: 0;
+      &:before {
+        content: "";
+      }
+    }
+  }
 }
 
 .page-summary {
@@ -46,4 +54,17 @@ ul {
 
 form p {
   max-width: none;
+}
+
+.grid-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  @include breakpoint(medium) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include breakpoint(large) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
