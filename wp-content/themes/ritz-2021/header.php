@@ -151,13 +151,13 @@
                                     <div class="grid-x">
                                         <div class="cell auto">&nbsp;</div>
                                         <div class="cell shrink text-right">
-                                            <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-blue.svg"></a>
+                                            <a href="https://www.facebook.com/theritzlondon" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-blue.svg"></a>
                                         </div>
                                         <div class="cell shrink text-right">
-                                            <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-blue.svg"></a>
+                                            <a href="https://instagram.com/theritzlondon" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram-blue.svg"></a>
                                         </div>
                                         <div class="cell shrink text-right">
-                                            <a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-blue.svg"></a>
+                                            <a href="https://twitter.com/theritzlondon" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter-blue.svg"></a>
                                         </div>
                                     </div>
                                 </div>
