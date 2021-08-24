@@ -25,6 +25,23 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transform: scale(1.2);
+    @include breakpoint(large) {
+      height: 100%;
+      max-height: none;
+    }
+  }
+  .image-container {
+    width: 100%;
+    height: 77vw;
+    max-height: 250px;
+    overflow: hidden;
+    &.animated-background {
+      .image.animated {
+        transform: scale(1);
+        animation: animatedBackground 2s linear;
+      }
+    }
     @include breakpoint(large) {
       height: 100%;
       max-height: none;
@@ -99,6 +116,17 @@
         line-height: 22px;
         padding-bottom: 28px;
       }
+    }
+  }
+  .animated-container {
+    opacity: 0;
+  }
+}
+
+div[data-type="acf/ritz-four-column-block"] {
+  &.wp-block {
+    .animated-container {
+      opacity: 1;
     }
   }
 }

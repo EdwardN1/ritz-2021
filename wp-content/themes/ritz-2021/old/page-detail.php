@@ -31,6 +31,11 @@
                                     <div class="left">
 										<?php the_field( 'main_content' ); ?>
                                     </div>
+                                    <?php if ( get_field( 'include_price' ) == 1 ) : ?>
+                                        <div class="price-line">
+                                            <?php the_field( 'price_description' ); ?>&nbsp;<?php the_field( 'price' ); ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="cell large-4 medium-6 small-12">
                                     <div class="right">
@@ -234,11 +239,7 @@
                                 </div>
 							<?php endif; ?>
                         </div>
-						<?php if ( get_field( 'include_price' ) == 1 ) : ?>
-                            <div class="price-line">
-								<?php the_field( 'price_description' ); ?>&nbsp;<?php the_field( 'price' ); ?>
-                            </div>
-						<?php endif; ?>
+
 						<?php $booking_type = get_field( 'bottom_link_type' ); ?>
 
 						<?php if ( ( get_field( 'hide_bottom_link' ) != 1 ) && ( get_field( 'bottom_description' ) != '' ) ) : ?>
@@ -581,7 +582,7 @@
                                                 <div class="slide-heading"><?php the_sub_field( 'link_text' ); ?></div>
                                                 <div class="slide-link"><a
                                                             href="<?php echo esc_url( $href ); ?>"
-                                                            class="button-underlined"><?php the_sub_field( 'link_text' ); ?></a>
+                                                            class="button-underlined short"><?php the_sub_field( 'link_text' ); ?></a>
                                                 </div>
                                             </div>
                                         </div>

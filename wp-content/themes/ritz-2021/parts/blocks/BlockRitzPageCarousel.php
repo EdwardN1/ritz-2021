@@ -89,6 +89,14 @@ endif;
 					<?php $href = get_sub_field( 'text' ); ?>
 					<?php
 					$link = '';
+                    $link_title = get_sub_field('link_text');
+                    $linkLen = '';
+                    if(strlen($link_title)<=8) {
+                        $linkLen = 'short';
+                    }
+                    if(strlen($link_title)>=13) {
+                        $linkLen = 'long';
+                    }
 					if ( get_sub_field( 'link_type') == 'Text' ) {
 						if ( $href != '' ) {
 							$ytpos = strpos( $href, 'https://youtu.be/' );
@@ -107,17 +115,17 @@ endif;
                                             <span class="close-reveal-modal" data-close>&times;</span>
                                         </div>
 										<?php
-										$link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined long feature-modal-btn">' . get_sub_field( 'link_text' ) . '</a>';
+										$link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn '.$linkLen.'">' . $link_title . '</a>';
 									} else {
-										$link = '<a href="' . esc_url( $href ) . '" class="button-underlined">' . get_sub_field( 'link_text' ) . '</a>';
+										$link = '<a href="' . esc_url( $href ) . '" class="button-underlined '.$linkLen.'">' . $link_title . '</a>';
 									}
 								}
 							} else {
-								$link = '<a href="' . esc_url( $page ) . '" class="button-underlined">' . get_sub_field( 'link_text' ) . '</a>';
+								$link = '<a href="' . esc_url( $page ) . '" class="button-underlined '.$linkLen.'">' . $link_title . '</a>';
 							}
 						}
 					} else {
-						$link = '<a href="' . esc_url( $page ) . '" class="button-underlined">' . get_sub_field( 'link_text' ) . '</a>';
+						$link = '<a href="' . esc_url( $page ) . '" class="button-underlined '.$linkLen.'">' . $link_title . '</a>';
 					}
 					?>
 

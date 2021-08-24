@@ -4,10 +4,10 @@
  *
  * Ritz Four Column Block Block Template.
  *
- * @var array $block The block settings and attributes.
  * @param string $content The block inner HTML (empty).
- * @var bool $is_preview True during AJAX preview.
  * @param   (int|string) $post_id The post ID this block is saved to.
+ * @var bool $is_preview True during AJAX preview.
+ * @var array $block The block settings and attributes.
  */
 
 // Create id attribute allowing for custom "anchor" value.
@@ -39,6 +39,7 @@ endif;
     .js .tmce-active .wp-editor-area {
         color: #000000 !important;
     }
+
     <?php echo '#' . $id; ?>
     {
     /* Add styles that use ACF values here */
@@ -47,6 +48,13 @@ endif;
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?>">
     <?php
+    $animated = get_field('animated');
+    $animated_text_container_class = '';
+    $animated_background_class = ' class="image-container animated-background"';
+    if ($animated == 1) {
+        $animated_text_container_class = 'class="animated-container"';
+        $animated_background_class = ' class="image-container animated-background"';
+    }
     $left_title = '';
     $left_content = '';
     $left_link = '';
@@ -65,6 +73,13 @@ endif;
                 $target = ' target="_blank"';
             }
             $link_title = get_sub_field('link_title');
+            $linkLen = '';
+            if(strlen($link_title)<=8) {
+                $linkLen = 'short';
+            }
+            if(strlen($link_title)>=13) {
+                $linkLen = 'long';
+            }
             $href = '';
             if ($link_to == 'Page') {
                 $href = get_sub_field('page');
@@ -79,7 +94,7 @@ endif;
                 $href = get_sub_field('url');
             }
             if ($href != '') {
-                $left_link = '<a href="' . esc_url($href) . '" class="link button-underlined"' . $target . '>' . $link_title . '</a>';
+                $left_link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
             }
             $image = get_sub_field('image');
             $left_img_url = esc_url($image['url']);
@@ -95,6 +110,13 @@ endif;
                 $target = ' target="_blank"';
             }
             $link_title = get_sub_field('link_title');
+            $linkLen = '';
+            if(strlen($link_title)<=8) {
+                $linkLen = 'short';
+            }
+            if(strlen($link_title)>=13) {
+                $linkLen = 'long';
+            }
             $href = '';
             if ($link_to == 'Page') {
                 $href = get_sub_field('page');
@@ -109,7 +131,7 @@ endif;
                 $href = get_sub_field('url');
             }
             if ($href != '') {
-                $right_link = '<a href="' . esc_url($href) . '" class="link button-underlined"' . $target . '>' . $link_title . '</a>';
+                $right_link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
             }
             $image = get_sub_field('image');
             $right_img_url = esc_url($image['url']);
@@ -123,21 +145,25 @@ endif;
                     <div class="background">
                         <div class="v-align">
                             <div class="v-content">
-                                <div class="heading">
-                                    <h3><?php echo $left_title; ?></h3>
-                                </div>
-                                <div class="content">
-                                    <?php echo $left_content; ?>
-                                </div>
-                                <div class="link">
-                                    <?php echo $left_link; ?>
+                                <div <?php echo $animated_text_container_class; ?>>
+                                    <div class="heading">
+                                        <h3><?php echo $left_title; ?></h3>
+                                    </div>
+                                    <div class="content">
+                                        <?php echo $left_content; ?>
+                                    </div>
+                                    <div class="link">
+                                        <?php echo $left_link; ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="cell large-6 medium-12 small-12">
-                    <div class="image" style="background-image: url(<?php echo $left_img_url; ?>)"></div>
+                    <div<?php echo $animated_background_class; ?>>
+                        <div class="image" style="background-image: url(<?php echo $left_img_url; ?>)"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,21 +173,25 @@ endif;
                     <div class="background">
                         <div class="v-align">
                             <div class="v-content">
-                                <div class="heading">
-                                    <h3><?php echo $right_title; ?></h3>
-                                </div>
-                                <div class="content">
-                                    <?php echo $right_content; ?>
-                                </div>
-                                <div class="link">
-                                    <?php echo $right_link; ?>
+                                <div <?php echo $animated_text_container_class; ?>>
+                                    <div class="heading">
+                                        <h3><?php echo $right_title; ?></h3>
+                                    </div>
+                                    <div class="content">
+                                        <?php echo $right_content; ?>
+                                    </div>
+                                    <div class="link">
+                                        <?php echo $right_link; ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="cell large-6 medium-12 small-12">
-                    <div class="image" style="background-image: url(<?php echo $right_img_url; ?>)"></div>
+                    <div<?php echo $animated_background_class; ?>>
+                        <div class="image" style="background-image: url(<?php echo $right_img_url; ?>)"></div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -69,7 +69,7 @@ endif;
                 <div class="left">
                     <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
 						<?php if ( $image_iframe_link != '' ): ?>
-                            <a data-open="<?php echo $uniqueID;?>" class="mag-reveal"></a>
+                            <a data-open="<?php echo $uniqueID;?>" class="mag-reveal iframe"></a>
 						<?php endif; ?>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ endif;
                 <div class="right">
                     <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
 	                    <?php if ( $image_iframe_link != '' ): ?>
-                            <a data-open="<?php echo $uniqueID;?>" class="mag-reveal"></a>
+                            <a data-open="<?php echo $uniqueID;?>" class="mag-reveal iframe"></a>
 	                    <?php endif; ?>
                     </div>
                 </div>
@@ -141,7 +141,7 @@ endif;
             <div class="right">
                 <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
 			        <?php if ( $image_iframe_link != '' ): ?>
-                        <a data-open="<?php echo $uniqueID;?>" class="mag-reveal"></a>
+                        <a data-open="<?php echo $uniqueID;?>" class="mag-reveal iframe"></a>
 			        <?php endif; ?>
                 </div>
             </div>

@@ -3,3 +3,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.event-forms {
+  padding-top: 20px;
+  .accordion-title {
+    border: 1px solid $ritz-blue;
+    &.book-now {
+      border-bottom: 1px solid $ritz-blue;
+    }
+  }
+}

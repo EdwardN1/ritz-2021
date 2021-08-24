@@ -173,7 +173,7 @@ jQuery(document).ready(function ($) {
                 });
             }
         }
-    })
+    });
 
     $('.block-ritz-image-gallery-block .filter-row .button-filter').on('click', function (){
         if(!$(this).hasClass('selected')) {
@@ -194,7 +194,7 @@ jQuery(document).ready(function ($) {
                 });
             }
         }
-    })
+    });
 
     $('.header-main').waypoint(function (direction){
         if(direction=='down') {
@@ -206,5 +206,24 @@ jQuery(document).ready(function ($) {
     },{
         offset: '-100px'
     })
+
+    $('.animated-container').each(function () {
+        let $this = $(this);
+        $this.waypoint(function (direction) {
+            $this.addClass('animate__animated animate__fadeInUp');
+        }, {
+            offset: '70%',
+        });
+    })
+
+    $('.animated-background .image').each(function () {
+        let $this = $(this);
+        $this.waypoint(function (direction) {
+            $this.addClass('animated');
+        }, {
+            offset: '70%',
+        });
+    });
+
 
 });

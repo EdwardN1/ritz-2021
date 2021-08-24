@@ -20,7 +20,7 @@ function sc_accordionform( $atts, $content = null ) {
 	if ( ( $formID != '' ) ) {
 		$return .= '<ul class="accordion event-forms" data-accordion data-allow-all-closed="true" >';
 		$return .= '<li id="frm' . $formID . '" class="accordion-item" data-accordion-item>';
-		$return .= '<a href="#" class="accordion-title">BOOK NOW</a>';
+		$return .= '<a href="#" class="accordion-title book-now">BOOK NOW</a>';
 		$return .= '<div class="accordion-content" data-tab-content>';
 		$return .= do_shortcode( '[gravityform id="' . $formID . '" title="false" description="false"]' );
 		$return .= '</div></li></ul>';
