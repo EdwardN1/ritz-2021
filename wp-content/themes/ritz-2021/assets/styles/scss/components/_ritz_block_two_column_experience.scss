@@ -35,10 +35,10 @@
   @include breakpoint(medium) {
     padding-top: 25px;
     .left {
-      padding-right: 35px;
+      padding-right: 17px;
     }
     .right {
-      padding-right: 35px;
+      padding-left: 17px;
       padding-top: 0;
     }
   }
@@ -54,13 +54,13 @@
     }
     .image {
       min-height: 350px;
-      max-width: 500px;
+      //max-width: 500px;
     }
     .left {
-      padding-right: 50px;
+      padding-right: 25px;
     }
     .right {
-      padding-right: 50px;
+      padding-left: 25px;
     }
   }
 
