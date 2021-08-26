@@ -149,10 +149,10 @@ endif;
 						$link_type = get_sub_field( 'link_type' );
 						$href      = '#';
 						if ( $link_type == 'Page' ) {
-							$href = get_sub_field( 'page_link' );
+							$href = get_sub_field( 'page' );
 						}
 						if ( $link_type == 'Post' ) {
-							$href = get_sub_field( 'post_link' );
+							$href = get_sub_field( 'post' );
 						}
 						if ( $link_type == 'External URL' ) {
 							$href = get_sub_field( 'external_url' );
@@ -178,10 +178,10 @@ endif;
 						$link_type = get_sub_field( 'link_type' );
 						$href      = '#';
 						if ( $link_type == 'Page' ) {
-							$href = get_sub_field( 'page_link' );
+							$href = get_sub_field( 'page' );
 						}
 						if ( $link_type == 'Post' ) {
-							$href = get_sub_field( 'post_link' );
+							$href = get_sub_field( 'post' );
 						}
 						if ( $link_type == 'External URL' ) {
 							$href = get_sub_field( 'external_url' );

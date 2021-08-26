@@ -50,7 +50,7 @@
                                 class="ritz-logo"></a>
                 </div>
                 <div class="cell auto links-social text-right">
-                    <a data-toggle="off-canvas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell.svg"></a>
+                    <a href="/contact/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell.svg"></a>
                 </div>
             </div>
         </div>

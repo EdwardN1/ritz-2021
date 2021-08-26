@@ -4,16 +4,7 @@
         <?php if (is_block_page()): ?>
             <?php the_content(); ?>
         <?php else: ?>
-            <?php $desktop_tour = get_field( 'desktop_tour' ); ?>
-            <?php if ( $desktop_tour ) : ?>
-                <?php $url = wp_get_attachment_url( $desktop_tour ); ?>
-                <a href="<?php echo esc_url( $url ); ?>">Download File</a>
-            <?php endif; ?>
-            <?php $mobile_tour = get_field( 'mobile_tour' ); ?>
-            <?php if ( $mobile_tour ) : ?>
-                <?php $url = wp_get_attachment_url( $mobile_tour ); ?>
-                <a href="<?php echo esc_url( $url ); ?>">Download File</a>
-            <?php endif; ?>
+            <iframe src="https://media.theritzlondon.com/" style="width: 100%; height: 75vh;"></iframe>
 
         <?php endif;?>
     </section>

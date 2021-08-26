@@ -82,8 +82,10 @@
 													?>
                                                     <a href="#/booking/step-1<?php echo $query; ?>"
                                                        class="button-ritz"><?php echo $booking_link_text; ?></a>
-												<?php
-												endif;
+												<?php else: ?>
+                                                    <a href="#/booking/step-1<?php echo $query; ?>"
+                                                       class="button-ritz"><?php echo $booking_link_text; ?></a>
+												<?php endif;
 											};
 											$book_data = '';
 											if ( $booking_options == 'Afternoon Tea' ) {

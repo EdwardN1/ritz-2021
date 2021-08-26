@@ -93,7 +93,7 @@
             </div>
             <div class="grid-container main-content">
                 <div class="grid-x grid-padding-x">
-                    <div class="cell large-6 medium-6 small-12">
+                    <div class="cell large-6 medium-6 small-12 show-for-large">
                         <div class="get-directions">
                             <h4>DIRECTIONS TO THE RITZ</h4>
                             <p>

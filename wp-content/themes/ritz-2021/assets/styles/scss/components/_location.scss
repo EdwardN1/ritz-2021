@@ -2,6 +2,7 @@
   .map-wrapper {
     position: relative;
     height: 58vw;
+    min-height: 300px;
     @include breakpoint(large) {
       height: 44vw;
     }
