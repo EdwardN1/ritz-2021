@@ -38,6 +38,14 @@
     padding-right: 25px;
     padding-top: 31px;
     padding-bottom: 31px;
+    .content {
+      padding-bottom: 24px;
+      p {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
     &.top {
       border: 1px solid $light-gray;
       border-bottom: none;

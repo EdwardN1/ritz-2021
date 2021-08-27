@@ -203,7 +203,7 @@ endif;
         </div>
 
 		<?php
-		get_template_part( 'parts/burger', 'menu-2' );
+		get_template_part( 'parts/burger', 'menu-3' );
 		?>
         <div class="footer-main-links grid-x show-for-large">
 			<?php if ( have_rows( 'footer_main_links', 'option' ) ) : ?>
@@ -267,6 +267,12 @@ endif;
 	<?php if ( have_rows( 'page_links', 'option' ) ) : ?>
         <script>
             jQuery(document).ready(function ($) {
+                if($('.sub-nav .inner .child-menu.animate__fadeInDown').length) {
+                    $('.sub-nav .inner .child-menu.animate__fadeInDown').each(function (){
+                        let $fmh = $(this).outerHeight();
+                        $('.sub-nav .inner').css('min-height',$fmh+'px');
+                    })
+                }
 				<?php
 				if ( $i == 0 ) {
 					$i = count( get_field( 'page_links', 'option' ) ) + 1;
@@ -277,6 +283,7 @@ endif;
                         if ($('.child-menu-<?php echo $x; ?>').length) {
                             e.preventDefault();
                         }
+                        let $oh = $('.child-menu-<?php echo $x; ?>').outerHeight();
                         if ($('.child-menu-<?php echo $x; ?>').hasClass('animate__fadeOutUp')) {
                             $('.child-menu').removeClass('animate__fadeInDown');
                             $('.child-menu').addClass('animate__fadeOutUp');
@@ -287,6 +294,7 @@ endif;
                                 $('.child-menu-<?php echo $x; ?>').addClass('animate__fadeInDown');
                                 $('.spacer-<?php echo $x; ?>').removeClass('animate__fadeOutUp');
                                 $('.spacer-menu-<?php echo $x; ?>').addClass('animate__fadeInDown');
+                                $('.sub-nav .inner').css('min-height',$oh+'px');
                             }, 500);
 
                         }

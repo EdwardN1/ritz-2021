@@ -97,6 +97,10 @@ header.header {
             text-align: center;
             width: 100%;
             outline: none !important;
+            &:hover {
+              background-color: $white;
+              color: $ritz-blue;
+            }
             @include breakpoint(large) {
               border-top: none;
               border-bottom: 1px solid $white;
@@ -117,6 +121,10 @@ header.header {
       font-weight: $weight-bold;
       padding-left: 25px;
       padding-right: 25px;
+      &:hover {
+        background-color: $white;
+        color: $ritz-blue;
+      }
       @include letter-spacing(100);
       @include breakpoint(medium) {
         padding-left: 36px;

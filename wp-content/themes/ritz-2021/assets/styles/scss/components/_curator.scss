@@ -1,8 +1,9 @@
 .curator {
   padding-top: 90px;
   @include breakpoint(large) {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 86px;
   }
   h2 {
     text-transform: uppercase;
@@ -12,7 +13,10 @@
     line-height: 25px;
     padding-bottom: 34px;
   }
-  .crt-carousel-pane .crt-grid-post {
-    padding: 10px;
+  .crt-carousel-pane {
+    padding: 7px;
+    .crt-grid-post {
+      padding: 10px;
+    }
   }
 }
