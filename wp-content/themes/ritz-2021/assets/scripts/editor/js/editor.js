@@ -7,12 +7,8 @@ wp.domReady( () => {
             isDefault: true,
         },
         {
-            name: 'tosca-zero',
-            label: 'Tosca Zero',
-        },
-        {
-            name: 'tosca-zero-uppercase',
-            label: 'Tosca Zero Uppercase',
+            name: 'text-uppercase',
+            label: 'Uppercase',
         }
     ]);
 
