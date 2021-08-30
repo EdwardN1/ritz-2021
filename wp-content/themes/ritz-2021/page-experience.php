@@ -1,16 +1,9 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- */
-
-global $template_name;
-
-$template_name = 'Default';
+// Template Name: Experience Page
 
 global $ritz_template_name;
-$ritz_template_name = 'ritz-default';
+
+$ritz_template_name = 'ritz-experience';
 
 get_header(); ?>
 

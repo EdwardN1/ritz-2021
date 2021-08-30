@@ -5,6 +5,8 @@
  * This is the template that displays all of the <head> section
  *
  */
+
+global $ritz_template_name;
 ?>
 
 <!doctype html>
@@ -39,7 +41,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class($ritz_template_name); ?>>
 
 <div class="off-canvas-wrapper">
 

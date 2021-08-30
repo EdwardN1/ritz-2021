@@ -3,6 +3,10 @@
 global $template_name;
 
 $template_name = 'T4 Offers Page';
+
+global $ritz_template_name;
+$ritz_template_name = 'ritz-old-template';
+
 get_header(); ?>
 
 <div class="content">

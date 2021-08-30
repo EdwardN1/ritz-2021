@@ -145,7 +145,16 @@ if (!empty($block['align'])) {
             </div>
             <div class="hide-for-medium">
                 <div>
-                    <?php $image = get_field('image'); ?>
+                    <?php
+                    if(get_field('add_image_to_display_on_mobile')==1) {
+                        $image = get_field('mobile_image');
+                        if(!$image) {
+                            $image = get_field('image');
+                        }
+                    } else {
+                        $image = get_field('image');
+                    }
+                    ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
 
                     </div>
@@ -217,7 +226,16 @@ if (!empty($block['align'])) {
                     </div>
                 </div>
                 <div>
-                    <?php $image = get_field('image'); ?>
+                    <?php
+                    if(get_field('add_image_to_display_on_mobile')==1) {
+                        $image = get_field('mobile_image');
+                        if(!$image) {
+                            $image = get_field('image');
+                        }
+                    } else {
+                        $image = get_field('image');
+                    }
+                    ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
 
                     </div>
@@ -262,7 +280,16 @@ if (!empty($block['align'])) {
             </div>
             <div class="hide-for-medium">
                 <div>
-                    <?php $image = get_field('image'); ?>
+                    <?php
+                    if(get_field('add_image_to_display_on_mobile')==1) {
+                        $image = get_field('mobile_image');
+                        if(!$image) {
+                            $image = get_field('image');
+                        }
+                    } else {
+                        $image = get_field('image');
+                    }
+                    ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
 
                     </div>
@@ -333,7 +360,16 @@ if (!empty($block['align'])) {
                     </div>
                 </div>
                 <div>
-                    <?php $image = get_field('image'); ?>
+                    <?php
+                    if(get_field('add_image_to_display_on_mobile')==1) {
+                        $image = get_field('mobile_image');
+                        if(!$image) {
+                            $image = get_field('image');
+                        }
+                    } else {
+                        $image = get_field('image');
+                    }
+                    ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
 
                     </div>
