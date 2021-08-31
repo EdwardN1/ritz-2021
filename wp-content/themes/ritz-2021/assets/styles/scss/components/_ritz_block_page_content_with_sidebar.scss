@@ -7,6 +7,9 @@
     padding-top: 6px;
     margin-left: auto;
     margin-right: auto;
+    @include breakpoint(large) {
+      padding-left: 105px;
+    }
     /*position: relative;
     display: inline-block;*/
     .left {
@@ -15,7 +18,7 @@
       p {
         font-size: 15px;
         line-height: 22px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
     }
     .right {
@@ -63,8 +66,8 @@
           padding-top: 25px;
           .button-container {
             text-align: center;
-            padding-top: 14px;
-            padding-bottom: 14px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             border: 1px solid $light-gray;
             width: 100%;
           }
@@ -78,7 +81,7 @@
       padding-bottom: 40px;
       text-transform: uppercase;
       @include breakpoint(large) {
-        padding-top: 20px;
+        padding-top: 28px;
         padding-bottom: 50px;
       }
     }
