@@ -10,6 +10,7 @@
     padding-top: 90px;
     padding-right: 40px;
     max-width: 1024px;
+    padding-left: 52px;
   }
 
   .heading {
@@ -143,7 +144,7 @@
       top: 91%;
     }
     @include breakpoint(large) {
-      right: 60px;
+      right: 30px;
       top: 40%;
     }
   }
@@ -161,7 +162,7 @@
       padding-left: 0;
     }
     @include breakpoint(large) {
-      padding-right: 60px;
+      padding-right: 35px;
       padding-top: 40px;
       padding-bottom: 40px;
     }
