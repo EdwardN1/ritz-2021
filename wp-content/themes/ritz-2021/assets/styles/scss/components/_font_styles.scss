@@ -19,12 +19,12 @@ body, p, span {
   line-height: 12px;
 }
 
-h1,h2 {
+h1, h2 {
   margin-bottom: 10px;
   @include breakpoint(large) {
-  margin-bottom: 35px;
+    margin-bottom: 35px;
     @include letter-spacing(50);
-}
+  }
 }
 
 h3 {
@@ -100,6 +100,40 @@ h3 {
     font-size: 14px;
     line-height: 18px;
     @include letter-spacing(50);
+  }
+}
+
+.ritz-accommodation {
+  h1 {
+    font-size: 22px;
+    line-height: 22px;
+    @include letter-spacing(50);
+    @include breakpoint(medium) {
+      font-size: 24px;
+      line-height: 24px;
+      @include letter-spacing(50);
+    }
+    @include breakpoint(large) {
+      font-size: 30px;
+      line-height: 30px;
+      margin-bottom: 20px;
+      @include letter-spacing(50);
+    }
+  }
+  h2 {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: $weight-medium;
+    @include letter-spacing(50);
+    @include breakpoint(medium) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @include breakpoint(large) {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 23px;
+    }
   }
 }
 
