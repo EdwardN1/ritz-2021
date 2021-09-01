@@ -10,7 +10,7 @@ header.header {
     box-shadow: 0 5px 10px rgba(0,0,0,0.4);
     height: 0;
     @include breakpoint(large) {
-      top: 50px;
+      top: 42px;
     }
     &.visible {
       height: 62px;
@@ -69,6 +69,10 @@ header.header {
     left: 0;
     z-index: 300;
     padding-top: 10px;
+    @include breakpoint(large) {
+      height: 42px;
+      padding-top: 6px;
+    }
     .reservations {
       padding-right: 10px;
     }
@@ -266,11 +270,14 @@ header.header {
       top: 30px;
     }
     @include breakpoint(large) {
-      top: 60px;
+      top: 52px;
     }
 
     .menu-button {
       /*padding-top: 32px;*/
+      @include breakpoint(large) {
+        padding-top: 20px;
+      }
     }
 
     .ritz-logo {
@@ -284,7 +291,7 @@ header.header {
     .links-social {
       /*padding-top: 25px;*/
       @include breakpoint(large) {
-        padding-top: 50px;
+        padding-top: 38px;
       }
     }
 
