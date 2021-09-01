@@ -119,8 +119,8 @@ header.header {
       text-transform: uppercase;
       font-size: 10px;
       font-weight: $weight-bold;
-      padding-left: 25px;
-      padding-right: 25px;
+      padding-left: 18px;
+      padding-right: 18px;
       &:hover {
         background-color: $white;
         color: $ritz-blue;
@@ -132,8 +132,8 @@ header.header {
       }
       &.dine-with-us {
         position: relative;
-        padding-left: 21px;
-        padding-right: 41px;
+        padding-left: 18px;
+        padding-right: 37px;
         @include breakpoint(medium) {
           padding-left: 36px;
           padding-right: 56px;
@@ -173,6 +173,9 @@ header.header {
   .blue-bottom {
     top: auto;
     bottom: -1px;
+    > .grid-container {
+      padding-bottom: 1px;
+    }
   }
 
   .featured-image {
@@ -267,7 +270,7 @@ header.header {
     }
 
     .menu-button {
-      padding-top: 32px;
+      /*padding-top: 32px;*/
     }
 
     .ritz-logo {
@@ -279,7 +282,7 @@ header.header {
     }
 
     .links-social {
-      padding-top: 25px;
+      /*padding-top: 25px;*/
       @include breakpoint(large) {
         padding-top: 50px;
       }

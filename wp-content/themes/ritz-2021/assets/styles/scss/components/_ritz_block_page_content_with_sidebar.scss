@@ -91,6 +91,7 @@
       line-height: 18px;
       text-transform: uppercase;
       padding-top: 50px;
+      @include letter-spacing(50);
     }
   }
 
@@ -102,11 +103,13 @@
     .page-sidebar {
       margin-left: auto;
       margin-right: auto;
+      margin-top: 10px;
       ul {
         max-width: none;
       }
       @include breakpoint(large) {
         max-width: 630px;
+        margin-top: 0;
       }
       .bullets {
         .accordion {
@@ -117,7 +120,10 @@
               font-size: 12px;
               text-transform: uppercase;
               background-color: $light-gray;
-              padding-bottom: 14px;
+              padding-bottom: 22px;
+              @include breakpoint(large) {
+                padding-bottom: 14px;
+              }
               &:before {
                 height: 13px;
                 width: 13px;
@@ -170,6 +176,10 @@
       font-size: 16px;
       font-weight: $weight-medium;
       padding-bottom: 25px;
+      padding-top: 8px;
+      @include breakpoint(large) {
+        padding-top: 0;
+      }
     }
     .read-more {
       padding-bottom: 25px;
@@ -178,12 +188,44 @@
         color: $ritz-blue;
         font-size: 12px;
         font-weight: $weight-semi-bold;
+        position: relative;
+        padding-right: 32px;
+        outline: none !important;
+        &:after {
+          content: " ";
+          background-position: top right;
+          top: 0;
+          right: 0;
+          background-image: url("../images/read-more-closed.svg");
+          height: 12px;
+          width: 10px;
+          background-repeat: no-repeat;
+          position: absolute;
+        }
+      }
+      button[aria-expanded="true"] {
+        &:after {
+          background-image: url("../images/read-more-open.svg");
+          background-position: center;
+        }
+      }
+    }
+    .read-more[aria-expanded="true"] {
+      button {
+        &:after {
+          background-image: url("../images/read-more-open.svg");
+          background-position: center;
+        }
       }
     }
     .footer-lines {
       text-transform: uppercase;
       font-size: 12px;
       font-weight: $weight-medium;
+      @include letter-spacing(100);
+      a {
+        text-decoration: underline;
+      }
     }
     .buttons {
       margin-left: auto;
@@ -197,22 +239,32 @@
           background-color: $light-gray;
           text-align: center;
           width: 100%;
-          padding-top: 14px;
-          padding-bottom: 14px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          @include breakpoint(large) {
+            padding-top: 14px;
+            padding-bottom: 14px;
+          }
         }
       }
     }
     .page-content {
-      padding-top: 25px;
+      padding-top: 33px;
       overflow: hidden;
       transition: all 1s ease-in-out;
+      @include  breakpoint(large) {
+        padding-top: 25px;
+      }
       .visible {
         background: $white;
         z-index: 10;
       }
       p {
         margin: 0;
-        padding-bottom: 25px;
+        padding-bottom: 20px;
+        @include breakpoint(large) {
+          padding-bottom: 25px;
+        }
       }
     }
   }

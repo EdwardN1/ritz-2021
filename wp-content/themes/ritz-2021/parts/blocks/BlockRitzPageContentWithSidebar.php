@@ -601,7 +601,7 @@ endif;
         <?php if (have_rows('footer_lines')) : ?>
             <div class="footer-lines">
                 <?php while (have_rows('footer_lines')) : the_row(); ?>
-                    <?php the_sub_field('line'); ?>&nbsp;
+                    <?php echo preg_replace('/<a href="mailto:(.+?)>.+?<\/a>/i','<a href="mailto:$1>HERE</a>',get_sub_field('line')); ?>&nbsp;
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>

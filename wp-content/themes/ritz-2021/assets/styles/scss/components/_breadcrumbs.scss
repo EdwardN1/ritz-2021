@@ -1,25 +1,36 @@
 .breadcrumbs {
   text-transform: uppercase;
-  padding-bottom: 27px;
-  @include breakpoint(large) {
-    padding-bottom: 38px;
-  }
+  padding-bottom: 28px;
+  line-height: 1;
   margin: 0;
   color: $dark-gray;
   font-size: 10px;
   font-weight: $weight-medium;
+  @include letter-spacing(100);
+  @include breakpoint(large) {
+    padding-bottom: 38px;
+    line-height: 20px;
+  }
   a {
     color: $dark-gray;
     text-transform: uppercase;
     font-size: 10px;
     font-weight: $weight-medium;
     display: block;
+    line-height: 1;
+    padding-bottom: 8px;
     @include breakpoint(large) {
       display: inline-block;
+      line-height: 20px;
+      padding-bottom: 0;
     }
   }
 }
 .breadcrumb-spacer {
   width: 100%;
-  height: 9px;
+  height: 20px;
+  @include breakpoint(large) {
+    height: 9px;
+  }
+
 }

@@ -107,6 +107,7 @@ h3 {
   h1 {
     font-size: 22px;
     line-height: 22px;
+    margin-bottom: 13px;
     @include letter-spacing(50);
     @include breakpoint(medium) {
       font-size: 24px;
@@ -124,6 +125,7 @@ h3 {
     font-size: 12px;
     line-height: 15px;
     font-weight: $weight-medium;
+    margin-bottom: 0;
     @include letter-spacing(50);
     @include breakpoint(medium) {
       font-size: 14px;

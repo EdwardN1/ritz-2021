@@ -1,6 +1,7 @@
 .curator {
-  padding-top: 90px;
+  padding-top: 30px;
   @include breakpoint(large) {
+    padding-top: 90px;
     padding-left: 150px;
     padding-right: 150px;
     padding-bottom: 86px;
@@ -11,10 +12,17 @@
     margin: 0;
     font-size: 20px;
     line-height: 25px;
-    padding-bottom: 34px;
+    padding-bottom: 20px;
+    @include breakpoint(large) {
+      padding-bottom: 34px;
+    }
   }
   .crt-carousel-pane {
-    padding: 7px;
+    padding: 0;
+    padding-top: 7px;
+    @include breakpoint(568) {
+      padding: 7px;
+    }
     .crt-grid-post {
       padding: 10px;
     }
