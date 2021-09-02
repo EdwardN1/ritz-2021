@@ -114,7 +114,74 @@
                     </div>
                 </div>
             </div>
-		<?php endif; ?>
+            <?php if ( have_rows( 'offer_tiles' ) ) : ?>
+                <div class="block-ritz-page-carousel-block">
+                    <div class="heading text-center"><?php the_field( 'offers_heading' ); ?></div>
+                    <div class="ritz-page-carousel">
+                        <?php while ( have_rows( 'offer_tiles' ) ) : the_row(); ?>
+                            <div class="carousel-slide text-center">
+                                <?php $page = get_sub_field( 'offer_link' ); ?>
+                                <?php $href = get_sub_field( 'url' ); ?>
+                                <?php
+                                $link = '';
+                                $link_title = get_sub_field('link_text');
+                                $linkLen = '';
+                                if(strlen($link_title)<=8) {
+                                    $linkLen = 'short';
+                                }
+                                if(strlen($link_title)>=13) {
+                                    $linkLen = 'long';
+                                }
+                                if ( get_sub_field( 'external_link') == 1 ) {
+                                    if ( $href != '' ) {
+                                        $ytpos = strpos( $href, 'https://youtu.be/' );
+                                        if ( $ytpos === 0 ) {
+                                            $url_array = parse_url( $href );
+                                            $videoID   = '';
+                                            if ( is_array( $url_array ) ) {
+                                                if ( array_key_exists( 'path', $url_array ) ) {
+                                                    $videoID  = trim( $url_array['path'], '/' );
+                                                    $uniqueID = uniqid();
+                                                    ?>
+                                                    <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal data-id="<?php echo $uniqueID; ?>" data-ytvideoid="<?php echo $videoID; ?>">
+                                                        <div class="flex-video widescreen">
+                                                            <div id="feature-video-<?php echo $uniqueID; ?>">[this div will be converted to an iframe]</div>
+                                                        </div>
+                                                        <span class="close-reveal-modal" data-close>&times;</span>
+                                                    </div>
+                                                    <?php
+                                                    $link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn '.$linkLen.'">READ MORE</a>';
+                                                } else {
+                                                    $link = '<a href="' . esc_url( $href ) . '" class="button-underlined '.$linkLen.'">READ MORE</a>';
+                                                }
+                                            }
+                                        } else {
+                                            $link = '<a href="' . esc_url( $page ) . '" class="button-underlined '.$linkLen.'">READ MORE</a>';
+                                        }
+                                    }
+                                } else {
+                                    $link = '<a href="' . esc_url( $page ) . '" class="button-underlined '.$linkLen.'">READ MORE</a>';
+                                }
+                                ?>
+
+                                <?php $image = get_sub_field( 'offer_image' ); ?>
+                                <?php if ( $image ) : ?>
+                                    <div class="image"
+                                         style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)"></div>
+                                <?php endif; ?>
+                                <div class="slide-content">
+                                    <div class="aligner">
+                                        <div class="slide-heading"><?php echo $link_title; ?></div>
+                                        <div class="slide-link"><?php echo $link; ?></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
 
     </section>
 </article>

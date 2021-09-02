@@ -103,6 +103,10 @@
     }
   }
 
+  button {
+    outline: none !important;
+  }
+
   button.slick-prev {
     position: absolute;
     height: 20px;

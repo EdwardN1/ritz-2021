@@ -95,3 +95,13 @@
     }
   }
 }
+
+.ritz-accommodation {
+  .entry-content {
+    .block-ritz-two-column-experience-block {
+      @include breakpoint(large) {
+        padding-top: 70px;
+      }
+    }
+  }
+}

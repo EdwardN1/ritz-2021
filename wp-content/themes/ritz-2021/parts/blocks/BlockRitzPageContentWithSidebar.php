@@ -53,9 +53,13 @@ endif;
             <div class="cell shrink">
                 <div class="left">
                     <?php the_field('content'); ?>
-                    <div class="price-line">
-                        <?php the_field('price_line'); ?>
-                    </div>
+                    <?php if (get_field('price_line') != ''): ?>
+                        <div class="price-line">
+                            <?php the_field('price_line'); ?>
+                        </div>
+                    <?php else: ?>
+                        <p>&nbsp;</p>
+                    <?php endif; ?>
                     <?php $booking_type = get_field('booking_type'); ?>
 
                     <?php if ($booking_type != 'None'): ?>
@@ -129,7 +133,7 @@ endif;
                                     while (have_rows('accomodation_codes')) : the_row();
                                         $key = get_sub_field('key');
                                         $value = get_sub_field('value');
-                                        $query .= $selector . '$key' . '=' . $value;
+                                        $query .= $selector . $key . '=' . $value;
                                         $selector = '&';
                                     endwhile;
                                     ?>
@@ -409,7 +413,7 @@ endif;
                         while (have_rows('accomodation_codes')) : the_row();
                             $key = get_sub_field('key');
                             $value = get_sub_field('value');
-                            $query .= $selector . '$key' . '=' . $value;
+                            $query .= $selector . $key . '=' . $value;
                             $selector = '&';
                         endwhile;
                         ?>
@@ -589,11 +593,13 @@ endif;
             echo $output;
             ?>
         </div>
-
-        <div class="price-line">
-            <?php the_field('price_line'); ?>
-        </div>
-
+        <?php if (get_field('price_line') != ''): ?>
+            <div class="price-line">
+                <?php the_field('price_line'); ?>
+            </div>
+        <?php else: ?>
+        <p>&nbsp;</p>
+        <?php endif; ?>
         <div class="read-more">
             <button data-toggle="read-more-content" href="#">READ MORE</button>
         </div>
@@ -601,7 +607,7 @@ endif;
         <?php if (have_rows('footer_lines')) : ?>
             <div class="footer-lines">
                 <?php while (have_rows('footer_lines')) : the_row(); ?>
-                    <?php echo preg_replace('/<a href="mailto:(.+?)>.+?<\/a>/i','<a href="mailto:$1>HERE</a>',get_sub_field('line')); ?>&nbsp;
+                    <?php echo preg_replace('/<a href="mailto:(.+?)>.+?<\/a>/i', '<a href="mailto:$1>HERE</a>', get_sub_field('line')); ?>&nbsp;
                 <?php endwhile; ?>
             </div>
         <?php endif; ?>

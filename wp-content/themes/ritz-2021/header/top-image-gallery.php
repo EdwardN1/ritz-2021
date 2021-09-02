@@ -13,6 +13,7 @@
             <div class="cell auto links-social">
                 <div class="grid-x">
                     <div class="cell auto">&nbsp;</div>
+                    <div class="cell shrink link text-right"><a href="/the-ritz-experience/location/">FIND US</a></div>
                     <div class="cell shrink link text-right"><a href="/contact-us/">CONTACT US</a></div>
                     <div class="cell shrink link text-right"><a href="https://www.theritzlondonvouchers.com/" target="_blank">GIFT VOUCHERS</a></div>
                     <div class="cell shrink social">
@@ -60,6 +61,7 @@
             <?php //error_log('Loaded section'); ?>
             <div class="slider-slide">
                 <?php
+                $huge_heading = get_sub_field('huge_heading');
                 $slide_heading = get_sub_field('slide_heading');
                 $slide_sub_heading = get_sub_field('slide_sub_heading');
                 $slide_background = '';
@@ -103,7 +105,13 @@
                     <div class="slide-overlay<?php echo $slide_background;?>">
                         &nbsp;
                     </div>
+
                     <div class="slide-info">
+                        <?php if($huge_heading != ''):?>
+                            <div class="slide-huge">
+                                <div class="huge-heading"><?php echo $huge_heading; ?></div>
+                            </div>
+                        <?php endif;?>
                         <h2 class="h1"><?php echo $slide_heading; ?></h2>
                         <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                     </div>

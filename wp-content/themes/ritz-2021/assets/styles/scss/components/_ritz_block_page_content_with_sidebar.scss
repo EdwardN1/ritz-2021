@@ -92,6 +92,9 @@
       text-transform: uppercase;
       padding-top: 50px;
       @include letter-spacing(50);
+      a {
+        text-decoration: underline;
+      }
     }
   }
 
