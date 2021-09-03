@@ -15,10 +15,14 @@
     .left {
       max-width: 575px;
       padding-right: 50px;
+      a {
+        text-decoration: underline;
+      }
       p {
         font-size: 15px;
         line-height: 22px;
         margin-bottom: 20px;
+        @include letter-spacing(10);
       }
     }
     .right {
