@@ -204,6 +204,10 @@ endif;
 										if ( $link_to == 'URL' ) {
 											$href = get_sub_field( 'url' );
 										}
+                                        if ( $link_to == 'File' ) {
+                                            $href = get_sub_field( 'file' );
+                                            $target = ' target="_blank"';
+                                        }
 										if ( $link_to == 'Popup' ) {
 											$popup_content = get_sub_field( 'popup' );
 											$uniqueID      = uniqid();
@@ -223,6 +227,15 @@ endif;
 														if ( $popup_content == 'Restaurant Sittings' ) {
 															echo get_field( 'restaurant_sittings', 'option' );
 														}
+                                                        if ( $popup_content == 'Restaurant Terrace Sittings' ) {
+                                                            echo get_field( 'restaurant_terrace_sittings', 'option' );
+                                                        }
+                                                        if ( $popup_content == 'The Ritz Garden Sittings' ) {
+                                                            echo get_field( 'the_ritz_garden_sittings', 'option' );
+                                                        }
+                                                        if ( $popup_content == 'Afternoon Tea Sittings' ) {
+                                                            echo get_field( 'afternoon_tea_sittings', 'option' );
+                                                        }
 														?>
                                                     </div>
                                                     <span class="close-reveal-modal" data-close>&times;</span>
