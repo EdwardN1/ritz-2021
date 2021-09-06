@@ -76,8 +76,8 @@ endif;
                         <?php the_field('price'); ?>
                     </div>
                     <div class="links">
-                        <div class="grid-x">
-                            <div class="cell auto text-center">
+                        <div class="grid-x grid-padding-x grid-padding-y">
+                            <div class="cell large-auto medium-12 small-auto text-center">
                                 <?php
                                 $link_to = get_field('link_to');
                                 $target = '';
@@ -105,7 +105,7 @@ endif;
                                 ?>
                                 <?php echo $left_link; ?>
                             </div>
-                            <div class="cell auto text-center">
+                            <div class="cell large-auto medium-12 small-auto text-center">
                                 <?php
                                 $booking_options = get_field('booking_options');
                                 $booking_link_text = get_field('booking_link_text');
@@ -160,7 +160,7 @@ endif;
                                 if ($booking_options == 'Page') {
                                     $page = get_field('page');
                                     ?>
-                                    <a href="<?php echo esc_url($page); ?>"><?php echo $booking_link_text; ?></a>
+                                    <a href="<?php echo esc_url($page); ?>" class="button-ritz"><?php echo $booking_link_text; ?></a>
                                     <?php
                                 };
                                 ?>

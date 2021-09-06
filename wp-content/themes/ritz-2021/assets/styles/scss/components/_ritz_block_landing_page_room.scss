@@ -76,9 +76,13 @@
       min-height: 78.125vw;
       @include breakpoint(medium) {
         min-height: 300px;
+        padding-top: 30px;
+        padding-bottom: 30px;
       }
       @include breakpoint(large) {
         min-height: 498px;
+        padding-top: 0;
+        padding-bottom: 0;
       }
       .v-content {
         display: block;
@@ -100,7 +104,7 @@
   }
 }
 
-.ritz-accommodation {
+.ritz-accommodation, .ritz-dining {
   .entry-content {
     .block-ritz-landing-page-room-block:first-of-type {
       @include breakpoint(large) {

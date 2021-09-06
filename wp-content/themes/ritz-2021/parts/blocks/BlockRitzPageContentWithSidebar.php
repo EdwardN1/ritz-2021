@@ -236,9 +236,6 @@ endif;
                                                         if ( $popup_content == 'Afternoon Tea Sittings' ) {
                                                             echo get_field( 'afternoon_tea_sittings', 'option' );
                                                         }
-                                                        if ( $popup_content == 'Rivoli Bar Opening Times' ) {
-                                                            echo get_field( 'rivoli_bar_opening_times', 'option' );
-                                                        }
 														?>
                                                     </div>
                                                     <span class="close-reveal-modal" data-close>&times;</span>
