@@ -221,6 +221,9 @@ endif;
 														if ( $popup_content == 'Entertainment' ) {
 															echo get_field( 'entertainment', 'option' );
 														}
+                                                        if ( $popup_content == 'Palm Court Entertainment' ) {
+                                                            echo get_field( 'palm_court_entertainment', 'option' );
+                                                        }
 														if ( $popup_content == 'Dress Code' ) {
 															echo get_field( 'dress_code', 'option' );
 														}
@@ -235,6 +238,9 @@ endif;
                                                         }
                                                         if ( $popup_content == 'Afternoon Tea Sittings' ) {
                                                             echo get_field( 'afternoon_tea_sittings', 'option' );
+                                                        }
+                                                        if ( $popup_content == 'Palm Court Sittings' ) {
+                                                            echo get_field( 'palm_court_sittings', 'option' );
                                                         }
 														?>
                                                     </div>
