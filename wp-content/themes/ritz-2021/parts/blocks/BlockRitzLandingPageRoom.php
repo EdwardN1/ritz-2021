@@ -158,7 +158,7 @@ endif;
                                     endif;
                                 };
                                 if ($booking_options == 'Page') {
-                                    $page = get_field('page');
+                                    $page = get_field('page_booking');
                                     ?>
                                     <a href="<?php echo esc_url($page); ?>" class="button-ritz"><?php echo $booking_link_text; ?></a>
                                     <?php
