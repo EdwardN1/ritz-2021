@@ -32,6 +32,14 @@
     padding-top: 25px;
   }
 
+  .left, .right {
+    p {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
   @include breakpoint(medium) {
     padding-top: 25px;
     .left {

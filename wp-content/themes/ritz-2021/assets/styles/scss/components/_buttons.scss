@@ -1,4 +1,4 @@
-.button-underline {
+/*.button-underline {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: $weight-semi-bold;
@@ -15,6 +15,78 @@
     left: 1px;
     right: 1px;
   }
+}*/
+
+.facebook, .instagram, .twitter, .youtube, .linkedin {
+  background-image: url("../images/facebook.svg");
+  height: 24px;
+  width: 16px;
+  background-position: center;
+  background-size: 16px auto;
+  display: inline-block;
+  position: relative;
+  background-repeat: no-repeat;
+  &:hover {
+    background-image: url("../images/facebook-grey.svg");
+  }
+  &.blue {
+    background-image: url("../images/facebook-blue.svg");
+    &:hover {
+      background-image: url("../images/facebook-grey.svg");
+    }
+  }
+}
+
+.instagram {
+  background-image: url("../images/instagram.svg");
+  &:hover {
+    background-image: url("../images/instagram-grey.svg");
+  }
+  &.blue {
+    background-image: url("../images/instagram-blue.svg");
+    &:hover {
+      background-image: url("../images/instagram-grey.svg");
+    }
+  }
+}
+
+.twitter {
+  background-image: url("../images/twitter.svg");
+  &:hover {
+    background-image: url("../images/twitter-grey.svg");
+  }
+  &.blue {
+    background-image: url("../images/twitter-blue.svg");
+    &:hover {
+      background-image: url("../images/twitter-grey.svg");
+    }
+  }
+}
+
+.youtube {
+  background-image: url("../images/youtube.svg");
+  &:hover {
+    background-image: url("../images/youtube-grey.svg");
+  }
+  /*&.blue {
+    background-image: url("../images/youtube-blue.svg");
+    &:hover {
+      background-image: url("../images/youtube-grey.svg");
+    }
+  }*/
+}
+
+.linkedin {
+  background-image: url("../images/linkedin.svg");
+  &:hover {
+    background-image: url("../images/linkedin-grey.svg");
+  }
+  /*&.blue {
+    background-image: url("../images/youtube-blue.svg");
+    &:hover {
+      background-image: url("../images/youtube-grey.svg");
+    }
+  }*/
 }
 
 .button-white {
@@ -59,7 +131,7 @@
   }
 }
 
-.button-underlined, .t5-page-grid .block-ritz-two-column-experience-block .content a {
+.button-underlined, .button-underline, .t5-page-grid .block-ritz-two-column-experience-block .content a {
   color: $ritz-blue;
   font-weight: $weight-semi-bold;
   text-transform: uppercase;
@@ -85,8 +157,10 @@
     margin-top: 5px;
   }
   &:hover {
+    color: $dark-gray;
     &:after {
       width: 60px;
+      background-color: $dark-gray;
     }
   }
   &.short {

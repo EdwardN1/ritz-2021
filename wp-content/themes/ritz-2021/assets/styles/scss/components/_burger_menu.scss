@@ -1,4 +1,7 @@
 #off-canvas {
+  > .grid-container {
+    padding-bottom: 100px;
+  }
   .close-button {
     left: 20px;
     right: auto;
@@ -194,6 +197,9 @@
       line-height: 13px;
       text-transform: uppercase;
       padding-right: 35px;
+      &:hover {
+        color: $ritz-blue;
+      }
     }
   }
 }

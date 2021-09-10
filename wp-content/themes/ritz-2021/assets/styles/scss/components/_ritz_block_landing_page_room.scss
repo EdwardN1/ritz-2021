@@ -86,6 +86,7 @@
       }
       .v-content {
         display: block;
+        padding-top: 15px;
       }
     }
     @include breakpoint(medium) {

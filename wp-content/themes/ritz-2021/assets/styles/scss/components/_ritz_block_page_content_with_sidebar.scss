@@ -84,6 +84,7 @@
       font-weight: $weight-medium;
       padding-bottom: 40px;
       text-transform: uppercase;
+      @include letter-spacing(50);
       @include breakpoint(large) {
         padding-top: 28px;
         padding-bottom: 50px;
@@ -97,7 +98,7 @@
       padding-top: 50px;
       @include letter-spacing(50);
       a {
-        text-decoration: underline;
+        text-decoration: none;
       }
     }
   }
