@@ -1,5 +1,6 @@
 .curator {
   padding-top: 30px;
+  padding-bottom: 90px;
   @include breakpoint(large) {
     padding-top: 90px;
     padding-left: 150px;
@@ -25,6 +26,14 @@
     }
     .crt-grid-post {
       padding: 10px;
+    }
+  }
+  .crt-panel-next, .crt-panel-prev {
+    top: auto;
+    bottom: -90px;
+    @include breakpoint(medium) {
+      bottom: auto;
+      top: 50%;
     }
   }
 }

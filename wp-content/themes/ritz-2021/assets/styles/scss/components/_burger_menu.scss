@@ -35,6 +35,7 @@
     a {
       text-transform: uppercase;
       color: $ritz-blue;
+      @include letter-spacing(50);
       &.top-level-link {
         font-size: 18px;
         padding-left: 10px;

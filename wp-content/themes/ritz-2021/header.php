@@ -175,7 +175,7 @@ global $ritz_template_name;
                     <div class="grid-x">
                         <div class="cell auto menu-button">
                             <a data-toggle="off-canvas"><img
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/menu-burger-button-blue.svg"></a>
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/mobile-menu-burger-button-blue.svg"></a>
                         </div>
                         <div class="cell shrink logo">
                             <a href="/"><img
