@@ -141,7 +141,7 @@ endif;
             <div class="right">
                 <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
 			        <?php if ( $image_iframe_link != '' ): ?>
-                        <a data-open="<?php echo $uniqueID;?>" class="mag-reveal iframe"></a>
+                        <a href="<?php echo $image_iframe_link;?>" class="mag-reveal iframe" target="_blank"></a>
 			        <?php endif; ?>
                 </div>
             </div>
