@@ -612,35 +612,35 @@ endif;
 						echo '<div class="button-row"><div class="button-container"><a href="' . esc_url( $href ) . '" class="link button-underlined long"' . $target . '>' . $title . '</a></div></div>';
 					}
 				}
-				if ( $link_to == 'Gallery' ) {
+				/*if ( $link_to == 'Gallery' ) {
 					$uniqueID = uniqid();
 					if ( have_rows( 'image_gallery' ) ) {
-						?>
-                        <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal
-                             data-galleryid="<?php echo $uniqueID; ?>">
+						*/?><!--
+                        <div id="<?php /*echo $uniqueID; */?>" class="reveal-modal" data-reveal
+                             data-galleryid="<?php /*echo $uniqueID; */?>">
                             <div class="gallery-container">
-                                <div id="gallery-slick-<?php echo $uniqueID; ?>" class="gallery-slick">
+                                <div id="gallery-slick-<?php /*echo $uniqueID; */?>" class="gallery-slick">
 									<?php
-									while ( have_rows( 'image_gallery' ) ) : the_row();
+/*									while ( have_rows( 'image_gallery' ) ) : the_row();
 										$image = get_sub_field( 'image' );
-										?>
+										*/?>
                                         <div class="gallery-image"
-                                             style="background-image: url(<?php echo $image['url']; ?>);"></div>
+                                             style="background-image: url(<?php /*echo $image['url']; */?>);"></div>
 									<?php
-									endwhile;
-									?>
+/*									endwhile;
+									*/?>
                                 </div>
                             </div>
                             <span class="close-reveal-modal" data-close>&times;</span>
                         </div>
                         <div class="button-row">
-                            <div class="button-container"><a data-open="<?php echo $uniqueID; ?>"
-                                                             class="link button-underlined long"><?php echo $title; ?> </a>
+                            <div class="button-container"><a data-open="<?php /*echo $uniqueID; */?>"
+                                                             class="link button-underlined long"><?php /*echo $title; */?> </a>
                             </div>
                         </div>
-						<?php
-					}
-				}
+						--><?php
+/*					}
+				}*/
 				?>
 			<?php endwhile; ?>
         </div>

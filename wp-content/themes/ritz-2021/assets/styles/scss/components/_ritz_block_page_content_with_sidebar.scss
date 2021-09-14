@@ -160,8 +160,9 @@
                   padding-bottom: 12px;
                   font-size: 14px;
                   line-height: 20px;
-                  text-indent: -10px;
-
+                  @include breakpoint(medium) {
+                    text-indent: -10px;
+                  }
                   &:before {
                     content: "- ";
                     text-indent: -10px;
