@@ -641,6 +641,22 @@ endif;
 						--><?php
 /*					}
 				}*/
+				if ( $link_to == 'iFrame' ) {
+					$iframe_link = get_sub_field( 'iframe_link' );
+					if ( $iframe_link != '' ) {
+						?>
+                        <div class="button-row">
+                            <div class="button-container">
+                                <!--<a data-open="<?php /*echo $uniqueID; */?>"
+                                   class="link button-underlined long"><?php /*echo $title; */?></a>-->
+                                <a href="<?php echo $iframe_link; ?>" target="_blank"
+                                   class="link button-underlined long"><?php echo $title; ?></a>
+                            </div>
+                        </div>
+						<?php
+					}
+				}
+
 				?>
 			<?php endwhile; ?>
         </div>
@@ -671,10 +687,11 @@ endif;
 		<?php else: ?>
             <p>&nbsp;</p>
 		<?php endif; ?>
+        <?php if($count > 3 ):?>
         <div class="read-more">
             <button data-toggle="read-more-content" href="#"><span class="more">READ MORE</span><span class="less">READ LESS</span></button>
         </div>
-
+        <?php endif;?>
 		<?php if ( have_rows( 'footer_lines' ) ) : ?>
             <div class="footer-lines">
 				<?php while ( have_rows( 'footer_lines' ) ) : the_row(); ?>

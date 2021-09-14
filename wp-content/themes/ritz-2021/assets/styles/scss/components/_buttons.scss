@@ -142,12 +142,15 @@
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
+  outline: none !important;
   @include letter-spacing(100);
   &:after {
     content: " ";
     position: relative;
     display: block;
     height: 1px;
+    max-height: 1px;
+    min-height: 1px;
     width: 100%;
     bottom: 0;
     background-color: $ritz-blue;

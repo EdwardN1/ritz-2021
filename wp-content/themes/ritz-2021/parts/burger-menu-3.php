@@ -65,7 +65,7 @@ global $no_menu_page;
                             }
                         }
                     }
-                    if ($currentpage) error_log('Current Page is True');
+                    //if ($currentpage) error_log('Current Page is True');
                     $active_class = '';
                     if (($no_menu_page) && ($i == 1)):
                         $active_class = ' not-active';
