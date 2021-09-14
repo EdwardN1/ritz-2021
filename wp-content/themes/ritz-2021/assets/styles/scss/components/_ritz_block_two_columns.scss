@@ -36,10 +36,17 @@
   .container {
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 31px;
-    padding-bottom: 31px;
+    padding-top: 30px;
+    padding-bottom: 28px;
+    @include breakpoint(medium) {
+      padding-top: 31px;
+      padding-bottom: 31px;
+    }
     .content {
-      padding-bottom: 24px;
+      padding-bottom: 19px;
+      @include breakpoint(medium) {
+        padding-bottom: 24px;
+      }
       p {
         &:last-of-type {
           margin-bottom: 0;

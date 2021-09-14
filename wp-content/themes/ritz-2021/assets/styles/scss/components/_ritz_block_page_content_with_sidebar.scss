@@ -129,6 +129,8 @@
               text-transform: uppercase;
               background-color: $light-gray;
               padding-bottom: 22px;
+              font-weight: $weight-medium;
+              @include letter-spacing(50);
               @include breakpoint(large) {
                 padding-bottom: 14px;
               }
@@ -200,6 +202,12 @@
         position: relative;
         padding-right: 32px;
         outline: none !important;
+        .less {
+          display: none;
+        }
+        .more {
+          display: inline;
+        }
         &:after {
           content: " ";
           background-position: top right;
@@ -217,6 +225,12 @@
           background-image: url("../images/read-more-open.svg");
           background-position: center;
         }
+        .more {
+          display: none;
+        }
+        .less {
+          display: inline;
+        }
       }
     }
     .read-more[aria-expanded="true"] {
@@ -224,6 +238,12 @@
         &:after {
           background-image: url("../images/read-more-open.svg");
           background-position: center;
+        }
+        .more {
+          display: none;
+        }
+        .less {
+          display: inline;
         }
       }
     }
@@ -234,6 +254,9 @@
       @include letter-spacing(100);
       a {
         text-decoration: underline;
+      }
+      a[href^="tel:"] {
+        text-decoration: none;
       }
     }
     .buttons {

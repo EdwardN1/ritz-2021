@@ -16,7 +16,6 @@
   }
   .content {
     text-align: center;
-    padding-bottom: 3px;
     @include letter-spacing(10);
     @include breakpoint(medium) {
       font-size: 13px;
@@ -28,12 +27,18 @@
       font-size: 15px;
       line-height: 22px;
     }
+    p:last-of-type {
+      margin-bottom: 25px;
+      @include breakpoint(medium) {
+        margin-bottom: 2em;
+      }
+    }
   }
   .price {
     text-align: center;
     text-transform: uppercase;
     font-weight: $weight-medium;
-    padding-bottom:22px;
+    padding-bottom:15px;
     @include letter-spacing(50);
     @include breakpoint(medium) {
       padding-bottom: 30px;
@@ -50,7 +55,7 @@
       text-transform: uppercase;
       margin: 0;
       @include letter-spacing(50);
-      padding-bottom: 12px;
+      padding-bottom: 25px;
       @include breakpoint(medium) {
         font-size: 18px;
         line-height: 22px;
@@ -86,7 +91,12 @@
       }
       .v-content {
         display: block;
-        padding-top: 15px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        @include breakpoint(medium) {
+          padding-top: 15px;
+          padding-bottom: 0;
+        }
       }
     }
     @include breakpoint(medium) {

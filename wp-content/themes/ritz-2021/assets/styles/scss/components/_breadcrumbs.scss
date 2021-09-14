@@ -1,12 +1,15 @@
 .breadcrumbs {
   text-transform: uppercase;
-  padding-bottom: 28px;
   line-height: 1;
   margin: 0;
   color: $dark-gray;
   font-size: 10px;
   font-weight: $weight-medium;
   @include letter-spacing(100);
+  padding-bottom: 35px;
+  @include breakpoint(medium) {
+    padding-bottom: 28px;
+  }
   @include breakpoint(large) {
     padding-bottom: 38px;
     line-height: 20px;

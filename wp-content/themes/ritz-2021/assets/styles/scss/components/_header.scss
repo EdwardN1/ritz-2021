@@ -428,8 +428,10 @@ header.header {
       .slide-info {
         position: absolute;
         width: 100%;
-        bottom: 35%;
+        bottom: 50%;
+        padding-top: 32px;
         @include breakpoint(568) {
+          padding-top: 0;
           bottom: 15%;
         }
         @include breakpoint(large)

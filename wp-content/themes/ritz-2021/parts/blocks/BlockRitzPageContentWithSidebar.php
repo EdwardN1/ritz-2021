@@ -672,7 +672,7 @@ endif;
             <p>&nbsp;</p>
 		<?php endif; ?>
         <div class="read-more">
-            <button data-toggle="read-more-content" href="#">READ MORE</button>
+            <button data-toggle="read-more-content" href="#"><span class="more">READ MORE</span><span class="less">READ LESS</span></button>
         </div>
 
 		<?php if ( have_rows( 'footer_lines' ) ) : ?>
