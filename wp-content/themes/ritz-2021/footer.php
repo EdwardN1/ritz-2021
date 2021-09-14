@@ -56,17 +56,14 @@
 <div class="grid-container curator">
     <!-- Place <div> tag where you want the feed to appear -->
     <h2>Follow Us</h2>
-    <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+    <div id="curator-feed-the-ritz-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
     <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
     <script type="text/javascript">
-        /* curator-feed-default-feed-layout */
-        (function () {
-            var i, e, d = document, s = "script";
-            i = d.createElement("script");
-            i.async = 1;
-            i.src = "https://cdn.curator.io/published/678fb0f1-abb8-4448-9f19-2775d5cfa7c4.js";
-            e = d.getElementsByTagName(s)[0];
-            e.parentNode.insertBefore(i, e);
+        /* curator-feed-the-ritz-layout */
+        (function(){
+            var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+            i.src = "https://cdn.curator.io/published/ec1d9988-00d8-4753-93ab-2d8801342333.js";
+            e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
         })();
     </script>
 </div>
