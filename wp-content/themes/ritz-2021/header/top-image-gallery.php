@@ -57,6 +57,7 @@
 <div id="ritz-main-image-gallery" class="main-image-gallery">
     <?php while (have_rows('image_gallery')) : the_row(); ?>
         <?php $slide = get_sub_field('slide'); ?>
+	    <?php $mobile_image = get_sub_field( 'mobile_image' ); ?>
         <?php if ($slide) : ?>
             <?php //error_log('Loaded section'); ?>
             <div class="slider-slide">
@@ -101,6 +102,7 @@
                 ?>
 
                 <?php echo $link_open; ?>
+	            <?php if ( (get_sub_field( 'add_mobile_image' ) != 1) || (!$mobile_image) ) : ?>
                 <div class="slide-container" style="background-image: url(<?php echo esc_url($slide['url']); ?>)">
                     <div class="slide-overlay<?php echo $slide_background;?>">
                         &nbsp;
@@ -116,6 +118,39 @@
                         <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                     </div>
                 </div>
+                <?php else: ?>
+                    <div class="slide-container show-for-medium" style="background-image: url(<?php echo esc_url($slide['url']); ?>)">
+                        <div class="slide-overlay<?php echo $slide_background;?>">
+                            &nbsp;
+                        </div>
+
+                        <div class="slide-info">
+				            <?php if($huge_heading != ''):?>
+                                <div class="slide-huge">
+                                    <div class="huge-heading"><?php echo $huge_heading; ?></div>
+                                </div>
+				            <?php endif;?>
+                            <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                            <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
+                        </div>
+                    </div>
+                    <div class="slide-container hide-for-medium" style="background-image: url(<?php echo esc_url($mobile_image['url']); ?>)">
+                        <div class="slide-overlay<?php echo $slide_background;?>">
+                            &nbsp;
+                        </div>
+
+                        <div class="slide-info">
+				            <?php if($huge_heading != ''):?>
+                                <div class="slide-huge">
+                                    <div class="huge-heading"><?php echo $huge_heading; ?></div>
+                                </div>
+				            <?php endif;?>
+                            <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                            <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
+                        </div>
+                    </div>
+                <?php endif;?>
+
                 <?php echo $link_close; ?>
 
             </div>

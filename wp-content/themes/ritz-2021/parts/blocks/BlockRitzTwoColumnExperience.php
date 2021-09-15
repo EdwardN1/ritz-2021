@@ -51,25 +51,26 @@ endif;
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 	<?php $image_position = get_field( 'image_position' ); ?>
 	<?php $image = get_field( 'image' ); ?>
+	<?php $mobile_image = get_field( 'mobile_image' ); ?>
 	<?php $image_iframe_link = get_field( 'image_iframe_link' ); ?>
     <div class="grid-x show-for-medium">
         <div class="cell large-6 medium-6 small-12">
-	        <?php if ( ($image_iframe_link != '')&&(!$is_preview) ): ?>
-		        <?php  $uniqueID = uniqid(); ?>
+			<?php if ( ( $image_iframe_link != '' ) && ( ! $is_preview ) ): ?>
+				<?php $uniqueID = uniqid(); ?>
                 <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal data-id="<?php echo $uniqueID; ?>">
                     <div class="virtual-tour">
-                        <iframe src="<?php echo  $image_iframe_link;?>" style="width: 100%; height: 60vh;"></iframe>
+                        <iframe src="<?php echo $image_iframe_link; ?>" style="width: 100%; height: 60vh;"></iframe>
                     </div>
                     <span class="close-reveal-modal" data-close>&times;</span>
                 </div>
-	        <?php endif; ?>
+			<?php endif; ?>
 			<?php
 			if ( $image_position == 'Left' ) {
 				?>
                 <div class="left">
                     <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
 						<?php if ( $image_iframe_link != '' ): ?>
-                            <a data-open="<?php echo $uniqueID;?>" class="mag-reveal iframe"></a>
+                            <a data-open="<?php echo $uniqueID; ?>" class="mag-reveal iframe"></a>
 						<?php endif; ?>
                     </div>
                 </div>
@@ -98,9 +99,9 @@ endif;
 				?>
                 <div class="right">
                     <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
-	                    <?php if ( $image_iframe_link != '' ): ?>
-                            <a data-open="<?php echo $uniqueID;?>" class="mag-reveal iframe"></a>
-	                    <?php endif; ?>
+						<?php if ( $image_iframe_link != '' ): ?>
+                            <a data-open="<?php echo $uniqueID; ?>" class="mag-reveal iframe"></a>
+						<?php endif; ?>
                     </div>
                 </div>
 				<?php
@@ -126,25 +127,29 @@ endif;
     <div class="grid-x hide-for-medium">
         <div class="cell large-6 medium-6 small-12">
             <div class="left">
-		        <?php $heading = get_field( 'heading' ); ?>
-		        <?php if ( $heading != '' ): ?>
+				<?php $heading = get_field( 'heading' ); ?>
+				<?php if ( $heading != '' ): ?>
                     <div class="heading"><h3><?php echo $heading; ?></h3></div>
-		        <?php endif; ?>
+				<?php endif; ?>
                 <div class="content"><?php the_field( 'content' ); ?></div>
-		        <?php $page_link = get_field( 'page_link' ); ?>
-		        <?php if ( $page_link ) : ?>
+				<?php $page_link = get_field( 'page_link' ); ?>
+				<?php if ( $page_link ) : ?>
                     <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
-		        <?php endif; ?>
+				<?php endif; ?>
             </div>
         </div>
         <div class="cell large-6 medium-6 small-12">
             <div class="right">
-                <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
-			        <?php if ( $image_iframe_link != '' ): ?>
-                        <a href="<?php echo $image_iframe_link;?>" class="mag-reveal iframe" target="_blank"></a>
-			        <?php endif; ?>
+				<?php if ( ( get_field( 'add_mobile_image' ) == 1 ) && ( $mobile_image ) ) : ?>
+                <div class="image" style="background-image: url(<?php echo esc_url( $mobile_image['url'] ); ?>)">
+					<?php else: ?>
+                    <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
+						<?php endif; ?>
+						<?php if ( $image_iframe_link != '' ): ?>
+                            <a href="<?php echo $image_iframe_link; ?>" class="mag-reveal iframe" target="_blank"></a>
+						<?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
