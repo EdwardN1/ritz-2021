@@ -41,7 +41,7 @@ global $ritz_template_name;
 
 </head>
 
-<body <?php body_class($ritz_template_name); ?>>
+<body <?php body_class( $ritz_template_name ); ?>>
 
 <div class="off-canvas-wrapper">
 
@@ -181,6 +181,11 @@ global $ritz_template_name;
                             <a href="/"><img
                                         src="<?php echo get_template_directory_uri(); ?>/assets/images/ritz-fixed-header-logo.svg"
                                         class="ritz-logo"></a>
+                        </div>
+                        <div class="cell auto text-right links-social">
+                            <a href="/contact-us/" aria-expanded="false" aria-controls="off-canvas">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bell-blue.svg">
+                            </a>
                         </div>
                     </div>
                 </div>

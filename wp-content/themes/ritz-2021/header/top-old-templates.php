@@ -125,7 +125,7 @@
                                     class="ritz-logo"></a>
                     </div>
                     <div class="cell auto links-social text-right">
-                        <a data-toggle="off-canvas"><img
+                        <a href="/contact-us/"><img
                                     src="<?php echo get_template_directory_uri(); ?>/assets/images/bell-blue.svg"></a>
                     </div>
                 </div>

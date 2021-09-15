@@ -186,6 +186,9 @@
         font-size: 14px;
         font-weight: $weight-medium;
         line-height: 18px;
+        &:hover {
+          color: $ritz-blue;
+        }
       }
     }
   }
