@@ -72,9 +72,12 @@ endif;
                     <div class="content">
                         <?php the_field('content'); ?>
                     </div>
+	                <?php $price = get_field('price'); ?>
+                    <?php if($price != ''): ?>
                     <div class="price">
                         <?php the_field('price'); ?>
                     </div>
+                    <?php endif;?>
                     <div class="links">
                         <div class="grid-x grid-padding-x grid-padding-y">
                             <div class="cell large-auto medium-12 small-auto text-center">

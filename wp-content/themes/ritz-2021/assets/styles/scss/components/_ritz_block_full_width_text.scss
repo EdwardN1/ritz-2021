@@ -22,7 +22,7 @@
       p:last-of-type {
         margin-bottom: 10px;
         @include breakpoint(medium) {
-          margin-bottom: 2em;
+          margin-bottom: 0;
         }
       }
     }

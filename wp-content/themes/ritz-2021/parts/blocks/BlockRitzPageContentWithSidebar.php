@@ -59,7 +59,7 @@ endif;
 							<?php the_field( 'price_line' ); ?>
                         </div>
 					<?php else: ?>
-                        <p>&nbsp;</p>
+                        <!--<p>&nbsp;</p>-->
 					<?php endif; ?>
 					<?php $booking_type = get_field( 'booking_type' ); ?>
 
@@ -388,7 +388,11 @@ endif;
 
     </div>
     <div class="page-content-mobile hide-for-large">
-
+	    <?php if ( get_field( 'price_line' ) != '' ): ?>
+            <div class="price-line text-center" style="padding-top: 25px; padding-bottom: 4px;">
+			    <?php the_field( 'price_line' ); ?>
+            </div>
+	    <?php endif; ?>
 		<?php $booking_type = get_field( 'booking_type' ); ?>
 		<?php if ( $booking_type != 'None' ): ?>
             <div class="booking-line">
@@ -685,7 +689,7 @@ endif;
 				<?php the_field( 'price_line' ); ?>
             </div>
 		<?php else: ?>
-            <p>&nbsp;</p>
+            <!--<p>&nbsp;</p>-->
 		<?php endif; ?>
         <?php if($count > 3 ):?>
         <div class="read-more">

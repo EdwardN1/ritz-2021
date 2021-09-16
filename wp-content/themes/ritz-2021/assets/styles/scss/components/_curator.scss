@@ -31,9 +31,52 @@
   .crt-panel-next, .crt-panel-prev {
     top: auto;
     bottom: -90px;
+    background-color: transparent;
+    svg {
+      display: none;
+    }
+    &:after {
+      content: " ";
+      width: 60px;
+      height: 60px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     @include breakpoint(medium) {
       bottom: auto;
       top: 50%;
+      background-color: rgba(151,152,172,.27);
+      svg {
+        display: inline;
+      }
+      &:after {
+        content: none;
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+  .crt-controls-over .crt-panel-next {
+    right: 30px;
+    @include breakpoint(medium) {
+      right: 10px;
+    }
+    &:after {
+      background-image: url("../images/curator-next.svg");
+    }
+  }
+
+  .crt-controls-over .crt-panel-prev {
+    left: 30px;
+    @include breakpoint(medium) {
+      left: 10px;
+    }
+    &:after {
+      background-image: url("../images/curator-prev.svg");
     }
   }
 }
