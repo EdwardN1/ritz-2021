@@ -87,7 +87,12 @@
       @include letter-spacing(50);
       @include breakpoint(large) {
         padding-top: 28px;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
+      }
+    }
+    .booking-line {
+      @include breakpoint(medium) {
+        padding-top: 25px;
       }
     }
     .footer-lines {
@@ -96,6 +101,9 @@
       line-height: 18px;
       text-transform: uppercase;
       padding-top: 50px;
+      &.short-top {
+        padding-top: 25px;
+      }
       @include letter-spacing(50);
       a {
         text-decoration: none;

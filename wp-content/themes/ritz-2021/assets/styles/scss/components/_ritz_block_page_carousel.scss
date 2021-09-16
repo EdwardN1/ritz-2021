@@ -18,6 +18,7 @@
     font-size: 18px;
     line-height: 20px;
     padding-bottom: 32px;
+    @include letter-spacing(50);
     @include breakpoint(large) {
       padding-bottom: 50px;
       font-size: 20px;
@@ -40,6 +41,7 @@
       /*width: 280px;*/
       width: 100%;
       height: 218px;
+      position: relative;
       @include breakpoint(medium) {
         width: 324px;
         height: 250px;
@@ -51,6 +53,15 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+      .image-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .slide-content {

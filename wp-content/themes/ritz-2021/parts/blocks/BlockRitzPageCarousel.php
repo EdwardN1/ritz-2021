@@ -116,23 +116,27 @@ endif;
                                         </div>
 										<?php
 										$link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn '.$linkLen.'">' . $link_title . '</a>';
+										$imageLink = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link feature-modal-btn '.$linkLen.'"></a>';
 									} else {
 										$link = '<a href="' . esc_url( $href ) . '" class="button-underlined '.$linkLen.'">' . $link_title . '</a>';
+										$imageLink = '<a href="' . esc_url( $href ) . '" class="image-link"></a>';
 									}
 								}
 							} else {
 								$link = '<a href="' . esc_url( $page ) . '" class="button-underlined '.$linkLen.'">' . $link_title . '</a>';
+								$imageLink = '<a href="' . esc_url( $page ) . '" class="image-link"></a>';
 							}
 						}
 					} else {
 						$link = '<a href="' . esc_url( $page ) . '" class="button-underlined '.$linkLen.'">' . $link_title . '</a>';
+						$imageLink = '<a href="' . esc_url( $page ) . '" class="image-link"></a>';
 					}
 					?>
 
 					<?php $image = get_sub_field( 'image' ); ?>
 					<?php if ( $image ) : ?>
                         <div class="image"
-                             style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)"></div>
+                             style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)"><?php echo $imageLink;?></div>
 					<?php endif; ?>
                     <div class="slide-content">
                         <div class="aligner">

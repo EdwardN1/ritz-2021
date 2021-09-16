@@ -166,11 +166,19 @@ endif;
 					<?php endif; ?>
 
 					<?php if ( have_rows( 'footer_lines' ) ) : ?>
-                        <div class="footer-lines">
-							<?php while ( have_rows( 'footer_lines' ) ) : the_row(); ?>
-								<?php the_sub_field( 'line' ); ?><br>
-							<?php endwhile; ?>
-                        </div>
+						<?php if ( $booking_type == 'None' ): ?>
+                            <div class="footer-lines short-top">
+								<?php while ( have_rows( 'footer_lines' ) ) : the_row(); ?>
+									<?php the_sub_field( 'line' ); ?><br>
+								<?php endwhile; ?>
+                            </div>
+						<?php else: ?>
+                            <div class="footer-lines">
+								<?php while ( have_rows( 'footer_lines' ) ) : the_row(); ?>
+									<?php the_sub_field( 'line' ); ?><br>
+								<?php endwhile; ?>
+                            </div>
+						<?php endif; ?>
 					<?php endif; ?>
                 </div>
             </div>
@@ -204,10 +212,10 @@ endif;
 										if ( $link_to == 'URL' ) {
 											$href = get_sub_field( 'url' );
 										}
-                                        if ( $link_to == 'File' ) {
-                                            $href = get_sub_field( 'file' );
-                                            $target = ' target="_blank"';
-                                        }
+										if ( $link_to == 'File' ) {
+											$href   = get_sub_field( 'file' );
+											$target = ' target="_blank"';
+										}
 										if ( $link_to == 'Popup' ) {
 											$popup_content = get_sub_field( 'popup' );
 											$uniqueID      = uniqid();
@@ -221,27 +229,27 @@ endif;
 														if ( $popup_content == 'Entertainment' ) {
 															echo get_field( 'entertainment', 'option' );
 														}
-                                                        if ( $popup_content == 'Palm Court Entertainment' ) {
-                                                            echo get_field( 'palm_court_entertainment', 'option' );
-                                                        }
+														if ( $popup_content == 'Palm Court Entertainment' ) {
+															echo get_field( 'palm_court_entertainment', 'option' );
+														}
 														if ( $popup_content == 'Dress Code' ) {
 															echo get_field( 'dress_code', 'option' );
 														}
 														if ( $popup_content == 'Restaurant Sittings' ) {
 															echo get_field( 'restaurant_sittings', 'option' );
 														}
-                                                        if ( $popup_content == 'Restaurant Terrace Sittings' ) {
-                                                            echo get_field( 'restaurant_terrace_sittings', 'option' );
-                                                        }
-                                                        if ( $popup_content == 'The Ritz Garden Sittings' ) {
-                                                            echo get_field( 'the_ritz_garden_sittings', 'option' );
-                                                        }
-                                                        if ( $popup_content == 'Afternoon Tea Sittings' ) {
-                                                            echo get_field( 'afternoon_tea_sittings', 'option' );
-                                                        }
-                                                        if ( $popup_content == 'Palm Court Sittings' ) {
-                                                            echo get_field( 'palm_court_sittings', 'option' );
-                                                        }
+														if ( $popup_content == 'Restaurant Terrace Sittings' ) {
+															echo get_field( 'restaurant_terrace_sittings', 'option' );
+														}
+														if ( $popup_content == 'The Ritz Garden Sittings' ) {
+															echo get_field( 'the_ritz_garden_sittings', 'option' );
+														}
+														if ( $popup_content == 'Afternoon Tea Sittings' ) {
+															echo get_field( 'afternoon_tea_sittings', 'option' );
+														}
+														if ( $popup_content == 'Palm Court Sittings' ) {
+															echo get_field( 'palm_court_sittings', 'option' );
+														}
 														?>
                                                     </div>
                                                     <span class="close-reveal-modal" data-close>&times;</span>
@@ -388,11 +396,11 @@ endif;
 
     </div>
     <div class="page-content-mobile hide-for-large">
-	    <?php if ( get_field( 'price_line' ) != '' ): ?>
+		<?php if ( get_field( 'price_line' ) != '' ): ?>
             <div class="price-line text-center" style="padding-top: 25px; padding-bottom: 4px;">
-			    <?php the_field( 'price_line' ); ?>
+				<?php the_field( 'price_line' ); ?>
             </div>
-	    <?php endif; ?>
+		<?php endif; ?>
 		<?php $booking_type = get_field( 'booking_type' ); ?>
 		<?php if ( $booking_type != 'None' ): ?>
             <div class="booking-line">
@@ -527,6 +535,10 @@ endif;
 									if ( $link_to == 'URL' ) {
 										$href = get_sub_field( 'url' );
 									}
+									if ( $link_to == 'File' ) {
+										$href   = get_sub_field( 'file' );
+										$target = ' target="_blank"';
+									}
 									if ( $link_to == 'Popup' ) {
 										$popup_content = get_sub_field( 'popup' );
 										$uniqueID      = uniqid(); ?>
@@ -619,40 +631,40 @@ endif;
 				/*if ( $link_to == 'Gallery' ) {
 					$uniqueID = uniqid();
 					if ( have_rows( 'image_gallery' ) ) {
-						*/?><!--
-                        <div id="<?php /*echo $uniqueID; */?>" class="reveal-modal" data-reveal
-                             data-galleryid="<?php /*echo $uniqueID; */?>">
+						*/ ?><!--
+                        <div id="<?php /*echo $uniqueID; */ ?>" class="reveal-modal" data-reveal
+                             data-galleryid="<?php /*echo $uniqueID; */ ?>">
                             <div class="gallery-container">
-                                <div id="gallery-slick-<?php /*echo $uniqueID; */?>" class="gallery-slick">
+                                <div id="gallery-slick-<?php /*echo $uniqueID; */ ?>" class="gallery-slick">
 									<?php
-/*									while ( have_rows( 'image_gallery' ) ) : the_row();
-										$image = get_sub_field( 'image' );
-										*/?>
+				/*									while ( have_rows( 'image_gallery' ) ) : the_row();
+														$image = get_sub_field( 'image' );
+														*/ ?>
                                         <div class="gallery-image"
-                                             style="background-image: url(<?php /*echo $image['url']; */?>);"></div>
+                                             style="background-image: url(<?php /*echo $image['url']; */ ?>);"></div>
 									<?php
-/*									endwhile;
-									*/?>
+				/*									endwhile;
+													*/ ?>
                                 </div>
                             </div>
                             <span class="close-reveal-modal" data-close>&times;</span>
                         </div>
                         <div class="button-row">
-                            <div class="button-container"><a data-open="<?php /*echo $uniqueID; */?>"
-                                                             class="link button-underlined long"><?php /*echo $title; */?> </a>
+                            <div class="button-container"><a data-open="<?php /*echo $uniqueID; */ ?>"
+                                                             class="link button-underlined long"><?php /*echo $title; */ ?> </a>
                             </div>
                         </div>
 						--><?php
-/*					}
-				}*/
+				/*					}
+								}*/
 				if ( $link_to == 'iFrame' ) {
 					$iframe_link = get_sub_field( 'iframe_link' );
 					if ( $iframe_link != '' ) {
 						?>
                         <div class="button-row">
                             <div class="button-container">
-                                <!--<a data-open="<?php /*echo $uniqueID; */?>"
-                                   class="link button-underlined long"><?php /*echo $title; */?></a>-->
+                                <!--<a data-open="<?php /*echo $uniqueID; */ ?>"
+                                   class="link button-underlined long"><?php /*echo $title; */ ?></a>-->
                                 <a href="<?php echo $iframe_link; ?>" target="_blank"
                                    class="link button-underlined long"><?php echo $title; ?></a>
                             </div>
@@ -691,11 +703,11 @@ endif;
 		<?php else: ?>
             <!--<p>&nbsp;</p>-->
 		<?php endif; ?>
-        <?php if($count > 3 ):?>
-        <div class="read-more">
-            <button data-toggle="read-more-content" href="#"><span class="more">READ MORE</span><span class="less">READ LESS</span></button>
-        </div>
-        <?php endif;?>
+		<?php if ( $count > 3 ): ?>
+            <div class="read-more">
+                <button data-toggle="read-more-content" href="#"><span class="more">READ MORE</span><span class="less">READ LESS</span></button>
+            </div>
+		<?php endif; ?>
 		<?php if ( have_rows( 'footer_lines' ) ) : ?>
             <div class="footer-lines">
 				<?php while ( have_rows( 'footer_lines' ) ) : the_row(); ?>

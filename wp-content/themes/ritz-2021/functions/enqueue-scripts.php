@@ -18,6 +18,7 @@ function site_scripts() {
 	wp_enqueue_script( 'azds', '//newbooking.azds.com/inline.bundle.js', array( 'ritz-js' ), 1.1, true );
 
 	// Register stylesheets
+	wp_enqueue_style( 'azds-css', 'https://newbooking.azds.com/api/hotel/ritzlondon/styles', array(), '', 'all' );
 	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/assets/styles/vendor/animate.min.css', array(), filemtime( get_template_directory() . '/assets/styles/scss' ), 'all' );
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/vendor/slick-1.8.1/slick/slick.css', array(), filemtime( get_template_directory() . '/vendor/slick-1.8.1/slick/slick.css' ), 'all' );
 	wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/styles/style.css', array(), filemtime( get_template_directory() . '/assets/styles/scss' ), 'all' );
