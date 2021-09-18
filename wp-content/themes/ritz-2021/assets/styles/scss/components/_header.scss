@@ -486,7 +486,13 @@ header.header {
       top: 32px;
     }
     .white-top {
-      top: 82px;
+      top: 0;
+      @include breakpoint(medium) {
+        top: 46px;
+      }
+      @include breakpoint(large) {
+        top: 74px;
+      }
     }
   }
 }

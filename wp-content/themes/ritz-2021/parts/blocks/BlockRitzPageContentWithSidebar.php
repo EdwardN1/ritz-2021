@@ -539,29 +539,52 @@ endif;
 										$href   = get_sub_field( 'file' );
 										$target = ' target="_blank"';
 									}
-									if ( $link_to == 'Popup' ) {
-										$popup_content = get_sub_field( 'popup' );
-										$uniqueID      = uniqid(); ?>
-                                        <div id="<?php echo $uniqueID; ?>" class="reveal-modal"
-                                             data-reveal data-id="<?php echo $uniqueID; ?>">
-                                            <div class="info-box">
-												<?php
-												$popup_content = get_sub_field( 'popup_content' );
-												if ( $popup_content == 'Entertainment' ) {
-													echo get_field( 'entertainment', 'option' );
-												} else {
-													if ( $popup_content == 'Dress Code' ) {
-														echo get_field( 'dress_code', 'option' );
-													}
-												}
-												?>
+                                    if ( $link_to == 'Popup' ) {
+                                        $popup_content = get_sub_field( 'popup' );
+                                        $uniqueID      = uniqid();
+                                        if ( ! $is_preview ):
+                                            ?>
+                                            <div id="<?php echo $uniqueID; ?>" class="reveal-modal"
+                                                 data-reveal data-id="<?php echo $uniqueID; ?>">
+                                                <div class="info-box">
+                                                    <?php
+                                                    $popup_content = get_sub_field( 'popup' );
+                                                    if ( $popup_content == 'Entertainment' ) {
+                                                        echo get_field( 'entertainment', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'Palm Court Entertainment' ) {
+                                                        echo get_field( 'palm_court_entertainment_normal', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'Palm Court Entertainment (Christmas)' ) {
+                                                        echo get_field( 'palm_court_entertainment', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'Dress Code' ) {
+                                                        echo get_field( 'dress_code', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'Restaurant Sittings' ) {
+                                                        echo get_field( 'restaurant_sittings', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'Restaurant Terrace Sittings' ) {
+                                                        echo get_field( 'restaurant_terrace_sittings', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'The Ritz Garden Sittings' ) {
+                                                        echo get_field( 'the_ritz_garden_sittings', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'Afternoon Tea Sittings' ) {
+                                                        echo get_field( 'afternoon_tea_sittings', 'option' );
+                                                    }
+                                                    if ( $popup_content == 'Palm Court Sittings' ) {
+                                                        echo get_field( 'palm_court_sittings', 'option' );
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <span class="close-reveal-modal" data-close>&times;</span>
                                             </div>
-                                            <span class="close-reveal-modal" data-close>&times;</span>
-                                        </div>
-										<?php
-										$bullet_text = '<a data-open="' . $uniqueID . '" class="link">' . $bullet_text . '</a>';
-										$href        = '';
-									}
+                                        <?php
+                                        endif;
+                                        $bullet_text = '<a data-open="' . $uniqueID . '" class="link">' . $bullet_text . '</a>';
+                                        $href        = '';
+                                    }
 									if ( $href != '' ) {
 										$bullet_text = '<a href="' . esc_url( $href ) . '" class="link"' . $target . '>' . $bullet_text . '</a>';
 									} ?>
