@@ -1,4 +1,11 @@
 .block-ritz-image-block {
+  padding-bottom: 25px;
+  @include breakpoint(medium) {
+    padding-bottom: 35px;
+  }
+  @include breakpoint(large) {
+    padding-bottom: 50px;
+  }
   .ritz-block-image {
     width: 100%;
     max-width: 630px;

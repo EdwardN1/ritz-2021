@@ -9,6 +9,10 @@ wp.domReady( () => {
         {
             name: 'text-uppercase',
             label: 'Uppercase',
+        },
+        {
+            name: 'text-uppercase-extra-bottom-spacing',
+            label: 'Uppercase with extra bottom spacing',
         }
     ]);
 
@@ -31,6 +35,11 @@ wp.domReady( () => {
     wp.blocks.registerBlockStyle( 'core/spacer', {
         name: 'responsive-small',
         label: 'Responsive Small',
+    } );
+
+    wp.blocks.registerBlockStyle( 'core/paragraph', {
+        name: 'responsive-bottom-spacing',
+        label: 'Responsive bottom spacing'
     } );
 
 } );
