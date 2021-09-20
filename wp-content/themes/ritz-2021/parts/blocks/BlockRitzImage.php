@@ -44,6 +44,12 @@ endif;
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <?php $image = get_field( 'image' ); ?>
+	<?php
+    $image_class = '';
+    if ( get_field( 'wide_layout' ) == 1 ) {
+        $image_class = ' is_wide_image';
+    }
+    ?>
     <?php
     $image_link = '';
     $target        = '';
@@ -167,19 +173,19 @@ endif;
         <?php if ( get_field( 'add_mobile_image' ) == 1 ) : ?>
             <?php $mobile_image = get_field( 'mobile_image' ); ?>
             <?php if ( $mobile_image ) : ?>
-                <div class="ritz-block-image show-for-medium" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
+                <div class="ritz-block-image show-for-medium<?php echo $image_class;?>" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
                     <?php echo $image_link;?>
                 </div>
-                <div class="ritz-block-image hide-for-medium" style="background-image: url(<?php echo esc_url( $mobile_image['url'] ); ?>)">
+                <div class="ritz-block-image hide-for-medium<?php echo $image_class;?>" style="background-image: url(<?php echo esc_url( $mobile_image['url'] ); ?>)">
                     <?php echo $image_link;?>
                 </div>
             <?php else : ?>
-                <div class="ritz-block-image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
+                <div class="ritz-block-image"<?php echo $image_class;?> style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
                     <?php echo $image_link;?>
                 </div>
             <?php endif; ?>
         <?php else : ?>
-            <div class="ritz-block-image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
+            <div class="ritz-block-image<?php echo $image_class;?>" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
                 <?php echo $image_link;?>
             </div>
         <?php endif; ?>

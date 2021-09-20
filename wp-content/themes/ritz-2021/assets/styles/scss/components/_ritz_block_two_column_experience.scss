@@ -52,7 +52,7 @@
   }
   @include breakpoint(large) {
     padding-top: 100px;
-    &.reduced {
+    &.reduced, &.is-style-half-pad {
       padding-top: 50px;
     }
     > .grid-x {

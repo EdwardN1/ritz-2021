@@ -16,6 +16,11 @@
     position: relative;
     background-size: cover;
     background-position: center;
+    &.is_wide_image {
+      max-width: 840px;
+      height: 27.778vw;
+      max-height: 350px;
+    }
     .image-link {
       position: absolute;
       top: 0;

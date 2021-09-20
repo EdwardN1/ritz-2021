@@ -234,6 +234,17 @@ function register_ritz_two_column_experience_block()
                     )
                 )
             ),
+            'styles'  => [
+	            [
+		            'name' => 'Default',
+		            'label' => __('Default', ''),
+		            'isDefault' => true,
+	            ],
+	            [
+		            'name' => 'half-pad',
+		            'label' => __('Reduced Vertical Spacing', ''),
+	            ]
+            ],
             // 'render_callback'	=> 'ritz_four_column_block_block_render_callback',
             // 'enqueue_style' 		=> get_template_directory_uri() . '/template-parts/blocks/ritz-four-column-block/ritz-four-column-block.css',
             // 'enqueue_script' 	=> get_template_directory_uri() . '/template-parts/blocks/ritz-four-column-block/ritz-four-column-block.js',

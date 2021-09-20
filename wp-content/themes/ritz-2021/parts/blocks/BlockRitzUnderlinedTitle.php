@@ -35,6 +35,12 @@ endif;
 
 ?>
 
+<?php
+if ( get_field( 'pad_bottom' ) == 1 ) {
+    $classes .= ' pad-bottom';
+}
+?>
+
 <style type="text/css">
     .js .tmce-active .wp-editor-area {
         color: #000000 !important;

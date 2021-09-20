@@ -37,9 +37,21 @@ wp.domReady( () => {
         label: 'Responsive Small',
     } );
 
-    wp.blocks.registerBlockStyle( 'core/paragraph', {
+    wp.blocks.registerBlockStyle( 'core/paragraph', [
+        {
+            name: 'default',
+            label: 'Default',
+            isDefault: true,
+        },
+        {
         name: 'responsive-bottom-spacing',
         label: 'Responsive bottom spacing'
-    } );
+        },
+        {
+            name: 'no-bottom-spacing',
+            label: 'No bottom spacing'
+        }
+    ] );
+
 
 } );

@@ -6,6 +6,15 @@
   font-weight: $weight-light;
   position: relative;
   line-height: 1;
+  &.pad-bottom {
+    margin-bottom: 25px;
+    @include breakpoint(medium) {
+      margin-bottom: 25px;
+    }
+    @include breakpoint(large) {
+      margin-bottom: 50px;
+    }
+  }
   &:after {
     content: " ";
     position: absolute;
