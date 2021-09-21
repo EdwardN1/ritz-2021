@@ -3,13 +3,14 @@ function site_scripts() {
 	global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 	global $template_name;
 
+
 	// Adding script files in the footer
 	wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/scripts/js' ), true );
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/vendor/slick-1.8.1/slick/slick.min.js', array( 'site-js' ), filemtime( get_template_directory() . '/vendor/slick-1.8.1/slick/slick.min.js' ), true );
 	wp_enqueue_script( 'waypoints-js', get_template_directory_uri() . '/vendor/waypoints/jquery.waypoints.min.js', array( 'slick-js' ), filemtime( get_template_directory() . '/vendor/waypoints/jquery.waypoints.min.js' ), true );
 	wp_enqueue_script( 'bookatable', '//bda.bookatable.com/deploy/lbui.direct.min.js', array( 'waypoints-js' ), 1.1, true );
 	if($template_name=='T8 Location Page') {
-		//wp_enqueue_script( 'google-maps-api', 'https://maps.googleapis__x.com/maps/api/js?key=AIzaSyBxPrxmkuPdY0biO5r7F7Y3gqrbTxa3nIk', array( 'jquery' ),'', true );
+	    wp_enqueue_script( 'google-maps-api', 'https://maps.googleapis.com/maps/api/js?key='.get_field( 'maps_api_key', 'option' ), array( 'jquery' ),'', true );
 		wp_enqueue_script( 'google-maps-markers', get_template_directory_uri() . '/vendor/old-google-maps/markerwithlabel.js', array( 'google-maps-api' ), filemtime( get_template_directory() . '/vendor/old-google-maps/markerwithlabel.js' ), true );
 		wp_enqueue_script( 'google-maps-js', get_template_directory_uri() . '/vendor/old-google-maps/google-maps.js', array( 'google-maps-api' ), filemtime( get_template_directory() . '/vendor/old-google-maps/google-maps.js' ), true );
 	}
