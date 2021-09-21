@@ -53,6 +53,74 @@ endif;
 	<?php $image = get_field( 'image' ); ?>
 	<?php $mobile_image = get_field( 'mobile_image' ); ?>
 	<?php $image_iframe_link = get_field( 'image_iframe_link' ); ?>
+	<?php $booking_options = get_field( 'second_link_type' ); ?>
+	<?php $booking_link_text = get_field( 'second_link_text' ); ?>
+	<?php $right_link = ''; ?>
+	<?php if ( ( $booking_options != 'None' ) && ( $booking_options != '' ) ): ?>
+		<?php ob_start(); ?>
+		<?php
+		if ( $booking_options == 'AZDS' ) {
+			if ( have_rows( 'accomodation_codes' ) ) :
+				$selector = '?';
+				$query = '';
+				while ( have_rows( 'accomodation_codes' ) ) : the_row();
+					$key      = get_sub_field( 'key' );
+					$value    = get_sub_field( 'value' );
+					$query    .= $selector . $key . '=' . $value;
+					$selector = '&';
+				endwhile;
+				?>
+                <a href="#/booking/step-1<?php echo $query; ?>"
+                   class="button-ritz"><?php echo $booking_link_text; ?></a>
+			<?php
+			endif;
+		}
+	;
+		if ( $booking_options == 'Bookatable' ) {
+			if ( have_rows( 'dining_codes' ) ) :
+				$book_data = '';
+				while ( have_rows( 'dining_codes' ) ) : the_row();
+					$book_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
+					$book_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
+					$book_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
+					$book_data .= ' data-promotionid="' . get_sub_field( 'promotionid' ) . '"';
+					$book_data .= ' data-sessionid="' . get_sub_field( 'sessionid' ) . '"';
+					$book_data .= ' data-conversionjs="' . get_sub_field( 'conversionjs' ) . '"';
+					$book_data .= ' data-gaaccountnumber="' . get_sub_field( 'gaaccountnumber' ) . '"';
+				endwhile;
+				if ( $book_data != '' ) {
+					?>
+                    <a href="#" <?php echo $book_data; ?>
+                       class="button-ritz"><?php echo $booking_link_text; ?></a>
+					<?php
+				}
+			endif;
+		}
+	;
+		if ( $booking_options == 'Email' ) {
+
+			if ( have_rows( 'email_options' ) ) :
+
+				while ( have_rows( 'email_options' ) ) : the_row();
+					?>
+                    <a href="mailto:<?php the_sub_field( 'email_to_address' ); ?>?subject=<?php the_sub_field( 'subject' ); ?>&body=<?php the_sub_field( 'body' ); ?>"
+                       class="button-ritz"><?php echo $booking_link_text; ?></a>
+				<?php
+				endwhile;
+			endif;
+		}
+	;
+		if ( $booking_options == 'Page' ) {
+			$page = get_field( 'second_link' );
+			?>
+            <a href="<?php echo esc_url( $page ); ?>" class="button-ritz"><?php echo $booking_link_text; ?></a>
+			<?php
+		};
+		$right_link = ob_get_clean();
+		?>
+	<?php endif; ?>
+
+
     <div class="grid-x show-for-medium">
         <div class="cell large-6 medium-6 small-12">
 			<?php if ( ( $image_iframe_link != '' ) && ( ! $is_preview ) ): ?>
@@ -85,9 +153,28 @@ endif;
 					<?php endif; ?>
                     <div class="content"><?php the_field( 'content' ); ?></div>
 					<?php $page_link = get_field( 'page_link' ); ?>
-					<?php if ( $page_link ) : ?>
-                        <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
-					<?php endif; ?>
+					<?php
+					if ( $page_link ) {
+						if ( ($booking_options == 'None') || ($booking_options == '') ) {
+							?>
+                            <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
+							<?php
+						} else {
+							?>
+                            <div class="grid-x">
+                                <div class="cell shrink link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
+                                <div class="cell shrink link"><?php echo $right_link; ?></div>
+                            </div>
+							<?php
+						}
+					} else {
+						if ( ( $booking_options != 'None' ) && ( $booking_options != '' ) ) {
+							?>
+                            <div class="link"><?php echo $right_link; ?></div>
+							<?php
+						}
+					}
+					?>
                 </div>
 				<?php
 			}
@@ -114,9 +201,28 @@ endif;
 					<?php endif; ?>
                     <div class="content"><?php the_field( 'content' ); ?></div>
 					<?php $page_link = get_field( 'page_link' ); ?>
-					<?php if ( $page_link ) : ?>
-                        <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
-					<?php endif; ?>
+					<?php if ( $page_link ) {
+						if ( ($booking_options == 'None') || ($booking_options == '') ) {
+							?>
+                            <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
+							<?php
+						} else {
+							?>
+                            <div class="grid-x">
+                                <div class="cell shrink link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
+                                <div class="cell shrink link"><?php echo $right_link; ?></div>
+                            </div>
+							<?php
+						}
+					} else {
+						if ( ( $booking_options != 'None' ) && ( $booking_options != '' ) ) {
+							/*error_log('$booking_options != None');
+							error_log('$booking_options = |'.$booking_options.'|');*/
+							?>
+                            <div class="link"><?php echo $right_link; ?></div>
+							<?php
+						}
+					} ?>
                 </div>
 				<?php
 			}
@@ -136,6 +242,9 @@ endif;
 				<?php if ( $page_link ) : ?>
                     <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
 				<?php endif; ?>
+                <?php if ( ( $booking_options != 'None' ) && ( $booking_options != '' ) ) : ?>
+                    <div class="link"><?php echo $right_link; ?></div>
+                <?php endif;?>
             </div>
         </div>
         <div class="cell large-6 medium-6 small-12">
