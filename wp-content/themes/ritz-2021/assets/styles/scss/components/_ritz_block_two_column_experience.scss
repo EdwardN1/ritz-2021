@@ -38,6 +38,12 @@
         text-decoration: underline;
       }
     }
+    .grid-x {
+      .cell.link {
+        padding-top: 6px;
+        padding-right: 2em;
+      }
+    }
   }
 
   @include breakpoint(medium) {
