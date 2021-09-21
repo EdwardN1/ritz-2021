@@ -103,7 +103,7 @@ endif;
 							?>
                             <!--<a href="<?php /*echo $href; */?>"<?php /*echo $target; */?>
                                class="top-level-link"><?php /*the_sub_field( 'link_text' ); */?></a>-->
-                            <a class="top-level-link"><?php the_sub_field( 'link_text' ); ?></a>
+                            <a href="<?php echo $href;?>" class="top-level-link"><?php the_sub_field( 'link_text' ); ?></a>
 							<?php if ( have_rows( 'child_pages' ) ) :
 								$childItems = '<li><a href="'.$href.'"'.$target.' class="sub-level-link">Overview</a></li>';
 								while ( have_rows( 'child_pages' ) ) : the_row();
