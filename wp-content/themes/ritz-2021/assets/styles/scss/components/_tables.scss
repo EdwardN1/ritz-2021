@@ -15,13 +15,28 @@ tbody tr:nth-child(even) {
   }
   table {
     margin-bottom: 0;
+    border: none;
   }
   &.is-style-stripes {
     border-bottom: none;
     tbody {
+      border: none;
       tr:nth-child(odd) {
         background-color: $light-gray;
       }
     }
   }
+}
+
+.block-ritz-two-column-experience-block {
+  table {
+    border: none;
+    tbody {
+      border: none;
+      tr:nth-child(odd) {
+        background-color: $light-gray;
+      }
+    }
+  }
+
 }

@@ -186,6 +186,47 @@ p.is-style-no-bottom-spacing {
       }
     }
   }
+  .h1 {
+    font-size: 25px;
+    line-height: 30px;
+    @include letter-spacing(50);
+    @include breakpoint(medium) {
+      font-size: 35px;
+      line-height: 40px;
+      @include letter-spacing(50);
+    }
+    @include breakpoint(large) {
+      font-size: 35px;
+      line-height: 40px;
+      @include letter-spacing(50);
+    }
+    &.has-text-align-center {
+      max-width: 630px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .h2 {
+    font-size: 12px;
+    line-height: 15px;
+    @include letter-spacing(50);
+    @include breakpoint(medium) {
+      font-size: 14px;
+      line-height: 18px;
+      @include letter-spacing(50);
+    }
+    @include breakpoint(large) {
+      font-size: 14px;
+      line-height: 18px;
+      @include letter-spacing(50);
+    }
+    &.has-text-align-center {
+      max-width: 630px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
 }
 
 .blue {
