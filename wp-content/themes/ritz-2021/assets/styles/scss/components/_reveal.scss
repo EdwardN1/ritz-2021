@@ -149,4 +149,11 @@
 
     }
   }
+  .button-popup {
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: $weight-medium;
+    }
+  }
 }

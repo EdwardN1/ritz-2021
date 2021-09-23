@@ -84,6 +84,7 @@ if (!empty($block['align'])) {
                     if (array_key_exists('path', $url_array)) {
                         $videoID = trim($url_array['path'], '/');
                         $uniqueID = uniqid();
+                        if(!$is_preview):
                         ?>
                         <div id="<?php echo $uniqueID; ?>" class="reveal-modal" data-reveal
                              data-id="<?php echo $uniqueID; ?>" data-ytvideoid="<?php echo $videoID; ?>">
@@ -95,7 +96,7 @@ if (!empty($block['align'])) {
                             <span class="close-reveal-modal" data-close>&times;</span>
                         </div>
                         <?php
-
+                        endif;
                         $link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
                     } else {
                         $link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
