@@ -119,6 +119,30 @@ function add_ritz_image_gallery_custom_taxonomies() {
 }
 add_action( 'init', 'add_ritz_image_gallery_custom_taxonomies', 0 );
 
+// $which (the position of the filters form) is either 'top' or 'bottom'
+add_action( 'restrict_manage_posts', function ( $post_type, $which ) {
+    if ( 'top' === $which && 'ritzimagegallery' === $post_type ) {
+        $taxonomy = 'ritzimagegallerycategory';
+        $tax = get_taxonomy( $taxonomy );            // get the taxonomy object/data
+        $cat = filter_input( INPUT_GET, $taxonomy ); // get the selected category slug
+
+        echo '<label class="screen-reader-text" for="ritzimagegallerycategory">Filter by ' .
+            esc_html( $tax->labels->singular_name ) . '</label>';
+
+        wp_dropdown_categories( [
+            'show_option_all' => $tax->labels->all_items,
+            'hide_empty'      => 0, // include categories that have no posts
+            'hierarchical'    => $tax->hierarchical,
+            'show_count'      => 0, // don't show the category's posts count
+            'orderby'         => 'name',
+            'selected'        => $cat,
+            'taxonomy'        => $taxonomy,
+            'name'            => $taxonomy,
+            'value_field'     => 'slug',
+        ] );
+    }
+}, 10, 2 );
+
 function custom_columns( $columns ) {
     if(get_current_screen()->post_type=='ritzimagegallery') {
         $columns = array(

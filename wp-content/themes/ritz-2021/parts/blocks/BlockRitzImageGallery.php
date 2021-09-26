@@ -52,15 +52,15 @@ endif;
                 'hide_empty' => true,
             )
         );
-        $i = 2;
         ?>
-        <div class="filter-row">
+        <div class="filter-row show-1124">
         <div class="grid-x grid-padding-x grid-padding-y">
-        <div class="cell auto show-for-medium"></div>
+        <div class="cell auto show-for-medium show-1190"></div>
         <div class="cell large-shrink medium-shrink small-12">
             <a class="button-filter selected small" data-filter-class="all">All</a>
         </div>
         <?php
+        $i = 2;
         foreach ($terms as $term) {
             $term_name = $term->name;
             $term_class = seoUrl($term_name);
@@ -76,10 +76,10 @@ endif;
             $i++;
             if ($i > 5) {
                 ?>
-                <div class="cell auto show-for-medium"></div>
+                <div class="cell auto show-for-medium show-1190"></div>
                 </div>
                 </div>
-                <div class="filter-row">
+                <div class="filter-row  show-1124">
                 <div class="grid-x grid-padding-x grid-padding-y">
                 <div class="cell auto show-for-medium"></div>
                 <?php
@@ -90,6 +90,161 @@ endif;
         <div class="cell auto show-for-medium"></div>
         </div>
         </div>
+
+
+        <div class="filter-row hide-1124">
+        <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell auto show-for-medium show-970"></div>
+        <div class="cell large-shrink medium-shrink small-12">
+            <a class="button-filter selected small" data-filter-class="all">All</a>
+        </div>
+        <?php
+        $i = 2;
+        foreach ($terms as $term) {
+            $term_name = $term->name;
+            $term_class = seoUrl($term_name);
+            $button_size = ' small';
+            if (strlen($term_name) > 4) $button_size = ' medium';
+            if (strlen($term_name) > 7) $button_size = ' large';
+            ?>
+            <div class="cell large-shrink medium-shrink small-12">
+                <a class="button-filter<?php echo $button_size; ?>"
+                   data-filter-class="<?php echo $term_class; ?>"><?php echo $term_name; ?></a>
+            </div>
+            <?php
+            $i++;
+            if ($i > 4) {
+                ?>
+                <div class="cell auto show-for-medium show-970"></div>
+                </div>
+                </div>
+                <div class="filter-row  hide-1124">
+                <div class="grid-x grid-padding-x grid-padding-y">
+                <div class="cell auto show-for-medium show-970"></div>
+                <?php
+                $i = 1;
+            }
+        }
+        ?>
+        <div class="cell auto show-for-medium show-970"></div>
+        </div>
+        </div>
+
+
+        <div class="filter-row show-for-medium hide-910">
+        <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell auto show-for-medium"></div>
+        <div class="cell large-shrink medium-shrink small-12">
+            <a class="button-filter selected small" data-filter-class="all">All</a>
+        </div>
+        <?php
+        $i = 2;
+        foreach ($terms as $term) {
+            $term_name = $term->name;
+            $term_class = seoUrl($term_name);
+            $button_size = ' small';
+            if (strlen($term_name) > 4) $button_size = ' medium';
+            if (strlen($term_name) > 7) $button_size = ' large';
+            ?>
+            <div class="cell large-shrink medium-shrink small-12">
+                <a class="button-filter<?php echo $button_size; ?>"
+                   data-filter-class="<?php echo $term_class; ?>"><?php echo $term_name; ?></a>
+            </div>
+            <?php
+            $i++;
+            if ($i > 3) {
+                ?>
+                <div class="cell auto show-for-medium"></div>
+                </div>
+                </div>
+                <div class="filter-row  show-for-medium hide-910">
+                <div class="grid-x grid-padding-x grid-padding-y">
+                <div class="cell auto show-for-medium"></div>
+                <?php
+                $i = 1;
+            }
+        }
+        ?>
+        <div class="cell auto show-for-medium"></div>
+        </div>
+        </div>
+
+
+        <div class="filter-row show-for-medium hide-768">
+        <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell auto show-for-medium"></div>
+        <div class="cell large-shrink medium-shrink small-12">
+            <a class="button-filter selected small" data-filter-class="all">All</a>
+        </div>
+        <?php
+        $i = 2;
+        foreach ($terms as $term) {
+            $term_name = $term->name;
+            $term_class = seoUrl($term_name);
+            $button_size = ' small';
+            if (strlen($term_name) > 4) $button_size = ' medium';
+            if (strlen($term_name) > 7) $button_size = ' large';
+            ?>
+            <div class="cell large-shrink medium-shrink small-12">
+                <a class="button-filter<?php echo $button_size; ?>"
+                   data-filter-class="<?php echo $term_class; ?>"><?php echo $term_name; ?></a>
+            </div>
+            <?php
+            $i++;
+            if ($i > 2) {
+                ?>
+                <div class="cell auto show-for-medium"></div>
+                </div>
+                </div>
+                <div class="filter-row  show-for-medium hide-768">
+                <div class="grid-x grid-padding-x grid-padding-y">
+                <div class="cell auto show-for-medium"></div>
+                <?php
+                $i = 1;
+            }
+        }
+        ?>
+        <div class="cell auto show-for-medium"></div>
+        </div>
+        </div>
+
+
+        <div class="filter-row hide-for-medium">
+        <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell large-shrink medium-shrink small-12">
+            <a class="button-filter selected small" data-filter-class="all">All</a>
+        </div>
+        <?php
+        $i = 2;
+        foreach ($terms as $term) {
+            $term_name = $term->name;
+            $term_class = seoUrl($term_name);
+            $button_size = ' small';
+            if (strlen($term_name) > 4) $button_size = ' medium';
+            if (strlen($term_name) > 7) $button_size = ' large';
+            ?>
+            <div class="cell large-shrink medium-shrink small-12">
+                <a class="button-filter<?php echo $button_size; ?>"
+                   data-filter-class="<?php echo $term_class; ?>"><?php echo $term_name; ?></a>
+            </div>
+            <?php
+            $i++;
+            if ($i > 1) {
+                ?>
+                </div>
+                </div>
+                <div class="filter-row hide-for-medium">
+                <div class="grid-x grid-padding-x grid-padding-y">
+                <?php
+                $i = 1;
+            }
+        }
+        ?>
+        </div>
+        </div>
+
+
+
     <?php endif; ?>
     <div class="image-grid">
         <div class="grid-x grid-margin-x grid-margin-y">

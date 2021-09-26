@@ -1,4 +1,59 @@
 .block-ritz-image-gallery-block {
+  .hide-768 {
+    display: block;
+    @include breakpoint(768) {
+      display: none;
+    }
+  }
+
+  .hide-910 {
+    display: none;
+    @include breakpoint(768) {
+      display: block;
+    }
+    @include breakpoint(910) {
+      display: none;
+    }
+  }
+
+  .hide-1124 {
+    display: none;
+    @include breakpoint(910) {
+      display: block;
+    }
+    @include breakpoint(1124) {
+      display: none;
+    }
+  }
+
+  .show-734 {
+    display: none;
+    @include breakpoint(734) {
+      display: block;
+    }
+  }
+
+  .show-970 {
+    display: none;
+    @include breakpoint(970) {
+      display: block;
+    }
+  }
+
+  .show-1124 {
+    display: none;
+    @include breakpoint(1124) {
+      display: block;
+    }
+  }
+
+  .show-1190 {
+    display: none;
+    @include breakpoint(1190) {
+      display: block;
+    }
+  }
+
   .icontainer {
     padding-top: 20px;
     @include breakpoint(medium) {
@@ -7,8 +62,8 @@
     @include breakpoint(medium) {
       padding-top: 50px;
     }
+
     .caption {
-      margin-left: auto;
       margin-right: auto;
       width: 280px;
       text-transform: uppercase;
@@ -17,26 +72,37 @@
       line-height: 14px;
       padding-top: 20px;
       @include breakpoint(medium) {
+        margin-left: auto;
         width: 324px;
       }
       @include breakpoint(large) {
         width: 395px;
       }
     }
+
     .image {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       margin-left: auto;
       margin-right: auto;
-      width: 280px;
+      min-width: 280px;
+      width: 100%;
+      height: 64vw;
       position: relative;
       @include breakpoint(medium) {
-        width: 324px;
+        min-width: 265px;
+        width: 43vw;
       }
       @include breakpoint(large) {
-        width: 395px;
+        min-width: 286px;
+        width: 28vw;
       }
+      @include breakpoint(1140) {
+        max-width: 395px;
+        width: 29vw;
+      }
+
       a {
         display: block;
         position: absolute;
@@ -48,57 +114,78 @@
         background-repeat: no-repeat;
         font-size: 0;
         color: transparent;
+        &:hover {
+          background-image: url("../images/magnifier-hover.svg");
+        }
       }
 
     }
-    &.y1 {
-      &.x1 {
-        .image {
-          height: 300px;
+
+    @include breakpoint(medium) {
+      &.y1 {
+        &.x1 {
+          .image {
+            max-height: 300px;
+            height: 22vw;
+          }
+        }
+
+        &.x2 {
+          .image {
+            max-height: 600px;
+            height: 44vw;
+          }
+        }
+
+        &.x3 {
+          .image {
+            max-height: 395px;
+            height: 29vw;
+          }
         }
       }
-      &.x2 {
-        .image {
-          height: 600px;
+      &.y2 {
+        &.x1 {
+          .image {
+            max-height: 600px;
+            height: 44vw;
+          }
+        }
+
+        &.x2 {
+          .image {
+            max-height: 300px;
+            height: 22vw;
+          }
+        }
+
+        &.x3 {
+          .image {
+            max-height: 600px;
+            height: 44vw;
+          }
         }
       }
-      &.x3 {
-        .image {
-          height: 395px;
+      &.y3 {
+        &.x1 {
+          .image {
+            max-height: 395px;
+            height: 29vw;
+          }
         }
-      }
-    }
-    &.y2 {
-      &.x1 {
-        .image {
-          height: 600px;
+
+        &.x2 {
+          .image {
+            max-height: 395px;
+            height: 29vw;
+          }
         }
-      }
-      &.x2 {
-        .image {
-          height: 300px;
-        }
-      }
-      &.x3 {
-        .image {
-          height: 600px;
-        }
-      }
-    }
-    &.y3 {
-      &.x1 {
-        .image {
-          height: 395px;
-        }
-      }
-      &.x2 {
-        .image {
-          height: 395px;
-        }
-      }
-      &.x3 {
-        .image {
-          height: 300px;
+
+        &.x3 {
+          .image {
+            max-height: 300px;
+            height: 22vw;
+          }
         }
       }
     }
@@ -109,6 +196,7 @@ div[data-type="acf/ritz-offers-block"] {
   &.wp-block {
     width: 80%;
     max-width: none;
+
     .image {
       width: 250px;
       height: 200px;

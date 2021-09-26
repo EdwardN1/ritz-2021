@@ -2,6 +2,7 @@
 function site_scripts() {
 	global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 	global $template_name;
+    global $ritz_template_name;
 
 
 	// Adding script files in the footer
@@ -14,6 +15,9 @@ function site_scripts() {
 		wp_enqueue_script( 'google-maps-markers', get_template_directory_uri() . '/vendor/old-google-maps/markerwithlabel.js', array( 'google-maps-api' ), filemtime( get_template_directory() . '/vendor/old-google-maps/markerwithlabel.js' ), true );
 		wp_enqueue_script( 'google-maps-js', get_template_directory_uri() . '/vendor/old-google-maps/google-maps.js', array( 'google-maps-api' ), filemtime( get_template_directory() . '/vendor/old-google-maps/google-maps.js' ), true );
 	}
+	if(($template_name=='T6 Gallery Page')||($ritz_template_name == 'ritz-gallery')) {
+        //wp_enqueue_script( 'isotope', get_template_directory_uri() . '/vendor/isotope/isotope.pkgd.min.js', array ( 'waypoints-js' ), 1.1, true);
+    }
 	wp_enqueue_script( 'ritz-js', get_template_directory_uri() . '/assets/scripts/ritz.js', array( 'bookatable' ), filemtime( get_template_directory() . '/assets/scripts/ritz.js' ), true );
 
 	wp_enqueue_script( 'azds', '//newbooking.azds.com/inline.bundle.js', array( 'ritz-js' ), 1.1, true );
