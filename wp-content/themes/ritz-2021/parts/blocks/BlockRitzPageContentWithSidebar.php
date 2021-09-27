@@ -160,7 +160,17 @@ endif;
 										<?php if ( get_sub_field( 'telephone_link' ) == 1 ): ?>
                                             <a href="tel:<?php the_sub_field( 'telephone_number' ) ?>" class="button-ritz"><?php echo $booking_link_text; ?></a>
 										<?php else: ?>
-                                            <a href="mailto:<?php the_sub_field( 'email_to_address' ); ?>?subject=<?php the_sub_field( 'subject' ); ?>&body=<?php the_sub_field( 'body' ); ?>"
+											<?php
+											$subject = get_sub_field( 'subject' );
+											$body = get_sub_field( 'body' );
+											if($subject != '') {
+												$subject = '?subject='.$subject;
+											}
+											if($body != '') {
+												$body = '&body='.$body;
+											}
+											?>
+                                            <a href="mailto:<?php the_sub_field( 'email_to_address' ); ?><?php echo $subject; ?><?php echo $body; ?>"
                                                class="button-ritz"><?php echo $booking_link_text; ?></a>
 										<?php endif; ?>
 									<?php
@@ -506,7 +516,17 @@ endif;
 							<?php if ( get_sub_field( 'telephone_link' ) == 1 ): ?>
                                 <a href="tel:<?php the_sub_field( 'telephone_number' ) ?>" class="button-ritz"><?php echo $booking_link_text; ?></a>
 							<?php else: ?>
-                                <a href="mailto:<?php the_sub_field( 'email_to_address' ); ?>?subject=<?php the_sub_field( 'subject' ); ?>&body=<?php the_sub_field( 'body' ); ?>"
+                                <?php
+								$subject = get_sub_field( 'subject' );
+								$body = get_sub_field( 'body' );
+								if($subject != '') {
+									$subject = '?subject='.$subject;
+								}
+								if($body != '') {
+									$body = '&body='.$body;
+								}
+								?>
+                                <a href="mailto:<?php the_sub_field( 'email_to_address' ); ?><?php echo $subject; ?><?php echo $body; ?>"
                                    class="button-ritz"><?php echo $booking_link_text; ?></a>
 							<?php endif; ?>
 

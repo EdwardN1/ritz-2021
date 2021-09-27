@@ -98,22 +98,22 @@ global $ritz_template_name;
                                         <a href="#" <?php echo $book_tea_data; ?>>Afternoon Tea</a>
                                     </div>
 								<?php endif; ?>
-								<?php if ( have_rows( 'the_ritz_garden' ) ) : ?>
-									<?php while ( have_rows( 'the_ritz_garden' ) ) : the_row(); ?>
+								<?php /*if ( have_rows( 'the_ritz_garden' ) ) : */?><!--
+									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */?>
 										<?php
-										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
+/*										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
 										$book_garden_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
 										$book_garden_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
 										$book_garden_data .= ' data-promotionid="' . get_sub_field( 'promotionid' ) . '"';
 										$book_garden_data .= ' data-sessionid="' . get_sub_field( 'sessionid' ) . '"';
 										$book_garden_data .= ' data-conversionjs="' . get_sub_field( 'conversionjs' ) . '"';
 										$book_garden_data .= ' data-gaaccountnumber="' . get_sub_field( 'gaaccountnumber' ) . '"';
-										?>
-									<?php endwhile; ?>
+										*/?>
+									<?php /*endwhile; */?>
                                     <div class="booking-line">
-                                        <a href="#" <?php echo $book_garden_data; ?>>The Ritz Garden</a>
+                                        <a href="#" <?php /*echo $book_garden_data; */?>>The Ritz Garden</a>
                                     </div>
-								<?php endif; ?>
+								--><?php /*endif; */?>
 								<?php if ( have_rows( 'addition_dining_links', 'option' ) ) : ?>
 									<?php while ( have_rows( 'addition_dining_links', 'option' ) ) : the_row(); ?>
 										<?php $page = get_sub_field( 'page' ); ?>
@@ -240,22 +240,22 @@ global $ritz_template_name;
                                             Tea</a>
                                     </div>
 								<?php endif; ?>
-								<?php if ( have_rows( 'the_ritz_garden' ) ) : ?>
-									<?php while ( have_rows( 'the_ritz_garden' ) ) : the_row(); ?>
+								<?php /*if ( have_rows( 'the_ritz_garden' ) ) : */?><!--
+									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */?>
 										<?php
-										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
+/*										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
 										$book_garden_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
 										$book_garden_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
 										$book_garden_data .= ' data-promotionid="' . get_sub_field( 'promotionid' ) . '"';
 										$book_garden_data .= ' data-sessionid="' . get_sub_field( 'sessionid' ) . '"';
 										$book_garden_data .= ' data-conversionjs="' . get_sub_field( 'conversionjs' ) . '"';
 										$book_garden_data .= ' data-gaaccountnumber="' . get_sub_field( 'gaaccountnumber' ) . '"';
-										?>
-									<?php endwhile; ?>
+										*/?>
+									<?php /*endwhile; */?>
                                     <div class="booking-line">
-                                        <a href="#" <?php echo $book_garden_data; ?>>The Ritz Garden</a>
+                                        <a href="#" <?php /*echo $book_garden_data; */?>>The Ritz Garden</a>
                                     </div>
-								<?php endif; ?>
+								--><?php /*endif; */?>
 								<?php if ( have_rows( 'addition_dining_links', 'option' ) ) : ?>
 									<?php while ( have_rows( 'addition_dining_links', 'option' ) ) : the_row(); ?>
 										<?php $page = get_sub_field( 'page' ); ?>

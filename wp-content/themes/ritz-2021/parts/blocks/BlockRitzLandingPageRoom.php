@@ -55,14 +55,7 @@ endif;
 		$img_div        = '';
 		$content_div    = '';
 		$image          = get_field( 'image' );
-		ob_start();
-		?>
-        <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
-
-        </div>
-		<?php
-		$img_div = ob_get_contents();
-		ob_end_clean();
+		$image_link = '';
 		ob_start();
 		?>
         <div class="background">
@@ -112,6 +105,7 @@ endif;
 								}
 								if ( $href != '' ) {
 									$left_link = '<a href="' . esc_url( $href ) . '" class="link button-underlined"' . $target . '>' . $link_title . '</a>';
+									$image_link = '<a href="' . esc_url( $href ) . '" class="image-link"' . $target . '></a>';
 								}
 								echo $left_link . '</div>';
 							}
@@ -163,8 +157,16 @@ endif;
 								if ( have_rows( 'email_options' ) ) :
 
 									while ( have_rows( 'email_options' ) ) : the_row();
+										$subject = get_sub_field( 'subject' );
+										$body = get_sub_field( 'body' );
+										if($subject != '') {
+										    $subject = '?subject='.$subject;
+										}
+										if($body != '') {
+										    $body = '&body='.$body;
+										}
 										?>
-                                        <a href="mailto:<?php the_sub_field( 'email_to_address' ); ?>?subject=<?php the_sub_field( 'subject' ); ?>&body=<?php the_sub_field( 'body' ); ?>"
+                                        <a href="mailto:<?php the_sub_field( 'email_to_address' ); ?><?php echo $subject ?><?php echo $body; ?>"
                                            class="button-ritz"><?php echo $booking_link_text; ?></a>
 									<?php
 									endwhile;
@@ -186,6 +188,14 @@ endif;
     </div>
 	<?php
 	$content_div = ob_get_contents();
+	ob_end_clean();
+	ob_start();
+	?>
+    <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
+        <?php echo $image_link;?>
+    </div>
+	<?php
+	$img_div = ob_get_contents();
 	ob_end_clean();
 	$leftClass  = 'large-shrink medium-shrink';
 	$rightClass = 'large-auto medium-auto';
