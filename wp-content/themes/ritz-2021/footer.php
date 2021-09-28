@@ -260,6 +260,10 @@
 
 <?php wp_footer(); ?>
 
+<?php
+echo get_field('google_analytics','option');
+?>
+
 </body>
 
 </html> <!-- end page -->
