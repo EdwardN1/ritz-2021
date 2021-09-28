@@ -58,10 +58,12 @@ endif;
     $left_title = '';
     $left_content = '';
     $left_link = '';
+    $left_image_link = '';
     $left_img_url = '';
     $right_title = '';
     $right_content = '';
     $right_link = '';
+    $right_image_link = '';
     $right_img_url = '';
     if (have_rows('left_panel')) :
         while (have_rows('left_panel')) : the_row();
@@ -95,6 +97,7 @@ endif;
             }
             if ($href != '') {
                 $left_link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
+	            $left_image_link = '<a href="' . esc_url($href) . '" class="image-link"' . $target . '></a>';
             }
             $image = get_sub_field('image');
             $mobile_image = get_sub_field('mobile_image');
@@ -139,6 +142,7 @@ endif;
             }
             if ($href != '') {
                 $right_link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
+	            $right_image_link = '<a href="' . esc_url($href) . '" class="image-link"' . $target . '></a>';
             }
             $image = get_sub_field('image');
             $mobile_image = get_sub_field('mobile_image');
@@ -176,8 +180,12 @@ endif;
                 </div>
                 <div class="cell large-6 medium-12 small-12">
                     <div<?php echo $animated_background_class; ?>>
-                        <div class="image hide-for-medium" style="background-image: url(<?php echo $left_img_url_mobile ?>)"></div>
-                        <div class="image show-for-medium" style="background-image: url(<?php echo $left_img_url; ?>)"></div>
+                        <div class="image hide-for-medium" style="background-image: url(<?php echo $left_img_url_mobile ?>)">
+	                        <?php echo $left_image_link; ?>
+                        </div>
+                        <div class="image show-for-medium" style="background-image: url(<?php echo $left_img_url; ?>)">
+	                        <?php echo $left_image_link; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,8 +213,12 @@ endif;
                 </div>
                 <div class="cell large-6 medium-12 small-12">
                     <div<?php echo $animated_background_class; ?>>
-                        <div class="image hide-for-medium" style="background-image: url(<?php echo $right_img_url_mobile ?>)"></div>
-                        <div class="image show-for-medium" style="background-image: url(<?php echo $right_img_url; ?>)"></div>
+                        <div class="image hide-for-medium" style="background-image: url(<?php echo $right_img_url_mobile ?>)">
+	                        <?php echo $right_image_link; ?>
+                        </div>
+                        <div class="image show-for-medium" style="background-image: url(<?php echo $right_img_url; ?>)">
+	                        <?php echo $right_image_link; ?>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,16 @@
     /*&.animated-background {
       animation: animatedBackground 10s linear;
     }*/
+    position: relative;
+    .image-link {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
     @include breakpoint(medium) {
       transform: scale(1.2);
       height: 100%;

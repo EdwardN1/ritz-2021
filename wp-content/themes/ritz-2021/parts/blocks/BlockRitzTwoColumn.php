@@ -48,6 +48,7 @@ if (!empty($block['align'])) {
         }
 
         $link = '';
+        $image_link = '';
         $link_to = get_field('link_to');
         $target = '';
         if (get_field('open_in_a_new_tab') == 1) {
@@ -98,12 +99,15 @@ if (!empty($block['align'])) {
                         <?php
                         endif;
                         $link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
+	                    $image_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link"' . $target . '></a>';
                     } else {
                         $link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
+	                    $image_link = '<a href="' . esc_url($href) . '" class="image-link"' . $target . '></a>';
                     }
                 }
             } else {
                 $link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
+	            $image_link = '<a href="' . esc_url($href) . '" class="image-link"' . $target . '></a>';
             }
         }
         ?>
@@ -122,7 +126,7 @@ if (!empty($block['align'])) {
                     <?php $image = get_field('image'); ?>
                     <div<?php echo $animated_background_class; ?>>
                         <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+                            <?php echo $image_link;?>
                         </div>
                     </div>
                 </div>
@@ -157,7 +161,7 @@ if (!empty($block['align'])) {
                     }
                     ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+	                    <?php echo $image_link;?>
                     </div>
                 </div>
                 <div class="bottom container text-center">
@@ -190,7 +194,7 @@ if (!empty($block['align'])) {
                     <div<?php echo $animated_background_class; ?>>
                         <div class="image"
                              style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+	                        <?php echo $image_link;?>
                         </div>
                     </div>
                 </div>
@@ -238,7 +242,7 @@ if (!empty($block['align'])) {
                     }
                     ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+	                    <?php echo $image_link;?>
                     </div>
                 </div>
             </div>
@@ -274,7 +278,7 @@ if (!empty($block['align'])) {
                     <div<?php echo $animated_background_class; ?>>
                         <div class="image"
                              style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+	                        <?php echo $image_link;?>
                         </div>
                     </div>
                 </div>
@@ -292,7 +296,7 @@ if (!empty($block['align'])) {
                     }
                     ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+	                    <?php echo $image_link;?>
                     </div>
                 </div>
                 <div class="bottom container text-center">
@@ -341,7 +345,7 @@ if (!empty($block['align'])) {
                     <div<?php echo $animated_background_class; ?>>
                         <div class="image"
                              style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+	                        <?php echo $image_link;?>
                         </div>
                     </div>
                 </div>
@@ -372,7 +376,7 @@ if (!empty($block['align'])) {
                     }
                     ?>
                     <div class="image" style="background-image: url(<?php echo esc_url($image['url']); ?>)">
-
+	                    <?php echo $image_link;?>
                     </div>
                 </div>
             </div>

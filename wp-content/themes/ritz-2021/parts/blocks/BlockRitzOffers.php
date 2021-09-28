@@ -70,14 +70,18 @@ endif;
 					endif;
 					?>
 					<?php $image = get_field( 'image' , $post->ID); ?>
+					<?php $page = get_field( 'page', $post->ID); ?>
                     <div class="cell large-4 medium-6 small-12<?php echo $termClass; ?>">
-                        <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)"></div>
+                        <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
+	                        <?php if ( $page ) : ?>
+                                <a href="<?php echo esc_url( $page ); ?>" class="image-link"></a>
+	                        <?php endif; ?>
+                        </div>
                         <div class="heading"><?php echo get_the_title($post->ID); ?></div>
                         <div class="description"><?php the_field( 'description', $post->ID); ?></div>
                         <div class="buttons-row">
                             <div class="grid-x grid-padding-x">
                                 <div class="cell auto text-right">
-									<?php $page = get_field( 'page', $post->ID); ?>
 									<?php if ( $page ) : ?>
                                         <a href="<?php echo esc_url( $page ); ?>" class="button-underlined long"><?php the_field( 'page_link_text', $post->ID); ?></a>
 									<?php endif; ?>
