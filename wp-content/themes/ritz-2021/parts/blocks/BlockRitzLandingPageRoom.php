@@ -104,8 +104,41 @@ endif;
 									$href = get_field( 'url' );
 								}
 								if ( $href != '' ) {
-									$left_link = '<a href="' . esc_url( $href ) . '" class="link button-underlined"' . $target . '>' . $link_title . '</a>';
-									$image_link = '<a href="' . esc_url( $href ) . '" class="image-link"' . $target . '></a>';
+
+                                    $ytpos = strpos( $href, 'https://youtu.be/' );
+                                    if ( $ytpos === 0 ) {
+                                        $url_array = parse_url( $href );
+                                        $videoID   = '';
+                                        if ( is_array( $url_array ) ) {
+                                            if ( array_key_exists( 'path', $url_array ) ) {
+                                                $videoID  = trim( $url_array['path'], '/' );
+                                                $uniqueID = uniqid();
+                                                ?>
+                                                <?php if ( ! $is_preview ): ?>
+                                                    <div id="<?php echo $uniqueID; ?>" class="reveal-modal"
+                                                         data-reveal data-id="<?php echo $uniqueID; ?>"
+                                                         data-ytvideoid="<?php echo $videoID; ?>">
+                                                        <div class="flex-video widescreen">
+                                                            <div id="feature-video-<?php echo $uniqueID; ?>">[this
+                                                                div will be converted to an iframe]
+                                                            </div>
+                                                        </div>
+                                                        <span class="close-reveal-modal" data-close>&times;</span>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <?php
+                                                $left_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined long feature-modal-btn"' . $target . '>' . $link_title . '</a>';
+                                                $image_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link feature-modal-btn"' . $target . '></a>';
+                                            } else {
+                                                $left_link = '<a href="' . esc_url( $href ) . '" class="link button-underlined"' . $target . '>' . $link_title . '</a>';
+                                                $image_link = '<a href="' . esc_url( $href ) . '" class="image-link"' . $target . '></a>';
+                                            }
+                                        }
+                                    } else {
+                                        $left_link = '<a href="' . esc_url( $href ) . '" class="link button-underlined"' . $target . '>' . $link_title . '</a>';
+                                        $image_link = '<a href="' . esc_url( $href ) . '" class="image-link"' . $target . '></a>';
+                                    }
+
 								}
 								echo $left_link . '</div>';
 							}
