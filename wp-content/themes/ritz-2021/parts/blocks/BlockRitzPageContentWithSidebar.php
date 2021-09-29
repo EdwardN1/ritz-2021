@@ -762,7 +762,7 @@ endif;
 		<?php else: ?>
             <!--<p>&nbsp;</p>-->
 		<?php endif; ?>
-		<?php if ( $count > 4 ): ?>
+		<?php if ( $count >= 2 ): ?>
             <div class="read-more">
                 <button data-toggle="read-more-content" href="#"><span class="more">READ MORE</span><span class="less">READ LESS</span></button>
             </div>

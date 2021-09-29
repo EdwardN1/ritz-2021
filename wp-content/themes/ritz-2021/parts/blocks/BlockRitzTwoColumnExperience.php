@@ -243,12 +243,28 @@ endif;
                     <div class="heading"><h3><?php echo $heading; ?></h3></div>
 				<?php endif; ?>
                 <div class="content"><?php the_field( 'content' ); ?></div>
-				<?php if ( $page_link ) : ?>
-                    <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
-				<?php endif; ?>
-				<?php if ( ( $booking_options != 'None' ) && ( $booking_options != '' ) ) : ?>
-                    <div class="link"><?php echo $right_link; ?></div>
-				<?php endif; ?>
+	            <?php if ( $page_link ) {
+		            if ( ( $booking_options == 'None' ) || ( $booking_options == '' ) ) {
+			            ?>
+                        <div class="link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
+			            <?php
+		            } else {
+			            ?>
+                        <div class="grid-x">
+                            <div class="cell shrink link"><a class="button-underlined" href="<?php echo esc_url( $page_link ); ?>"><?php the_field( 'page_link_text' ); ?></a></div>
+                            <div class="cell shrink link"><?php echo $right_link; ?></div>
+                        </div>
+			            <?php
+		            }
+	            } else {
+		            if ( ( $booking_options != 'None' ) && ( $booking_options != '' ) ) {
+			            /*error_log('$booking_options != None');
+						error_log('$booking_options = |'.$booking_options.'|');*/
+			            ?>
+                        <div class="link"><?php echo $right_link; ?></div>
+			            <?php
+		            }
+	            } ?>
             </div>
         </div>
         <div class="cell large-6 medium-6 small-12">

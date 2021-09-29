@@ -24,6 +24,9 @@
         margin-bottom: 20px;
         @include letter-spacing(10);
       }
+      ul {
+        margin-bottom: 20px;
+      }
     }
     .right {
       max-width: 370px;
@@ -170,7 +173,9 @@
                   padding-bottom: 12px;
                   font-size: 14px;
                   line-height: 20px;
-
+                  a {
+                    text-decoration: underline;
+                  }
                   @include breakpoint(medium) {
                     text-indent: -10px;
                   }
@@ -197,12 +202,14 @@
       font-weight: $weight-medium;
       padding-bottom: 25px;
       padding-top: 8px;
+      @include letter-spacing(50);
       @include breakpoint(large) {
         padding-top: 0;
       }
     }
     .read-more {
       padding-bottom: 25px;
+      @include letter-spacing(100);
       button {
         text-transform: uppercase;
         color: $ritz-blue;
@@ -305,6 +312,15 @@
       }
       p {
         margin: 0;
+        padding-bottom: 20px;
+        @include breakpoint(large) {
+          padding-bottom: 25px;
+        }
+      }
+      a {
+        text-decoration: underline;
+      }
+      ul {
         padding-bottom: 20px;
         @include breakpoint(large) {
           padding-bottom: 25px;

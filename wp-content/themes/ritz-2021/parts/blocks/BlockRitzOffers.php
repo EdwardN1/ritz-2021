@@ -126,6 +126,11 @@ endif;
 											}
 										endif;
 									};
+									if ($booking_options == 'Email') {
+									    ?>
+                                        <a href="mailto:<?php echo get_field('email_address', $post->ID); ?>" class="button-ritz"><?php echo $booking_link_text; ?></a>
+                                    <?php
+									}
 									?>
                                 </div>
                             </div>

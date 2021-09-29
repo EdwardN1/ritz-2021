@@ -22,6 +22,11 @@
     p {
       margin-bottom: 25px;
     }
+    h2 {
+      @include letter-spacing(50);
+      font-weight: $weight-medium;
+      font-size: 14px;
+    }
   }
 
   .link {

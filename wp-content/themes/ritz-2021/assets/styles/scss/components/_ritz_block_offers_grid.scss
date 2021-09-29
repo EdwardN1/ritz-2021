@@ -76,6 +76,12 @@
   .filter-row {
     padding-top: 50px;
     padding-bottom: 25px;
+    > .grid-x > .cell {
+      padding-bottom: 10px;
+      @include breakpoint(medium) {
+        padding-bottom: 0;
+      }
+    }
   }
 }
 

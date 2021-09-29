@@ -33,14 +33,14 @@
       padding-bottom: 6px;
     }
     @include breakpoint(large) {
-      padding-bottom: 15px;
+      padding-bottom: 10px;
       font-size: 15px;
       line-height: 22px;
     }
     p:last-of-type {
       margin-bottom: 25px;
       @include breakpoint(medium) {
-        margin-bottom: 20px;
+        margin-bottom: 0;
       }
     }
   }
@@ -54,7 +54,7 @@
       padding-bottom: 30px;
     }
     @include breakpoint(large) {
-      padding-bottom: 36px;
+      padding-bottom: 25px;
       padding-top: 10px;
       font-size: 14px;
       line-height: 18px;
@@ -75,7 +75,7 @@
       @include breakpoint(large) {
         font-size: 20px;
         line-height: 25px;
-        padding-bottom: 40px;
+        //padding-bottom: 30px;
       }
     }
 

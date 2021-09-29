@@ -6,6 +6,13 @@ p, .page-summary {
   @include letter-spacing(10);
 }
 
+p.one-em-mob-top {
+  padding-top: 1em;
+  @include breakpoint(medium) {
+    padding-top: 0;
+  }
+}
+
 ul, ol {
   max-width: 630px;
   margin: 0;

@@ -161,10 +161,10 @@ jQuery(document).ready(function ($) {
             });
             $(this).addClass('selected');
             if($(this).data('filter-class')=='all') {
-                $('.block-ritz-offers-block .offers-grid .grid-x .cell').show();
+                $('.block-ritz-offers-block .offers-grid > .grid-x > .cell').show();
             } else {
                 let filterClass = $(this).data('filter-class');
-                $('.block-ritz-offers-block .offers-grid .grid-x .cell').each(function(){
+                $('.block-ritz-offers-block .offers-grid > .grid-x > .cell').each(function(){
                     if($(this).hasClass(filterClass)) {
                         $(this).show();
                     } else {
