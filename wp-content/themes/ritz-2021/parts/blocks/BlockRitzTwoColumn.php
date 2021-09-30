@@ -98,8 +98,10 @@ if (!empty($block['align'])) {
                         </div>
                         <?php
                         endif;
-                        $link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
-	                    $image_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link"' . $target . '></a>';
+                        $link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn show-for-large '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
+	                    $link .= '<a href="'.$href.'" class="link button-underlined long hide-for-large" target="_blank">' . $link_title . '</a>';
+	                    $image_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link hide-for-large"' . $target . '></a>';
+	                    $image_link .= '<a href="'.$href.'" class="image-link hide-for-large" target="_blank"></a>';
                     } else {
                         $link = '<a href="' . esc_url($href) . '" class="link button-underlined '.$linkLen.'"' . $target . '>' . $link_title . '</a>';
 	                    $image_link = '<a href="' . esc_url($href) . '" class="image-link"' . $target . '></a>';

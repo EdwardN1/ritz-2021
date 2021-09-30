@@ -115,8 +115,10 @@ endif;
                                             <span class="close-reveal-modal" data-close>&times;</span>
                                         </div>
 										<?php
-										$link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn '.$linkLen.'">' . $link_title . '</a>';
-										$imageLink = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link feature-modal-btn '.$linkLen.'"></a>';
+										$link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined feature-modal-btn show-for-large '.$linkLen.'">' . $link_title . '</a>';
+										$link .= '<a href="'.$href.'" class="link button-underlined hide-for-large '.$linkLen.'" target="_blank">' . $link_title . '</a>';
+										$imageLink = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link feature-modal-btn show-for-large"></a>';
+										$imageLink .= '<a href="'.$href.'" class="image-link hide-for-large" target="_blank"></a>';
 									} else {
 										$link = '<a href="' . esc_url( $href ) . '" class="button-underlined '.$linkLen.'">' . $link_title . '</a>';
 										$imageLink = '<a href="' . esc_url( $href ) . '" class="image-link"></a>';

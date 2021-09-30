@@ -178,7 +178,7 @@
         </div>
         <div class="contact text-center">
             150 PICCADILLY, LONDON W1J 9BR<br>
-            TELEPHONE: +44 (0) 20 7493 8181
+            TELEPHONE: <a href="tel:+442074938181" style="color: #FFFFFF;">+44 (0) 20 7493 8181</a>
         </div>
         <div class="social">
             <div class="grid-container">
@@ -206,13 +206,22 @@
                 </div>
             </div>
         </div>
-        <div class="numbers text-center">
+        <div class="numbers text-center show-for-medium">
             <p>THE RITZ HOTEL (LONDON) LTD<br>
                 REGISTERED IN ENGLAND NO.64203 VAT<br>
                 REGISTRATION 773 8638 79<br>
             </p>
             <p class="source-org copyright">&copy; <?php echo date( 'Y' ); ?> THE RITZ HOTEL (LONDON) LTD.</p>
         </div>
+        <div class="numbers text-center hide-for-medium">
+            <p>THE RITZ HOTEL (LONDON) LTD<br>
+                REGISTERED IN ENGLAND NO.64203<br>
+                VAT REGISTRATION 773 8638 79<br>
+            </p>
+            <p class="source-org copyright">&copy; <?php echo date( 'Y' ); ?> THE RITZ HOTEL (LONDON) LTD.</p>
+        </div>
+
+
         <div class="grid-x">
             <div class="cell auto warrant">
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/white-warrant.svg' ?>"/>

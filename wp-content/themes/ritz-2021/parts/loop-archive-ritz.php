@@ -9,7 +9,7 @@ global $archive_side;
             <div class="grid-x">
                 <div class="cell large-6 medium-6 small-12" style="padding-right: 2em;">
                     <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-	                <?php the_content('<a class="button-underlined" href="'.get_the_permalink().'">' . __( 'Read more', 'jointswp' ) . '</a>'); ?>
+	                <?php the_content('<p><a class="button-underlined" href="'.get_the_permalink().'">' . __( 'Read more', 'jointswp' ) . '</a></p>'); ?>
 
                 </div>
                 <div class="cell large-6 medium-6 small-12">
@@ -36,7 +36,7 @@ global $archive_side;
                     </div>
                     <div class="cell large-6 medium-6 small-12" style="padding-left: 2em;">
                         <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-	                    <?php the_content('<a class="button-underlined" href="'.get_the_permalink().'">' . __( 'Read more', 'jointswp' ) . '</a>'); ?>
+	                    <?php the_content('<p><a class="button-underlined" href="'.get_the_permalink().'">' . __( 'Read more', 'jointswp' ) . '</a></p>'); ?>
 
                     </div>
                 </div>

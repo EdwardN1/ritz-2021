@@ -127,8 +127,10 @@ endif;
                                                     </div>
                                                 <?php endif; ?>
                                                 <?php
-                                                $left_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined long feature-modal-btn"' . $target . '>' . $link_title . '</a>';
+                                                $left_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="link button-underlined long feature-modal-btn show-for-large"' . $target . '>' . $link_title . '</a>';
+                                                $left_link .= '<a href="'.$href.'" class="link button-underlined long hide-for-large" target="_blank">' . $link_title . '</a>';
                                                 $image_link = '<a data-open="' . $uniqueID . '" data-ytvideoid="' . $videoID . '" class="image-link feature-modal-btn"' . $target . '></a>';
+	                                            $image_link .= '<a href="'.$href.'" class="link button-underlined long hide-for-large" target="_blank">' . $link_title . '</a>';
                                             } else {
                                                 $left_link = '<a href="' . esc_url( $href ) . '" class="link button-underlined"' . $target . '>' . $link_title . '</a>';
                                                 $image_link = '<a href="' . esc_url( $href ) . '" class="image-link"' . $target . '></a>';

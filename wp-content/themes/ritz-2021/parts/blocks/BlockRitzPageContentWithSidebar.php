@@ -742,7 +742,8 @@ endif;
         <div class="page-content">
 			<?php
 			$content    = get_field( 'content' );
-			$paragraphs = explode( '</p>', $content );
+			echo $content;
+			/*$paragraphs = explode( '</p>', $content );
 			$count      = count( $paragraphs );
 			$output     = '<div class="visible">';
 			for ( $i = 0; $i < $count; $i ++ ) {
@@ -752,7 +753,7 @@ endif;
 				}
 			}
 			$output .= '</div>';
-			echo $output;
+			echo $output;*/
 			?>
         </div>
 		<?php if ( get_field( 'price_line' ) != '' ): ?>
@@ -762,11 +763,11 @@ endif;
 		<?php else: ?>
             <!--<p>&nbsp;</p>-->
 		<?php endif; ?>
-		<?php if ( $count >= 2 ): ?>
+		<?php /*if ( $count >= 2 ): */?><!--
             <div class="read-more">
                 <button data-toggle="read-more-content" href="#"><span class="more">READ MORE</span><span class="less">READ LESS</span></button>
             </div>
-		<?php endif; ?>
+		--><?php /*endif; */?>
 		<?php if ( have_rows( 'footer_lines' ) ) : ?>
             <div class="footer-lines">
 				<?php while ( have_rows( 'footer_lines' ) ) : the_row(); ?>
