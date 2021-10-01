@@ -267,6 +267,9 @@ endif;
 														if ( $popup_content == 'Palm Court Sittings' ) {
 															echo get_field( 'palm_court_sittings', 'option' );
 														}
+														if ( $popup_content == 'Rivoli Bar Opening Times' ) {
+															echo get_field( 'rivoli_bar_opening_times', 'option' );
+														}
 														?>
                                                     </div>
                                                     <span class="close-reveal-modal" data-close>&times;</span>

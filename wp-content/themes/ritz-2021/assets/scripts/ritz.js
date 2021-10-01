@@ -14,6 +14,10 @@ jQuery(document).ready(function ($) {
         speed: 2000
     });
 
+    /*$('#ritz-main-image-gallery').on('beforeChange',function(event, slick, direction){
+        $('#ritz-main-image-gallery img.js-focal-point-image').responsify();
+    });*/
+
     $('.ritz-page-carousel').slick({
         arrows: true,
         autoplay: false,

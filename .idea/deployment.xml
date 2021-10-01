@@ -9,14 +9,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="Ritz Dev">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="Ritz Stage">
+      <paths name="Ritz Live">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />

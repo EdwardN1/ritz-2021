@@ -2,15 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="d31aeec2-563f-4041-b6a3-2724b10f0a4a" name="Ritz Stage" url="http://5.101.141.232">
-        <fileTransfer rootFolder="/web" host="5.101.141.232" port="21">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
-          </advancedOptions>
-        </fileTransfer>
-      </webServer>
-      <webServer id="bc547389-9f41-489c-b91d-155bd205683f" name="Ritz Dev" url="https://ritz.making.me.uk">
-        <fileTransfer rootFolder="/web" host="mail.technicks.com" port="21">
+      <webServer id="d31aeec2-563f-4041-b6a3-2724b10f0a4a" name="Ritz Live" url="https://www.theritzlondon.com">
+        <fileTransfer host="5.101.141.232" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

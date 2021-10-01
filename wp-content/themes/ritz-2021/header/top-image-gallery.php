@@ -55,6 +55,8 @@
 </div>
 
 <div id="ritz-main-image-gallery" class="main-image-gallery">
+	<?php $preloadImages = ''; ?>
+	<?php $preloadImageArray = array(); ?>
 	<?php while ( have_rows( 'image_gallery' ) ) : the_row(); ?>
 		<?php $slide = get_sub_field( 'slide' ); ?>
 		<?php $responsive_image = get_sub_field( 'responsive_image' ); ?>
@@ -108,6 +110,16 @@
                         <div class="slide-container hide-for-large">
                             <div class="responsive-container">
 								<?php echo $responsive_image; ?>
+								<?php
+								$doc = new DOMDocument();
+								$doc->loadHTML( $responsive_image );
+								$xpath = new DOMXPath( $doc );
+								$src   = $xpath->evaluate( "string(//img/@src)" );
+								if ( $src != '' ) {
+									$preloadImages       .= 'url(' . $src . ') ';
+									$preloadImageArray[] = $src;
+								}
+								?>
 								<?php $responsive_image = null; ?>
                             </div>
                             <div class="slide-overlay<?php echo $slide_background; ?>">
@@ -195,6 +207,34 @@
 	<?php endwhile; ?>
 
 </div>
+<?php
+if ( $preloadImages != '' ) {
+	?>
+    <!--<script>
+		<?php
+/*		$i = 1;
+		foreach ($preloadImageArray as $preload_image) {
+		*/?>
+        let pic<?php /*echo $i;*/?> = new Image();
+        pic<?php /*echo $i;*/?>.src = "<?php /*echo $preload_image;*/?>";
+		<?php
+/*            $i++;
+		}
+		*/?>
+    </script>-->
+    <style>
+        #ritz-main-image-gallery:after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+            content: <?php echo $preloadImages ?>;
+        }
+    </style>
+	<?php
+}
+?>
 <?php if ( ! is_front_page() ): ?>
     <div class="breadcrumb-spacer">&nbsp;</div>
     <div class="breadcrumbs text-center"><?php echo get_breadcrumb(); ?></div>
