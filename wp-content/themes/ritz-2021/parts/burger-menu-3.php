@@ -80,7 +80,7 @@ global $no_menu_page;
                     ?>
                     <h3 class="menu-page-link">
                         <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>
-                           class="parent-<?php echo $i.$active_class; ?>"><?php echo esc_html($link_text); ?></a>
+                           class="parent-<?php echo $i . $active_class; ?>"><?php echo esc_html($link_text); ?></a>
                     </h3>
                 <?php
                 endif;
@@ -126,12 +126,12 @@ global $no_menu_page;
                         ?>
                         <h2 class="menu-page-link">
                             <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>
-                               class="<?php echo $overview_class;?>">Overview</a>
+                               class="<?php echo $overview_class; ?>">Overview</a>
                         </h2>
                         <?php
                         $overview_link = ob_get_clean();
                         if (have_rows('child_pages')) :
-                            if (($no_menu_page)&&($i==1)) {
+                            if (($no_menu_page) && ($i == 1)) {
                                 echo '<div class="child-menu child-menu-' . $i . ' animate__animated animate__fadeInDown">';
                             } else {
                                 $padTop = ($i - 1) * 57;
@@ -178,7 +178,7 @@ global $no_menu_page;
                                     ?>
                                     <h2 class="menu-page-link">
                                         <a href="<?php echo esc_url($jhref); ?>"<?php echo $target; ?>
-                                           class="<?php echo $child_link_class;?>"><?php echo esc_html($link_text); ?></a>
+                                           class="<?php echo $child_link_class; ?>"><?php echo esc_html($link_text); ?></a>
                                     </h2>
                                 <?php
                                 endif;
@@ -209,10 +209,52 @@ global $no_menu_page;
                             <a href="<?php echo get_sub_field('page_link'); ?>"
                                class="button-underline"><?php the_sub_field('link_text'); ?></a>
                         </div>
-                        <div class="cell auto text-center">
-                            <a href="#/booking/step-1" class="button-white">BOOK
-                                NOW</a>
-                        </div>
+
+                        <?php $booking_type = get_sub_field('booking_type'); ?>
+                        <?php if ($booking_type == 'AZDS'): ?>
+                            <?php if (have_rows('accomodation_codes')) :
+                                $selector = '?';
+                                $query = '';
+                                while (have_rows('accomodation_codes')) : the_row();
+                                    $key = get_sub_field('key');
+                                    $value = get_sub_field('value');
+                                    $query .= $selector . $key . '=' . $value;
+                                    $selector = '&';
+                                endwhile;
+                                ?>
+                                <div class="cell auto text-center">
+                                    <a href="#/booking/step-1<?php echo $query; ?>"
+                                       class="button-ritz">BOOK NOW</a>
+                                </div>
+                            <?php else : ?>
+                                <div class="cell auto text-center">
+                                    <a href="#/booking/step-1" class="button-white">BOOK
+                                        NOW</a>
+                                </div>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php if ($booking_type == 'Bookatable'): ?>
+                            <?php if (have_rows('dining_codes')) :
+                                $book_data = '';
+                                while (have_rows('dining_codes')) : the_row();
+                                    $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
+                                    $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
+                                    $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
+                                    $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
+                                    $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
+                                    $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
+                                    $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
+                                endwhile;
+                                if ($book_data != '') {
+                                    ?>
+                                    <div class="cell auto text-center">
+                                        <a href="#" <?php echo $book_data; ?>
+                                           class="button-ritz">BOOK NOW</a>
+                                    </div>
+                                    <?php
+                                }
+                            endif; ?>
+                        <?php endif; ?>
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>
