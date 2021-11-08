@@ -273,6 +273,8 @@
 echo get_field('google_analytics','option');
 ?>
 
+<script src="https://onboard.triptease.io/bootstrap.js?integrationId=01D703G7JWVD1EM5GN9W8HH38E" defer async crossorigin="anonymous" type="text/javascript"></script>
+
 </body>
 
 </html> <!-- end page -->
