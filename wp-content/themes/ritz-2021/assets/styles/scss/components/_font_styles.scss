@@ -20,10 +20,12 @@ body, p, span {
 }
 
 h1, h2 {
+  font-family: $garamond;
   margin-bottom: 10px;
+  font-weight: $weight-light;
   @include breakpoint(large) {
     margin-bottom: 35px;
-    @include letter-spacing(50);
+    @include letter-spacing(100);
   }
   &.has-text-align-center {
     max-width: 630px;
@@ -33,7 +35,9 @@ h1, h2 {
 }
 
 h3 {
-  @include letter-spacing(50);
+  font-family: $garamond;
+  font-weight: $weight-light;
+  @include letter-spacing(100);
 }
 
 .cta-link {
@@ -77,16 +81,16 @@ h3 {
 }
 
 .h1 {
-  font-size: 25px;
+  font-size: 35px;
   line-height: 30px;
   @include letter-spacing(50);
   @include breakpoint(medium) {
-    font-size: 35px;
+    font-size: 40px;
     line-height: 40px;
     @include letter-spacing(50);
   }
   @include breakpoint(large) {
-    font-size: 35px;
+    font-size: 40px;
     line-height: 40px;
     @include letter-spacing(50);
   }
@@ -144,8 +148,8 @@ p.is-style-no-bottom-spacing {
       @include letter-spacing(50);
     }
     @include breakpoint(large) {
-      font-size: 30px;
-      line-height: 30px;
+      font-size: 40px;
+      line-height: 40px;
       margin-bottom: 25px;
       @include letter-spacing(50);
     }
@@ -165,6 +169,7 @@ p.is-style-no-bottom-spacing {
     line-height: 15px;
     font-weight: $weight-medium;
     margin-bottom: 0;
+    font-family: $montserrat;
     @include letter-spacing(50);
     @include breakpoint(medium) {
       font-size: 14px;
@@ -189,14 +194,15 @@ p.is-style-no-bottom-spacing {
   .h1 {
     font-size: 25px;
     line-height: 30px;
-    @include letter-spacing(50);
+    font-family: $garamond;
+    @include letter-spacing(100);
     @include breakpoint(medium) {
       font-size: 35px;
       line-height: 40px;
       @include letter-spacing(50);
     }
     @include breakpoint(large) {
-      font-size: 35px;
+      font-size: 40px;
       line-height: 40px;
       @include letter-spacing(50);
     }

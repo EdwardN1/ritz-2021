@@ -15,14 +15,15 @@
 
   .heading {
     text-transform: uppercase;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 25px;
+    line-height: 25px;
     padding-bottom: 32px;
-    @include letter-spacing(50);
+    font-family: $montserrat;
+    @include letter-spacing(100);
     @include breakpoint(large) {
       padding-bottom: 50px;
-      font-size: 20px;
-      line-height: 25px;
+      font-size: 30px;
+      line-height: 30px;
       max-width: 892px;
     }
 
@@ -97,13 +98,14 @@
         display: block;
         width: 100%;
         padding-bottom: 10px;
-        font-size: 18px;
-        line-height: 20px;
-        @include letter-spacing(50);
+        font-size: 25px;
+        line-height: 25px;
+        font-family: $montserrat;
+        @include letter-spacing(100);
         @include breakpoint(large) {
           padding-bottom: 30px;
-          font-size: 20px;
-          line-height: 25px;
+          font-size: 30px;
+          line-height: 30px;
         }
 
       }

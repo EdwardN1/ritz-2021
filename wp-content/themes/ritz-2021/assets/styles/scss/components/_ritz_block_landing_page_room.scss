@@ -65,7 +65,7 @@
     h3 {
       text-transform: uppercase;
       margin: 0;
-      @include letter-spacing(50);
+      @include letter-spacing(100);
       padding-bottom: 25px;
       @include breakpoint(medium) {
         font-size: 18px;
@@ -73,8 +73,8 @@
         padding-top: 3px;
       }
       @include breakpoint(large) {
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 30px;
+        line-height: 30px;
         //padding-bottom: 30px;
       }
     }

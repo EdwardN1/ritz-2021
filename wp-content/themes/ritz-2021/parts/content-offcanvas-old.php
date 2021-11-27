@@ -203,7 +203,7 @@ endif;
         </div>
 
 		<?php
-		get_template_part( 'parts/burger', 'menu-4' );
+		get_template_part( 'parts/burger', 'menu-3' );
 		?>
         <div class="footer-main-links grid-x show-for-large">
 			<?php if ( have_rows( 'footer_main_links', 'option' ) ) : ?>

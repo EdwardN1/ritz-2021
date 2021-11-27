@@ -1,6 +1,9 @@
 header.header {
   position: relative;
-
+  padding-top: 80px;
+  @include breakpoint(large) {
+    padding-top: 100px;
+  }
   .white-top {
     position: fixed;
     top: 0;
@@ -277,7 +280,7 @@ header.header {
     width: 100%;
   }
 
-  .header-main {
+  .header-main, .header-main-new {
     position: absolute;
     width: 100%;
     color: white;
@@ -352,6 +355,148 @@ header.header {
     .social {
       .text-right {
         padding-left: 14px;
+      }
+    }
+  }
+
+  .header-main-new {
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 9px;
+    padding-bottom: 13px;
+    @include breakpoint(large) {
+      padding-top: 12px;
+      padding-bottom: 17px;
+    }
+    .ritz-logo {
+      width: 77px;
+      @include breakpoint(large) {
+        width: 95px;
+      }
+    }
+    .booking-section {
+      padding-top: 19px;
+      .reservations {
+        padding-right: 10px;
+      }
+      .dining {
+        position: relative;
+        .dropdown-pane {
+          padding: 0;
+          border: none;
+          width: 100%;
+          .booking-line {
+            background-color: $ritz-blue;
+
+            a {
+              color: $white;
+              line-height: 28px;
+              line-height: 28px;
+              display: block;
+              padding: 0;
+              margin: 0;
+              border-left: 1px solid $white;
+              border-right: 1px solid $white;
+              border-top: 1px solid $white;
+              text-transform: uppercase;
+              font-size: 10px;
+              font-weight: $weight-bold;
+              text-align: center;
+              width: 100%;
+              outline: none !important;
+              &:hover {
+                background-color: $white;
+                color: $ritz-blue;
+                border: 1px solid $ritz-blue;
+              }
+              @include breakpoint(large) {
+                border-top: none;
+                border-bottom: 1px solid $white;
+              }
+            }
+          }
+        }
+      }
+      .top-button {
+        color: $white;
+        line-height: 28px;
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: 1px solid $white;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: $weight-bold;
+        padding-left: 18px;
+        padding-right: 18px;
+        background-color: $ritz-blue;
+        &:hover {
+          background-color: $white;
+          color: $ritz-blue;
+          border: 1px solid $ritz-blue;
+        }
+        @include letter-spacing(100);
+        @include breakpoint(medium) {
+          padding-left: 36px;
+          padding-right: 36px;
+        }
+        &.dine-with-us {
+          position: relative;
+          padding-left: 18px;
+          padding-right: 37px;
+          @include breakpoint(medium) {
+            padding-left: 36px;
+            padding-right: 56px;
+          }
+          &:after {
+            content: " ";
+            position: absolute;
+            right: 21px;
+            top: 7px;
+            border: solid $white;
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            @include breakpoint(medium) {
+              right: 41px;
+            }
+          }
+          &.hover {
+            &:after {
+              border: solid $ritz-blue;
+              border-width: 0 1px 1px 0;
+              top: 11px;
+              transform: rotate(-135deg);
+              -webkit-transform: rotate(-135deg);
+            }
+            &:hover {
+              &:after {
+                border: solid $ritz-blue;
+                border-width: 0 1px 1px 0;
+                top: 11px;
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+              }
+            }
+          }
+          &:hover {
+            &:after {
+              border: solid $ritz-blue;
+              border-width: 0 1px 1px 0;
+              /*top: 13px;*/
+              /*transform: rotate(-135deg);
+              -webkit-transform: rotate(-135deg);*/
+            }
+          }
+        }
+        &.hover {
+          background-color: $white;
+          color: $ritz-blue;
+        }
       }
     }
   }
@@ -438,6 +583,9 @@ header.header {
         {
           bottom: 75px;
         }
+        .h1 {
+          @include letter-spacing(100);
+        }
         h2, .sub-heading {
           color: $white;
           width: 100%;
@@ -453,6 +601,7 @@ header.header {
         .sub-heading {
           font-weight: $weight-medium;
           padding-top: 25px;
+          font-family: $montserrat;
           @include breakpoint(large) {
             padding-top: 35px;
           }
