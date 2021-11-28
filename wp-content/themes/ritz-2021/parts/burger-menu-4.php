@@ -11,6 +11,7 @@ global $no_menu_page;
                 while (have_rows('page_links', 'option')) : the_row();
                     $link_type = get_sub_field('link_type');
                     $target = '';
+                    $currentpage = false;
                     if (get_sub_field('open_in_new_tab') == 1) :
                         $target = ' target="_blank"';
                     endif;
@@ -61,9 +62,13 @@ global $no_menu_page;
                                 }
                             }
                         }
+                        $currentpage_class='';
+                        if($currentpage) {
+                            $currentpage_class = ' active_menu_item';
+                        }
                         ?>
                         <?php if (have_rows('child_pages')) : ?>
-                            <li class="menu-item-has-children">
+                            <li class="menu-item-has-children<?php echo $currentpage_class;?>">
                                 <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>><?php echo esc_html($link_text); ?></a>
                                 <ul class="menu vertical nested">
                                     <li>
@@ -128,6 +133,11 @@ global $no_menu_page;
                 //$(document).foundation();
                 let $menu = $('#ritz-main-menu');
                 let $target = '';
+                let $active_menu_item = $('#ritz-main-menu li.active_menu_item:first');
+                if($active_menu_item) {
+                    $active_target = $active_menu_item.find('.menu');
+                    $menu.foundation('down', $active_target);
+                }
                 setInterval(function (e){
                     if($target != '') {
                         $menu.foundation('down', $target); // also try 'down'

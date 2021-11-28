@@ -255,4 +255,9 @@ global $ritz_template_name;
                 <?php //get_template_part( 'header/top', 'featured-image' ) ?>
             <?php endif; ?>
 
+            <?php if ( ! is_front_page() ): ?>
+                <div class="breadcrumb-spacer">&nbsp;</div>
+                <div class="breadcrumbs text-center"><?php echo get_breadcrumb(); ?></div>
+            <?php endif; ?>
+
         </header> <!-- end .header -->

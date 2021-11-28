@@ -210,6 +210,9 @@
   #ritz-main-menu {
     > li {
       //max-height: 43px;
+      button {
+        display: none;
+      }
       > a {
         text-transform: uppercase;
         @include letter-spacing(50);
@@ -230,7 +233,5 @@
       }
     }
   }
-  button {
-    display: none;
-  }
+
 }

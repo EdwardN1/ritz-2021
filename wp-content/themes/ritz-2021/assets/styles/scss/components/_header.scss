@@ -366,6 +366,7 @@ header.header {
     left: 0;
     padding-top: 9px;
     padding-bottom: 13px;
+    z-index: 500;
     @include breakpoint(large) {
       padding-top: 12px;
       padding-bottom: 17px;
@@ -374,6 +375,14 @@ header.header {
       width: 77px;
       @include breakpoint(large) {
         width: 95px;
+      }
+    }
+    .hide-for-large {
+      .menu-button {
+        img {
+          height: 18px;
+          width: 30px;
+        }
       }
     }
     .booking-section {
@@ -581,7 +590,7 @@ header.header {
         }
         @include breakpoint(large)
         {
-          bottom: 75px;
+          bottom: 175px;
         }
         .h1 {
           @include letter-spacing(100);
