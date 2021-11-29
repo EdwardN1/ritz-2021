@@ -5,9 +5,9 @@ global $no_menu_page;
 <div class="grid-x show-for-large">
     <div class="cell auto main-nav">
         <?php if (have_rows('page_links', 'option')) : ?>
-            <ul id="ritz-main-menu" class="vertical dropdown menu accordion-menu" data-accordion-menu data-multi-open="false"
-                data-submenu-toggle="true" data-slide-speed="500" data-parent-link="false">
+            <ul id="ritz-main-menu-vertical" class="vertical dropdown menu" data-dropdown-menu -menu>
                 <?php
+                $pi = 1;
                 while (have_rows('page_links', 'option')) : the_row();
                     $link_type = get_sub_field('link_type');
                     $target = '';
@@ -66,11 +66,14 @@ global $no_menu_page;
                         if($currentpage) {
                             $currentpage_class = ' active_menu_item';
                         }
+                        $parent_data = ' data-parent-number="'.$pi.'"';
+	                    $parent_data_is = ' data-parent-number-is="'.$pi.'"';
+                        $pi++;
                         ?>
                         <?php if (have_rows('child_pages')) : ?>
-                            <li class="menu-item-has-children<?php echo $currentpage_class;?>">
+                            <li class="menu-item-has-children<?php echo $currentpage_class;?>"<?php echo $parent_data;?>>
                                 <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>><?php echo esc_html($link_text); ?></a>
-                                <ul class="menu vertical nested">
+                                <ul class="menu vertical nested"<?php echo $parent_data_is;?>>
                                     <li>
                                         <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>>Overview</a>
                                     </li>
@@ -108,7 +111,7 @@ global $no_menu_page;
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li class="menu-item-has-children">
+                            <li class="menu-item-has-children"<?php echo $parent_data;?>>
                                 <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>><?php echo esc_html($link_text); ?></a>
                                 <ul class="menu vertical nested">
                                     <li>
@@ -129,25 +132,16 @@ global $no_menu_page;
 
     <script>
         jQuery(document).ready(function ($) {
-            $(function () {
-                //$(document).foundation();
-                let $menu = $('#ritz-main-menu');
-                let $target = '';
-                let $active_menu_item = $('#ritz-main-menu li.active_menu_item:first');
-                if($active_menu_item) {
-                    $active_target = $active_menu_item.find('.menu');
-                    $menu.foundation('down', $active_target);
-                }
-                setInterval(function (e){
-                    if($target != '') {
-                        $menu.foundation('down', $target); // also try 'down'
-                        $target = '';
-                    }
-                },300);
-                $('.menu').on('mouseover', '.menu-item-has-children', function (event) {
-                    $target = $(event.currentTarget).find('.menu');
-                });
+            $('#ritz-main-menu-vertical').on('show.zf.dropdownMenu', function(ev, $el) {
+                let $parentNumber = $el.data('parent-number-is');
+                let $parentMenu = $('#ritz-main-menu-vertical').find('[data-parent-number="'+$parentNumber+'"]');
+                let numberofSubMenuItems = $el.children().length;
+                let minHeight = (numberofSubMenuItems * 40) + ($parentNumber*45)-60;
+                window.console.log(minHeight+' minimum height');
+                $('#ritz-main-menu-vertical').css('min-height',minHeight);
+
             });
+
         });
     </script>
 

@@ -2,7 +2,7 @@
   padding-top: 30px;
   padding-bottom: 90px;
   @include breakpoint(large) {
-    padding-top: 90px;
+    padding-top: 45px;
     padding-left: 150px;
     padding-right: 150px;
     padding-bottom: 86px;
@@ -11,9 +11,10 @@
     text-transform: uppercase;
     text-align: center;
     margin: 0;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 30px;
     padding-bottom: 20px;
+    font-family: $garamond;
     @include breakpoint(large) {
       padding-bottom: 34px;
     }
@@ -78,5 +79,9 @@
     &:after {
       background-image: url("../images/curator-prev.svg");
     }
+  }
+
+  .crt-grid-post .crt-post-footer .crt-post-userimage {
+    display: none;
   }
 }

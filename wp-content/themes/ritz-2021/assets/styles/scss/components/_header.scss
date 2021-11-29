@@ -1,8 +1,8 @@
 header.header {
   position: relative;
-  padding-top: 80px;
+  padding-top: 75px;
   @include breakpoint(large) {
-    padding-top: 100px;
+    padding-top: 85px;
   }
   .white-top {
     position: fixed;
@@ -365,16 +365,16 @@ header.header {
     top: 0;
     left: 0;
     padding-top: 9px;
-    padding-bottom: 13px;
+    padding-bottom: 3px;
     z-index: 500;
     @include breakpoint(large) {
       padding-top: 12px;
-      padding-bottom: 17px;
+      padding-bottom: 7px;
     }
     .ritz-logo {
-      width: 77px;
+      width: 67px;
       @include breakpoint(large) {
-        width: 95px;
+        width: 85px;
       }
     }
     .hide-for-large {

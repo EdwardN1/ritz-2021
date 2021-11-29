@@ -234,4 +234,36 @@
     }
   }
 
+  #ritz-main-menu-vertical {
+    transition: all 0.1s ease-in-out;
+    > li {
+      //max-height: 43px;
+      max-width: 60%;
+      button {
+        display: none;
+      }
+      > a {
+        text-transform: uppercase;
+        @include letter-spacing(50);
+        font-size: 20px;
+        &:after {
+          display: none;
+        }
+      }
+      ul.menu.is-dropdown-submenu {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        > li {
+          a {
+            text-transform: uppercase;
+            font-weight: $weight-medium;
+            font-size: 14px;
+            @include letter-spacing(50);
+          }
+        }
+      }
+    }
+  }
+
 }
