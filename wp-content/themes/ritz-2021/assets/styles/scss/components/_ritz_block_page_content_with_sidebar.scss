@@ -209,6 +209,10 @@
       font-weight: $weight-medium;*/
       padding-bottom: 25px;
       padding-top: 8px;
+      text-transform: lowercase;
+      &:first-letter {
+        text-transform: uppercase;
+      }
       @include letter-spacing(50);
       @include breakpoint(large) {
         padding-top: 0;
@@ -280,6 +284,7 @@
       @include letter-spacing(100);
       a {
         text-decoration: underline;
+        font-weight: $weight-semi-bold;
       }
       a[href^="tel:"] {
         text-decoration: none;
