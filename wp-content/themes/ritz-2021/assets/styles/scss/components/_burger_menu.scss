@@ -255,6 +255,10 @@
         border: none;
         width: 100%;
         > li {
+          max-width: 235px;
+          @include breakpoint(1145) {
+            max-width: none;
+          }
           a {
             text-transform: uppercase;
             font-weight: $weight-medium;

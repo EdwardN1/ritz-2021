@@ -76,8 +76,11 @@
                 <img src="<?php echo get_template_directory_uri() . '/assets/images/white-ritz-logo.svg'; ?>">
             </div>
             <div class="cell shrink contact">
-                150 PICCADILLY, LONDON W1J 9BR<br>
-                TELEPHONE: +44 (0) 20 7493 8181
+                <div>150 PICCADILLY, LONDON W1J 9BR<br>
+                TELEPHONE: +44 (0) 20 7493 8181</div>
+                        <div>
+                            <a href="//policy.cookiereports.com/9187251e-en-gb.html" class="CookieReportsLink" style="color: #fff; text-transform: uppercase;" target="_blank">Cookie Policy</a>
+                        </div>
             </div>
             <div class="cell shrink numbers">
                 <p>THE RITZ HOTEL (LONDON) LTD<br>
@@ -126,8 +129,12 @@
             </div>
             <div class="cell shrink">
                 <div class="contact">
-                    150 PICCADILLY, LONDON W1J 9BR<br>
+                    <div>150 PICCADILLY, LONDON W1J 9BR<br>
                     TELEPHONE: +44 (0) 20 7493 8181
+                    </div>
+                    <div>
+                        <a href="//policy.cookiereports.com/9187251e-en-gb.html" class="CookieReportsLink" style="color: #fff; text-transform: uppercase;" target="_blank">Cookie Policy</a>
+                    </div>
                 </div>
                 <div class="social">
                     <div class="grid-x">
@@ -177,8 +184,12 @@
             <img src="<?php echo get_template_directory_uri() . '/assets/images/white-ritz-logo.svg'; ?>">
         </div>
         <div class="contact text-center">
-            150 PICCADILLY, LONDON W1J 9BR<br>
+            <div>150 PICCADILLY, LONDON W1J 9BR<br>
             TELEPHONE: <a href="tel:+442074938181" style="color: #FFFFFF;">+44 (0) 20 7493 8181</a>
+            </div>
+            <div>
+                <a href="//policy.cookiereports.com/9187251e-en-gb.html" class="CookieReportsLink" style="color: #fff; text-transform: uppercase;" target="_blank">Cookie Policy</a>
+            </div>
         </div>
         <div class="social">
             <div class="grid-container">
