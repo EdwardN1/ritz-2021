@@ -329,17 +329,6 @@ endif;
 
     <div id="tea-booking" style="width: 100%">
         <iframe src="https://www.sevenrooms.com/reservations/ritzafternoontea" style="width: 100%; height: 100vh; border-style: none;"></iframe>
-        <!--<div id="sr-res-root" class="sr-md sr-dark sr-#002034">BOOK NOW</div>
-        <script src="https://www.sevenrooms.com/widget/embed.js"></script>
-        <script>
-            SevenroomsWidget.init({
-                venueId: "ritzafternoontea",
-                triggerId: "sr-res-root", // id of the dom element that will trigger this widget
-                type: "reservations", // either 'reservations' or 'waitlist' or 'events'
-                styleButton: false, // true if you are using the SevenRooms button
-                clientToken: "" //(Optional) Pass the api generated clientTokenId here
-            })
-        </script>-->
     </div>
 
 </div>
