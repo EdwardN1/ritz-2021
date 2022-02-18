@@ -176,7 +176,7 @@ global $ritz_template_name;
                                                 ?>
                                             <?php endwhile; ?>
                                             <div class="booking-line">
-                                                <a href="#" <?php echo $book_data; ?>>The Ritz Restaurant</a>
+                                                <a data-toggle="off-canvas-restaurant" <?php //echo $book_data; ?>>The Ritz Restaurant</a>
                                             </div>
                                         <?php endif; ?>
                                         <?php if ( have_rows( 'afternoon_tea' ) ) : ?>
@@ -192,7 +192,7 @@ global $ritz_template_name;
                                                 ?>
                                             <?php endwhile; ?>
                                             <div class="booking-line">
-                                                <a href="#" <?php echo $book_tea_data; ?>>Afternoon Tea</a>
+                                                <a data-toggle="off-canvas-afternoon-tea" <?php //echo $book_tea_data; ?>>Afternoon Tea</a>
                                             </div>
                                         <?php endif; ?>
                                         <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */?><!--
@@ -247,6 +247,10 @@ global $ritz_template_name;
                     </div>
                 </div>
             </div>
+
+            <!--<div id="restaurant-booking" style="width: 100%">
+                <iframe src="https://www.sevenrooms.com/reservations/theritzrestaurant" style="width: 100%; height: 100vh; border-style: none;"></iframe>
+            </div>-->
 
             <?php if ( have_rows( 'image_gallery' ) ) : ?>
 
