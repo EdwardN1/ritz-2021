@@ -10,6 +10,8 @@ function site_scripts() {
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/vendor/slick-1.8.1/slick/slick.min.js', array( 'site-js' ), filemtime( get_template_directory() . '/vendor/slick-1.8.1/slick/slick.min.js' ), true );
 	wp_enqueue_script( 'waypoints-js', get_template_directory_uri() . '/vendor/waypoints/jquery.waypoints.min.js', array( 'slick-js' ), filemtime( get_template_directory() . '/vendor/waypoints/jquery.waypoints.min.js' ), true );
 	wp_enqueue_script( 'bookatable', '//bda.bookatable.com/deploy/lbui.direct.min.js', array( 'waypoints-js' ), 1.1, true );
+    wp_enqueue_script( 'seven-rooms', '//www.sevenrooms.com/widget/embed.js', array( 'waypoints-js' ), 1.1, true );
+    wp_enqueue_script( 'seven-rooms-js', get_template_directory_uri() . '/assets/scripts/sevenRooms.js', array( 'seven-rooms' ), filemtime( get_template_directory() . '/assets/scripts/sevenRooms.js' ), true );
 	if($template_name=='T8 Location Page') {
 	    wp_enqueue_script( 'google-maps-api', 'https://maps.googleapis.com/maps/api/js?key='.get_field( 'maps_api_key', 'option' ), array( 'jquery' ),'', true );
 		wp_enqueue_script( 'google-maps-markers', get_template_directory_uri() . '/vendor/old-google-maps/markerwithlabel.js', array( 'google-maps-api' ), filemtime( get_template_directory() . '/vendor/old-google-maps/markerwithlabel.js' ), true );
