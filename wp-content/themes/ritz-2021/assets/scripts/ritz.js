@@ -94,7 +94,7 @@ jQuery(document).ready(function ($) {
                 if(gaaccountnumber != '') {
                     obj.gaaccountnumber = gaaccountnumber;
                 }
-                $(this).lbuiDirect(obj);
+                //$(this).lbuiDirect(obj);
             }
         }
     });

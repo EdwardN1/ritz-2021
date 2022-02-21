@@ -9,7 +9,7 @@ function site_scripts() {
 	wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/scripts/js' ), true );
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/vendor/slick-1.8.1/slick/slick.min.js', array( 'site-js' ), filemtime( get_template_directory() . '/vendor/slick-1.8.1/slick/slick.min.js' ), true );
 	wp_enqueue_script( 'waypoints-js', get_template_directory_uri() . '/vendor/waypoints/jquery.waypoints.min.js', array( 'slick-js' ), filemtime( get_template_directory() . '/vendor/waypoints/jquery.waypoints.min.js' ), true );
-	wp_enqueue_script( 'bookatable', '//bda.bookatable.com/deploy/lbui.direct.min.js', array( 'waypoints-js' ), 1.1, true );
+	//wp_enqueue_script( 'bookatable', '//bda.bookatable.com/deploy/lbui.direct.min.js', array( 'waypoints-js' ), 1.1, true );
     wp_enqueue_script( 'seven-rooms', '//www.sevenrooms.com/widget/embed.js', array( 'waypoints-js' ), 1.1, true );
     wp_enqueue_script( 'seven-rooms-js', get_template_directory_uri() . '/assets/scripts/sevenRooms.js', array( 'seven-rooms' ), filemtime( get_template_directory() . '/assets/scripts/sevenRooms.js' ), true );
 	if($template_name=='T8 Location Page') {
@@ -20,7 +20,7 @@ function site_scripts() {
 	if(($template_name=='T6 Gallery Page')||($ritz_template_name == 'ritz-gallery')) {
         //wp_enqueue_script( 'isotope', get_template_directory_uri() . '/vendor/isotope/isotope.pkgd.min.js', array ( 'waypoints-js' ), 1.1, true);
     }
-	wp_enqueue_script( 'ritz-js', get_template_directory_uri() . '/assets/scripts/ritz.js', array( 'bookatable' ), filemtime( get_template_directory() . '/assets/scripts/ritz.js' ), true );
+	wp_enqueue_script( 'ritz-js', get_template_directory_uri() . '/assets/scripts/ritz.js', array( 'seven-rooms-js' ), filemtime( get_template_directory() . '/assets/scripts/ritz.js' ), true );
 
 	wp_enqueue_script( 'azds', '//newbooking.azds.com/inline.bundle.js', array( 'ritz-js' ), 1.1, true );
 

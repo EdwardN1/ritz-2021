@@ -309,26 +309,4 @@ endif;
 	<?php endif; ?>
 </div>
 
-<div class="off-canvas position-right" id="off-canvas-restaurant" data-off-canvas>
 
-    <button class="close-button" aria-label="Close menu" type="button" data-close>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/close.svg">
-    </button>
-
-    <div id="restaurant-booking" style="width: 100%">
-        <iframe src="https://www.sevenrooms.com/reservations/theritzrestaurant" style="width: 100%; height: 100vh; border-style: none;"></iframe>
-    </div>
-
-</div>
-
-<div class="off-canvas position-right" id="off-canvas-afternoon-tea" data-off-canvas>
-
-    <button class="close-button" aria-label="Close menu" type="button" data-close>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/close.svg">
-    </button>
-
-    <div id="tea-booking" style="width: 100%">
-        <iframe src="https://www.sevenrooms.com/reservations/ritzafternoontea" style="width: 100%; height: 100vh; border-style: none;"></iframe>
-    </div>
-
-</div>
