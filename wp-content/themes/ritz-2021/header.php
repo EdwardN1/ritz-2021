@@ -68,8 +68,10 @@ global $ritz_template_name;
                             <div class="dropdown-pane top" id="bookings-panel-mobile" data-dropdown
                                  data-close-on-click="true" data-auto-focus="true">
                                 <?php if (have_rows('the_ritz_restaurant')) : ?>
+                                    <?php $restaurantid = ''; ?>
                                     <?php while (have_rows('the_ritz_restaurant')) : the_row(); ?>
                                         <?php
+                                        $restaurantid = get_sub_field('restaurantid');
                                         $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
                                         $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
                                         $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
@@ -80,13 +82,18 @@ global $ritz_template_name;
                                         ?>
                                     <?php endwhile; ?>
                                     <div class="booking-line">
-                                        <a href="#" id="mobile-header-book-restaurant" <?php echo $book_data; ?>>The
+                                        <!--<a href="#" id="mobile-header-book-restaurant" <?php /*echo $book_data; */?>>The
+                                            Ritz Restaurant</a>-->
+                                        <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_restaurant&brand=73" id="mobile-header-book-restaurant" target="_blank">The
                                             Ritz Restaurant</a>
+                                        <?php /*echo rid_to_quadranet_link($restaurantid, 'Afternoon Tea');*/?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (have_rows('afternoon_tea')) : ?>
+                                    <?php $restaurantid = ''; ?>
                                     <?php while (have_rows('afternoon_tea')) : the_row(); ?>
                                         <?php
+                                        $restaurantid = get_sub_field('restaurantid');
                                         $book_tea_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
                                         $book_tea_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
                                         $book_tea_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
@@ -97,10 +104,14 @@ global $ritz_template_name;
                                         ?>
                                     <?php endwhile; ?>
                                     <div class="booking-line">
-                                        <a href="#" id="mobile-header-book-tea" <?php echo $book_tea_data; ?>>Afternoon
+                                        <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_afternoon_tea&brand=73" id="mobile-header-book-tea" target="_blank">Afternoon
                                             Tea</a>
+                                        <?php /*echo rid_to_quadranet_link($restaurantid, 'Afternoon Tea');*/?>
                                     </div>
                                 <?php endif; ?>
+                                <div class="booking-line">
+                                    <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73" target="_blank">The Ritz Garden</a>
+                                </div>
                                 <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
 									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */ ?>
 										<?php
@@ -178,7 +189,8 @@ global $ritz_template_name;
                                                 ?>
                                             <?php endwhile; ?>
                                             <div class="booking-line">
-                                                <a href="#" <?php echo $book_data; ?>>The Ritz Restaurant</a>
+                                                <!--<a href="#" <?php /*echo $book_data; */?>>The Ritz Restaurant</a>-->
+                                                <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_restaurant&brand=73" target="_blank">The Ritz Restaurant</a>
                                             </div>
                                         <?php endif; ?>
                                         <?php if (have_rows('afternoon_tea')) : ?>
@@ -194,9 +206,13 @@ global $ritz_template_name;
                                                 ?>
                                             <?php endwhile; ?>
                                             <div class="booking-line">
-                                                <a href="#" <?php echo $book_tea_data; ?>>Afternoon Tea</a>
+                                                <!--<a href="#" <?php /*echo $book_tea_data; */?>>Afternoon Tea</a>-->
+                                                <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_afternoon_tea&brand=73" target="_blank">Afternoon Tea</a>
                                             </div>
                                         <?php endif; ?>
+                                        <div class="booking-line">
+                                            <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73" target="_blank">The Ritz Garden</a>
+                                        </div>
                                         <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
 									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */ ?>
 										<?php
