@@ -52,18 +52,26 @@
     </div>
 </div>
 
-<!-- Place <div> tag where you want the feed to appear -->
-<div class="grid-container curator">
-    <!-- Place <div> tag where you want the feed to appear -->
+<!--<div class="grid-container curator">
     <h2>Immerse yourself in the world of The Ritz</h2>
     <div id="curator-feed-the-ritz-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
-    <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
     <script type="text/javascript">
-        /* curator-feed-the-ritz-layout */
         (function(){
             var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
             i.src = "https://cdn.curator.io/published/ec1d9988-00d8-4753-93ab-2d8801342333.js";
             e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+        })();
+    </script>
+</div>-->
+<div class="grid-container curator">
+    <!-- Place <div> tag where you want the feed to appear -->
+    <h2>Immerse yourself in the world of The Ritz</h2>
+    <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
+        /* curator-feed-default-feed-layout */
+        (function(){
+            var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+            i.src="https://cdn.curator.io/published/e1c1b171-2579-409d-ac7a-68a62041081e.js";
+            e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
         })();
     </script>
 </div>
