@@ -15,16 +15,9 @@
     .left {
       max-width: 575px;
       padding-right: 50px;
-      a {
-        text-decoration: underline;
-      }
       p {
         font-size: 15px;
         line-height: 22px;
-        margin-bottom: 20px;
-        @include letter-spacing(10);
-      }
-      ul {
         margin-bottom: 20px;
       }
     }
@@ -82,42 +75,22 @@
       }
     }
     .price-line {
-      font-size: 15px;
+      font-size: 18px;
       line-height: 22px;
-      font-weight: $weight-regular;
+      font-weight: $weight-medium;
       padding-bottom: 40px;
-      text-transform: lowercase;
-      &:first-letter {
-        text-transform: uppercase;
-      }
-      @include letter-spacing(10);
+      text-transform: uppercase;
       @include breakpoint(large) {
-        //padding-top: 28px;
-        padding-bottom: 25px;
-      }
-    }
-    .booking-line {
-      @include breakpoint(medium) {
-        padding-top: 25px;
+        padding-top: 28px;
+        padding-bottom: 50px;
       }
     }
     .footer-lines {
-      font-size: 15px;
-      font-weight: $weight-regular;
-      line-height: 22px;
-      text-transform: lowercase;
-      &:first-letter {
-        text-transform: uppercase;
-      }
+      font-size: 14px;
+      font-weight: $weight-medium;
+      line-height: 18px;
+      text-transform: uppercase;
       padding-top: 50px;
-      &.short-top {
-        padding-top: 25px;
-      }
-      @include letter-spacing(10);
-      a {
-        text-decoration: none;
-        font-weight: $weight-semi-bold;
-      }
     }
   }
 
@@ -147,8 +120,6 @@
               text-transform: uppercase;
               background-color: $light-gray;
               padding-bottom: 22px;
-              font-weight: $weight-medium;
-              @include letter-spacing(50);
               @include breakpoint(large) {
                 padding-bottom: 14px;
               }
@@ -180,12 +151,8 @@
                   padding-bottom: 12px;
                   font-size: 14px;
                   line-height: 20px;
-                  a {
-                    text-decoration: underline;
-                  }
-                  @include breakpoint(medium) {
-                    text-indent: -10px;
-                  }
+                  text-indent: -10px;
+
                   &:before {
                     content: "- ";
                     text-indent: -10px;
@@ -205,95 +172,28 @@
     }
     .price-line {
       text-transform: uppercase;
-      /*font-size: 16px;
-      font-weight: $weight-medium;*/
+      font-size: 16px;
+      font-weight: $weight-medium;
       padding-bottom: 25px;
       padding-top: 8px;
-      text-transform: lowercase;
-      &:first-letter {
-        text-transform: uppercase;
-      }
-      @include letter-spacing(50);
       @include breakpoint(large) {
         padding-top: 0;
       }
     }
     .read-more {
       padding-bottom: 25px;
-      @include letter-spacing(100);
       button {
         text-transform: uppercase;
         color: $ritz-blue;
         font-size: 12px;
         font-weight: $weight-semi-bold;
-        position: relative;
-        padding-right: 32px;
-        outline: none !important;
-        .less {
-          display: none;
-        }
-        .more {
-          display: inline;
-        }
-        &:after {
-          content: " ";
-          background-position: top right;
-          top: 50%;
-          right: 0;
-          margin-top: -6px;
-          background-image: url("../images/read-more-closed.svg");
-          height: 12px;
-          width: 10px;
-          background-repeat: no-repeat;
-          position: absolute;
-        }
-      }
-      button[aria-expanded="true"] {
-        &:after {
-          background-image: url("../images/read-more-open.svg");
-          background-position: center;
-          margin-top: -3px;
-        }
-        .more {
-          display: none;
-        }
-        .less {
-          display: inline;
-        }
-      }
-    }
-    .read-more[aria-expanded="true"] {
-      button {
-        &:after {
-          background-image: url("../images/read-more-open.svg");
-          background-position: center;
-          margin-top: -3px;
-        }
-        .more {
-          display: none;
-        }
-        .less {
-          display: inline;
-        }
       }
     }
     .footer-lines {
       text-transform: uppercase;
-      font-size: 14px;
-      font-weight: $weight-regular;
-      text-transform: lowercase;
-      &:first-letter {
-        text-transform: uppercase;
-      }
+      font-size: 12px;
+      font-weight: $weight-medium;
       @include letter-spacing(100);
-      a {
-        text-decoration: underline;
-        font-weight: $weight-semi-bold;
-      }
-      a[href^="tel:"] {
-        text-decoration: none;
-        white-space: nowrap;
-      }
     }
     .buttons {
       margin-left: auto;
@@ -329,15 +229,6 @@
       }
       p {
         margin: 0;
-        padding-bottom: 20px;
-        @include breakpoint(large) {
-          padding-bottom: 25px;
-        }
-      }
-      a {
-        text-decoration: underline;
-      }
-      ul {
         padding-bottom: 20px;
         @include breakpoint(large) {
           padding-bottom: 25px;

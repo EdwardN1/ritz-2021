@@ -5,29 +5,3 @@
 .text-right {
   text-align: right;
 }
-
-.acf-focal_point.active {
-  .has-image {
-    width: 100%;
-    min-height: 80px;
-    height: 70px;
-    .acf-focal_point-image {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-    }
-    .acf-focal_point-canvas {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      min-height: 80px;
-      height: 70px;
-    }
-    .acf-button-delete {
-      z-index: 2;
-    }
-  }
-}

@@ -14,10 +14,6 @@ jQuery(document).ready(function ($) {
         speed: 2000
     });
 
-    /*$('#ritz-main-image-gallery').on('beforeChange',function(event, slick, direction){
-        $('#ritz-main-image-gallery img.js-focal-point-image').responsify();
-    });*/
-
     $('.ritz-page-carousel').slick({
         arrows: true,
         autoplay: false,
@@ -29,7 +25,7 @@ jQuery(document).ready(function ($) {
         slidesToShow: 2,
         responsive: [
             {
-                breakpoint :768,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                 }
@@ -38,23 +34,23 @@ jQuery(document).ready(function ($) {
     });
 
     $('#bookings-panel').on(
-        'show.zf.dropdown', function() {
+        'show.zf.dropdown', function () {
             $('#bookings-panel').css('display', 'none');
             $('#bookings-panel').fadeIn('fast');
         });
     $('#bookings-panel').on(
-        'hide.zf.dropdown', function() {
+        'hide.zf.dropdown', function () {
             /*$('#bookings-panel').css('display', 'inherit');
             $('#bookings-panel').fadeOut('slow');*/
         });
 
     $('#bookings-panel-mobile').on(
-        'show.zf.dropdown', function() {
+        'show.zf.dropdown', function () {
             $('#bookings-panel-mobile').css('display', 'none');
             $('#bookings-panel-mobile').fadeIn('fast');
         });
     $('#bookings-panel-mobile').on(
-        'hide.zf.dropdown', function() {
+        'hide.zf.dropdown', function () {
             /*$('#bookings-panel-mobile').css('display', 'inherit');
             $('#bookings-panel-mobile').fadeOut('slow');*/
         });
@@ -68,30 +64,30 @@ jQuery(document).ready(function ($) {
         let conversionjs = $(this).data("conversionjs");
         let gaaccountnumber = $(this).data("gaaccountnumber");
         //window.console.log(connectionid+':'+restaurantid+':'+basecolor+':'+promotionid+':'+sessionid+':'+gaaccountnumber);
-        if(connectionid != '') {
-            if(restaurantid != '') {
+        if (connectionid != '') {
+            if (restaurantid != '') {
                 let obj = {
-                    connectionid  :  connectionid,
-                    restaurantid : restaurantid,
-                    modalWindow  :  {enabled  :  true}
+                    connectionid: connectionid,
+                    restaurantid: restaurantid,
+                    modalWindow: {enabled: true}
                 };
-                if(basecolor != '') {
+                if (basecolor != '') {
                     obj.style = {
-                        baseColor : basecolor
+                        baseColor: basecolor
                     };
                 }
-                if(promotionid != '') {
+                if (promotionid != '') {
                     obj.promotionid = promotionid;
                 }
-                if(sessionid != '') {
+                if (sessionid != '') {
                     obj.preselect = {
-                        sessionid : sessionid
+                        sessionid: sessionid
                     };
                 }
-                if(conversionjs != '') {
+                if (conversionjs != '') {
                     obj.conversionjs = conversionjs;
                 }
-                if(gaaccountnumber != '') {
+                if (gaaccountnumber != '') {
                     obj.gaaccountnumber = gaaccountnumber;
                 }
                 //$(this).lbuiDirect(obj);
@@ -99,7 +95,7 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $('.dining .top-button, .reservations .top-button').on('click', function (e){
+    $('.dining .top-button, .reservations .top-button').on('click', function (e) {
         $(this).preventDefault;
     });
 
@@ -111,7 +107,7 @@ jQuery(document).ready(function ($) {
     $(document).on(
         'open.zf.reveal', '[data-reveal]', function () {
             let $modal = $(this);
-            if($modal.data('ytvideoid')) {
+            if ($modal.data('ytvideoid')) {
                 let $id = $(this).data('id');
                 let ytVideoID = $modal.data('ytvideoid');
                 let player = new YT.Player('feature-video-' + $id, {
@@ -129,9 +125,9 @@ jQuery(document).ready(function ($) {
                     events: {}
                 });
             } else {
-                if($modal.data('galleryid')) {
+                if ($modal.data('galleryid')) {
                     let galleryid = $modal.data('galleryid');
-                    $('#gallery-slick-'+galleryid).slick({
+                    $('#gallery-slick-' + galleryid).slick({
                         arrows: true,
                         autoplay: false,
                         autoplaySpeed: 3000,
@@ -153,44 +149,23 @@ jQuery(document).ready(function ($) {
     $(document).on(
         'closed.zf.reveal', '[data-reveal]', function () {
             $id = $(this).data('id');
-            $('#'+$id+' .flex-video iframe').remove();
-            $('#'+$id+' .flex-video').append('<div id="feature-video-'+$id+'" />');
+            $('#' + $id + ' .flex-video iframe').remove();
+            $('#' + $id + ' .flex-video').append('<div id="feature-video-' + $id + '" />');
         }
     );
 
-    $('.block-ritz-offers-block .filter-row .button-filter').on('click', function (){
-        if(!$(this).hasClass('selected')) {
-            $('.block-ritz-offers-block .filter-row .button-filter').each(function (){
-               $(this).removeClass('selected');
-            });
-            $(this).addClass('selected');
-            if($(this).data('filter-class')=='all') {
-                $('.block-ritz-offers-block .offers-grid > .grid-x > .cell').show();
-            } else {
-                let filterClass = $(this).data('filter-class');
-                $('.block-ritz-offers-block .offers-grid > .grid-x > .cell').each(function(){
-                    if($(this).hasClass(filterClass)) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
-            }
-        }
-    });
-
-    $('.block-ritz-image-gallery-block .filter-row .button-filter').on('click', function (){
-        if(!$(this).hasClass('selected')) {
-            $('.block-ritz-image-gallery-block .filter-row .button-filter').each(function (){
+    $('.block-ritz-offers-block .filter-row .button-filter').on('click', function () {
+        if (!$(this).hasClass('selected')) {
+            $('.block-ritz-offers-block .filter-row .button-filter').each(function () {
                 $(this).removeClass('selected');
             });
             $(this).addClass('selected');
-            if($(this).data('filter-class')=='all') {
-                $('.block-ritz-image-gallery-block .icontainer').show();
+            if ($(this).data('filter-class') == 'all') {
+                $('.block-ritz-offers-block .offers-grid > .grid-x > .cell').show();
             } else {
                 let filterClass = $(this).data('filter-class');
-                $('.block-ritz-image-gallery-block .icontainer').each(function(){
-                    if($(this).hasClass(filterClass)) {
+                $('.block-ritz-offers-block .offers-grid > .grid-x > .cell').each(function () {
+                    if ($(this).hasClass(filterClass)) {
                         $(this).show();
                     } else {
                         $(this).hide();
@@ -200,14 +175,35 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $('.header-main').waypoint(function (direction){
-        if(direction=='down') {
+    $('.block-ritz-image-gallery-block .filter-row .button-filter').on('click', function () {
+        if (!$(this).hasClass('selected')) {
+            $('.block-ritz-image-gallery-block .filter-row .button-filter').each(function () {
+                $(this).removeClass('selected');
+            });
+            $(this).addClass('selected');
+            if ($(this).data('filter-class') == 'all') {
+                $('.block-ritz-image-gallery-block .icontainer').show();
+            } else {
+                let filterClass = $(this).data('filter-class');
+                $('.block-ritz-image-gallery-block .icontainer').each(function () {
+                    if ($(this).hasClass(filterClass)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            }
+        }
+    });
+
+    $('.header-main').waypoint(function (direction) {
+        if (direction == 'down') {
             $('.white-top').addClass('visible');
         }
-        if(direction=='up') {
+        if (direction == 'up') {
             $('.white-top').removeClass('visible');
         }
-    },{
+    }, {
         offset: '-100px'
     })
 
@@ -228,6 +224,4 @@ jQuery(document).ready(function ($) {
             offset: '70%',
         });
     });
-
-
 });

@@ -308,5 +308,3 @@ endif;
         </script>
 	<?php endif; ?>
 </div>
-
-

@@ -8,7 +8,6 @@ CSS file.
 
 ******************************************************************/
 
-
 // Import local Foundation overrides - Don't link to Bower version as it will be overwritten whenever updated
 @import "settings";
 
@@ -67,7 +66,6 @@ CSS file.
 
 // Import your custom styles
 @import "global";
-@import "components/animations";
 @import "components/font_styles";
 @import "classes/responsive_text_alignment";
 @import "components/top_bar";
@@ -87,15 +85,3 @@ CSS file.
 @import "components/ritz_block_two_column_experience";
 @import "components/ritz_block_underlined_title";
 @import "components/ritz_block_offer_landing";
-@import "components/ritz_block_page_carousel";
-@import "components/reveal";
-@import "components/curator";
-@import "components/ritz_block_offers_grid";
-@import "components/ritz_block_image_gallery";
-@import "components/location";
-@import "components/forms";
-@import "components/ritz_block_image";
-@import "components/event_forms";
-@import "components/tables";
-@import "components/ritz_block_popup_button_row";
-@import "components/single-post";

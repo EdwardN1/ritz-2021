@@ -2,29 +2,29 @@
 
   @include breakpoint(small) {
     &.is-style-responsive-large {
-      height: 25px !important;
+      height: 60px !important;
     }
 
     &.is-style-responsive-medium {
-      height: 25px !important;
+      height: 40px !important;
     }
 
     &.is-style-responsive-small {
-      height: 25px !important;
+      height: 20px !important;
     }
   }
 
   @include breakpoint(medium) {
     &.is-style-responsive-large {
-      height: 35px !important;
+      height: 80px !important;
     }
 
     &.is-style-responsive-medium {
-      height: 35px !important;
+      height: 60px !important;
     }
 
     &.is-style-responsive-small {
-      height: 25px !important;
+      height: 40px !important;
     }
   }
 
@@ -34,11 +34,11 @@
     }
 
     &.is-style-responsive-medium {
-      height: 50px !important;
+      height: 60px !important;
     }
 
     &.is-style-responsive-small {
-      height: 25px !important;
+      height: 30px !important;
     }
   }
 }

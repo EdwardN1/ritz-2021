@@ -7,6 +7,8 @@
  */
 
 global $ritz_template_name;
+global $use_seven_rooms;
+
 ?>
 
 <!doctype html>
@@ -62,86 +64,126 @@ global $ritz_template_name;
                             <a href="#/booking/step-1" id="book-nav" class="stay-with-us top-button book-now-button">Stay
                                 with us</a>
                         </div>
-                        <div class="cell shrink dining">
-                            <a class="dine-with-us top-button" data-toggle="bookings-panel-mobile">Dine with
-                                us</a>
-                            <div class="dropdown-pane top" id="bookings-panel-mobile" data-dropdown
-                                 data-close-on-click="true" data-auto-focus="true">
-                                <?php if (have_rows('the_ritz_restaurant')) : ?>
-                                    <?php $restaurantid = ''; ?>
-                                    <?php while (have_rows('the_ritz_restaurant')) : the_row(); ?>
-                                        <?php
-                                        $restaurantid = get_sub_field('restaurantid');
-                                        $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
-                                        $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
-                                        $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
-                                        $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
-                                        $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
-                                        $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
-                                        $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
-                                        ?>
-                                    <?php endwhile; ?>
+                        <?php if ($use_seven_rooms): ?>
+                            <div class="cell shrink dining">
+                                <a class="dine-with-us top-button" data-toggle="bookings-panel-mobile">Dine with
+                                    us</a>
+                                <div class="dropdown-pane top" id="bookings-panel-mobile" data-dropdown
+                                     data-close-on-click="true" data-auto-focus="true">
                                     <div class="booking-line">
-                                        <!--<a href="#" id="mobile-header-book-restaurant" <?php /*echo $book_data; */?>>The
-                                            Ritz Restaurant</a>-->
-                                        <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_restaurant&brand=73" id="mobile-header-book-restaurant" target="_blank">The
-                                            Ritz Restaurant</a>
-                                        <?php /*echo rid_to_quadranet_link($restaurantid, 'Afternoon Tea');*/?>
+                                        <a id="mobile-header-sr-res-root" class="ritz-seven-rooms"
+                                           data-venueid="theritzrestaurant">The Ritz Restaurant</a>
                                     </div>
-                                <?php endif; ?>
-                                <?php if (have_rows('afternoon_tea')) : ?>
-                                    <?php $restaurantid = ''; ?>
-                                    <?php while (have_rows('afternoon_tea')) : the_row(); ?>
-                                        <?php
-                                        $restaurantid = get_sub_field('restaurantid');
-                                        $book_tea_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
-                                        $book_tea_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
-                                        $book_tea_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
-                                        $book_tea_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
-                                        $book_tea_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
-                                        $book_tea_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
-                                        $book_tea_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
-                                        ?>
-                                    <?php endwhile; ?>
                                     <div class="booking-line">
-                                        <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_afternoon_tea&brand=73" id="mobile-header-book-tea" target="_blank">Afternoon
-                                            Tea</a>
-                                        <?php /*echo rid_to_quadranet_link($restaurantid, 'Afternoon Tea');*/?>
+                                        <a id="mobile-header-sr-res-tea-root" class="ritz-seven-rooms"
+                                           data-venueid="ritzafternoontea">Afternoon Tea</a>
                                     </div>
-                                <?php endif; ?>
-                                <div class="booking-line">
-                                    <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73" target="_blank">The Ritz Garden</a>
+                                    <div class="booking-line">
+                                        <a id="mobile-header-sr-res-garden-root" class="ritz-seven-rooms"
+                                           data-venueid="ritzgarden">The Ritz Garden</a>
+                                    </div>
+                                    <!--<div class="booking-line">
+                                                <a id="mobile-header-sr-res-garden-root" class="ritz-seven-rooms" data-venueid="ritzgarden">The Ritz Garden</a>
+                                            </div>-->
+                                    <?php if (have_rows('addition_dining_links', 'option')) : ?>
+                                        <?php while (have_rows('addition_dining_links', 'option')) : the_row(); ?>
+                                            <?php $page = get_sub_field('page'); ?>
+                                            <?php if ($page) : ?>
+                                                <div class="booking-line">
+                                                    <a href="<?php echo esc_url($page); ?>"><?php the_sub_field('link_text'); ?></a>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endwhile; ?>
+                                    <?php else : ?>
+                                        <?php // no rows found ?>
+                                    <?php endif; ?>
                                 </div>
-                                <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
+                            </div>
+                        <?php else: ?>
+                            <div class="cell shrink dining">
+                                <a class="dine-with-us top-button" data-toggle="bookings-panel-mobile">Dine with
+                                    us</a>
+                                <div class="dropdown-pane top" id="bookings-panel-mobile" data-dropdown
+                                     data-close-on-click="true" data-auto-focus="true">
+                                    <?php if (have_rows('the_ritz_restaurant')) : ?>
+                                        <?php $restaurantid = ''; ?>
+                                        <?php while (have_rows('the_ritz_restaurant')) : the_row(); ?>
+                                            <?php
+                                            $restaurantid = get_sub_field('restaurantid');
+                                            $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
+                                            $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
+                                            $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
+                                            $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
+                                            $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
+                                            $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
+                                            $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
+                                            ?>
+                                        <?php endwhile; ?>
+                                        <div class="booking-line">
+                                            <!--<a href="#" id="mobile-header-book-restaurant" <?php /*echo $book_data; */ ?>>The
+                                            Ritz Restaurant</a>-->
+                                            <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_restaurant&brand=73"
+                                               id="mobile-header-book-restaurant" target="_blank">The
+                                                Ritz Restaurant</a>
+                                            <?php /*echo rid_to_quadranet_link($restaurantid, 'Afternoon Tea');*/ ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (have_rows('afternoon_tea')) : ?>
+                                        <?php $restaurantid = ''; ?>
+                                        <?php while (have_rows('afternoon_tea')) : the_row(); ?>
+                                            <?php
+                                            $restaurantid = get_sub_field('restaurantid');
+                                            $book_tea_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
+                                            $book_tea_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
+                                            $book_tea_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
+                                            $book_tea_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
+                                            $book_tea_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
+                                            $book_tea_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
+                                            $book_tea_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
+                                            ?>
+                                        <?php endwhile; ?>
+                                        <div class="booking-line">
+                                            <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_afternoon_tea&brand=73"
+                                               id="mobile-header-book-tea" target="_blank">Afternoon
+                                                Tea</a>
+                                            <?php /*echo rid_to_quadranet_link($restaurantid, 'Afternoon Tea');*/ ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="booking-line">
+                                        <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73"
+                                           target="_blank">The Ritz Garden</a>
+                                    </div>
+                                    <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
 									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */ ?>
 										<?php
-                                /*										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
-                                                                        $book_garden_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
-                                                                        $book_garden_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
-                                                                        $book_garden_data .= ' data-promotionid="' . get_sub_field( 'promotionid' ) . '"';
-                                                                        $book_garden_data .= ' data-sessionid="' . get_sub_field( 'sessionid' ) . '"';
-                                                                        $book_garden_data .= ' data-conversionjs="' . get_sub_field( 'conversionjs' ) . '"';
-                                                                        $book_garden_data .= ' data-gaaccountnumber="' . get_sub_field( 'gaaccountnumber' ) . '"';
-                                                                        */ ?>
+                                    /*										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
+                                                                            $book_garden_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
+                                                                            $book_garden_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
+                                                                            $book_garden_data .= ' data-promotionid="' . get_sub_field( 'promotionid' ) . '"';
+                                                                            $book_garden_data .= ' data-sessionid="' . get_sub_field( 'sessionid' ) . '"';
+                                                                            $book_garden_data .= ' data-conversionjs="' . get_sub_field( 'conversionjs' ) . '"';
+                                                                            $book_garden_data .= ' data-gaaccountnumber="' . get_sub_field( 'gaaccountnumber' ) . '"';
+                                                                            */ ?>
 									<?php /*endwhile; */ ?>
                                     <div class="booking-line">
                                         <a href="#" <?php /*echo $book_garden_data; */ ?>>The Ritz Garden</a>
                                     </div>
 								--><?php /*endif; */ ?>
-                                <?php if (have_rows('addition_dining_links', 'option')) : ?>
-                                    <?php while (have_rows('addition_dining_links', 'option')) : the_row(); ?>
-                                        <?php $page = get_sub_field('page'); ?>
-                                        <?php if ($page) : ?>
-                                            <div class="booking-line">
-                                                <a href="<?php echo esc_url($page); ?>"><?php the_sub_field('link_text'); ?></a>
-                                            </div>
-                                        <?php endif; ?>
-                                    <?php endwhile; ?>
-                                <?php else : ?>
-                                    <?php // no rows found ?>
-                                <?php endif; ?>
+                                    <?php if (have_rows('addition_dining_links', 'option')) : ?>
+                                        <?php while (have_rows('addition_dining_links', 'option')) : the_row(); ?>
+                                            <?php $page = get_sub_field('page'); ?>
+                                            <?php if ($page) : ?>
+                                                <div class="booking-line">
+                                                    <a href="<?php echo esc_url($page); ?>"><?php the_sub_field('link_text'); ?></a>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endwhile; ?>
+                                    <?php else : ?>
+                                        <?php // no rows found ?>
+                                    <?php endif; ?>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                         <div class="cell auto">
                             &nbsp;
                         </div>
@@ -171,78 +213,119 @@ global $ritz_template_name;
                                        class="stay-with-us top-button book-now-button">Stay
                                         with us</a>
                                 </div>
-                                <div class="cell shrink dining">
-                                    <a class="dine-with-us top-button" data-toggle="bookings-panel">Dine with us</a>
-                                    <div class="dropdown-pane" id="bookings-panel" data-dropdown
-                                         data-close-on-click="true"
-                                         data-auto-focus="true">
-                                        <?php if (have_rows('the_ritz_restaurant')) : ?>
-                                            <?php while (have_rows('the_ritz_restaurant')) : the_row(); ?>
-                                                <?php
-                                                $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
-                                                $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
-                                                $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
-                                                $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
-                                                $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
-                                                $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
-                                                $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
-                                                ?>
-                                            <?php endwhile; ?>
+                                <?php if ($use_seven_rooms): ?>
+                                    <div class="cell shrink dining">
+                                        <a class="dine-with-us top-button" data-toggle="bookings-panel">Dine with us</a>
+                                        <div class="dropdown-pane" id="bookings-panel" data-dropdown
+                                             data-close-on-click="true"
+                                             data-auto-focus="true">
                                             <div class="booking-line">
-                                                <!--<a href="#" <?php /*echo $book_data; */?>>The Ritz Restaurant</a>-->
-                                                <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_restaurant&brand=73" target="_blank">The Ritz Restaurant</a>
+                                                <a id="header-sr-res-root" class="ritz-seven-rooms"
+                                                   data-venueid="theritzrestaurant">The Ritz Restaurant</a>
                                             </div>
-                                        <?php endif; ?>
-                                        <?php if (have_rows('afternoon_tea')) : ?>
-                                            <?php while (have_rows('afternoon_tea')) : the_row(); ?>
-                                                <?php
-                                                $book_tea_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
-                                                $book_tea_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
-                                                $book_tea_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
-                                                $book_tea_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
-                                                $book_tea_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
-                                                $book_tea_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
-                                                $book_tea_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
-                                                ?>
-                                            <?php endwhile; ?>
                                             <div class="booking-line">
-                                                <!--<a href="#" <?php /*echo $book_tea_data; */?>>Afternoon Tea</a>-->
-                                                <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_afternoon_tea&brand=73" target="_blank">Afternoon Tea</a>
+                                                <a id="header-sr-res-tea-root" class="ritz-seven-rooms"
+                                                   data-venueid="ritzafternoontea">Afternoon Tea</a>
                                             </div>
-                                        <?php endif; ?>
-                                        <div class="booking-line">
-                                            <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73" target="_blank">The Ritz Garden</a>
+                                            <div class="booking-line">
+                                                <a id="header-sr-res-garden-root" class="ritz-seven-rooms"
+                                                   data-venueid="ritzgarden">The Ritz Garden</a>
+                                            </div>
+                                            <!--<div class="booking-line">
+                                                <a id="header-sr-res-garden-root" class="ritz-seven-rooms" data-venueid="ritzgarden">The Ritz Garden</a>
+                                            </div>-->
+                                            <?php if (have_rows('addition_dining_links', 'option')) : ?>
+                                                <?php while (have_rows('addition_dining_links', 'option')) : the_row(); ?>
+                                                    <?php $page = get_sub_field('page'); ?>
+                                                    <?php if ($page) : ?>
+                                                        <div class="booking-line">
+                                                            <a href="<?php echo esc_url($page); ?>"><?php the_sub_field('link_text'); ?></a>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                <?php endwhile; ?>
+                                            <?php else : ?>
+                                                <?php // no rows found ?>
+                                            <?php endif; ?>
                                         </div>
-                                        <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
+                                    </div>
+                                <?php else: ?>
+                                    <div class="cell shrink dining">
+                                        <a class="dine-with-us top-button" data-toggle="bookings-panel">Dine with us</a>
+                                        <div class="dropdown-pane" id="bookings-panel" data-dropdown
+                                             data-close-on-click="true"
+                                             data-auto-focus="true">
+                                            <?php if (have_rows('the_ritz_restaurant')) : ?>
+                                                <?php while (have_rows('the_ritz_restaurant')) : the_row(); ?>
+                                                    <?php
+                                                    $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
+                                                    $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
+                                                    $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
+                                                    $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
+                                                    $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
+                                                    $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
+                                                    $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
+                                                    ?>
+                                                <?php endwhile; ?>
+                                                <div class="booking-line">
+                                                    <!--<a href="#" <?php /*echo $book_data; */ ?>>The Ritz Restaurant</a>-->
+                                                    <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_restaurant&brand=73"
+                                                       target="_blank">The Ritz Restaurant</a>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if (have_rows('afternoon_tea')) : ?>
+                                                <?php while (have_rows('afternoon_tea')) : the_row(); ?>
+                                                    <?php
+                                                    $book_tea_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
+                                                    $book_tea_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
+                                                    $book_tea_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
+                                                    $book_tea_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
+                                                    $book_tea_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
+                                                    $book_tea_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
+                                                    $book_tea_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
+                                                    ?>
+                                                <?php endwhile; ?>
+                                                <div class="booking-line">
+                                                    <!--<a href="#" <?php /*echo $book_tea_data; */ ?>>Afternoon Tea</a>-->
+                                                    <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_afternoon_tea&brand=73"
+                                                       target="_blank">Afternoon Tea</a>
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="booking-line">
+                                                <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73"
+                                                   target="_blank">The Ritz Garden</a>
+                                            </div>
+                                            <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
 									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */ ?>
 										<?php
-                                        /*										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
-                                                                                $book_garden_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
-                                                                                $book_garden_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
-                                                                                $book_garden_data .= ' data-promotionid="' . get_sub_field( 'promotionid' ) . '"';
-                                                                                $book_garden_data .= ' data-sessionid="' . get_sub_field( 'sessionid' ) . '"';
-                                                                                $book_garden_data .= ' data-conversionjs="' . get_sub_field( 'conversionjs' ) . '"';
-                                                                                $book_garden_data .= ' data-gaaccountnumber="' . get_sub_field( 'gaaccountnumber' ) . '"';
-                                                                                */ ?>
+                                            /*										$book_garden_data = ' data-bookatable data-connectionid="' . get_sub_field( 'connectionid' ) . '"';
+                                                                                    $book_garden_data .= ' data-restaurantid="' . get_sub_field( 'restaurantid' ) . '"';
+                                                                                    $book_garden_data .= ' data-basecolor="' . get_sub_field( 'basecolor' ) . '"';
+                                                                                    $book_garden_data .= ' data-promotionid="' . get_sub_field( 'promotionid' ) . '"';
+                                                                                    $book_garden_data .= ' data-sessionid="' . get_sub_field( 'sessionid' ) . '"';
+                                                                                    $book_garden_data .= ' data-conversionjs="' . get_sub_field( 'conversionjs' ) . '"';
+                                                                                    $book_garden_data .= ' data-gaaccountnumber="' . get_sub_field( 'gaaccountnumber' ) . '"';
+                                                                                    */ ?>
 									<?php /*endwhile; */ ?>
                                     <div class="booking-line">
                                         <a href="#" <?php /*echo $book_garden_data; */ ?>>The Ritz Garden</a>
                                     </div>
 								--><?php /*endif; */ ?>
-                                        <?php if (have_rows('addition_dining_links', 'option')) : ?>
-                                            <?php while (have_rows('addition_dining_links', 'option')) : the_row(); ?>
-                                                <?php $page = get_sub_field('page'); ?>
-                                                <?php if ($page) : ?>
-                                                    <div class="booking-line">
-                                                        <a href="<?php echo esc_url($page); ?>"><?php the_sub_field('link_text'); ?></a>
-                                                    </div>
-                                                <?php endif; ?>
-                                            <?php endwhile; ?>
-                                        <?php else : ?>
-                                            <?php // no rows found ?>
-                                        <?php endif; ?>
+                                            <?php if (have_rows('addition_dining_links', 'option')) : ?>
+                                                <?php while (have_rows('addition_dining_links', 'option')) : the_row(); ?>
+                                                    <?php $page = get_sub_field('page'); ?>
+                                                    <?php if ($page) : ?>
+                                                        <div class="booking-line">
+                                                            <a href="<?php echo esc_url($page); ?>"><?php the_sub_field('link_text'); ?></a>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                <?php endwhile; ?>
+                                            <?php else : ?>
+                                                <?php // no rows found ?>
+                                            <?php endif; ?>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php endif;?>
+
                             </div>
                         </div>
                     </div>

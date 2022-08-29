@@ -1,9 +1,6 @@
 header.header {
   position: relative;
-  padding-top: 75px;
-  @include breakpoint(large) {
-    padding-top: 85px;
-  }
+
   .white-top {
     position: fixed;
     top: 0;
@@ -168,24 +165,6 @@ header.header {
             transform: rotate(-135deg);
             -webkit-transform: rotate(-135deg);
           }
-          &:hover {
-            &:after {
-              border: solid $ritz-blue;
-              border-width: 0 1px 1px 0;
-              top: 11px;
-              transform: rotate(-135deg);
-              -webkit-transform: rotate(-135deg);
-            }
-          }
-        }
-        &:hover {
-          &:after {
-            border: solid $ritz-blue;
-            border-width: 0 1px 1px 0;
-            /*top: 13px;*/
-            /*transform: rotate(-135deg);
-            -webkit-transform: rotate(-135deg);*/
-          }
         }
       }
       &.hover {
@@ -280,7 +259,7 @@ header.header {
     width: 100%;
   }
 
-  .header-main, .header-main-new {
+  .header-main {
     position: absolute;
     width: 100%;
     color: white;
@@ -324,29 +303,23 @@ header.header {
         font-weight: $weight-medium;
         letter-spacing: 1px;
         position: relative;
-        padding-bottom: 4px;
         &:after {
           content: " ";
-          background-color: transparent;
-          border-bottom: 1px solid $white;
+          background-color: $white;
           height: 1px;
           position: absolute;
           bottom: 0;
-          left: 0;
-          right: 0;
-          transition: all 0.3s ease-in-out;
-          opacity: 0;
+          left: 1px;
+          right: 1px;
         }
         &:hover {
-          &:after {
-            opacity: 1;
-          }
+
         }
         &.blue {
           color: $ritz-blue;
-          &:after {
+          /*&:hover {
             border-bottom: 1px solid $ritz-blue;
-          }
+          }*/
         }
 
       }
@@ -355,157 +328,6 @@ header.header {
     .social {
       .text-right {
         padding-left: 14px;
-      }
-    }
-  }
-
-  .header-main-new {
-    background-color: $white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding-top: 9px;
-    padding-bottom: 3px;
-    z-index: 500;
-    @include breakpoint(large) {
-      padding-top: 12px;
-      padding-bottom: 7px;
-    }
-    .ritz-logo {
-      width: 67px;
-      @include breakpoint(large) {
-        width: 85px;
-      }
-    }
-    .hide-for-large {
-      .menu-button {
-        img {
-          height: 18px;
-          width: 30px;
-        }
-      }
-    }
-    .booking-section {
-      padding-top: 19px;
-      .reservations {
-        padding-right: 10px;
-      }
-      .dining {
-        position: relative;
-        .dropdown-pane {
-          padding: 0;
-          border: none;
-          width: 100%;
-          .booking-line {
-            background-color: $ritz-blue;
-
-            a {
-              color: $white;
-              line-height: 28px;
-              line-height: 28px;
-              display: block;
-              padding: 0;
-              margin: 0;
-              border-left: 1px solid $white;
-              border-right: 1px solid $white;
-              border-top: 1px solid $white;
-              text-transform: uppercase;
-              font-size: 10px;
-              font-weight: $weight-bold;
-              text-align: center;
-              width: 100%;
-              outline: none !important;
-              &:hover {
-                background-color: $white;
-                color: $ritz-blue;
-                border: 1px solid $ritz-blue;
-              }
-              @include breakpoint(large) {
-                border-top: none;
-                border-bottom: 1px solid $white;
-              }
-            }
-          }
-        }
-      }
-      .top-button {
-        color: $white;
-        line-height: 28px;
-        display: block;
-        padding: 0;
-        margin: 0;
-        border: 1px solid $white;
-        text-transform: uppercase;
-        font-size: 10px;
-        font-weight: $weight-bold;
-        padding-left: 18px;
-        padding-right: 18px;
-        background-color: $ritz-blue;
-        &:hover {
-          background-color: $white;
-          color: $ritz-blue;
-          border: 1px solid $ritz-blue;
-        }
-        @include letter-spacing(100);
-        @include breakpoint(medium) {
-          padding-left: 36px;
-          padding-right: 36px;
-        }
-        &.dine-with-us {
-          position: relative;
-          padding-left: 18px;
-          padding-right: 37px;
-          @include breakpoint(medium) {
-            padding-left: 36px;
-            padding-right: 56px;
-          }
-          &:after {
-            content: " ";
-            position: absolute;
-            right: 21px;
-            top: 7px;
-            border: solid $white;
-            border-width: 0 1px 1px 0;
-            display: inline-block;
-            padding: 3px;
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-            @include breakpoint(medium) {
-              right: 41px;
-            }
-          }
-          &.hover {
-            &:after {
-              border: solid $ritz-blue;
-              border-width: 0 1px 1px 0;
-              top: 11px;
-              transform: rotate(-135deg);
-              -webkit-transform: rotate(-135deg);
-            }
-            &:hover {
-              &:after {
-                border: solid $ritz-blue;
-                border-width: 0 1px 1px 0;
-                top: 11px;
-                transform: rotate(-135deg);
-                -webkit-transform: rotate(-135deg);
-              }
-            }
-          }
-          &:hover {
-            &:after {
-              border: solid $ritz-blue;
-              border-width: 0 1px 1px 0;
-              /*top: 13px;*/
-              /*transform: rotate(-135deg);
-              -webkit-transform: rotate(-135deg);*/
-            }
-          }
-        }
-        &.hover {
-          background-color: $white;
-          color: $ritz-blue;
-        }
       }
     }
   }
@@ -582,18 +404,13 @@ header.header {
       .slide-info {
         position: absolute;
         width: 100%;
-        bottom: 50%;
-        padding-top: 32px;
+        bottom: 35%;
         @include breakpoint(568) {
-          padding-top: 0;
           bottom: 15%;
         }
         @include breakpoint(large)
         {
-          bottom: 175px;
-        }
-        .h1 {
-          @include letter-spacing(100);
+          bottom: 75px;
         }
         h2, .sub-heading {
           color: $white;
@@ -610,13 +427,12 @@ header.header {
         .sub-heading {
           font-weight: $weight-medium;
           padding-top: 25px;
-          font-family: $montserrat;
           @include breakpoint(large) {
             padding-top: 35px;
           }
         }
         .slide-huge {
-          font-size: 35px;
+          font-size: 9vw;
           text-align: center;
           line-height: 1;
           color: $white;
@@ -644,13 +460,7 @@ header.header {
       top: 32px;
     }
     .white-top {
-      top: 0;
-      @include breakpoint(medium) {
-        top: 46px;
-      }
-      @include breakpoint(large) {
-        top: 74px;
-      }
+      top: 82px;
     }
   }
 }

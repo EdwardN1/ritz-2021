@@ -1,4 +1,5 @@
 <?php
+global $use_seven_rooms;
 $current_page_id = get_queried_object_id();
 global $no_menu_page;
 ?>
@@ -62,18 +63,18 @@ global $no_menu_page;
                                 }
                             }
                         }
-                        $currentpage_class='';
-                        if($currentpage) {
+                        $currentpage_class = '';
+                        if ($currentpage) {
                             $currentpage_class = ' active_menu_item';
                         }
-                        $parent_data = ' data-parent-number="'.$pi.'"';
-	                    $parent_data_is = ' data-parent-number-is="'.$pi.'"';
+                        $parent_data = ' data-parent-number="' . $pi . '"';
+                        $parent_data_is = ' data-parent-number-is="' . $pi . '"';
                         $pi++;
                         ?>
                         <?php if (have_rows('child_pages')) : ?>
-                            <li class="menu-item-has-children<?php echo $currentpage_class;?>"<?php echo $parent_data;?>>
+                            <li class="menu-item-has-children<?php echo $currentpage_class; ?>"<?php echo $parent_data; ?>>
                                 <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>><?php echo esc_html($link_text); ?></a>
-                                <ul class="menu vertical nested"<?php echo $parent_data_is;?>>
+                                <ul class="menu vertical nested"<?php echo $parent_data_is; ?>>
                                     <li>
                                         <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>>Overview</a>
                                     </li>
@@ -111,7 +112,7 @@ global $no_menu_page;
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li class="menu-item-has-children"<?php echo $parent_data;?>>
+                            <li class="menu-item-has-children"<?php echo $parent_data; ?>>
                                 <a href="<?php echo esc_url($href); ?>"<?php echo $target; ?>><?php echo esc_html($link_text); ?></a>
                                 <ul class="menu vertical nested">
                                     <li>
@@ -132,13 +133,13 @@ global $no_menu_page;
 
     <script>
         jQuery(document).ready(function ($) {
-            $('#ritz-main-menu-vertical').on('show.zf.dropdownMenu', function(ev, $el) {
+            $('#ritz-main-menu-vertical').on('show.zf.dropdownMenu', function (ev, $el) {
                 let $parentNumber = $el.data('parent-number-is');
-                let $parentMenu = $('#ritz-main-menu-vertical').find('[data-parent-number="'+$parentNumber+'"]');
+                let $parentMenu = $('#ritz-main-menu-vertical').find('[data-parent-number="' + $parentNumber + '"]');
                 let numberofSubMenuItems = $el.children().length;
-                let minHeight = (numberofSubMenuItems * 40) + ($parentNumber*45)-60;
-                window.console.log(minHeight+' minimum height');
-                $('#ritz-main-menu-vertical').css('min-height',minHeight);
+                let minHeight = (numberofSubMenuItems * 40) + ($parentNumber * 45) - 60;
+                window.console.log(minHeight + ' minimum height');
+                $('#ritz-main-menu-vertical').css('min-height', minHeight);
 
             });
 
@@ -154,9 +155,11 @@ global $no_menu_page;
                         style="background-image: url(<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>);"
                     <?php endif; ?>></div>
                     <h2 class="text-center"><?php the_sub_field('line_1'); ?></h2>
-                    <h3 class="text-center"><?php the_sub_field('line_2'); ?></h3>
-                    <h2 class="text-center"><?php the_sub_field('line_3'); ?></h2>
-                    <div class="grid-x">
+                    <h2 class="text-center"
+                        style="padding-bottom: 5px; padding-top: 0;"><?php the_sub_field('line_2'); ?></h2>
+                    <h2 class="text-center"
+                        style="padding-top: 0; padding-bottom: 5px;"><?php the_sub_field('line_3'); ?></h2>
+                    <div class="grid-x" style="padding-top: 25px;">
                         <div class="cell auto text-center">
                             <a href="<?php echo get_sub_field('page_link'); ?>"
                                class="button-underline"><?php the_sub_field('link_text'); ?></a>
@@ -185,28 +188,74 @@ global $no_menu_page;
                                 </div>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <?php if ($booking_type == 'Bookatable'): ?>
-                            <?php if (have_rows('dining_codes')) :
-                                $book_data = '';
-                                while (have_rows('dining_codes')) : the_row();
-                                    $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
-                                    $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
-                                    $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
-                                    $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
-                                    $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
-                                    $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
-                                    $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
-                                endwhile;
-                                if ($book_data != '') {
+                        <?php if ($use_seven_rooms): ?>
+                            <?php
+                            if ($booking_type == 'Seven Rooms') {
+                                $seven_rooms_link = '';
+                                $slugs = explode('/', get_field('seven_rooms_link'));
+                                $seven_rooms_link = end($slugs);
+                                if ($seven_rooms_link) {
                                     ?>
                                     <div class="cell auto text-center">
-                                        <a href="#" <?php echo $book_data; ?>
-                                           class="button-ritz">BOOK NOW</a>
+                                        <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                           data-venueid="<?php echo $seven_rooms_link; ?>">BOOK NOW</a>
                                     </div>
                                     <?php
                                 }
-                            endif; ?>
+                            };
+                            if ($booking_type == 'Bookatable'){
+                                if (have_rows('dining_codes')) :
+                                    while (have_rows('dining_codes')) : the_row();
+                                        $bookatable_restaurant = get_sub_field('restaurantid');
+                                        if ($bookatable_restaurant == '108823') {
+                                            ?>
+                                            <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                               data-venueid="theritzrestaurant">BOOK NOW</a>
+                                            <?php
+                                        }
+                                        if ($bookatable_restaurant == '108845') {
+                                            ?>
+                                            <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                               data-venueid="ritzafternoontea">BOOK NOW</a>
+                                            <?php
+                                        }
+                                        if ($bookatable_restaurant == '460014') {
+                                            ?>
+                                            <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                               data-venueid="ritzgarden">BOOK NOW</a>
+                                            <?php
+                                        }
+                                    endwhile;
+                                endif;
+                            }
+                            ?>
+                        <?php else: ?>
+                            <?php if ($booking_type == 'Bookatable'): ?>
+                                <?php if (have_rows('dining_codes')) :
+                                    $book_data = '';
+                                    while (have_rows('dining_codes')) : the_row();
+                                        $restaurantid = get_sub_field('restaurantid');
+                                        $book_data = ' data-bookatable data-connectionid="' . get_sub_field('connectionid') . '"';
+                                        $book_data .= ' data-restaurantid="' . get_sub_field('restaurantid') . '"';
+                                        $book_data .= ' data-basecolor="' . get_sub_field('basecolor') . '"';
+                                        $book_data .= ' data-promotionid="' . get_sub_field('promotionid') . '"';
+                                        $book_data .= ' data-sessionid="' . get_sub_field('sessionid') . '"';
+                                        $book_data .= ' data-conversionjs="' . get_sub_field('conversionjs') . '"';
+                                        $book_data .= ' data-gaaccountnumber="' . get_sub_field('gaaccountnumber') . '"';
+                                    endwhile;
+                                    if ($book_data != '') {
+                                        ?>
+                                        <div class="cell auto text-center">
+                                            <?php echo rid_to_quadranet_link($restaurantid, 'BOOK NOW'); ?>
+                                            <!--<a href="#" <?php /*echo $book_data; */ ?>
+                                           class="button-ritz">BOOK NOW</a>-->
+                                        </div>
+                                        <?php
+                                    }
+                                endif; ?>
+                            <?php endif; ?>
                         <?php endif; ?>
+
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>

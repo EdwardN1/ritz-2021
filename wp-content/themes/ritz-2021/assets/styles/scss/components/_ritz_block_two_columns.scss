@@ -6,34 +6,6 @@
     background-size: cover;
     width: 100%;
     height: 78.125vw;
-    /*&.animated-background {
-      animation: animatedBackground 10s linear;
-    }*/
-    position: relative;
-    .image-link {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-    }
-    @include breakpoint(medium) {
-      transform: scale(1.2);
-      height: 100%;
-    }
-  }
-  .image-container {
-    width: 100%;
-    height: 78.125vw;
-    overflow: hidden;
-    &.animated-background {
-      .image.animated {
-        transform: scale(1);
-        animation: animatedBackground 2s linear;
-      }
-    }
     @include breakpoint(medium) {
       height: 100%;
     }
@@ -46,23 +18,8 @@
   .container {
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 30px;
-    padding-bottom: 28px;
-    @include breakpoint(medium) {
-      padding-top: 31px;
-      padding-bottom: 31px;
-    }
-    .content {
-      padding-bottom: 19px;
-      @include breakpoint(medium) {
-        padding-bottom: 24px;
-      }
-      p {
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
-    }
+    padding-top: 31px;
+    padding-bottom: 31px;
     &.top {
       border: 1px solid $light-gray;
       border-bottom: none;
@@ -92,8 +49,8 @@
   @include breakpoint(large) {
     padding-top: 50px;
     h3 {
-      font-size: 30px;
-      line-height: 30px;
+      font-size: 20px;
+      line-height: 25px;
       margin-bottom: 24px;
     }
     .container {
@@ -105,19 +62,4 @@
       border: none;
     }
   }
-  .animated-container {
-    opacity: 0;
-  }
-}
-
-div[data-type="acf/two-columns"] {
-  &.wp-block {
-    .animated-container {
-      opacity: 1;
-    }
-  }
-}
-
-.wp-editor-area {
-  color: $black !important;
 }

@@ -1,6 +1,5 @@
 .block-ritz-two-column-experience-block {
   padding-top: 25px;
-
   .image {
     position: relative;
     width: 100%;
@@ -10,75 +9,35 @@
     background-position: center;
     min-height: 275px;
   }
-
   .heading {
     h3 {
       text-transform: uppercase;
       margin-bottom: 25px;
     }
   }
-
   .content {
     p {
       margin-bottom: 25px;
     }
-    h2 {
-      @include letter-spacing(50);
-      font-weight: $weight-medium;
-      font-size: 14px;
-    }
   }
-
   .link {
-    @include breakpoint(medium) {
-      padding-bottom: 25px;
-    }
+    padding-bottom: 25px;
   }
-
   .right {
-    padding-bottom: 75px;
     padding-top: 25px;
-    @include breakpoint(medium) {
-      padding-bottom: 0;
-    }
   }
-
-  .left, .right {
-    p {
-      a {
-        text-decoration: underline;
-      }
-    }
-    .grid-x {
-      .cell.link {
-        padding-top: 6px;
-        padding-right: 2em;
-      }
-    }
-  }
-
-  .left {
-    padding-bottom: 35px;
-    @include breakpoint(medium) {
-      padding-bottom: 0;
-    }
-  }
-
   @include breakpoint(medium) {
     padding-top: 25px;
     .left {
-      padding-right: 17px;
+      padding-right: 35px;
     }
     .right {
-      padding-left: 17px;
+      padding-right: 35px;
       padding-top: 0;
     }
   }
   @include breakpoint(large) {
-    padding-top: 100px;
-    &.reduced, &.is-style-half-pad {
-      padding-top: 50px;
-    }
+    padding-top: 50px;
     > .grid-x {
       max-width: 1050px;
       margin-left: auto;
@@ -86,67 +45,13 @@
     }
     .image {
       min-height: 350px;
-      //max-width: 500px;
-      margin-bottom: 25px;
-      position: relative;
-      .image-link {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-      }
+      max-width: 500px;
     }
     .left {
-      padding-right: 25px;
+      padding-right: 50px;
     }
     .right {
-      padding-left: 25px;
-    }
-  }
-
-  .mag-reveal {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/magnifier.svg");
-    background-size: 20px 20px;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    &:hover {
-      background-image: url("../images/magnifier-hover.svg");
-    }
-    &.iframe {
-      &:after {
-        width: 113px;
-        height: 45px;
-        content: " ";
-        position: absolute;
-        top: 10px;
-        left: 15px;
-        background-image: url("../images/360.png");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-
-    }
-  }
-}
-
-.ritz-accommodation {
-  .entry-content {
-    .block-ritz-two-column-experience-block {
-      @include breakpoint(large) {
-        padding-top: 70px;
-      }
+      padding-right: 50px;
     }
   }
 }
