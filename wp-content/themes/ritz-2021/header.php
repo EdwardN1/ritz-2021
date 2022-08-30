@@ -9,6 +9,10 @@
 global $ritz_template_name;
 global $use_seven_rooms;
 
+if(get_field('dining_booking_engine','option')=='Seven Rooms') {
+    $use_seven_rooms = true;
+}
+
 ?>
 
 <!doctype html>

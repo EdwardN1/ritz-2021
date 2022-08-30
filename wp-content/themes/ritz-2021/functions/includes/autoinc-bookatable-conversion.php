@@ -4,9 +4,6 @@ global $use_seven_rooms;
 
 $use_seven_rooms = false;
 
-if(get_field('dining_booking_engine','option')=='Seven Rooms') {
-    $use_seven_rooms = true;
-}
 
 function rid_to_quadranet_link($restaurant_id,$link_text) {
     //error_log('$restaurantid = '.$restaurant_id);
