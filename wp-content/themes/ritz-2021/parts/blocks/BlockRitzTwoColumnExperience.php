@@ -59,6 +59,7 @@ endif;
     <?php $booking_link_text = get_field('second_link_text'); ?>
     <?php $right_link = ''; ?>
     <?php $page_link = get_field('page_link'); ?>
+    <?php $page_link_text = get_field('page_link_text'); ?>
     <?php $image_link = ''; ?>
     <?php if ($page_link) $image_link = '<a href="' . $page_link . '" class="image-link"></a>'; ?>
     <?php if (($booking_options != 'None') && ($booking_options != '')): ?>
@@ -169,6 +170,14 @@ endif;
             <a href="<?php echo esc_url($page); ?>" class="button-ritz"><?php echo $booking_link_text; ?></a>
             <?php
         };
+
+        if ($booking_options == 'URL') {
+            $page = get_field('second_link_url');
+            ?>
+            <a href="<?php echo esc_url($page); ?>" class="button-underlined"><?php echo $booking_link_text; ?></a>
+            <?php
+        };
+
         $right_link = ob_get_clean();
         ?>
     <?php endif; ?>
@@ -208,7 +217,7 @@ endif;
                     <?php endif; ?>
                     <div class="content"><?php the_field('content'); ?></div>
                     <?php
-                    if ($page_link) {
+                    if ($page_link && $page_link_text) {
                         if (($booking_options == 'None') || ($booking_options == '')) {
                             ?>
                             <div class="link"><a class="button-underlined"
@@ -260,7 +269,7 @@ endif;
                         <div class="heading"><h3><?php echo $heading; ?></h3></div>
                     <?php endif; ?>
                     <div class="content"><?php the_field('content'); ?></div>
-                    <?php if ($page_link) {
+                    <?php if ($page_link && $page_link_text) {
                         if (($booking_options == 'None') || ($booking_options == '')) {
                             ?>
                             <div class="link"><a class="button-underlined"
