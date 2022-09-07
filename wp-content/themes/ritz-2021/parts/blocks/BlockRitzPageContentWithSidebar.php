@@ -317,8 +317,11 @@ endif;
 															echo get_field( 'entertainment', 'option' );
 														}
 														if ( $popup_content == 'Palm Court Entertainment' ) {
-															echo get_field( 'palm_court_entertainment', 'option' );
+															echo get_field( 'palm_court_entertainment_normal', 'option' );
 														}
+                                                        if ( $popup_content == 'Palm Court Entertainment (Christmas)' ) {
+                                                            echo get_field( 'palm_court_entertainment', 'option' );
+                                                        }
 														if ( $popup_content == 'Dress Code' ) {
 															echo get_field( 'dress_code', 'option' );
 														}
