@@ -147,7 +147,7 @@ global $ritz_template_name;
                         </div>
                         <div class="cell shrink logo">
                             <a href="/"><img
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-ritz-logo.svg"
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/black-ritz-logo.svg"
                                         class="ritz-logo"></a>
                         </div>
                         <div class="cell auto booking-section">
@@ -241,7 +241,7 @@ global $ritz_template_name;
                         </div>
                         <div class="cell shrink logo">
                             <a href="/"><img
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/blue-ritz-logo.svg"
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/black-ritz-logo.svg"
                                         class="ritz-logo"></a>
                         </div>
                         <div class="cell auto links-social text-right">
