@@ -82,10 +82,10 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                         <a id="mobile-header-sr-res-tea-root" class="ritz-seven-rooms"
                                            data-venueid="ritzafternoontea">Afternoon Tea</a>
                                     </div>
-                                    <div class="booking-line">
+                                    <!--<div class="booking-line">
                                         <a id="mobile-header-sr-res-garden-root" class="ritz-seven-rooms"
                                            data-venueid="ritzgarden">The Ritz Garden</a>
-                                    </div>
+                                    </div>-->
                                     <!--<div class="booking-line">
                                                 <a id="mobile-header-sr-res-garden-root" class="ritz-seven-rooms" data-venueid="ritzgarden">The Ritz Garden</a>
                                             </div>-->
@@ -153,10 +153,10 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                             <?php /*echo rid_to_quadranet_link($restaurantid, 'Afternoon Tea');*/ ?>
                                         </div>
                                     <?php endif; ?>
-                                    <div class="booking-line">
+                                    <!--<div class="booking-line">
                                         <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73"
                                            target="_blank">The Ritz Garden</a>
-                                    </div>
+                                    </div>-->
                                     <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
 									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */ ?>
 										<?php
@@ -231,10 +231,10 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                                 <a id="header-sr-res-tea-root" class="ritz-seven-rooms"
                                                    data-venueid="ritzafternoontea">Afternoon Tea</a>
                                             </div>
-                                            <div class="booking-line">
+                                            <!--<div class="booking-line">
                                                 <a id="header-sr-res-garden-root" class="ritz-seven-rooms"
                                                    data-venueid="ritzgarden">The Ritz Garden</a>
-                                            </div>
+                                            </div>-->
                                             <!--<div class="booking-line">
                                                 <a id="header-sr-res-garden-root" class="ritz-seven-rooms" data-venueid="ritzgarden">The Ritz Garden</a>
                                             </div>-->
@@ -294,10 +294,10 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                                        target="_blank">Afternoon Tea</a>
                                                 </div>
                                             <?php endif; ?>
-                                            <div class="booking-line">
+                                            <!--<div class="booking-line">
                                                 <a href="https://bookings.quadranet.co.uk/?slug=the_ritz_garden&brand=73"
                                                    target="_blank">The Ritz Garden</a>
-                                            </div>
+                                            </div>-->
                                             <?php /*if ( have_rows( 'the_ritz_garden' ) ) : */ ?><!--
 									<?php /*while ( have_rows( 'the_ritz_garden' ) ) : the_row(); */ ?>
 										<?php
