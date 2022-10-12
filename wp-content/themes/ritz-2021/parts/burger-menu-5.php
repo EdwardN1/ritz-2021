@@ -3,7 +3,7 @@ global $use_seven_rooms;
 $current_page_id = get_queried_object_id();
 global $no_menu_page;
 ?>
-<div class="grid-x show-for-large">
+<div class="grid-x show-for-large bm5">
     <div class="cell auto main-nav">
         <?php if (have_rows('page_links', 'option')) : ?>
             <ul id="ritz-main-menu-vertical" class="vertical dropdown menu" data-dropdown-menu -menu>
@@ -229,6 +229,12 @@ global $no_menu_page;
                                 endif;
                             }
                             ?>
+	                        <?php if ( $booking_type == 'URL' ): ?>
+                                <div class="cell auto text-center">
+                                    <a href="<?php echo get_sub_field('burger_book_url');?>" class="button-white" target="_blank">BOOK
+                                        NOW</a>
+                                </div>
+	                        <?php endif; ?>
                         <?php else: ?>
                             <?php if ($booking_type == 'Bookatable'): ?>
                                 <?php if (have_rows('dining_codes')) :
@@ -254,6 +260,12 @@ global $no_menu_page;
                                     }
                                 endif; ?>
                             <?php endif; ?>
+	                        <?php if ( $booking_type == 'URL' ): ?>
+                                <div class="cell auto text-center">
+                                    <a href="<?php echo get_sub_field('burger_book_url');?>" class="button-white" target="_blank">BOOK
+                                        NOW</a>
+                                </div>
+	                        <?php endif; ?>
                         <?php endif; ?>
 
                     </div>

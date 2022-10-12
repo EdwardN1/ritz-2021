@@ -223,6 +223,13 @@ endif;
                                    class="button-ritz"><?php echo $booking_link_text; ?></a>
 								<?php
 							}
+                            if ( $booking_type == 'URL' ) {
+                                $url = get_field( 'book_url' );
+                                ?>
+                                <a href="<?php echo esc_url( $url ); ?>"
+                                   class="button-ritz" target="_blank"><?php echo $booking_link_text; ?></a>
+                                <?php
+                            }
 							if ( $booking_type == 'Email' ) {
 								if ( have_rows( 'email_options' ) ) :
 									while ( have_rows( 'email_options' ) ) : the_row();
