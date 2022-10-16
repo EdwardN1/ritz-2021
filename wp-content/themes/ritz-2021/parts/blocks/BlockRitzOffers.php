@@ -124,6 +124,14 @@ endif;
                                             }
                                         }
 
+                                        if ( $booking_options == 'URL' ) {
+                                            $url = get_field( 'book_url',$post->ID );
+                                            ?>
+                                            <a href="<?php echo esc_url( $url ); ?>"
+                                               class="button-ritz" target="_blank"><?php echo $booking_link_text; ?></a>
+                                            <?php
+                                        }
+
                                         if ($booking_options == 'Bookatable') {
                                             if (have_rows('bookatable', $post->ID)) :
                                                 while (have_rows('bookatable', $post->ID)) :
@@ -177,6 +185,14 @@ endif;
                                                 }
                                             endif;
                                         };
+
+                                        if ( $booking_options == 'URL' ) {
+                                            $url = get_field( 'book_url',$post->ID );
+                                            ?>
+                                            <a href="<?php echo esc_url( $url ); ?>"
+                                               class="button-ritz" target="_blank"><?php echo $booking_link_text; ?></a>
+                                            <?php
+                                        }
                                     endif;
 
 
@@ -186,6 +202,8 @@ endif;
                                            class="button-ritz"><?php echo $booking_link_text; ?></a>
                                         <?php
                                     }
+
+
                                     ?>
                                 </div>
                             </div>
