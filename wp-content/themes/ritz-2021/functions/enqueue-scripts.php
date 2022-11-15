@@ -29,6 +29,7 @@ function site_scripts() {
 	wp_enqueue_style( 'animate-css', get_template_directory_uri() . '/assets/styles/vendor/animate.min.css', array(), filemtime( get_template_directory() . '/assets/styles/scss' ), 'all' );
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() . '/vendor/slick-1.8.1/slick/slick.css', array(), filemtime( get_template_directory() . '/vendor/slick-1.8.1/slick/slick.css' ), 'all' );
 	wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/styles/style.css', array(), filemtime( get_template_directory() . '/assets/styles/scss' ), 'all' );
+	wp_enqueue_style( 'more-site-css', get_template_directory_uri() . '/assets/styles/more_styles.css', array('site-css'), filemtime( get_template_directory() . '/assets/styles/scss' ), 'all' );
 
 	// Comment reply script for threaded comments
 	if ( is_singular() and comments_open() and ( get_option( 'thread_comments' ) == 1 ) ) {
