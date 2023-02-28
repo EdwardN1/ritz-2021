@@ -175,7 +175,9 @@ endif;
                                     $seven_rooms_link = end($slugs);
                                     if ($seven_rooms_link) {
                                         ?>
-                                        <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                        <!--<a id="z*+-unique-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                           data-venueid="<?php echo $seven_rooms_link; ?>"><?php echo $booking_link_text; ?></a>-->
+                                        <a id="z-sr-res-root" class="ritz-seven-rooms button-ritz"
                                            data-venueid="<?php echo $seven_rooms_link; ?>"><?php echo $booking_link_text; ?></a>
                                         <?php
                                     }
@@ -187,19 +189,20 @@ endif;
                                             $bookatable_restaurant = get_sub_field('restaurantid');
                                             if ($bookatable_restaurant == '108823') {
                                                 ?>
-                                                <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                                <a id="z-sr-res-root" class="ritz-seven-rooms button-ritz"
                                                    data-venueid="theritzrestaurant"><?php echo $booking_link_text; ?></a>
+
                                                 <?php
                                             }
                                             if ($bookatable_restaurant == '108845') {
                                                 ?>
-                                                <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                                <a id="z-sr-res-root" class="ritz-seven-rooms button-ritz"
                                                    data-venueid="ritzafternoontea"><?php echo $booking_link_text; ?></a>
                                                 <?php
                                             }
                                             if ($bookatable_restaurant == '460014') {
                                                 ?>
-                                                <a id="<?php echo uniqid(); ?>-sr-res-root" class="ritz-seven-rooms button-ritz"
+                                                <a id="z-sr-res-root" class="ritz-seven-rooms button-ritz"
                                                    data-venueid="ritzgarden"><?php echo $booking_link_text; ?></a>
                                                 <?php
                                             }
@@ -267,9 +270,10 @@ endif;
         </div>
     </div>
 	<?php
+
 	$content_div = ob_get_contents();
 	ob_end_clean();
-	ob_start();
+    ob_start();
 	?>
     <div class="image" style="background-image: url(<?php echo esc_url( $image['url'] ); ?>)">
         <?php echo $image_link;?>
@@ -291,7 +295,7 @@ endif;
 		if ( $image_position == 'Left' ) :
 			echo $img_div;
 		else:
-			echo $content_div;
+			echo replace_content_svn_rms($content_div,'s1g');
 		endif;
 		?>
     </div>
@@ -300,13 +304,13 @@ endif;
 		if ( $image_position == 'Right' ):
 			echo $img_div;
 		else:
-			echo $content_div;
+			echo replace_content_svn_rms($content_div, 'w3h');
 		endif;
 		?>
     </div>
     <div class="cell small-12 <?php echo $topClass; ?> hide-for-medium">
 		<?php
-		echo $content_div;
+		echo replace_content_svn_rms($content_div,'j9b');
 		?>
     </div>
     <div class="cell small-12 hide-for-medium">
