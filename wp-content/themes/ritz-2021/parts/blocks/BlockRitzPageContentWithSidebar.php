@@ -335,6 +335,9 @@ endif;
 														if ( $popup_content == 'Restaurant Sittings' ) {
 															echo get_field( 'restaurant_sittings', 'option' );
 														}
+                                                        if ( $popup_content == 'Ritz Room Sittings' ) {
+                                                            echo get_field( 'ritz_room_sittings', 'option' );
+                                                        }
                                                         if ( $popup_content == 'Restaurant Entertainment' ) {
                                                             echo get_field( 'the_ritz_restaurant_entertainment', 'option' );
                                                         }
@@ -765,6 +768,9 @@ endif;
 													if ( $popup_content == 'Restaurant Sittings' ) {
 														echo get_field( 'restaurant_sittings', 'option' );
 													}
+                                                    if ( $popup_content == 'Ritz Room Sittings' ) {
+                                                        echo get_field( 'ritz_room_sittings', 'option' );
+                                                    }
                                                     if ( $popup_content == 'Restaurant Entertainment' ) {
                                                         echo get_field( 'the_ritz_restaurant_entertainment', 'option' );
                                                     }
