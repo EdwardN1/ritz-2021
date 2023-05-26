@@ -136,9 +136,9 @@ if (!empty($block['align'])) {
                     <div class="right container text-center">
                         <div <?php echo $animated_text_container_class; ?>>
                             <div class="heading">
-                                <h3>
+                                <h2 class="h3">
                                     <?php the_field('title'); ?>
-                                </h3>
+                                </h2>
                             </div>
                             <div class="content">
                                 <?php the_field('content'); ?>
@@ -168,9 +168,9 @@ if (!empty($block['align'])) {
                 </div>
                 <div class="bottom container text-center">
                     <div class="heading">
-                        <h3>
+                        <h2 class="h3">
                             <?php the_field('title'); ?>
-                        </h3>
+                        </h2>
                     </div>
                     <div class="content">
                         <?php the_field('content'); ?>
@@ -204,9 +204,9 @@ if (!empty($block['align'])) {
                     <div class="right container text-center">
                         <div <?php echo $animated_text_container_class; ?>>
                             <div class="heading">
-                                <h3>
+                                <h2 class="h3">
                                     <?php the_field('title'); ?>
-                                </h3>
+                                </h2>
                             </div>
                             <div class="content">
                                 <?php the_field('content'); ?>
@@ -221,9 +221,9 @@ if (!empty($block['align'])) {
             <div class="hide-for-medium">
                 <div class="top container text-center">
                     <div class="heading">
-                        <h3>
+                        <h2 class="h3">
                             <?php the_field('title'); ?>
-                        </h3>
+                        </h2>
                     </div>
                     <div class="content">
                         <?php the_field('content'); ?>
@@ -262,9 +262,9 @@ if (!empty($block['align'])) {
                     <div class="left container">
                         <div <?php echo $animated_text_container_class; ?>>
                             <div class="heading">
-                                <h3>
+                                <h2 class="h3">
                                     <?php the_field('title'); ?>
-                                </h3>
+                                </h2>
                             </div>
                             <div class="content">
                                 <?php the_field('content'); ?>
@@ -303,9 +303,9 @@ if (!empty($block['align'])) {
                 </div>
                 <div class="bottom container text-center">
                     <div class="heading">
-                        <h3>
+                        <h2 class="h3">
                             <?php the_field('title'); ?>
-                        </h3>
+                        </h2>
                     </div>
                     <div class="content">
                         <?php the_field('content'); ?>
@@ -329,9 +329,9 @@ if (!empty($block['align'])) {
                     <div class="left container">
                         <div <?php echo $animated_text_container_class; ?>>
                             <div class="heading">
-                                <h3>
+                                <h2 class="h3">
                                     <?php the_field('title'); ?>
-                                </h3>
+                                </h2>
                             </div>
                             <div class="content">
                                 <?php the_field('content'); ?>
@@ -355,9 +355,9 @@ if (!empty($block['align'])) {
             <div class="hide-for-medium">
                 <div class="top container text-center">
                     <div class="heading">
-                        <h3>
+                        <h2 class="h3">
                             <?php the_field('title'); ?>
-                        </h3>
+                        </h2>
                     </div>
                     <div class="content">
                         <?php the_field('content'); ?>

@@ -229,7 +229,7 @@ endif;
 					endif;
 					?>
                     <div class="cell shrink">
-                        <h2><a href="<?php echo $href; ?>"><?php the_sub_field( 'link_text' ); ?></a></h2>
+                        <h3><a href="<?php echo $href; ?>"><?php the_sub_field( 'link_text' ); ?></a></h3>
                     </div>
 				<?php endwhile; ?>
 			<?php endif; ?>

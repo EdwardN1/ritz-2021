@@ -15,10 +15,13 @@ get_header(); ?>
 
             <main class="main small-12 medium-12 large-12 cell" role="main">
 
-                <!--<header>
-		    		<h1 class="page-title"><?php /*the_archive_title();*/ ?></h1>
-					<?php /*the_archive_description('<div class="taxonomy-description">', '</div>');*/ ?>
-		    	</header>-->
+                <header>
+                    <?php
+                    ?>
+		    		<h1 class="page-title" style="text-align: center; margin-bottom: 0; text-transform: uppercase;"><?php //the_archive_title(); ?><?php
+                        echo single_cat_title();
+		    		?></h1>
+		    	</header>
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

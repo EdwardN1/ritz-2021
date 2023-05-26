@@ -165,7 +165,7 @@ endif;
                             <div class="v-content">
                                 <div <?php echo $animated_text_container_class; ?>>
                                     <div class="heading">
-                                        <h3><?php echo $left_title; ?></h3>
+                                         <h2 class="h3"><?php echo $left_title; ?> </h2>
                                     </div>
                                     <div class="content">
                                         <?php echo $left_content; ?>
@@ -198,7 +198,7 @@ endif;
                             <div class="v-content">
                                 <div <?php echo $animated_text_container_class; ?>>
                                     <div class="heading">
-                                        <h3><?php echo $right_title; ?></h3>
+                                         <h2 class="h3"><?php echo $right_title; ?> </h2>
                                     </div>
                                     <div class="content">
                                         <?php echo $right_content; ?>

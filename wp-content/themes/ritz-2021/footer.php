@@ -65,7 +65,7 @@
 </div>-->
 <div class="grid-container curator">
     <!-- Place <div> tag where you want the feed to appear -->
-    <h2>Immerse yourself in the world of The Ritz</h2>
+    <h3 class="h2">Immerse yourself in the world of The Ritz</h3>
     <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div><!-- The Javascript can be moved to the end of the html page before the </body> tag --><script type="text/javascript">
         /* curator-feed-default-feed-layout */
         (function(){

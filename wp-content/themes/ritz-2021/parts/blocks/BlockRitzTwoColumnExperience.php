@@ -174,7 +174,7 @@ endif;
         if ($booking_options == 'URL') {
             $page = get_field('second_link_url');
             ?>
-            <a href="<?php echo esc_url($page); ?>" class="button-underlined"><?php echo $booking_link_text; ?></a>
+            <a href="<?php echo esc_url($page); ?>" class="button-ritz" target="_blank"><?php echo $booking_link_text; ?></a>
             <?php
         };
 
