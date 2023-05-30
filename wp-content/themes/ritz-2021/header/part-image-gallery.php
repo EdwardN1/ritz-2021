@@ -77,11 +77,20 @@
                                 <?php endif; ?>
 
                                 <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                    <h1 class="h1"><?php echo $slide_heading; ?></h1>
+                                    <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                    <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
                                 <?php else: ?>
                                     <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                    <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                                 <?php endif; ?>
-                                <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
+
+
+                                <?php /*if (get_sub_field('use_h1_tag') == 1): */?><!--
+                                    <h1 class="h1"><?php /*echo $slide_heading; */?></h1>
+                                <?php /*else: */?>
+                                    <h2 class="h1"><?php /*echo $slide_heading; */?></h2>
+                                <?php /*endif; */?>
+                                <div class="sub-heading h2"><?php /*echo $slide_sub_heading; */?></div>-->
                             </div>
                         </div>
                         <div class="slide-container show-for-large"
@@ -97,11 +106,18 @@
                                     </div>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                    <h1 class="h1"><?php echo $slide_heading; ?></h1>
+                                    <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                    <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
                                 <?php else: ?>
                                     <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                    <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                                 <?php endif; ?>
-                                <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
+                                <?php /*if (get_sub_field('use_h1_tag') == 1): */?><!--
+                                    <h1 class="h1"><?php /*echo $slide_heading; */?></h1>
+                                <?php /*else: */?>
+                                    <h2 class="h1"><?php /*echo $slide_heading; */?></h2>
+                                <?php /*endif; */?>
+                                <div class="sub-heading h2"><?php /*echo $slide_sub_heading; */?></div>-->
                             </div>
                         </div>
                     <?php else: ?>
@@ -118,11 +134,18 @@
                                     </div>
                                 <?php endif; ?>
                                 <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                    <h1 class="h1"><?php echo $slide_heading; ?></h1>
+                                    <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                    <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
                                 <?php else: ?>
                                     <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                    <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                                 <?php endif; ?>
-                                <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
+                                <?php /*if (get_sub_field('use_h1_tag') == 1): */?><!--
+                                    <h1 class="h1"><?php /*echo $slide_heading; */?></h1>
+                                <?php /*else: */?>
+                                    <h2 class="h1"><?php /*echo $slide_heading; */?></h2>
+                                <?php /*endif; */?>
+                                <div class="sub-heading h2"><?php /*echo $slide_sub_heading; */?></div>-->
                             </div>
                         </div>
                     <?php endif; ?>
@@ -140,11 +163,18 @@
                                 </div>
                             <?php endif; ?>
                             <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                <h1 class="h1"><?php echo $slide_heading; ?></h1>
+                                <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
                             <?php else: ?>
                                 <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                             <?php endif; ?>
-                            <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
+                            <?php /*if (get_sub_field('use_h1_tag') == 1): */?><!--
+                                <h1 class="h1"><?php /*echo $slide_heading; */?></h1>
+                            <?php /*else: */?>
+                                <h2 class="h1"><?php /*echo $slide_heading; */?></h2>
+                            <?php /*endif; */?>
+                            <div class="sub-heading h2"><?php /*echo $slide_sub_heading; */?></div>-->
                         </div>
                     </div>
                     <div class="slide-container hide-for-medium"
@@ -160,11 +190,18 @@
                                 </div>
                             <?php endif; ?>
                             <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                <h1 class="h1"><?php echo $slide_heading; ?></h1>
+                                <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
                             <?php else: ?>
                                 <h2 class="h1"><?php echo $slide_heading; ?></h2>
+                                <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                             <?php endif; ?>
-                            <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
+                            <?php /*if (get_sub_field('use_h1_tag') == 1): */?><!--
+                                <h1 class="h1"><?php /*echo $slide_heading; */?></h1>
+                            <?php /*else: */?>
+                                <h2 class="h1"><?php /*echo $slide_heading; */?></h2>
+                            <?php /*endif; */?>
+                            <div class="sub-heading h2"><?php /*echo $slide_sub_heading; */?></div>-->
                         </div>
                     </div>
                 <?php endif; ?>
