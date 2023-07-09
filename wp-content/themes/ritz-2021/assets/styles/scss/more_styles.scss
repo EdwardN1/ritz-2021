@@ -75,6 +75,15 @@ header.header #ritz-main-image-gallery .slide-container .slide-info h1 {
   }
 }
 
+body.single-post {
+  section.single-post {
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+  }
+}
+
 @media print, screen and (min-width: 40em) {
 
   header.header #ritz-main-image-gallery .slide-container .slide-info h1 {
