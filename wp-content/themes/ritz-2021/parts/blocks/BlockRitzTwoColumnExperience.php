@@ -173,8 +173,18 @@ endif;
 
         if ($booking_options == 'URL') {
             $page = get_field('second_link_url');
+            $blank_option = ' target="_blank"';
+            if (strpos($page, 'theritzlondon.com') !== false) {
+                $blank_option = '';
+            }
+            if (strpos($page, 'making.me.uk') !== false) {
+                $blank_option = '';
+            }
+            if (substr( $page, 0, 1 ) === "/") {
+                $blank_option = '';
+            }
             ?>
-            <a href="<?php echo esc_url($page); ?>" class="button-ritz" target="_blank"><?php echo $booking_link_text; ?></a>
+            <a href="<?php echo esc_url($page); ?>" class="button-ritz"<?php echo $blank_option;?>><?php echo $booking_link_text; ?></a>
             <?php
         };
 
