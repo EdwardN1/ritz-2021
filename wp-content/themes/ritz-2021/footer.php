@@ -106,9 +106,9 @@
                         <div class="cell auto">
                             <a href="https://instagram.com/theritzlondon" class="social-icon instagram" target="_blank"></a>
                         </div>
-                        <div class="cell auto">
+                        <!--<div class="cell auto">
                             <a href="https://twitter.com/theritzlondon" class="social-icon twitter" target="_blank"></a>
-                        </div>
+                        </div>-->
                         <div class="cell auto">
                             <a href="https://www.youtube.com/user/TheRitzLondon" class="social-icon youtube" target="_blank"></a>
                         </div>
@@ -154,10 +154,10 @@
                             <a href="https://instagram.com/theritzlondon" class="social-icon" target="_blank"><img
                                         src="<?php echo get_template_directory_uri() . '/assets/images/instagram.svg' ?>"></a>
                         </div>
-                        <div class="cell auto">
+                        <!--<div class="cell auto">
                             <a href="https://twitter.com/theritzlondon" class="social-icon" target="_blank"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/twitter.svg' ?>"></a>
-                        </div>
+                                        src="<?php /*echo get_template_directory_uri() . '/assets/images/twitter.svg' */?>"></a>
+                        </div>-->
                         <div class="cell auto">
                             <a href="https://www.linkedin.com/company/the-ritz-london" class="social-icon" target="_blank"><img
                                         src="<?php echo get_template_directory_uri() . '/assets/images/youtube.svg' ?>"></a>
@@ -210,10 +210,10 @@
                         <a href="https://instagram.com/theritzlondon" class="social-icon" target="_blank"><img
                                     src="<?php echo get_template_directory_uri() . '/assets/images/instagram.svg' ?>"></a>
                     </div>
-                    <div class="cell auto">
+                    <!--<div class="cell auto">
                         <a href="https://twitter.com/theritzlondon" class="social-icon" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/twitter.svg' ?>"></a>
-                    </div>
+                                    src="<?php /*echo get_template_directory_uri() . '/assets/images/twitter.svg' */?>"></a>
+                    </div>-->
                     <div class="cell auto">
                         <a href="https://www.youtube.com/user/TheRitzLondon" class="social-icon" target="_blank"><img
                                     src="<?php echo get_template_directory_uri() . '/assets/images/youtube.svg' ?>"></a>

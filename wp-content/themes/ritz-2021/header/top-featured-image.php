@@ -34,9 +34,9 @@ if ( has_post_thumbnail() && ! is_archive() ) :
                                     <div class="cell shrink text-right">
                                         <a href="https://instagram.com/theritzlondon" target="_blank" class="instagram"></a>
                                     </div>
-                                    <div class="cell shrink text-right">
+                                    <!--<div class="cell shrink text-right">
                                         <a href="https://twitter.com/theritzlondon" target="_blank" class="twitter"></a>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
