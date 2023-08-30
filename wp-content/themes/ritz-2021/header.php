@@ -84,7 +84,7 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                     </div>
                                     <div class="booking-line">
                                         <a id="mobile-header-sr-res-rivoli-root" class="ritz-seven-rooms"
-                                           data-venueid="therivolibar">Rivoli Bar</a>
+                                           data-venueid="therivolibar">The Rivoli Bar</a>
                                     </div>
                                     <!--<div class="booking-line">
                                         <a id="mobile-header-sr-res-garden-root" class="ritz-seven-rooms"
@@ -237,7 +237,7 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                             </div>
                                             <div class="booking-line">
                                                 <a id="header-sr-res-rivoli-root" class="ritz-seven-rooms"
-                                                   data-venueid="therivolibar">Rivoli Bar</a>
+                                                   data-venueid="therivolibar">The Rivoli Bar</a>
                                             </div>
                                             <!--<div class="booking-line">
                                                 <a id="header-sr-res-garden-root" class="ritz-seven-rooms"
