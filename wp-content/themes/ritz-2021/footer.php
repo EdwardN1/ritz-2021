@@ -110,6 +110,9 @@
                             <a href="https://twitter.com/theritzlondon" class="social-icon twitter" target="_blank"></a>
                         </div>-->
                         <div class="cell auto">
+                            <a href="https://www.tiktok.com/@theritzlondon" class="social-icon tiktok" target="_blank" style="background-image: url('/wp-content/themes/ritz-2021/assets/images/tiktok.svg'); height: 24px; width: 16px; background-position: center; background-size: 16px auto; display: inline-block; position: relative; background-repeat: no-repeat;"></a>
+                        </div>
+                        <div class="cell auto">
                             <a href="https://www.youtube.com/user/TheRitzLondon" class="social-icon youtube" target="_blank"></a>
                         </div>
                         <div class="cell auto">
@@ -158,6 +161,9 @@
                             <a href="https://twitter.com/theritzlondon" class="social-icon" target="_blank"><img
                                         src="<?php /*echo get_template_directory_uri() . '/assets/images/twitter.svg' */?>"></a>
                         </div>-->
+                        <div class="cell auto">
+                            <a href="https://www.tiktok.com/@theritzlondon" class="social-icon tiktok" target="_blank" style="background-image: url('/wp-content/themes/ritz-2021/assets/images/tiktok.svg'); height: 24px; width: 16px; background-position: center; background-size: 16px auto; display: inline-block; position: relative; background-repeat: no-repeat;"></a>
+                        </div>
                         <div class="cell auto">
                             <a href="https://www.linkedin.com/company/the-ritz-london" class="social-icon" target="_blank"><img
                                         src="<?php echo get_template_directory_uri() . '/assets/images/youtube.svg' ?>"></a>
@@ -214,6 +220,9 @@
                         <a href="https://twitter.com/theritzlondon" class="social-icon" target="_blank"><img
                                     src="<?php /*echo get_template_directory_uri() . '/assets/images/twitter.svg' */?>"></a>
                     </div>-->
+                    <div class="cell auto">
+                        <a href="https://www.tiktok.com/@theritzlondon" class="social-icon tiktok" target="_blank" style="background-image: url('/wp-content/themes/ritz-2021/assets/images/tiktok.svg'); height: 24px; width: 16px; background-position: center; background-size: 16px auto; display: inline-block; position: relative; background-repeat: no-repeat;"></a>
+                    </div>
                     <div class="cell auto">
                         <a href="https://www.youtube.com/user/TheRitzLondon" class="social-icon" target="_blank"><img
                                     src="<?php echo get_template_directory_uri() . '/assets/images/youtube.svg' ?>"></a>
