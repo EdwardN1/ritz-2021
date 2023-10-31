@@ -86,6 +86,10 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                         <a id="mobile-header-sr-res-rivoli-root" class="ritz-seven-rooms"
                                            data-venueid="therivolibar">The Rivoli Bar</a>
                                     </div>
+                                    <div class="booking-line">
+                                        <a id="mobile-header-sr-res-champagne-root" class="ritz-seven-rooms"
+                                           data-venueid="thelonggallery">Caviar & Champagne</a>
+                                    </div>
                                     <!--<div class="booking-line">
                                         <a id="mobile-header-sr-res-garden-root" class="ritz-seven-rooms"
                                            data-venueid="ritzgarden">The Ritz Garden</a>
@@ -238,6 +242,10 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                                             <div class="booking-line">
                                                 <a id="header-sr-res-rivoli-root" class="ritz-seven-rooms"
                                                    data-venueid="therivolibar">The Rivoli Bar</a>
+                                            </div>
+                                            <div class="booking-line">
+                                                <a id="header-sr-res-champagne-root" class="ritz-seven-rooms"
+                                                   data-venueid="thelonggallery">Caviar & Champagne</a>
                                             </div>
                                             <!--<div class="booking-line">
                                                 <a id="header-sr-res-garden-root" class="ritz-seven-rooms"
