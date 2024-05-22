@@ -263,7 +263,8 @@ class Hookturn_ACFTCP_Plugin_Updater {
 
 			if ( empty( $version_info->download_link ) ) {
 				printf(
-					__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s.', 'easy-digital-downloads' ),
+					/* translators: 1: version name 2: changelog link opening tag 3: new version 4: changelog link closing tag */
+					__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s.', 'acf-theme-code' ),
 					esc_html( $version_info->name ),
 					'<a target="_blank" class="thickbox" href="' . esc_url( $changelog_link ) . '">',
 					esc_html( $version_info->new_version ),
@@ -271,7 +272,8 @@ class Hookturn_ACFTCP_Plugin_Updater {
 				);
 			} else {
 				printf(
-					__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s.', 'easy-digital-downloads' ),
+					/* translators: 1: version name 2: changelog link opening tag 3: new version 4: changelog link closing tag 5: update link opening tag 6: update link closing tag */
+					__( 'There is a new version of %1$s available. %2$sView version %3$s details%4$s or %5$supdate now%6$s.', 'acf-theme-code' ),
 					esc_html( $version_info->name ),
 					'<a target="_blank" class="thickbox" href="' . esc_url( $changelog_link ) . '">',
 					esc_html( $version_info->new_version ),
@@ -514,7 +516,7 @@ class Hookturn_ACFTCP_Plugin_Updater {
 		}
 
 		if( ! current_user_can( 'update_plugins' ) ) {
-			wp_die( __( 'You do not have permission to install plugin updates', 'easy-digital-downloads' ), __( 'Error', 'easy-digital-downloads' ), array( 'response' => 403 ) );
+			wp_die( __( 'You do not have permission to install plugin updates', 'acf-theme-code' ), __( 'Error', 'acf-theme-code' ), array( 'response' => 403 ) );
 		}
 
 		$data         = $edd_plugin_data[ $_REQUEST['slug'] ];

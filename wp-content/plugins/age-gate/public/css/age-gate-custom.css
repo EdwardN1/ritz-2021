@@ -1,0 +1,25 @@
+.age-gate-submit{
+    background-color: #fff;
+    border: 1px solid #022e46;
+    color: #022e46;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 11px;
+    white-space: nowrap;
+    text-decoration: none !important;
+    letter-spacing: .1em;
+}
+
+.age-gate-submit:hover {
+    background-color: #022e46;
+    color: #fff;
+}
+
+.age-gate-form-elements li:first-of-type:before {
+    content: "";
+}

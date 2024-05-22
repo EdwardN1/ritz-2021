@@ -77,8 +77,9 @@
                                 <?php endif; ?>
 
                                 <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                    <h2 class="h1"><?php echo $slide_heading; ?></h2>
-                                    <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
+                                    <h1 style="font-family: garamond-premier-pro,serif; line-height: 1; font-size: 35px; letter-spacing: 0.1em;"><?php echo $slide_heading; ?></h1>
+                                    <!--<h1 class="h1"><?php /*echo $slide_sub_heading; */?></h1>-->
+                                    <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                                 <?php else: ?>
                                     <h2 class="h1"><?php echo $slide_heading; ?></h2>
                                     <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
@@ -163,8 +164,8 @@
                                 </div>
                             <?php endif; ?>
                             <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                <h2 class="h1"><?php echo $slide_heading; ?></h2>
-                                <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
+                                <h1 class="h1" style="font-size: 40px; letter-spacing: 0.1em; font-family: garamond-premier-pro,serif; line-height: 1;"><?php echo $slide_heading; ?></h1>
+                                <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                             <?php else: ?>
                                 <h2 class="h1"><?php echo $slide_heading; ?></h2>
                                 <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
@@ -190,8 +191,9 @@
                                 </div>
                             <?php endif; ?>
                             <?php if (get_sub_field('use_h1_tag') == 1): ?>
-                                <h2 class="h1"><?php echo $slide_heading; ?></h2>
-                                <h1 class="h1"><?php echo $slide_sub_heading; ?></h1>
+                                <h1 style="font-family: garamond-premier-pro,serif; line-height: 1; font-size: 35px; letter-spacing: 0.1em;"><?php echo $slide_heading; ?></h1>
+                                <!--<h1 class="h1"><?php /*echo $slide_sub_heading; */?></h1>-->
+                                <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>
                             <?php else: ?>
                                 <h2 class="h1"><?php echo $slide_heading; ?></h2>
                                 <div class="sub-heading h2"><?php echo $slide_sub_heading; ?></div>

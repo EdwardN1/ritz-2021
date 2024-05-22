@@ -3,11 +3,11 @@
 Plugin Name: Advanced Custom Fields: Theme Code Pro
 Plugin URI: https://hookturn.io/downloads/acf-theme-code-pro/
 Description: Generates theme code for ACF Pro field groups to speed up development.
-Version: 2.5.2
+Version: 2.5.5
 Author: Hookturn with Ben Pearson
-Author URI: http://www.hookturn.io
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Author URI: https://hookturn.io
+Text Domain: acf-theme-code
+Domain Path: /pro/languages
 */
 
 // Exit if accessed directly
@@ -17,15 +17,17 @@ if ( is_admin() ) {
 	
 	if ( ! class_exists( 'ACFTC_Core' ) ) {
 
-		defined( 'ACFTC_PLUGIN_VERSION' ) or define( 'ACFTC_PLUGIN_VERSION', '2.5.2' );
+		defined( 'ACFTC_PLUGIN_VERSION' ) or define( 'ACFTC_PLUGIN_VERSION', '2.5.5' );
 		defined( 'ACFTC_PLUGIN_DIR_PATH' ) or define( 'ACFTC_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 		defined( 'ACFTC_PLUGIN_DIR_URL' ) or define( 'ACFTC_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 		defined( 'ACFTC_PLUGIN_BASENAME' ) or define( 'ACFTC_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		defined( 'ACFTC_IS_PRO' ) or define( 'ACFTC_IS_PRO', file_exists( ACFTC_PLUGIN_DIR_PATH . 'pro' ) );
 		defined( 'ACFTC_PLUGIN_FILE' ) or define( 'ACFTC_PLUGIN_FILE', __FILE__ );
+		defined( 'ACFTC_HOOKTURN_URL' ) or define( 'ACFTC_HOOKTURN_URL', 'https://hookturn.io' ); // See also HOOKTURN_STORE_URL
 
 		// Classes
 		include('core/core.php');
+		include('core/field-group-ui.php'); // Theme code UI for field groups
 		include('core/locations.php');
 		include('core/group.php');
 		include('core/field.php');

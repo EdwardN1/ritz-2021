@@ -5,7 +5,14 @@
  */
 
 function hookturn_acftcp_license_menu() {
-	add_options_page( 'Theme Code Pro License', 'Theme Code Pro', 'manage_options', HOOKTURN_ACFTCP_LICENSE_PAGE, 'hookturn_acftcp_license_page' );
+
+	add_options_page( 
+		__( 'Theme Code Pro License', 'acf-theme-code' ),
+		__( 'Theme Code Pro', 'acf-theme-code' ),
+		'manage_options', HOOKTURN_ACFTCP_LICENSE_PAGE,
+		'hookturn_acftcp_license_page'
+	);
+
 }
 add_action('admin_menu', 'hookturn_acftcp_license_menu');
 
@@ -14,7 +21,7 @@ function hookturn_acftcp_license_page() {
 	$status  = get_option( 'hookturn_acftcp_license_status' );
 	?>
 	<div class="wrap acf-settings-wrap acftcp-license-page__wrap">
-		<h2><?php _e('ACF Theme Code Pro'); ?></h2>
+		<h2><?php _e( 'ACF Theme Code Pro', 'acf-theme-code' ); ?></h2>
 
 		<div class="acf-box">
 			
@@ -24,7 +31,7 @@ function hookturn_acftcp_license_page() {
 
 			<div class="inner">
 
-				<p>To unlock updates please enter your license key, save it and then activate it.</p>
+				<p><?php _e( 'To unlock updates please enter your license key, save it and then activate it.', 'acf-theme-code' ); ?></p>
 
 				<form method="post" action="options.php">
 
@@ -34,34 +41,37 @@ function hookturn_acftcp_license_page() {
 						<tbody>
 							<tr>
 								<th>
-									<label class="acftcp-license-page__label" for="hookturn_acftcp_license_key"><?php _e('License Key'); ?></label>
+									<label class="acftcp-license-page__label" for="hookturn_acftcp_license_key"><?php _e( 'License Key', 'acf-theme-code' ); ?></label>
 								</th>
 								<td>
 									<input id="hookturn_acftcp_license_key" name="hookturn_acftcp_license_key" type="password" class="regular-text acftcp-license-page__key" value="<?php esc_attr_e( $license ); ?>" />
 									<?php if ( $license == '' ) : ?>
-										<p class="description"><?php _e('Enter your license key.'); ?></p>
+										<p class="description"><?php _e( 'Enter your license key.', 'acf-theme-code' ); ?></p>
 									<?php endif; ?>
-									<?php submit_button( __('Save License Key'), 'button button-primary' ); ?>
+									<?php submit_button( 
+										__( 'Save License Key', 'acf-theme-code' ),
+										'button button-primary'
+									); ?>
 								</td>
 							</tr>
 							<?php if ( '' != $license ) : ?>
 								<tr>
 									<th>
-										<span class="acftcp-license-page__label"><?php _e('License Status'); ?></span>
+										<span class="acftcp-license-page__label"><?php _e( 'License Status', 'acf-theme-code' ); ?></span>
 									</th>
 									<td>
 										<?php if ( $status !== false && $status == 'valid' ) : ?>
-											<p class="acftcp-license-page__status acftcp-license-page__status--active" ><?php _e('Active'); ?></p>
+											<p class="acftcp-license-page__status acftcp-license-page__status--active" ><?php _e( 'Active', 'acf-theme-code' ); ?></p>
 											<?php wp_nonce_field( 'hookturn_acftcp_nonce', 'hookturn_acftcp_nonce' ); ?>
 											<p class="submit">
-												<input type="submit" class="button button-primary" name="edd_license_deactivate" value="<?php _e('Deactivate License'); ?>"/>
+												<input type="submit" class="button button-primary" name="edd_license_deactivate" value="<?php _e( 'Deactivate License', 'acf-theme-code' ); ?>"/>
 											</p>
 										<?php else : ?>
 											<?php wp_nonce_field( 'hookturn_acftcp_nonce', 'hookturn_acftcp_nonce' ); ?>
-											<p class="acftcp-license-page__status acftcp-license-page__status--inactive" ><?php _e('Inactive'); ?></p>
-											<p class="description"><?php _e('Activate license to enable plugin updates.'); ?></p>
+											<p class="acftcp-license-page__status acftcp-license-page__status--inactive" ><?php _e( 'Inactive', 'acf-theme-code' ); ?></p>
+											<p class="description"><?php _e( 'Activate license to enable plugin updates.', 'acf-theme-code' ); ?></p>
 											<p class="submit">
-												<input type="submit" class="button button-primary" name="edd_license_activate" value="<?php _e('Activate License'); ?>"/>
+												<input type="submit" class="button button-primary" name="edd_license_activate" value="<?php _e( 'Activate License', 'acf-theme-code' ); ?>"/>
 											</p>
 										<?php endif; ?>
 									</td>
@@ -130,7 +140,7 @@ function hookturn_acftcp_activate_license() {
 			if ( is_wp_error( $response ) ) {
 				$message = $response->get_error_message();
 			} else {
-				$message = __( 'An error occurred, please try again.' );
+				$message = __( 'An error occurred, please try again.', 'acf-theme-code' );
 			}
 
 		} else {
@@ -144,41 +154,51 @@ function hookturn_acftcp_activate_license() {
 					case 'expired' :
 
 						$message = sprintf(
-							__( '<b>Your license key expired on %1$s</b>.<br/><br/>To continue receiving new features, security updates and support, log into your <a href="https://hookturn.io/account/">Hookturn account</a> and renew your license.' ),
-								date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) )
+							/* translators: 1: license key expiry date 2: Hookturn account URL */
+							__( '<b>Your license key expired on %1$s</b>.<br/><br/>To continue receiving new features, security updates and support, log into your <a href="%2$s" target="_blank">Hookturn account</a> and renew your license.', 'acf-theme-code' ),
+							date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) ),
+							'https://hookturn.io/account/'
 						);
 						break;
 
 					case 'disabled' :
 					case 'revoked' :
 
-						$message = __( 'Your license key has been disabled.' );
+						$message = __( 'Your license key has been disabled.', 'acf-theme-code' );
 						break;
 
 					case 'missing' :
 
-						$message = __( '<b>Invalid license</b>.<br/><br/>Try entering your <em>License Key</em> again. Then hit the <em>Save License Key</em> button followed by the <em>Activate License</em> button. If the issue persists, log into your <a href="https://hookturn.io/account/">Hookturn account</a> and check the status of your license.' );
+						$message = sprintf(
+							/* translators: 1: Hookturn account URL  */
+							__( '<b>Invalid license</b>.<br/><br/>Try entering your <em>License Key</em> again. Then hit the <em>Save License Key</em> button followed by the <em>Activate License</em> button. If the issue persists, log into your <a href="%s" target="_blank">Hookturn account</a> and check the status of your license.', 'acf-theme-code' ),
+							'https://hookturn.io/account/'
+						);
 						break;
 
 					case 'invalid' :
 					case 'site_inactive' :
 
-						$message = __( 'Your license is not active for this URL.' );
+						$message = __( 'Your license is not active for this URL.', 'acf-theme-code' );
 						break;
 
 					case 'item_name_mismatch' :
 
-						$message = sprintf( __( 'This appears to be an invalid license key for %s.' ), HOOKTURN_ITEM_NAME );
+						$message = sprintf(
+							/* translators: 1: plugin name  */
+							__( 'This appears to be an invalid license key for %s.', 'acf-theme-code' ),
+							HOOKTURN_ITEM_NAME
+						);
 						break;
 
 					case 'no_activations_left':
 
-						$message = __( 'Your license key has reached its activation limit.' );
+						$message = __( 'Your license key has reached its activation limit.', 'acf-theme-code' );
 						break;
 
 					default :
 
-						$message = __( 'An error occurred, please try again.' );
+						$message = __( 'An error occurred, please try again.', 'acf-theme-code' );
 						break;
 				}
 
@@ -197,7 +217,7 @@ function hookturn_acftcp_activate_license() {
 			update_option( 'hookturn_acftcp_license_status', $license_data->license );
 
 			$notice_type = 'success';
-			$message = __( '<b>Licence key activated</b>.<br/><br/>Plugin updates are now enabled.' );
+			$message = __( '<b>Licence key activated</b>.<br/><br/>Plugin updates are now enabled.', 'acf-theme-code' );
 
 		}
 		
@@ -261,7 +281,7 @@ function hookturn_acftcp_deactivate_license() {
 			}
 
 			$notice_type = 'warning';
-			$message = __( '<b>License key deactived</b>. Updates now disabled.' );
+			$message = __( '<b>License key deactived</b>. Updates now disabled.', 'acf-theme-code' );
 
 		}
 

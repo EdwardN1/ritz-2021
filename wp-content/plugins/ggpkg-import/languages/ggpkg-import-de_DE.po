@@ -1,0 +1,181 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GGSW-Import V1.0\n"
+"POT-Creation-Date: 2014-11-24 16:28+0100\n"
+"PO-Revision-Date: 2014-11-24 16:30+0100\n"
+"Last-Translator: Christoph Stummer <christoph@gardengnome.at>\n"
+"Language-Team: GGSW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;ggsw__;ggsw_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ggpkg-import.php:89 ggpkg-import.php:157
+msgid ""
+"The PHP Zip extension is not installed on your server. Without it GGPKG-"
+"Import will not work. Please contact your server administrator."
+msgstr ""
+"Die PHP Zip Erweiterung ist auf Ihrem Server nicht installiert. Diese wird "
+"von GGPKG-Import benötigt. Bitte kontaktieren Sie Ihren Server Administrator."
+
+#: ggpkg-import.php:91 ggpkg-import.php:159
+msgid ""
+"The libxml extension is not installed on your server. Without it GGPKG-"
+"Import will not work. Please contact your server administrator."
+msgstr ""
+"Die libxml Erweiterung ist auf Ihrem Server nicht installiert. Diese wird "
+"von GGPKG-Import benötigt. Bitte kontaktieren Sie Ihren Server Administrator."
+
+#: ggpkg-import.php:149 ggpkg-import.php:191
+msgid "GGPKG Import"
+msgstr "GGPKG Import"
+
+#: ggpkg-import.php:182
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+#: ggpkg-import.php:184
+msgid "Settings could not be saved."
+msgstr "Einstellungen konnten nicht gespeichert werden."
+
+#: ggpkg-import.php:195
+msgid "Player size"
+msgstr "Player Größe"
+
+#: ggpkg-import.php:197
+msgid "Width"
+msgstr "Breite"
+
+#: ggpkg-import.php:199
+msgid "Height"
+msgstr "Höhe"
+
+#: ggpkg-import.php:205
+msgid "Start player as preview image"
+msgstr "Starte Player als Vorschaubild"
+
+#: ggpkg-import.php:213
+msgid "Display User Data"
+msgstr "Zeige Benutzer Daten"
+
+#: ggpkg-import.php:221
+msgid "Expand User Data on Import"
+msgstr "Expandiere Benutzerdaten beim Import"
+
+#: ggpkg-import.php:229
+msgid "User Data"
+msgstr "Benutzer Daten"
+
+#: ggpkg-import.php:232
+msgid ""
+"Enter HTML-Code for User Data containing <a href='http://gardengnomesoftware."
+"com/wiki/Skin_-_Placeholder'>User Data Placeholders</a>."
+msgstr ""
+"Tragen Sie den HTML-Code für die Benutzerdaten mit <a href='http://"
+"gardengnomesoftware.com/wiki/Skin_-_Placeholder'>Benutzer Daten "
+"Platzhaltern</a> ein."
+
+#: ggpkg-import.php:245
+msgid "Display Map"
+msgstr "Zeige Karte"
+
+#: ggpkg-import.php:253
+msgid "Master Panorama"
+msgstr "Master Panorama"
+
+#: ggpkg-import.php:257
+msgid "Upload/Select Master Panorama"
+msgstr "Master Panorama hochladen/auswählen"
+
+#: ggpkg-import.php:262
+msgid "Use Panorama Player from Master Panorama"
+msgstr "Benutze Panorama Player aus Master Panorama"
+
+#: ggpkg-import.php:270
+msgid "Use Skin from Master Panorama"
+msgstr "Benutze Skin aus Master Panorama"
+
+#: ggpkg-import.php:278
+msgid "Use Gyro on Handheld Devices"
+msgstr "Benutze Gyroskop bei mobilen Geräten"
+
+#: ggpkg-import.php:286
+msgid "Use True North for Gyro"
+msgstr "Benutze echtes Norden bei Gyroskop"
+
+#: ggpkg-import.php:297
+msgid "Master Objectmovie"
+msgstr "Master Objectmovie"
+
+#: ggpkg-import.php:301
+msgid "Upload/Select Master Objectmovie"
+msgstr "Master Objectmovie hochladen/auswählen"
+
+#: ggpkg-import.php:306
+msgid "Use Object Player from Master Objectmovie"
+msgstr "Benutze Object Player aus Master Objectmovie"
+
+#: ggpkg-import.php:314
+msgid "Use Skin from Master Objectmovie"
+msgstr "Benutze Skin aus Master Objectmovie"
+
+#: ggpkg-import.php:354
+msgid "GGPKG Import Settings"
+msgstr "GGPKG Import Einstellungen"
+
+#: ggpkg-import.php:386
+msgid "GGPKG Import Documentation"
+msgstr "GGPKG Import Dokumentation"
+
+#: ggpkg-import.php:399
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: ggpkg-import.php:758 ggpkg-import.php:799 ggpkg-import.php:899
+msgid "GGPKG incomplete, XML-File is missing!"
+msgstr "GGPKG ist unvollständig, die XML-Datei fehlt!"
+
+#: ggpkg-import.php:900
+msgid ""
+"This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or "
+"higher."
+msgstr ""
+"Dieser Inhalt benötigt HTML5/CSS3, WebGL, oder Adobe Flash Player Version 9 "
+"oder höher."
+
+#: ggpkg-import.php:901
+msgid "Please enable Javascript!"
+msgstr "Bitte aktivieren Sie Javascript!"
+
+#~ msgid "Width Unit"
+#~ msgstr "Breiteneinheit"
+
+#~ msgid "Title:"
+#~ msgstr "Titel:"
+
+#~ msgid "Global Panorama Player URL"
+#~ msgstr "Globaler Panorama Player URL"
+
+#~ msgid "Use Global Panorama Player"
+#~ msgstr "Benutze globalen Panorama Player"
+
+#~ msgid "Global Object Player URL"
+#~ msgstr "Globaler Object Player URL"
+
+#~ msgid "Use Global Object Player"
+#~ msgstr "Benutze globalen Object Player"
+
+#~ msgid "Upload Player"
+#~ msgstr "Player hochladen"
+
+#~ msgid "Use Global Panorama Skin"
+#~ msgstr "Benutze globale Panorama Skin"
+
+#~ msgid "Global Panorama Skin"
+#~ msgstr "Globale Panorama Skin"
+
+#~ msgid "Upload Skin Files"
+#~ msgstr "Skin Dateien hochladen"

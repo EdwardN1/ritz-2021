@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GGSW-Import V1.0\n"
+"POT-Creation-Date: 2013-10-01 08:11+0100\n"
+"PO-Revision-Date: 2013-10-01 08:12+0100\n"
+"Last-Translator: Christoph Stummer <christoph@gardengnome.at>\n"
+"Language-Team: GGSW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;ggsw__;ggsw_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ggpkg-import.php:89 ggpkg-import.php:189
+msgid ""
+"The PHP Zip extension is not installed on your server. Without it GGPKG-"
+"Import will not work. Please contact your server administrator."
+msgstr ""
+
+#: ggpkg-import.php:91 ggpkg-import.php:191
+msgid ""
+"The libxml extension is not installed on your server. Without it GGPKG-"
+"Import will not work. Please contact your server administrator."
+msgstr ""
+
+#: ggpkg-import.php:181 ggpkg-import.php:221
+msgid "GGPKG Import"
+msgstr ""
+
+#: ggpkg-import.php:212
+msgid "Settings saved."
+msgstr ""
+
+#: ggpkg-import.php:214
+msgid "Settings could not be saved."
+msgstr ""
+
+#: ggpkg-import.php:225
+msgid "Player size"
+msgstr ""
+
+#: ggpkg-import.php:227
+msgid "Width"
+msgstr ""
+
+#: ggpkg-import.php:229
+msgid "Height"
+msgstr ""
+
+#: ggpkg-import.php:235
+msgid "Start player as preview image"
+msgstr ""
+
+#: ggpkg-import.php:243
+msgid "Display User Data"
+msgstr ""
+
+#: ggpkg-import.php:251
+msgid "Expand User Data on Import"
+msgstr ""
+
+#: ggpkg-import.php:259
+msgid "User Data"
+msgstr ""
+
+#: ggpkg-import.php:262
+msgid ""
+"Enter HTML-Code for User Data containing <a href='http://gardengnomesoftware."
+"com/wiki/Skin_-_Placeholder'>User Data Placeholders</a>."
+msgstr ""
+
+#: ggpkg-import.php:275
+msgid "Display Map"
+msgstr ""
+
+#: ggpkg-import.php:283
+msgid "Master Panorama"
+msgstr ""
+
+#: ggpkg-import.php:287
+msgid "Upload/Select Master Panorama"
+msgstr ""
+
+#: ggpkg-import.php:292
+msgid "Use Panorama Player from Master Panorama"
+msgstr ""
+
+#: ggpkg-import.php:300
+msgid "Use Skin from Master Panorama"
+msgstr ""
+
+#: ggpkg-import.php:311
+msgid "Master Objectmovie"
+msgstr ""
+
+#: ggpkg-import.php:315
+msgid "Upload/Select Master Objectmovie"
+msgstr ""
+
+#: ggpkg-import.php:320
+msgid "Use Object Player from Master Objectmovie"
+msgstr ""
+
+#: ggpkg-import.php:328
+msgid "Use Skin from Master Objectmovie"
+msgstr ""
+
+#: ggpkg-import.php:368
+msgid "GGPKG Import Settings"
+msgstr ""
+
+#: ggpkg-import.php:398
+msgid "GGPKG Import Documentation"
+msgstr ""
+
+#: ggpkg-import.php:411
+msgid "Settings"
+msgstr ""
+
+#: ggpkg-import.php:643 ggpkg-import.php:680 ggpkg-import.php:763
+msgid "GGPKG incomplete, XML-File is missing!"
+msgstr ""
+
+#: ggpkg-import.php:764
+msgid ""
+"This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or "
+"higher."
+msgstr ""
+
+#: ggpkg-import.php:765
+msgid "Please enable Javascript!"
+msgstr ""

@@ -6,7 +6,7 @@
 function acftcp_action_links( $links ) {
 
     $settings_link = array(
-        '<a href="' . admin_url('options-general.php?page=theme-code-pro-license') . '">Settings</a>',
+        '<a href="' . admin_url('options-general.php?page=theme-code-pro-license') . '">' . __( 'Settings', 'acf-theme-code' ) . '</a>',
     );
 
     return array_merge( $links, $settings_link );

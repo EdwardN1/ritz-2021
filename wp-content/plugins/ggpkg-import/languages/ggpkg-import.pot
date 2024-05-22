@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GGSW-Import V1.0\n"
+"POT-Creation-Date: 2013-01-11 13:24+0100\n"
+"PO-Revision-Date: 2013-01-11 13:24+0100\n"
+"Last-Translator: \n"
+"Language-Team: GGSW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;ggsw__;ggsw_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ggswimport.php:103
+msgid "Title:"
+msgstr ""
+
+#: ggswimport.php:128
+msgid "GGSW Import"
+msgstr ""
+
+#: ggswimport.php:155
+msgid "Settings saved."
+msgstr ""
+
+#: ggswimport.php:157
+msgid "Settings could not be saved."
+msgstr ""
+
+#: ggswimport.php:168
+msgid "Player size"
+msgstr ""
+
+#: ggswimport.php:170
+msgid "Width"
+msgstr ""
+
+#: ggswimport.php:172
+msgid "Height"
+msgstr ""
+
+#: ggswimport.php:178
+msgid "Display Map"
+msgstr ""
+
+#: ggswimport.php:186
+msgid "Display User Data"
+msgstr ""
+
+#: ggswimport.php:194
+msgid "Expand User Data on Import"
+msgstr ""
+
+#: ggswimport.php:202
+msgid "User Data"
+msgstr ""
+
+#: ggswimport.php:205
+msgid ""
+"Enter HTML-Code for User Data containing <a href='http://gardengnomesoftware."
+"com/wiki/Skin_-_Placeholder'>User Data Placeholders</a>."
+msgstr ""
+
+#: ggswimport.php:218
+msgid "Use Global Panorama Player"
+msgstr ""
+
+#: ggswimport.php:226
+msgid "Global Panorama Player"
+msgstr ""
+
+#: ggswimport.php:230
+msgid "Upload Player"
+msgstr ""
+
+#: ggswimport.php:235
+msgid "Use Global Panorama Skin"
+msgstr ""
+
+#: ggswimport.php:243
+msgid "Global Panorama Skin"
+msgstr ""
+
+#: ggswimport.php:247
+msgid "Upload Skin Files"
+msgstr ""
+
+#: ggswimport.php:283
+msgid "GGSW Import Settings"
+msgstr ""
+
+#: ggswimport.php:314
+msgid "GGSW Import Documentation"
+msgstr ""
+
+#: ggswimport.php:584
+msgid ""
+"This content requires HTML5/CSS3, WebGL, or Adobe Flash Player Version 9 or "
+"higher."
+msgstr ""
+
+#: ggswimport.php:603
+msgid "Please enable Javascript!"
+msgstr ""

@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+
+.ggskin img {
+    margin: none; 
+    border: none; 
+    padding: none; 
+    box-shadow: none !important;
+}
+.ggskin {
+    font-family: Helvetica, Arial, Sans-Serif; 
+    font-size: 14px; 
+    box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+}

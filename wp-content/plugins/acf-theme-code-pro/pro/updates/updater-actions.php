@@ -35,7 +35,8 @@ function hookturn_modify_plugin_update_message( $plugin_data, $response ) {
 	if ( empty( $response->package ) ) {
 		echo '<br /><br />';
 		echo sprintf( 
-			__('To enable updates, please save and activate your license key on the <a href="%s">Theme Code Pro Settings</a> page. If you don\'t have a licence key, please visit <a href="%s" target="_blank">Hookturn</a> for details and pricing.'),
+			/* translators: 1: plugin settings page URL 2: Hookturn plugin URL */
+			__('To enable updates, please save and activate your license key on the <a href="%1$s">Theme Code Pro Settings</a> page. If you don\'t have a licence key, please visit <a href="%2$s" target="_blank">Hookturn</a> for details and pricing.', 'acf-theme-code' ),
 			admin_url('options-general.php?page=theme-code-pro-license'),
 			'https://hookturn.io/downloads/acf-theme-code-pro/'
 		);
@@ -59,7 +60,8 @@ function hookturn_acftcp_upgrader_process_complete( $plugin_upgrader_object, $ho
 			if ( $plugin == ACFTC_PLUGIN_BASENAME ) {
 				
 				$custom_error = sprintf( 
-					__('please check the status of your license key on the <a href="%s">Theme Code Pro Settings</a> page.'),
+					/* translators: 1: plugin settings page URL */
+					__('please check the status of your license key on the <a href="%s">Theme Code Pro Settings</a> page.', 'acf-theme-code' ),
 					admin_url('options-general.php?page=theme-code-pro-license')
 				);
 

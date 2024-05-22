@@ -1,14 +1,33 @@
 === ACF Theme Code Pro ===
 Contributors: aaronrutley, ben-pearson
 Requires at least: 4.8.0
-Tested up to: 5.6.0
-Stable tag: 2.5.2
+Tested up to: 6.0
+Stable tag: 2.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ACF Theme Code will automatically generate the code needed to implement Advanced Custom Fields in your themes!
 
 == Changelog ==
+
+= 2.5.5 =
+* Add new stylesheet to integrate all components with ACF 6
+* Update location registration tool UI to integrate with ACF 6
+* Update scroll to code functionality to support ACF 6
+
+= 2.5.4 =
+* Add support for ACF 6
+* Add Polish translation thanks to Michal Lepiarz
+* Add Dutch translation thanks to Peter Smits
+* Add Chinese (Taiwan) translation thanks to RedBazil
+* Add German translation thanks to Christian Kappmeyer
+* Fix JS and CSS enqueuing bug on Tools page
+
+= 2.5.3 =
+* Add full support for localization (i18n)
+  * Please let us know if you're interested in helping translate ACF Theme Code Pro into your language (https://hookturn.io/contact/)
+* Improve enqueuing of CSS and JS
+* Fix notice that occurs when Location is set to an unregistered block type
 
 = 2.5.2 =
 * Add support for the following third party fields:

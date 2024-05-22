@@ -1,17 +1,18 @@
-// jQuery doc ready
+// Currently no requirement for i18n in this file
+
 (function($) {
 	$(document).ready(function() {
 
 		// If ACF Tools page and Theme Code registration meta box is present
-		if ($('#acf-admin-tool-acftc_location_registration').length) {
+		if ($('#acf-admin-tool-acftc-location-registration').length) {
 
 			// set the new block code
-			var newblockcode = $('.acf-block-code-hidden').html();
+			var newblockcode = $('.acftc-block-code-hidden').html();
 			$('#acftc-block-code-output-code').html(newblockcode);
 			Prism.highlightElement($('#acftc-block-code-output-code')[0]);
 
 			// set the new options code
-			var newoptionscode = $('.acf-option-code-hidden').html();
+			var newoptionscode = $('.acftc-option-code-hidden').html();
 			$('#acftc-option-code-output-code').html(newoptionscode);
 			Prism.highlightElement($('#acftc-option-code-output-code')[0]);
 
@@ -22,16 +23,16 @@
 				var activediv = $(this).val();
 
 				// hide all the divs
-				$('.registration-wrap').slideUp();
+				$('.acftc-registration-wrap').hide();
 
 				// remove the active class from all the divs
-				$('.registration-wrap').removeClass('registration-wrap--active');
+				$('.acftc-registration-wrap').removeClass('acftc-registration-wrap--active');
 
-				// slide down the one we want
-				$('#' + activediv ).slideDown();
+				// show the one we want
+				$('#' + activediv ).show();
 
 				// add the active class to the active div
-				$('#' + activediv ).addClass('registration-wrap--active');
+				$('#' + activediv ).addClass('acftc-registration-wrap--active');
 
 			});
 
@@ -58,7 +59,7 @@
 				}
 
 				$('#acftc-block-code-output-code').empty();
-				var newcontent = $('.acf-block-code-hidden').html();
+				var newcontent = $('.acftc-block-code-hidden').html();
 				$('#acftc-block-code-output-code').html(newcontent);
 				Prism.highlightElement($('#acftc-block-code-output-code')[0]);
 
@@ -81,7 +82,7 @@
 				}
 
 				$('#acftc-option-code-output-code').empty();
-				var newcontent = $('.acf-option-code-hidden').html();
+				var newcontent = $('.acftc-option-code-hidden').html();
 				$('#acftc-option-code-output-code').html(newcontent);
 				Prism.highlightElement($('#acftc-option-code-output-code')[0]);
 
