@@ -16,7 +16,7 @@ if ( has_post_thumbnail() && ! is_archive() ) :
                     </div>
                     <div class="cell shrink logo">
                         <a href="/"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/white-ritz-logo.svg"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/White_Ritz_Logo_New_Vector.svg"
                                     class="ritz-logo"></a>
                     </div>
                     <div class="cell auto links-social">
@@ -53,7 +53,7 @@ if ( has_post_thumbnail() && ! is_archive() ) :
                     </div>
                     <div class="cell shrink logo">
                         <a href="/"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/white-ritz-logo.svg"
+                                    src="<?php echo get_template_directory_uri(); ?>/assets/images/White_Ritz_Logo_New_Vector.svg"
                                     class="ritz-logo"></a>
                     </div>
                     <div class="cell auto links-social text-right">
