@@ -81,7 +81,7 @@
     <div class="show-for-large grid-container">
         <div class="grid-x">
             <div class="cell auto logo text-left">
-                <img src="<?php echo get_template_directory_uri() . '/assets/images/White_Ritz_Logo_New_Vector.svg'; ?><?php //echo get_template_directory_uri() . '/assets/images/black-ritz-logo.svg'; ?>">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/White_Ritz_Logo_New_Vector_B.svg'; ?><?php //echo get_template_directory_uri() . '/assets/images/black-ritz-logo.svg'; ?>">
             </div>
             <div class="cell shrink contact">
                 <div>150 PICCADILLY, LONDON W1J 9BR<br>
@@ -135,7 +135,7 @@
         <div class="grid-x">
             <div class="cell auto">
                 <div class="logo">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/White_Ritz_Logo_New_Vector.svg'; ?><?php //echo get_template_directory_uri() . '/assets/images/black-ritz-logo.svg'; ?>">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/White_Ritz_Logo_New_Vector_B.svg'; ?><?php //echo get_template_directory_uri() . '/assets/images/black-ritz-logo.svg'; ?>">
                 </div>
             </div>
             <div class="cell shrink">
@@ -195,7 +195,7 @@
 
     <div class="hide-for-medium">
         <div class="logo">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/White_Ritz_Logo_New_Vector.svg'; ?><?php //echo get_template_directory_uri() . '/assets/images/black-ritz-logo.svg'; ?>">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/White_Ritz_Logo_New_Vector_B.svg'; ?><?php //echo get_template_directory_uri() . '/assets/images/black-ritz-logo.svg'; ?>">
         </div>
         <div class="contact text-center">
             <div>150 PICCADILLY, LONDON W1J 9BR<br>

@@ -63,7 +63,9 @@ endif;
             <div class="v-align">
                 <div class="v-content">
                     <div class="title">
-                        <h3><?php the_field( 'title' ); ?></h3>
+
+                        <h2 class="h3"><?php the_field( 'title' ); ?></h2>
+                        <!--<h3><?php /*the_field( 'title' ); */?></h3>-->
                     </div>
                     <div class="content">
 						<?php the_field( 'content' ); ?>

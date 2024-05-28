@@ -36,6 +36,14 @@ header.header #ritz-main-image-gallery .slide-container .slide-info h1 {
   }
 }
 
+.block-ritz-landing-page-room-block h2.h3 {
+  //font-size: 30px;
+  line-height: 30px;
+  font-family: garamond-premier-pro, serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
 .block-ritz-four-column-block {
   .heading {
     text-align: center;
@@ -90,6 +98,10 @@ body.single-post {
     font-size: 14px;
     line-height: 18px;
     letter-spacing: .05em;
+  }
+
+  .block-ritz-landing-page-room-block h2.h3 {
+    font-size: 30px;
   }
 
   .ritz-block-two-columns {

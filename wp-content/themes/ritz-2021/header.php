@@ -212,7 +212,7 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                         </div>
                         <div class="cell shrink logo">
                             <a href="/"><img
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/Blue_Ritz_Logo_New_Vector.svg"
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/Blue_Ritz_Logo_New_Vector_B.svg"
                                         class="ritz-logo"></a>
                         </div>
                         <div class="cell auto booking-section">
@@ -358,7 +358,7 @@ if(get_field('dining_booking_engine','option')=='Seven Rooms') {
                         </div>
                         <div class="cell shrink logo">
                             <a href="/"><img
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/Blue_Ritz_Logo_New_Vector.svg"
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/images/Blue_Ritz_Logo_New_Vector_B.svg"
                                         class="ritz-logo"></a>
                         </div>
                         <div class="cell auto links-social text-right">
