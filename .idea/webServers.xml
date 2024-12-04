@@ -9,7 +9,21 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
-      <webServer id="338bf0fc-862e-4346-8e06-876c01fd92f2" name="Ritz3" url="http://mail.technicks.com">
+      <webServer id="20f51f37-e301-4a4f-9bf2-f818d658c119" name="backup.techicks.com" url="http://mail.technicks.com">
+        <fileTransfer host="mail.technicks.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f79e9fa9-b580-4a0d-941b-99db2083ae4a" name="backups.technicks.com" url="http://mail.technicks.com">
+        <fileTransfer rootFolder="/web" host="mail.technicks.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="75872e15-6c0b-45dd-a96a-d57032a0bea7" name="Ritz Stage" url="http://ritz.making.me.uk">
         <fileTransfer rootFolder="/web" host="mail.technicks.com" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
